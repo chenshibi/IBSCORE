@@ -1,0 +1,57 @@
+@CHARSET "UTF8";
+body
+{
+	font-family: verdana;
+	font-size: 9pt;
+	height:100%;
+}
+table
+{
+	font-family: verdana;
+	font-size: 9pt;
+}
+input.label
+{
+	border: 1px gray solid;
+}
+tbody.datatable
+{
+	background-color:white;
+}
+
+thead.datatable
+{
+	background-color: white;
+	background-image: url('../../images/table_header.gif');
+}
+button
+{
+	border: darkgray 1px solid;
+	background-color: white;
+	background-image: url('../../images/table_header.gif');
+}
+.tab_ul
+{
+	width:6px;
+	background-image: url('../../images/tab_ul.gif');
+}
+.tab_ur
+{
+	width:6px;
+	background-image: url('../../images/tab_ur.gif');
+}
+.tab_sm
+{
+	background-image: url('../../images/tab_sm.gif');
+	font-weight: bold;
+}
+.tab_sl
+{
+	width:6px;
+	background-image: url('../../images/tab_sl.gif');
+}
+.tab_sr
+{
+	width:36px;
+	background-image: url('../../images/tab_sr.gif');
+}

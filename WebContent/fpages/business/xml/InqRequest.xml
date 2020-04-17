@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="原始个人征信报告查询" navigate="原始个人征信报告查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.InqCustGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		 <Field id="idType" desc="证件类型" edittype="select" translated="DATA_DIC.5511"  
+         datatype="String" size="2"  status="F"  xpath="/idType"/>
+		<Field id="individualId" desc="证件号" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/individualId" />
+		<Field id="name" desc="客户名称" edittype="text" datatype="string"
+			method="None" readonly="false" size="60" status="N" require="true" default="" 
+			primary="true" xpath="/name" />
+		<Field id="queryReason" desc="查询原因" edittype="select" translated="DATA_DIC.504"  
+         datatype="String" size="20"  status="F"  xpath="/queryReason"/>
+		<Field id="inqCustType" desc="客户属性" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/inqCustType" />
+		<Field id="createTime" desc="提交时间" placeholder="yyyy-MM-dd HH:mm:ss"
+		edittype="timestamp" datatype="timestamp" xpath="/createTime" />
+		<Field id="returnTime" desc="返回时间" placeholder="yyyy-MM-dd HH:mm:ss"
+		edittype="timestamp" datatype="timestamp" xpath="/returnTime" />
+		<Field id="createUser" desc="提交用户" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="F" default=""
+			xpath="/createUser" />
+		<Field id="consentFilePath" desc="查询授权书" edittype="text" datatype="string"
+			method="None" readonly="false" size="400" status="F" require="true"
+			default="" xpath="/consentFilePath" />
+		<Field id="consentFilePath2" desc="查询授权书2" edittype="text" datatype="string"
+			method="None" readonly="false" size="400" status="F" require="true"
+			default="" xpath="/consentFilePath2" />
+		<Field id="nonWorkhourFilepath" desc="非工作时间主管批复" edittype="text" datatype="string"
+			method="None" readonly="false" size="400" status="F" require="true"
+			default="" xpath="/nonWorkhourFilepath" />
+		
+		<Field id="inqCustAppid" desc="inqCustAppid" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="F" require="true"
+			default="" xpath="/inqCustAppid" />
+		<Field id="rptId" desc="报告编号" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="F" require="true"
+			default="" xpath="/rptId" />
+		<Field id="status" desc="查询状态" edittype="select" translated="DATA_DIC.506"  
+         datatype="String" size="50"  status="F"  xpath="/status"/>
+		<Field id="relCorpId" desc="被担保公司中征码" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="F" require="true"
+			default="" xpath="/relCorpId" />
+		<Field id="relName" desc="被担保公司名称" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="F" require="true"
+			default="" xpath="/relName" />
+		<Field id="funcid1" desc="菜单ID1" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/funcid1" />
+		<Field id="funcid2" desc="菜单ID2" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/funcid2" />
+		<Field id="funcid3" desc="菜单ID3" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/funcid3" />
+		<Field id="funcid4" desc="菜单ID4" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/funcid4" />
+		<Field id="funcid5" desc="菜单ID5" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/funcid5" />
+		<Field id="id" desc="id" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="N" require="true" default="" 
+			primary="true" xpath="/id" />
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="false" />
+		<Field id="down" desc="非工作时间主管批复文件" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="false" />
+	</Fields>
+	<Where>
+		<TextBox id="individualId" type="String"  size="22" width="180"
+			desc="证件号" tip="证件号" index="1" />
+		<TextBox id="name" type="String"  size="22"
+			desc="客户名称" tip="客户名称" index="2" />
+		<TextBox id="rptId" type="String"  size="50" width="180"
+			desc="报告编号" tip="报告编号" index="3" />
+		<Option id="MyQuery"  default="" desc="我的查询" type="MyQuery" tip="" method="None" index="4" translated="LIST:1,近7日;2,近30天;"/>
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>

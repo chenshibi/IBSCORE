@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 
+     navigate:导航信息 
+     type:方式（sql|call) 
+     interface:是否显示输入条件页面(true|false) 
+	 databusid:数据总线编号
+	 transdataactionurl:数据整理URL 
+	 async:异步提交标志 
+	 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate=" 批量企业征信报告查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PbocBatchCorpsEnquiryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="corpCustLoancard" desc="LoanCard ID" edittype="text" datatype="string"
+			method="None" readonly="false" size="16" status="F" default="" 
+			xpath="/corpCustLoancard" />
+		<Field id="corpCustPswd" desc="LEID" edittype="text" datatype="string" require="false"
+			method="None" readonly="false" size="8" status="F"
+			default="" xpath="/corpCustPswd" />
+		<Field id="corpCustCompanyname" desc="Company Name" edittype="text" datatype="string"
+			method="None" readonly="false" size="300" status="F"
+			default="" xpath="/corpCustCompanyname" />
+		<Field id="queryReason" desc="QueryReason" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="DATA_DIC.507" xpath="/queryReason"/>
+		
+		<Field id="detailFlag" desc="IsDetailInquery" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="DATA_DIC.509" xpath="/detailFlag"/>
+             
+        <Field id="confirmFlag" desc="是否查询标记" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F"
+			default="" xpath="/confirmFlag" />	
+		
+	
+		
+		
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+	<Button id="BtNew" name="companyBtNew" desc="新增" icon="icon-add"        
+			operation="addrecord" url="" txn="" />
+	<Button id="BtDel" name="companyDel" desc="删除" icon="icon-remove"
+			operation="delrecord" url="#" txn="" />
+	<Button id="Btsave" name="btSubmitSave" desc="检验" operation="asysubmit"
+			updateClass=""
+			url="" txn="" show="" group="" />
+	</Operations>
+</CommQry>

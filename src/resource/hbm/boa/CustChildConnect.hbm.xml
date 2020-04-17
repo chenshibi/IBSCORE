@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.boa">
+    <class name="CustChildConnect" table="CUST_CHILD_CONNECT">
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" type="string" column="ID">
+            <generator class="uuid"/>
+        </id>
+        <property name="batchNo" column="BATCH_NO" type="string" not-null="false"  length="30" />
+        <property name="bdhm" column="BDHM" type="string" not-null="false" length="30"/>
+        <property name="type" column="TYPE" type="string" not-null="false" length="1"/>
+        <property name="idNumber" column="ID_NUMBER" type="string" not-null="false" length="30"/>
+        <property name="branchNo" column="BRANCH_NO" type="string" not-null="false" length="4"/>
+        <property name="customerNo" column="CUSTOMER_NO" type="string" not-null="false" length="8"/>
+        <property name="accountNo" column="ACCOUNT_NO" type="string" not-null="false" length="1"/>
+        <property name="from" column="CICS_FROM" type="string" not-null="false" length="2"/>
+        <property name="to" column="CICS_TO" type="string" not-null="false" length="32"/>
+        <property name="statusCode" column="STATUS_CODE" type="string" not-null="false" length="100"/>
+        <property name="reqTime" column="REQ_TIME" type="string" not-null="false" length="20"/>
+        <property name="rspTime" column="RSP_TIME" type="string" not-null="false" length="14"/>
+        <property name="fileName" column="FILE_NAME" type="string" not-null="false" length="14"/>
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="16"/>
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="16"/>
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="32"/>
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="32"/>
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="64"/>
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="64"/>
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="128"/>
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="128"/>
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="1024"/>
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024"/>
+        <property name="applicationID" column="ApplicationID" type="string" not-null="false" length="36"/>
+    </class>
+</hibernate-mapping>

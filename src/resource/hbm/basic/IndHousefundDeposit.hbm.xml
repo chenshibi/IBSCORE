@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndHousefundDeposit"
+            table="Ind_housefund_Deposit"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="city"
+                column="city"
+                type="string"
+                not-null="false"
+                length="100"
+        />
+       
+        <property
+                name="firstMonth"
+                column="first_month"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        <property
+                name="initDate"
+                column="init_date"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        <property
+                name="monthlyAmount"
+                column="monthly_amount"
+                type="string"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="no"
+                column="no"
+                type="integer"
+                not-null="false"
+                 length="20"
+        />
+          <property
+                name="organ"
+                column="organ"
+                type="string"
+                not-null="false"
+                 length="100"
+        />
+          <property
+                name="percentCom"
+                column="percent_com"
+                type="string"
+                not-null="false"
+                 length="10"
+        />
+         <property
+                name="persentPer"
+                column="persent_per"
+                type="string"
+                not-null="false"
+                 length="10"
+        />
+         <property
+                name="status"
+                column="status"
+                type="string"
+                not-null="false"
+                 length="20"
+        />
+        <property
+                name="toMonth"
+                column="to_month"
+                type="string"
+                not-null="false"
+                 length="30"
+        />
+        <property
+                name="updateDate"
+                column="update_date"
+                type="string"
+                not-null="false"
+                 length="30"
+        />
+        
+    </class>
+</hibernate-mapping>

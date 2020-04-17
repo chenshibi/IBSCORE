@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		  name="TCorpYearlyReport"
+          table="T_Corp_Yearly_Report"
+          lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+			<generator class="increment"/>
+		</id>
+
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="createTime"
+            column="create_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="rptKind"
+            column="rpt_Kind"
+			type="string"
+			not-null="false"
+			length="300"
+		/>
+		<property
+			name="rptSummaryType"
+            column="rpt_Summary_Type"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="rptType"
+            column="rpt_Type"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="rptYear"
+            column="rpt_Year"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+	</class>
+</hibernate-mapping>

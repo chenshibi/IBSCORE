@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="CorpLoancardScurbInfo"
+            table="corp_loancard_scurb_info"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+			<generator class="increment"/>
+		</id>
+
+         <property
+                name="batchId"
+                column="batch_id"
+                type="integer"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="appId"
+                column="app_id"
+                type="integer"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="inquiryType"
+                column="inquiry_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="inquiryValue"
+                column="inquiry_value"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="status"
+                column="status"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        <property
+                name="inputTime"
+                column="input_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="returnTime"
+                column="return_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="createUser"
+                column="create_user"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+    </class>
+</hibernate-mapping>

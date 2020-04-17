@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+
+<CommQry title="系统公告维护" navigate="系统信息  &gt; 系统公告维护"
+    type="call" interface = "false" pagesize="10" async="true" databusid=""
+    transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+    getterclassname="com.huateng.report.system.getter.SysNoticeGetter" >
+   <Include id="BankParam" />
+
+	<!-- <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="批量下载-系统公告" perfetch="15" />
+ -->
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+
+		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="N" default="" primary="true" xpath="/id" />
+
+		<Field id="noticeTitle" desc="公告标题" require="true" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="50" status="F" default="" xpath="/noticeTitle" width="400" colspan="4"/>
+
+		<Field id="noticeContent" desc="公告内容" require="true" edittype="textarea" datatype="string" method="None"
+	 	  readonly="false" size="1024" height="150" status="F" default="" xpath="/noticeContent" width="400"  colspan="4"/>
+
+		<Field id="startDate" desc="开始显示时间" require="true" edittype="text" datatype="date" method="None"
+	 	  readonly="false" size="8" status="F" default="" xpath="/startDate" />
+
+ 	    <Field id="endDate" desc="结束显示时间" require="true" edittype="text" datatype="date" method="None"
+	 	  readonly="false" size="8" status="F" default="" xpath="/endDate" />
+
+		<Field id="st" desc="记录状态" status="F" require="false" edittype="select"
+			datatype="string" method="None" readonly="true" primary="true"
+			translated="DATA_DIC.3001" size="30" default="" xpath="/st" tip="" />
+
+		<Field id="crtTm" desc="发布时间" require="" edittype="text" datatype="timestamp" method="None"
+	 	  readonly="false" size="14" status="F" default="" xpath="/crtTm" />
+
+	 	<Field id="crtTlr" desc="发布人" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="14" status="F" default="" xpath="/crtTlr" />
+
+		<Field id="lstUpdTm" desc="最后更新日期" require="" edittype="text" datatype="timestamp" method="None"
+	 	  readonly="false" size="14" status="F" default="" xpath="/lstUpdTm" />
+
+		<Field id="lstUpdTlr" desc="最后更新人" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="F" default="" xpath="/lstUpdTlr" />
+
+	 	 <Field id="opr" desc="操作" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="F" default="" primary="true" xpath="/id" />
+	</Fields>
+
+	<Where >
+		<TextBox id="noticeTitle" desc="公告标题" edittype="text" datatype="string" index="0" rules="xss"/>
+		<TextBox id="crtTlr" desc="发布人"  edittype="text" datatype="string" index="1" rules="xss"/>
+		<DateTextBox id="startDate" type="date" edittype="date" length="8" rules="xss"
+			errormessage=""  status="F" method="none" default="" primary="false" translated=""
+			readonly="" require="" desc="开始显示时间" index="2"/>
+		<DateTextBox id="endDate" type="date" edittype="date" length="10" rules="xss"
+			errormessage=""  status="F" method="none" default="" primary="false" translated=""
+			readonly="" require="" desc="结束显示时间" index="3"/>
+		<Option id="st"  default="" desc="记录状态" type="st" tip="" method="None" index="4" translated="DATA_DIC.3001"/>
+	</Where>
+
+	<Operations>
+		<Button id="btNew" name="btNew" desc ="新增" updateClass="" operation="addRecord" icon="icon-add"
+			url="#" show="" group="" txn="" />
+		<Button id="btMod" name="btMod" desc="修改" updateClass="" operation=""
+			url="#" show="" group="" txn="" />
+		<Button id="btSave" name="btSave" desc="保存" updateClass="com.huateng.report.system.updater.SysNoticeUpdate" operation="asysubmit"
+			url="#" show="" group="" txn="" />
+		<Button id="btDel" name="btDel" desc="删除" updateClass="com.huateng.report.system.updater.SysNoticeUpdate"
+		         operation="asysubmit" url="#"  txn="" />
+		<Button id="btBack" name="btBack" desc="返回" updateClass="" operation=""
+			url="#" show="" group="" txn="" />
+	</Operations>
+	<Script></Script>
+</CommQry>

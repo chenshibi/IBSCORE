@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+.tablerowStyleColor{
+	BORDER-RIGHT:  #BDBCBC  1px solid;
+	BORDER-TOP:  #BDBCBC  1px solid;
+	BORDER-LEFT:  #BDBCBC  1px solid;
+	BORDER-BOTTOM:  #BDBCBC  1px solid;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: #fff;
+	width:100%;
+	height:100%
+}
+.tablerowStyleColor td{
+	BORDER: #BDBCBC 1px solid;
+}
+
+.workdateDis{
+	background-color:#f7f7f7;
+}
+.monthtitle{
+	font:12px 'Arial';
+	text-align:center;
+	line-height: 26px;
+	background-color: #dae2ec
+}
+.workdateWeek{
+	font:12px '宋体';
+	text-align:center;
+	background-color: #4698ca;
+	color:#ffffff;
+}
+
+.workdateTd{
+	font:12px 'Arial';
+	color:black;
+	cursor: pointer;
+	text-align: center;
+	width: 13%;
+}

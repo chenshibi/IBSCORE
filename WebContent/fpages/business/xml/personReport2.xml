@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="二代个人征信信息查询" navigate="二代个人征信信息查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PersonReport2Getter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="false" />
+		
+		<Field id="id" name="ID" desc="ID" status="N" method="None" width=""  size="32" require="false" readonly = "true" datatype="String" edittype="text" xpath="/id" />
+		<Field id="name" name="客户名称" desc="客户名称" status="N" method="None" width=""  size="30" require="false" readonly = "true" datatype="String" edittype="text" xpath="/name" />
+		<Field id="idType" name="个人证件类型" desc="个人证件类型" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.6002" xpath="/idType" />
+		<Field id="idNum" name="个人证件号码" desc="个人证件号码" status="N" method="None" width=""  size="32" require="false" readonly = "true" datatype="String" edittype="text" xpath="/idNum" />
+		<Field id="queryReason" name="查询原因" desc="查询原因" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.6004" xpath="/queryReason" />
+		<Field id="serviceCode" name="服务码" desc="服务码" status="N" method="None" width=""  size="100" require="false" readonly = "true" datatype="String" edittype="text" xpath="/serviceCode" />
+		<Field id="respId" name="回执ID" desc="回执ID" status="N" method="None" width=""  size="32" require="false" readonly = "true" datatype="String" edittype="text" xpath="/respId" />
+		<Field id="respCode" name="回执码" desc="回执码" status="N" method="None" width=""  size="4" require="false" readonly = "true" datatype="String" edittype="text" xpath="/respCode" />
+		<Field id="respMsg" name="回执信息" desc="回执信息" status="N" method="None" width=""  size="1024" require="false" readonly = "true" datatype="String" edittype="text" xpath="/respMsg" />
+		<Field id="queryDate" name="查询日期" desc="查询日期" status="N" method="None" width=""  size="8" require="false" readonly = "true" datatype="String" edittype="text" xpath="/queryDate" />
+		<Field id="createUser" name="创建者" desc="创建者" status="N" method="None" width=""  size="20" require="false" readonly = "true" datatype="String" edittype="text" xpath="/createUser" />
+		<Field id="createTime" name="创建时间" desc="创建时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" xpath="/createTime" />
+		<Field id="checkUser" name="审核者" desc="审核者" status="N" method="None" width=""  size="20" require="false" readonly = "true" datatype="String" edittype="text" xpath="/checkUser" />
+		<Field id="checkTime" name="审核时间" desc="审核时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" xpath="/checkTime" />
+		<Field id="sendTime" name="发送时间" desc="发送时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" xpath="/sendTime" />
+		<Field id="respTime" name="回执时间" desc="回执时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" xpath="/respTime" />
+		<Field id="status" name="状态" desc="状态" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="LIST:00,未查;02,查询成功-未解析;03,查询成功;04,查询失败;" xpath="/status" />
+		<Field id="certAuthStatus" name="授权证书状态" desc="授权证书状态" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="LIST:01,已授权;02,未授权;" xpath="/certAuthStatus" />
+		<Field id="rsv2" name="补录字段2" desc="补录字段2" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv2" />
+		<Field id="rsv3" name="补录字段3" desc="补录字段3" status="N" method="None" width=""  size="8" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv3" />
+		<Field id="rsv4" name="补录字段4" desc="补录字段4" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv4" />
+		<Field id="rsv5" name="补录字段5" desc="补录字段5" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv5" />
+		<Field id="rsv6" name="补录字段6" desc="补录字段6" status="N" method="None" width=""  size="32" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv6" />
+		<Field id="rsv7" name="补录字段7" desc="补录字段7" status="N" method="None" width=""  size="64" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv7" />
+		<Field id="rsv8" name="补录字段8" desc="补录字段8" status="N" method="None" width=""  size="60" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv8" />
+		<Field id="rsv9" name="补录字段9" desc="补录字段9" status="N" method="None" width=""  size="512" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv9" />
+		<Field id="rsv10" name="补录字段10" desc="补录字段10" status="N" method="None" width=""  size="1024" require="false" readonly = "true" datatype="String" edittype="text" xpath="/rsv10" />
+				
+	</Fields>
+	<Where>
+		<TextBox id="name" type="String"  size="30" width="180"
+			desc="客户名称" tip="客户名称" index="1" />
+		<TextBox id="idNum" type="String"  size="32" width="180"
+			desc="个人证件号码" tip="个人证件号码" index="2" />
+		<Option id="queryReason"  width="180"  desc="查询原因" edittype="select" tip="" method="None" index="3" translated="DATA_DIC.6004" />
+		<Option id="idType"  width="180"  desc="个人证件类型" edittype="select" tip="" method="None" index="4" translated="DATA_DIC.6002" />
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="TCorpSumDebitHistory"
+            table="t_corp_sum_debit_history"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptKey"
+			column="Rpt_key"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+
+        <property
+                name="createTime"
+                column="create_time"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+       
+        <property
+                name="totalAmount"
+                column="total_amount"
+                type="float"
+                not-null="false"
+                length="30"
+        />
+         <property
+                name="badAmount"
+                column="bad_amount"
+                type="float"
+                not-null="false"
+                length="30"
+        />
+        <property
+                name="month"
+                column="month"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        
+    </class>
+</hibernate-mapping>

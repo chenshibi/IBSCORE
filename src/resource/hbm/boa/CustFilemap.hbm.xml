@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.boa">
+    <class name="CustFilemap" table="CUST_FILEMAP" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="REC_ID" type="string"  length="50" >
+            <generator class="uuid" />
+        </id>
+
+        <property name="filetype" column="FILETYPE" type="string" not-null="false" length="5" />
+        <property name="filename" column="FILENAME" type="string" not-null="false" length="100" />
+        <property name="filepath" column="FILEPATH" type="string" not-null="false" length="300" />
+        <property name="mainId" column="MAIN_ID" type="string" not-null="false" length="50" />
+        <property name="sysname" column="SYSNAME" type="string" not-null="false" length="20" />
+        <property name="rcvtime" column="RCVTIME" type="string" not-null="false" length="14" />
+        <property name="txnId" column="TXN_ID" type="string" not-null="false" length="50" />
+        <property name="filler1" column="FILLER1" type="string" not-null="false" length="50" />
+        <property name="filler2" column="FILLER2" type="string" not-null="false" length="50" />
+        <property name="filler3" column="FILLER3" type="string" not-null="false" length="50" />
+        <property name="filler4" column="FILLER4" type="string" not-null="false" length="50" />
+        <property name="filler5" column="FILLER5" type="string" not-null="false" length="50" />
+        <property name="filler6" column="FILLER6" type="string" not-null="false" length="50" />
+        <property name="filler7" column="FILLER7" type="string" not-null="false" length="50" />
+        <property name="filler8" column="FILLER8" type="string" not-null="false" length="50" />
+        <property name="filler9" column="FILLER9" type="string" not-null="false" length="50" />
+        <property name="filler10" column="FILLER10" type="string" not-null="false" length="50" />
+        <property name="filler11" column="FILLER11" type="string" not-null="false" length="50" />
+        <property name="filler12" column="FILLER12" type="string" not-null="false" length="50" />
+    </class>
+</hibernate-mapping>

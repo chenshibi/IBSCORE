@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" name="MyAppLogConfig">
+
+    <CustomLevels>
+        <CustomLevel name="COMPLIANCE" intLevel="50" />
+    </CustomLevels>
+    
+    <Appenders>
+        <EnterpriseTechServicesInstrumentationLog4j2DomainSocketAppender
+            name="ComplianceDomainSocketsAppender"
+            socketName="/banktools/etasc/iaas/aggregator/var/etasc_iaas_aggregator_compliance_events.sock"
+            errorReportingFrequency="3600">
+            <NameValueLayout addFields="ait=70216,application=CCIS" />
+            <LevelRangeFilter minLevel="COMPLIANCE" maxLevel="COMPLIANCE" onMatch="ACCEPT" onMismatch="DENY" />
+        </EnterpriseTechServicesInstrumentationLog4j2DomainSocketAppender>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="ComplianceDomainSocketsAppender"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

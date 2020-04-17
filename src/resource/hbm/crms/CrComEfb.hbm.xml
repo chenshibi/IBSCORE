@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrComEfb" table="CR_COM_EFB" >
+        <meta attribute="sync-DAO">false</meta>
+         <id name="id" type="string" column="ID" length="32">
+			<!-- <generator class="uuid" /> -->
+		</id>
+        <property name="ef020i01" column="EF020I01" type="string" not-null="false" length="6" />
+        <property name="ef020q01" column="EF020Q01" type="string" not-null="false" length="80" />
+        <property name="ef020i02" column="EF020I02" type="string" not-null="false" length="40" />
+        <property name="ef020r01" column="EF020R01" type="string" not-null="false" length="10" />
+        <property name="ef020q02" column="EF020Q02" type="string" not-null="false" length="40" />
+        <property name="ef020d01" column="EF020D01" type="string" not-null="false" length="1" />
+        <property name="ef020d02" column="EF020D02" type="string" not-null="false" length="1" />
+        <property name="ef020q03" column="EF020Q03" type="string" not-null="false" length="200" />
+        <property name="ef020j01" column="EF020J01" type="string" not-null="false" length="15"/>
+        <property name="ef020d03" column="EF020D03" type="string" not-null="false" length="1" />
+        <property name="ef020r02" column="EF020R02" type="string" not-null="false" length="10" />
+        <property name="ef020q04" column="EF020Q04" type="string" not-null="false" length="200" />
+        <property name="ef030i01" column="EF030I01" type="string" not-null="false" length="6" />
+        <property name="ef030q01" column="EF030Q01" type="string" not-null="false" length="80" />
+        <property name="ef030i02" column="EF030I02" type="string" not-null="false" length="40" />
+        <property name="ef030r01" column="EF030R01" type="string" not-null="false" length="10" />
+        <property name="ef030q02" column="EF030Q02" type="string" not-null="false" length="40" />
+        <property name="ef030q03" column="EF030Q03" type="string" not-null="false" length="200" />
+        <property name="ef030j01" column="EF030J01" type="string" not-null="false" length="15" />
+        <property name="ef030q04" column="EF030Q04" type="string" not-null="false" length="20" />
+        <property name="ef030d01" column="EF030D01" type="string" not-null="false" length="3" />
+        <property name="ef030q05" column="EF030Q05" type="string" not-null="false" length="200" />
+        <property name="ef030j02" column="EF030J02" type="string" not-null="false" length="15" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+    </class>
+</hibernate-mapping>

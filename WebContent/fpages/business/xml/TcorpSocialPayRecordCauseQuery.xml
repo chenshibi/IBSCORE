@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="300" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.TcorpSocialPayRecordCauseQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="organ" desc="公用事业单位名称" edittype="text" datatype="string" 
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/organ" />
+		
+		<Field id="infotype" desc="信息类型" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="N"  default="" 
+			primary="true" xpath="/infotype" />
+
+		<Field id="sumYm" desc="统计年月" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/sumYm" />
+			
+		<Field id="payStatus" desc="缴费状态" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/payStatus" />
+			
+		<Field id="lastPayDate" desc="最近一次交费日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/lastPayDate" />
+			
+		<Field id="sumOwnAmt" desc="累计欠费金额(元)" edittype="text" datatype="currency"
+			method="None" readonly="false" size="100" status="F"  scale="2"
+			default="" xpath="/sumOwnAmt" />
+			
+		<Field id="highestOwnDate" desc="最高欠费发生日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/highestOwnDate" />
+			
+		<Field id="highestOwnAmt" desc="最高欠费金额(元)" edittype="text" datatype="currency"
+			method="None" readonly="false" size="100" status="F"  scale="2"
+			default="" xpath="/highestOwnAmt" />
+		
+	</Fields>
+	<Operations>
+	<Button id="query24monthGysy" name="query24monthGysy" desc="查看过去24个月缴费情况" operation="" url="#" />
+	</Operations>
+</CommQry>

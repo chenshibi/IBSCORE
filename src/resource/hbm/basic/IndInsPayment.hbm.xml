@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndInsPayment"
+            table="Ind_ins_payment"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="city"
+                column="city"
+                type="string"
+                not-null="false"
+                length="100"
+        />
+       
+        <property
+                name="endReason"
+                column="end_reason"
+                type="string"
+                not-null="false"
+                length="300"
+        />
+        <property
+                name="no"
+                column="no"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="organ"
+                column="organ"
+                type="string"
+                not-null="false"
+                length="100"
+        />
+         <property
+                name="payAmount"
+                column="pay_amount"
+                type="string"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="retireMonth"
+                column="retire_month"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+         <property
+                name="type"
+                column="type"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+         <property
+                name="updateDate"
+                column="update_date"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+         <property
+                name="workMonth"
+                column="work_month"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        
+    </class>
+</hibernate-mapping>

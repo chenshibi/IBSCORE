@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- old primary key(id); -->
+<hibernate-mapping package="resource.bean.boa">
+	<class name="CustStepInfo" table="CUST_STEP_INFO">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="ID">
+			<generator class="uuid" />
+		</id>
+
+		<property name="recId" column="REC_ID" type="string" not-null="false" length="50" />
+		<property name="batchNo" column="BATCH_NO" type="string" not-null="false" length="30" />
+		<property name="bdhm" column="BDHM" type="string" not-null="false" length="30" />
+        <property name="queryType" column="QUERY_TYPE" type="string" not-null="false" length="1" />
+        <property name="brno" column="BRNO" type="string" not-null="false" length="30" />
+        <property name="roleId" column="ROLE_ID" type="string" not-null="false" length="32" />
+		<property name="roleName" column="ROLE_NAME" type="string" not-null="false" length="30" />
+		<property name="status" column="STATUS" type="string" not-null="false" length="1" />
+		<property name="maker" column="MAKER" type="string" not-null="false" length="20" />
+		<property name="makeTime" column="MAKETIME" type="string" not-null="false" length="14" />
+		<property name="requireRoleFlag" column="REQUIRE_ROLE_FLAG" type="string" not-null="false" length="1" />
+		<property name="rsv1" column="RSV1" type="string" not-null="false" length="60" />
+		<property name="rsv2" column="RSV2" type="string" not-null="false" length="60" />
+		<property name="rsv3" column="RSV3" type="string" not-null="false" length="60" />
+		<property name="rsv4" column="RSV4" type="string" not-null="false" length="60" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="60" />
+        <property name="applicationId" column="APPLICATIONID" type="string" not-null="false" length="36" />
+	</class>
+</hibernate-mapping>

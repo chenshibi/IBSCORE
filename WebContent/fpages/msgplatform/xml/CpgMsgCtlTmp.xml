@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)5
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="消息类型维护审核" navigate="主页 &gt; 消息平台 &gt; 消息类型维护审核"
+	type="call"
+	interface="true"
+	pagesize="10"
+	async="true"
+	btnNm="aaa"
+	databusid="DEMO"
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.msgplatform.getter.MsgTypeApvGetter">
+	<Include id="BankParam" />
+
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		<Field id="id" desc="记录主键" status="F" require="" edittype="text" rules="xssSave"
+			datatype="string" method="None" readonly="false" primary="true" type="String"
+			size="32" default="" xpath="/id" />
+			
+		<Field id="innerId" desc="内部流水号" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/innerId" size="20" />
+		<Field id="optType" desc="维护类型" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/optType" size="1" 
+			translated="LIST:1,新增;2,修改;3,删除;4,置为有效;5,置为无效" />
+		<Field id="msgId" desc="消息编号" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/msgId" size="20" />
+		<Field id="sysType" desc="系统编号" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/sysType" size="20" />
+		<Field id="msgName" desc="消息描述" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/msgName" size="90" />
+		<Field id="type" desc="消息类型" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/type" size="1" 
+			translated="LIST:1,系统级消息;2,业务级消息;3,信息级消息;" />
+		<Field id="subType" desc="消息子类型" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/subType" size="20" />
+		<Field id="status" desc="状态" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/status" size="1" 
+			translated="LIST:0,有效;1,无效;" />
+		<Field id="creator" desc="创建者" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/creator" size="20" />
+		<Field id="createdDate" desc="创建时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/createdDate" size="14" />
+		<Field id="checkUser" desc="审核人" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkUser" size="20" />
+		<Field id="checkDate" desc="审核时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkDate" size="14" />
+		<Field id="optStatus" desc="操作状态" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/optStatus" size="1" 
+			translated="LIST:0,待审核;1,已审核;2,已拒绝;" />
+			
+		<Field id="creator1" desc="创建者" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/creator" size="20" 
+			method="com.huateng.ebank.business.common.CQMethod.getTlrName" />
+		<Field id="checkUser1" desc="审核人" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkUser" size="20" 
+			method="com.huateng.ebank.business.common.CQMethod.getTlrName" />
+		<Field id="createdDate1" desc="创建时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/createdDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+		<Field id="checkDate1" desc="审核时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+		
+		<Field id="rsv1" desc="备用1" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv1" size="60" />
+		<Field id="rsv2" desc="备用2" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv2" size="60" />
+		<Field id="rsv3" desc="备用3" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv3" size="60" />
+		<Field id="rsv4" desc="备用4" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv4" size="60" />
+		<Field id="rsv5" desc="备用5" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv5" size="60" />
+
+		<Field id="opr" desc="操作" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="" size="20" />
+		<Field id="select" desc="选择" require="false" method="None"
+			readonly="false" size="20" default="" xpath="/id" type="select"
+			edittype="checkbox" />
+	</Fields>
+
+	<Where>
+		<TextBox id="sysType" desc="系统编号" require="false" datatype="string"
+			method="None" size="20" primary="false" index="0" type="String" rules="xss"/>
+			
+		<TextBox id="msgId" desc="消息编号" require="false" datatype="string"
+			method="None" size="20" primary="false" index="1" type="String" rules="xss"/>
+		<!-- 
+		<TextBox id="msgName" desc="消息描述" require="false" datatype="string"
+			method="None" size="20" primary="false" index="2" type="String" />
+		 -->
+	</Where>
+
+	<Operations>
+			
+		<Button id="btCheck" name="btCheck" desc="审核" operation="asysubmit"
+			updateClass="com.huateng.msgplatform.updater.MsgTypeCheckUpdater"
+			url="/fpages/msgplatform/ftl/CpgMsgCtlTmp.ftl" txn="" />
+		<Button id="btReject" name="btReject" desc="拒绝" operation="asysubmit"
+			updateClass="com.huateng.msgplatform.updater.MsgTypeRejectUpdater"
+			url="/fpages/msgplatform/ftl/CpgMsgCtlTmp.ftl" txn="" />
+	</Operations>
+</CommQry>

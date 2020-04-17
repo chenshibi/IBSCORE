@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="IbsEntCreditSum" table="IBS_ENT_CREDIT_SUM" >
+        <meta attribute="sync-DAO">false</meta>
+         <id name="xh" type="string" column="报表序号"></id> 
+        <!-- <property name="xh" column="报表序号" type="string" not-null="false" length="32" /> -->
+        <property name="qymc" column="企业名称" type="string" not-null="false" length="80" />
+        <property name="cxrq" column="查询日期" type="string" not-null="false" length="50" />
+        <property name="sfbh" column="是否白户" type="string" not-null="false" length="50" />
+        <property name="ywyq" column="有无逾期_欠息" type="string" not-null="false" length="50" />
+        <!-- <property name="cyq" column="current_GZ_NPL_historical_GZ_NPL_逾期" type="string" not-null="false" length="50" /> -->
+        <property name="dqgzlblfzbs"  column="当前关注类_不良类负债笔数" type="int" not-null="false" length="50" />
+        <property name="dqgzlblfzye"  column="当前关注类_不良类负债余额" type="int" not-null="false" length="50" />
+        <property name="lsgzlblyqfzbs"  column="历史关注_不良_逾期类负债笔数" type="int" not-null="false" length="50" />
+        <property name="lsgzlblyqfze"  column="历史关注_不良_逾期类负债额"  type="int" not-null="false" length="50" />
+        <property name="fmxx" column="负面信息" type="string" not-null="false" length="63" />
+        <property name="bgbm" column="报告编码" type="string" not-null="false" length="50" />
+        <property name="zzm" column="中征码" type="string" not-null="false" length="50" />
+        <property name="qyzxlb" column="企业征信类别" type="string" not-null="false" length="50" />
+        <property name="dqdkbs" column="当前贷款笔数" type="int" not-null="false" length="50" />  
+        <property name="dqdkjgs" column="当前贷款机构数" type="string" not-null="false" length="50" />
+        <property name="dqdkzed" column="当前贷款总额度" type="string" not-null="false" length="50" />
+        <property name="dqdkyyed" column="当前贷款已用额度" type="string" not-null="false" length="50" />
+        <property name="dqdkzye" column="当前贷款总余额" type="string" not-null="false" length="50" />
+        <property name="dqbzcywbs"  column="当前被追偿业务笔数"  type="int" not-null="false" length="50" />
+        <property name="dqbzcywye"  column="当前被追偿业务余额"  type="int" not-null="false" length="50" />
+        <property name="dqxghkzrbs"  column="当前相关还款责任笔数"  type="int" not-null="false" length="50" />
+        <property name="dqxghkzrye"  column="当前相关还款责任余额"  type="int" not-null="false" length="50" />
+        <property name="dqzcwjfl" column="当前最差五级分类" type="string" not-null="false" length="50" />
+        <property name="dqyqze" column="当前逾期总额" type="int" not-null="false" length="50" />
+        <property name="dqyqbj" column="当前逾期本金" type="int" not-null="false" length="50" />
+        <property name="dqgzlbs" column="当前关注类笔数" type="int" not-null="false" length="50" />
+        <property name="dqgzlje" column="当前关注类金额" type="int" not-null="false" length="50" />
+        <property name="dqsslbs" column="当前损失类笔数" type="int" not-null="false" length="50" />
+        <property name="dqsslje" column="当前损失类金额" type="int" not-null="false" length="50" />
+        <property name="cjsslbs" column="曾经损失类笔数" type="int" not-null="false" length="50" />
+        <property name="cjsslje" column="曾经损失类金额" type="int" not-null="false" length="50" />
+        <property name="jjyblbs" column="近九月不良笔数" type="int" not-null="false" length="50" />
+        <property name="jjyblje" column="近九月不良金额" type="int" not-null="false" length="50" />
+        <property name="tue" column="TUE" type="string" not-null="false" length="30" />
+        <property name="dsr" column="DSR" type="string" not-null="false" length="30" />
+        <property name="wc" column="WC" type="string" not-null="false" length="30" />
+        <property name="totalBankLimit" column="Total_Bank_Limit" type="string" not-null="false" length="30" />
+    </class>
+</hibernate-mapping>

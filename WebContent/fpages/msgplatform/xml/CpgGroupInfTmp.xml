@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="交易数据补录" type="call" interface="true" navigate="" pagesize="10"
+	async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.msgplatform.getter.RcvUserGroupApvGetter">
+	<Include id="BankParam" />
+	<!-- status ：F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+	<!-- primary ： true-作为表单项记录上传 false-不作为表单项上传 -->
+	<Fields>
+		<Field id="id" desc="记录主键" status="F" require="" edittype="text" rules="xssSave"
+			datatype="string" method="None" readonly="false" primary="true" type="String"
+			size="32" default="" xpath="/id" />
+		
+		<Field id="innerId" desc="内部序号" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/innerId" size="20" />
+		<Field id="groupId" desc="组ID" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/groupId" size="20" />
+		<Field id="optType" desc="维护类型" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/optType" size="1" 
+			translated="LIST:1,新增;2,修改;3,删除;" />
+		<Field id="groupName" desc="组名称 " status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/groupName" size="96" />
+		<Field id="creator" desc="创建者" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/creator" size="20" />
+		<Field id="createdDate" desc="创建时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/createdDate" size="14" />
+		<Field id="checkUser" desc="审核人" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkUser" size="20" />
+		<Field id="checkDate" desc="审核时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkDate" size="14" />
+		<Field id="optStatus" desc="状态" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/optStatus" size="1" 
+			translated="LIST:0,待审核;1,已审核;2,已拒绝;" />
+		<Field id="rsv1" desc="备用1" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv1" size="60" />
+		<Field id="rsv2" desc="备用2" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv2" size="60" />
+		<Field id="rsv3" desc="备用3" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv3" size="60" />
+		<Field id="rsv4" desc="备用4" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv4" size="60" />
+		<Field id="rsv5" desc="备用5" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv5" size="60" />
+		
+		<Field id="creator1" desc="创建者" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/creator" size="20" 
+			method="com.huateng.ebank.business.common.CQMethod.getTlrName" />
+		<Field id="checkUser1" desc="审核人" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkUser" size="20" 
+			method="com.huateng.ebank.business.common.CQMethod.getTlrName" />
+		<Field id="createdDate1" desc="创建时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/createdDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+		<Field id="checkDate1" desc="审核时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/checkDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+			
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="false" />
+		<Field id="incenter" edittype="select" type="INCENTER" xpath="/incenter"
+			readonly="true" status="F" desc="" />
+		<Field id="approveStatusChoose" desc="审核状态选择" require="false"
+			edittype="select" datatype="string" method="None" readonly="false"
+			size="2" translated="LIST:1,通过;2,不通过;" status="N" default="" xpath="" />
+		<Field id="approveResultChoose" desc="审核说明" require="" edittype="textarea" rules="xssSave"
+			datatype="string" method="None" readonly="false" size="256" status="N"
+			default="" xpath="" />	
+		<Field id="select" desc="选择" require="false" method="None"
+			readonly="false" size="20" default="" xpath="/id" type="select"
+			edittype="checkbox" />
+		
+	</Fields>
+	<Where>
+		<TextBox id="qgroupId" desc="组ID" require="false" datatype="string"
+			method="None" size="150" primary="false" index="1" type="String" rules="xss"/>
+	</Where>
+
+	<Operations>
+		<Button id="btBack" name="btBack" desc="返回" operation="" url="#" />
+		<Button id="btAudit" desc="审核" icon="icon-edit" />
+		<Button id="btCancel" desc="取消" icon="icon-cancel" />
+		<Button id="btConfirm" desc="确认" operation="asysubmit" icon="icon-ok"
+			url="#"
+			updateClass="com.huateng.msgplatform.updater.RcvUserGroupApvUpdater" />
+	</Operations>
+</CommQry>		

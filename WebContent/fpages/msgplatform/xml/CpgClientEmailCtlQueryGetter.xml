@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="黑灰名单客户邮件发送配置" type="call" interface="true" navigate=""  pagesize="10"
+    async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+    getterclassname="com.huateng.msgplatform.getter.CpgClientEmailCtlQueryGetter">
+
+    <Include id="BankParam" />
+
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出--黑灰名单客户邮件发送配置"  />
+
+    <Fields>
+        <Field id="ftloperation" desc="操作" status="N" size="20" tip="操作"/>
+        <Field id="cpgClientEmailCtlMsgId" desc="消息号" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlmsgid"  width="95%"/> 
+        <Field id="cpgClientEmailCtlMsgName" desc="消息名" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlmsgname"  width="95%"/> 
+        <Field id="cpgClientEmailCtlSysName" desc="系统名" edittype="select" translated="LIST:CNAPS2,CNAPS2;SICC,SICC;GMO,GMO;PBLS,PBLS;YANGTZE,YANGTZE;" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlsysname"  width="95%"/> 
+        <Field id="cpgClientEmailCtlBrno" desc="分行号" edittype="select" translated="LIST:6841,6841-上海分行;5375,5375-北京分行;6097,6097-广州分行;" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlbrno"  size="4"  width="95%"/> 
+        <Field id="cpgClientEmailCtlClientSnd" desc="是否发送客户邮件" edittype="select" translated="LIST:0,不发送;1,发送;" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlclientsnd"  size="1"  width="95%"/> 
+        <Field id="cpgClientEmailCtlOpsSnd" desc="是否发送用户邮件" edittype="select" translated="LIST:0,不发送;1,发送;" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlopssnd"  size="1"  width="95%"/> 
+        <Field id="cpgClientEmailCtlEmail" desc="用户邮件地址" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlemail"  size="256"  width="95%"/> 
+        <Field id="cpgClientEmailCtlSt" desc="操作状态" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailctlst"  size="2"  width="95%"/> 
+    </Fields>
+
+    <Where>
+        <TextBox id="querycpgClientEmailCtlMsgId" require="false"  desc="消息号" datatype="string" index="1"  size="20"/>
+        <Option id="querycpgClientEmailCtlSysName" require="false"  desc="系统名" datatype="select" index="2" />
+        <Option id="querycpgClientEmailCtlBrno" require="false"  desc="分行号" datatype="select" index="3" />
+    </Where>
+
+</CommQry>
+

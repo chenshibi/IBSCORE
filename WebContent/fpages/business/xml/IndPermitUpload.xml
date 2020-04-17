@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PermitUploadGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="individualId" desc="证件号码" edittype="text" datatype="string"
+			method="None" readonly="false" size="52" status="N" require="true" default=""  
+			primary="true" xpath="individualId" />
+		<Field id="idType" desc="证件类型" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.5511"
+			status="F" default="" xpath="idType" tip="证件类型" />  
+		<Field id="name" desc="姓名" status="N" require="true"
+			readonly="false" primary="true" type="String" size="60"
+			xpath="name" />	
+
+		<Field id="expireDate" desc="过期日期" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default="" require="true"
+			xpath="/expireDate" />
+		<Field id="approveTime" desc="授权时间" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default=""   require="true"
+			xpath="/approveTime" />
+		
+
+	</Fields>
+	<Operations>
+		<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="#"
+			url="#" txn="" />
+	</Operations>
+</CommQry>

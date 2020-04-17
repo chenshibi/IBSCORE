@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndPublicRecordForceQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="no" desc="编号" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/no" />
+			
+		<Field id="organ" desc="执行法院" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="N"  default="" 
+			primary="true" xpath="/organ" />
+
+		<Field id="reason" desc="执行案由" edittype="text" datatype="string"
+			method="None" readonly="false" size="300" status="F" 
+			default="" xpath="/reason" />
+			
+		<Field id="initDate" desc="立案日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/initDate" />
+		
+		<Field id="type" desc="结案方式" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/type" />
+		
+		<Field id="status" desc="案件状态" edittype="text" datatype="string"
+			method="None" readonly="false" size="300" status="F" 
+			default="" xpath="/status" />
+			
+		<Field id="endDate" desc="结案日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/endDate" />
+			
+		<Field id="subjectName" desc="申请执行标的" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/subjectName" />
+			
+		<Field id="subjectAmount" desc="申请执行标的价值" edittype="text" datatype="currency"
+			method="None" readonly="false" size="20" status="F"  scale="2"
+			default="" xpath="/subjectAmount" />
+			
+		<Field id="objectName" desc="已执行标的" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/objectName" />
+			
+		<Field id="objectAmount" desc="已执行标的金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="20" status="F"  scale="2"
+			default="" xpath="/objectAmount" />
+			
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

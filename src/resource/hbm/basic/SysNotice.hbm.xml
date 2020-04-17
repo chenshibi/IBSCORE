@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="SysNotice"
+		table="SYS_NOTICE"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="ID"
+		>
+		</id>
+
+		<property
+			name="noticeTitle"
+			column="NOTICE_TITLE"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="noticeContent"
+			column="NOTICE_CONTENT"
+			type="string"
+			not-null="false"
+			length="1024"
+		/>
+		<property
+			name="crtTm"
+			column="CRT_TM"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="crtTlr"
+			column="CRT_TLR"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="startDate"
+			column="START_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="endDate"
+			column="END_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="brNo"
+			column="BR_NO"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="lstUpdTm"
+			column="LST_UPD_TM"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="lstUpdTlr"
+			column="LST_UPD_TLR"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="st"
+			column="ST"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

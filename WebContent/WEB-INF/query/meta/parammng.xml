@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+
+
+	<!-- 操作员管理 -->
+	<Query id="parammng_TlrInfo1" path="/fpages/parammng/xml/TlrInfo1.xml" txn="90103" desc="操作员管理"/>
+	<Query id="parammng_TlrInfo2" path="/fpages/parammng/xml/TlrInfo2.xml" txn="90103,90104" desc="操作员管理"/>
+	<Query id="parammng_TlrInfo3" path="/fpages/parammng/xml/TlrInfo3.xml" txn="90103,90104" desc="操作员管理"/>
+</META>

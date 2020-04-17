@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.boa">
+    <class name="CustChildInfo" table="CUST_CHILD_INFO">
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" type="string" column="ID">
+            <generator class="uuid"/>
+        </id>
+          <property name="rcvTime" column="RCV_TIME" type="string" not-null="false" length="14"/>
+          <property name="accountNo" column="ACCOUNT_NO" type="string" not-null="false" length="512"/>
+        <property name="accountStatus" column="ACCOUNT_STATUS" type="string" not-null="false"  length="512" />
+        <property name="accountType" column="ACCOUNT_TYPE" type="string" not-null="false" length="512"/>
+        <property name="address" column="ADDRESS" type="string" not-null="false" length="512"/>
+        <property name="amount" column="AMOUNT" type="string" not-null="false" length="512"/>
+        <property name="balance" column="BALANCE" type="string" not-null="false" length="512"/>
+        <property name="branchNo" column="BRANCHNO" type="string" not-null="false" length="512"/>
+        <property name="counterParty" column="COUNTER_PARTY" type="string" not-null="false" length="512"/>
+        <property name="cptyAccountno" column="CPTY_ACCOUNTNO" type="string" not-null="false" length="512"/>
+        <property name="cptyAddress" column="CPTY_ADDRESS" type="string" not-null="false" length="512"/>
+        <property name="cptyBankid" column="CPTY_BANKID" type="string" not-null="false" length="512"/>
+        <property name="cptyBankname" column="CPTY_BANKNAME" type="string" not-null="false" length="512"/>
+        <property name="cptyCertificateno" column="CPTY_CERTIFICATENO" type="string" not-null="false" length="512"/>
+        <property name="cptyCertificatetype" column="CPTY_CERTIFICATETYPE" type="string" not-null="false" length="512"/>
+        <property name="cptypostcode" column="CPTY_POSTCODE" type="string" not-null="false" length="512"/>
+        <property name="currencycode" column="CURRENCYCODE" type="string" not-null="false" length="512"/>
+        <property name="customerName" column="CUSTOMER_NAME" type="string" not-null="false" length="512"/>
+        <property name="customerNo" column="CUSTOMER_NO" type="string" not-null="false" length="512"/>
+        <property name="closeDate" column="CLOSEDATE" type="string" not-null="false" length="512"/>
+        <property name="direction" column="DIRECTION" type="string" not-null="false" length="512"/>
+        <property name="idnumber" column="IDNUMBER" type="string" not-null="false" length="512"/>
+        <property name="locationno" column="LOCATIONNO" type="string" not-null="false" length="512"/>
+        <property name="opendate" column="OPENDATE" type="string" not-null="false" length="512"/>
+        <property name="realBalance" column="REAL_BALANCE" type="string" not-null="false" length="512"/>
+        <property name="rowcount" column="ROWCOUNT" type="string" not-null="false" length="512"/>
+        <property name="tradeType" column="TRADE_TYPE" type="string" not-null="false" length="512"/>
+        <property name="transactionDate" column="TRANSACTION_DATE" type="string" not-null="false" length="512"/>
+        <property name="transactionNo" column="TRANSACTION_NO" type="string" not-null="false" length="512"/>
+        <property name="postcode" column="POSTCODE" type="string" not-null="false" length="512"/>
+        <property name="phonecode" column="PHONECODE" type="string" not-null="false" length="512"/>
+        <property name="relatedaccount" column="RELATEDACCOUNT" type="string" not-null="false" length="512"/>
+        <property name="filler1" column="FILLER1" type="string" not-null="false" length="512"/>
+        <property name="filler2" column="FILLER2" type="string" not-null="false" length="512"/>
+        <property name="filler3" column="FILLER3" type="string" not-null="false" length="512"/>
+        <property name="filler4" column="FILLER4" type="string" not-null="false" length="512"/>
+        
+        
+    </class>
+</hibernate-mapping>

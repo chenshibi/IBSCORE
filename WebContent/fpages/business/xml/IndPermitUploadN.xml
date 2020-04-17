@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PermitUploadGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" desc="个人征信查询" 
+		url="/trans/qryExp.do"  perfetch="50" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="id" desc="id" edittype="text" datatype="string"
+			method="None" readonly="true" size="6" status="N" default="" 
+			xpath="" />
+		<Field id="individualId" desc="证件号码" edittype="text" datatype="string"
+			method="None" readonly="true" size="52" status="N" require="true" default=""  
+			primary="true" xpath="/ids/individualId" />
+		<Field id="idType" desc="证件类型" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.5511" readonly="true"
+			status="F" default="" xpath="/IdType" tip="证件类型" />  
+		<Field id="name" desc="姓名" status="N" require="true"
+			readonly="true" primary="true" type="String" size="60"
+			xpath="/name" />
+	  <!--   <Field id="flag" desc="标识" status="N" readonly="true" primary="true" type="String" size="1"
+			xpath="/flag" />	 -->	
+		<Field id="expireDate" desc="过期日期" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default="" require="true"
+			xpath="/expireDate" />
+		<Field id="approveTime" desc="授权时间" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default="" 
+			xpath="/approveTime" />
+
+	</Fields>
+	<Operations>
+		<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="#"
+			url="#" txn="" />
+		<!--  <Button id="btClose" name="btClose" desc="返回" operation="syncsubmit"
+			url="/fpages/crms/ftl/CrmsBatchQueryPersonalReport.ftl" txn="" updateClass="#"/> -->
+	</Operations>
+</CommQry>

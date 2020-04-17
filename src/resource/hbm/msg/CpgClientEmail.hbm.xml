@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.msg">
+    <class name="CpgClientEmail" table="CPG_CLIENT_EMAIL" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid" />
+        </id>
+
+        <property name="actno" column="ACTNO" type="string" not-null="false" length="32" />
+        <property name="actName" column="ACT_NAME" type="string" not-null="false" length="100" />
+        <property name="brno" column="BRNO" type="string" not-null="false" length="4" />
+        <property name="email" column="EMAIL" type="string" not-null="false" length="256" />
+        <property name="msgId" column="MSG_ID" type="string" not-null="false" length="20" />
+        <property name="msgName" column="MSG_NAME" type="string" not-null="false" length="90" />
+        <property name="sndTime" column="SND_TIME" type="string" not-null="false" length="14" />
+        <property name="st" column="ST" type="string" not-null="false" length="2" />
+        <property name="errmsg" column="ERRMSG" type="string" not-null="false" length="100" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="50" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="50" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="125" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="125" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="256" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="256" />
+    </class>
+</hibernate-mapping>

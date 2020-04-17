@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrComEd01" table="CR_COM_ED01" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid" />
+        </id>
+
+        <property name="ed01ai01" column="ED01AI01" type="string" not-null="false" length="6" />
+        <property name="ed01ad01" column="ED01AD01" type="string" not-null="false" length="1" />
+        <property name="ed01ad02" column="ED01AD02" type="string" not-null="false" length="2" />
+        <property name="ed01ad03" column="ED01AD03" type="string" not-null="false" length="2" />
+        <property name="ed01ad04" column="ED01AD04" type="string" not-null="false" length="2" />
+        <property name="ed01ai02" column="ED01AI02" type="string" not-null="false" length="4" />
+        <property name="ed01ai03" column="ED01AI03" type="string" not-null="false" length="6" />
+        <property name="ed01ad05" column="ED01AD05" type="string" not-null="false" length="2" />
+        <property name="ed01ad06" column="ED01AD06" type="string" not-null="false" length="2" />
+        <property name="ed01ar01" column="ED01AR01" type="string" not-null="false" length="10" />
+        <property name="ed01ad07" column="ED01AD07" type="string" not-null="false" length="3" />
+        <property name="ed01aj01" column="ED01AJ01" type="string" not-null="false" length="15"/>
+        <property name="ed01aj02" column="ED01AJ02" type="string" not-null="false" length="15"/>
+        <property name="ed01ar02" column="ED01AR02" type="string" not-null="false" length="10" />
+        <property name="ed01ad08" column="ED01AD08" type="string" not-null="false" length="1" />
+        <property name="ed01ad09" column="ED01AD09" type="string" not-null="false" length="1" />
+        <property name="ed01ad10" column="ED01AD10" type="string" not-null="false" length="1" />
+        <property name="ed01ad11" column="ED01AD11" type="string" not-null="false" length="1" />
+        <property name="ed01ar03" column="ED01AR03" type="string" not-null="false" length="10" />
+        <property name="ed01ar04" column="ED01AR04" type="string" not-null="false" length="10" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+        <property name="batchId" column="BATCH_ID" type="string" not-null="false" length="32" />
+    </class>
+</hibernate-mapping>

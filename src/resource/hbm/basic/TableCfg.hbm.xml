@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="TableCfg"
+		table="TB_TABLECFG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="recId"
+			type="string"
+			column="REC_ID"
+		>
+		</id>
+
+		<property
+			name="tableName"
+			column="TABLE_NAME"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+
+		<property
+			name="classfyFlag"
+			column="CLASSFY_FLAG"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="tableDesc"
+			column="TABLE_DESC"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+        <property
+			name="className"
+			column="CLASS_NAME"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="businessflag"
+			column="BUSINESS_FLAG"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="parentTbName"
+			column="PARENT_TBNAME"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="twoSeven"
+			column="TWO_SEVEN"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		
+		<property
+			name="isOnlyone"
+			column="IS_ONLY"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+	</class>	
+</hibernate-mapping>

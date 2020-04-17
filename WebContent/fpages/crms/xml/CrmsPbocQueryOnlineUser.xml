@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="在线用户列表查询" navigate="在线用户列表查询  &gt; 在线用户列表查询" type="call"
+         interface="true" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do"
+         getterclassname="com.huateng.crms.thirdparty.pboc.getter.CustPbocSsoSessionGetter">
+    <Include id="BankParam"/>
+    <ResultViewParam>
+        /fpages/crms/ftl/CrmsPbocQueryOnlineUser.ftl
+    </ResultViewParam>
+
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-在线用户列表查询"/>
+    <Fields>
+        <!-- 在线用户列表查询 -->
+        <Field id="userId" desc="组织机构" tip="组织机构" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="30" default="" xpath="/userId"/>
+        <Field id="userName" desc="用户名" tip="用户名" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="30" default="" xpath="/userName"/>
+        <Field id="ipAddress" desc="用户IP" tip="用户IP" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="30" default="" xpath="/ipAddress"/>
+        <Field id="createTime" desc="创建时间" tip="创建时间" status="F" require=""
+               edittype="timestamp" datatype="timestamp" method="None" readonly="" primary="true"
+               size="8" default="" xpath="/createTime"/>
+        <Field id="sessionTimeOut" desc="超时时间" tip="超时时间" status="F" require=""
+               edittype="timestamp" datatype="timestamp" method="None" readonly="" primary="true"
+               size="14" default="" xpath="/sessionTimeOut"/>
+        <Field id="sessionTimeOutSeconds" desc="超时间隔" tip="超时间隔" status="F"
+               require="" edittype="int" datatype="Integer" method="None" readonly=""
+               primary=""  default="" xpath="/sessionTimeOutSeconds"/>]
+        <Field id="updateTime" desc="更新时间" tip="更新时间" status="F" require=""
+               edittype="timestamp" datatype="timestamp" method="None" readonly="" primary="true"
+               default="" xpath="/updateTime"/>
+
+    </Fields>
+    <Where>
+        <TextBox id="qtlrno" tablename="USER_NAME" fieldname="userName"
+                 type="String" dataType="" operation="EQ" size="20" desc="操作员号"
+                 tip="操作员号" method="genLikeP" index="3" function="" width=""
+                 default="" scale="" require="" readOnly="" rules="xss" errmsg="操作员号有错!"/>
+    </Where>
+
+</CommQry>

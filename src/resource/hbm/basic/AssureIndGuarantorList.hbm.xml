@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="AssureIndGuarantorList"
+            table="Assure_Ind_Guarantor_List"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="assureType"
+                column="assure_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="no"
+                column="no"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+        <property
+                name="contractNo"
+                column="contract_no"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="guarantorName"
+                column="guarantor_name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       <property
+                name="guarantorLoancardNo"
+                column="guarantor_loancard_no"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+    </class>
+</hibernate-mapping>

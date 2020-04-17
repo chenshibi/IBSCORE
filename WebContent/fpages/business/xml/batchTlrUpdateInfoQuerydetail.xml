@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="贷款卡卡号（中证码）查询请求" navigate="贷款卡卡号（中证码）查询请求"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.batchTlrUpdateInfoQuerydetailsGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		
+		<Field id="id" desc="id" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/id" />
+		
+		<Field id="userId" desc="操作员号" status="N"  method="None" readonly="true" 
+			primary="true" type="String" size="" xpath="/userId" default="false"  />
+		
+		<Field id="city" desc="城市" edittype="select" datatype="string" 
+			method="None" readonly="false" size="20" status="F" translated="DATA_DIC.503"
+			default="" xpath="/city" />		
+		<Field id="region" desc="区域" edittype="select" datatype="string" 
+			method="None" readonly="false" size="150" status="F" translated="DATA_DIC.502"
+			default="" xpath="/region" />	
+			
+		<Field id="batchId" desc="批次号" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/batchId" />	
+			
+		<Field id="inputTime" desc="创建时间" placeholder="yyyy-MM-dd HH:mm:ss"
+			edittype="timestamp" datatype="timestamp"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/inputTime" />	
+			
+		<Field id="createUser" desc="操作员" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/createUser" />
+			
+		<Field id="status" desc="状态" edittype="select" datatype="string" 
+			method="None" readonly="false" size="50" status="F" translated="DATA_DIC.606"
+			default="" xpath="/status" />	
+
+			
+		<Field id="checkNoPass" desc="异常错误" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="checkNoPass" />	
+			<Field id="queryDefeat" desc="查无此人" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="queryDefeat" />	
+		<Field id="query" desc="无变化" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="query" />	
+			
+		<Field id="querySuccess" desc="更新成功" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="querySuccess" />	
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+		 <Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/business/ftl/BatchTlrUpdateInfoQuery.ftl" txn="" />
+	</Operations>
+</CommQry>

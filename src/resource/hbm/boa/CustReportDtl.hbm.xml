@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.boa">
+    <class name="CustReportDtl" table="CUST_REPORTDTL">
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" type="string" column="ID">
+            <generator class="uuid"/>
+        </id>
+        <property name="batchNo" column="BATCH_NO" type="string" not-null="false" length="30"/>
+        <property name="bdhm" column="BDHM" type="string" not-null="false" length="30"/>
+        <property name="brno" column="BRNO" type="string" not-null="false" length="4"/>
+        <property name="txDate" column="TX_DATE" type="string" not-null="false" length="8"/>
+        <property name="xz" column="XZ" type="string" not-null="false" length="1"/>
+        <property name="accType" column="ACC_TYPE" type="string" not-null="false" length="2"/>
+        <property name="actNo" column="ACTNO" type="string" not-null="false" length="32"/>
+        <property name="actName" column="ACTNAME" type="string" not-null="false" length="100"/>
+        <property name="amount" column="AMOUNT" type="string" not-null="false" length="20"/>
+        <property name="frozeStime" column="FROZE_STIME" type="string" not-null="false" length="14"/>
+        <property name="frozeEtime" column="FROZE_ETIME" type="string" not-null="false" length="14"/>
+        <property name="organName" column="ORGAN_NAME" type="string" not-null="false" length="256"/>
+        <property name="refNo" column="REF_NO" type="string" not-null="false" length="50"/>
+        <property name="kzcs" column="KZCS" type="string" not-null="false" length="2"/>
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="16"/>
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="16"/>
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="32"/>
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="32"/>
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="64"/>
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="64"/>
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="128"/>
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="128"/>
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="1024"/>
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024"/>
+        <property name="jrcpbh" column="JRCPBH" type="string" not-null="false" length="50"/>
+        <property name="dsrzjhm" column="DSRZJHM" type="string" not-null="false" length="60"/>
+    </class>
+</hibernate-mapping>

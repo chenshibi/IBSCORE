@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="黑名单个人单笔插入" navigate="黑名单个人单笔插入"
+	type="call" interface="false" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+	getterclassname="">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="custId"       name="CustomerID证件号码"                 desc="CustomerID证件号码"                 	status="N" method="None" width=""  size="18" require="true" readonly="false" datatype="String" edittype="text"  xpath="/custId" />
+		<Field id="idType"       name="ID Type 证件类型"                   desc="ID Type 证件类型"                   	status="N" method="None" width=""  size="10" require="true" readonly="false" datatype="String" edittype="select" translated="DATA_DIC.6501"  xpath="/idType" />   
+		<Field id="nameChn"      name="Customer Chinese Name 个人中文姓名"  desc="Customer Chinese Name 个人中文姓名"   	status="N" method="None" width=""  size="60" require="true" readonly="false" datatype="String" edittype="text"  xpath="/nameChn" />
+		<Field id="nameEng"      name="Customer Enghlish Name 个人英文姓名" desc="Customer Enghlish Name 个人英文姓名"  	status="N" method="None" width=""  size="60" require="false" readonly="false" datatype="String" edittype="text"  xpath="/nameEng" />
+		<Field id="dataSource"   name="DataSource 数据来源"                desc="DataSource 数据来源"                	status="N" method="None" width=""  size="20" require="false" readonly="false" datatype="String" edittype="select" translated="DATA_DIC.6502"  xpath="/dataSource" />
+		<Field id="product"      name="Product"                          desc="Product"                       	status="N" method="None" width=""  size="20" require="false" readonly="false" datatype="String" edittype="select" translated="DATA_DIC.6503"  xpath="/product" />
+		<Field id="rm"           name="RM Name"                          desc="RM Name"                        	status="N" method="None" width=""  size="32" require="false" readonly="false" datatype="String" edittype="text"  xpath="/rm" />
+		<Field id="loanNo"       name="Loan No 贷款号"                     desc="Loan No 贷款号"               		status="N" method="None" width=""  size="10" require="false" readonly="false" datatype="String" edittype="text"  xpath="/loanNo" />      
+		<Field id="appNo"        name="Application No 申请号"              desc="Application No 申请号"        		status="N" method="None" width=""  size="50" require="false" readonly="false" datatype="String" edittype="text"  xpath="/appNo" />      
+		<Field id="reason1"      name="Reason1 原因1"                      desc="Reason1 原因1"                		status="N" method="None" width=""  size="64" require="true" readonly="false" datatype="String" edittype="select" translated="DATA_DIC.6506"  xpath="/reason1" />     
+		<Field id="reason2"      name="Reason2 原因1"                      desc="Reason2 原因1"               		status="N" method="None" width=""  size="64" require="false" readonly="false" datatype="String" edittype="select" translated="DATA_DIC.6506"  xpath="/reason2" />     
+		<Field id="reason3"      name="Reason3 原因3"                      desc="Reason3 原因3"                		status="N" method="None" width=""  size="64" require="false" readonly="false" datatype="String" edittype="select" translated="DATA_DIC.6506"  xpath="/reason3" />     
+		<Field id="status"       name="Status 状态"                        desc="Status 状态"                  	status="N" method="None" width=""  size="16" require="false" readonly="false" datatype="String" edittype="select" translated="DATA_DIC.6504"  xpath="/status" />    
+		<Field id="guaranShare"  name="Guarantor Share 担保比例"           desc="Guarantor Share 担保比例"     		status="N" method="None" width=""  size="8" require="false" readonly="false" datatype="String" edittype="text"  xpath="/guaranShare" />      
+		<Field id="dateBirth"    name="Date of Birth 出生日期"             desc="Date of Birth 出生日期"       		status="N" method="None" width=""  size="18" require="false" readonly="false" datatype="date" edittype="date"  xpath="/dateBirth" />       
+		<Field id="dateApp"      name="Date of Application 申请日期"       desc="Date of Application 申请日期" 		status="N" method="None" width=""  size="18" require="false" readonly="false" datatype="date" edittype="date"  xpath="/dateApp" />       
+		<Field id="dateInput"    name="Date Input 录入日期"                desc="Date Input 录入日期"         		status="N" method="None" width=""  size="18" require="false" readonly="false" datatype="date" edittype="date"  xpath="/dateInput" />       
+		<Field id="homeAddr1"    name="Home Address1 家庭住址1"            desc="Home Address1 家庭住址1"      			status="N" method="None" width=""  size="100" require="false" readonly="false" datatype="String" edittype="text"  xpath="/homeAddr1" />       
+		<Field id="homeAddr2"    name="Home Address2 家庭住址1"            desc="Home Address2 家庭住址1"      			status="N" method="None" width=""  size="100" require="false" readonly="false" datatype="String" edittype="text"  xpath="/homeAddr2" />       
+		<Field id="officePhone1" name="Office Phone1 办公室电话1"          desc="Office Phone1 办公室电话1"    			status="N" method="None" width=""  size="16" require="false" readonly="false" datatype="String" edittype="text"  xpath="/officePhone1" />        
+		<Field id="officePhone2" name="Office Phone2 办公室电话2"          desc="Office Phone2 办公室电话2"    			status="N" method="None" width=""  size="16" require="false" readonly="false" datatype="String" edittype="text"  xpath="/officePhone2" />        
+		<Field id="homePhone1"   name="Home Phone1 家庭电话1"              desc="Home Phone1 家庭电话1"        			status="N" method="None" width=""  size="16" require="false" readonly="false" datatype="String" edittype="text"  xpath="/homePhone1" />      
+		<Field id="homePhone2"   name="Home Phone2 家庭电话"               desc="Home Phone2 家庭电话"        			status="N" method="None" width=""  size="16" require="false" readonly="false" datatype="String" edittype="text"  xpath="/homePhone2" />      
+		<Field id="mobilePhone1" name="Mobile Phone1 手机号码1"            desc="Mobile Phone1 手机号码1"      			status="N" method="None" width=""  size="20" require="false" readonly="false" datatype="String" edittype="text"  xpath="/mobilePhone1" />       
+		<Field id="mobilePhone2" name="Mobile Phone2 手机号码1"            desc="Mobile Phone2 手机号码1"      			status="N" method="None" width=""  size="20" require="false" readonly="false" datatype="String" edittype="text"  xpath="/mobilePhone2" />     
+		<Field id="recovStatus"  name="Recover Status "                 desc="Recover Status "                 	status="N" method="None" width=""  size="1" require="false" readonly="false" datatype="String" edittype="text"  xpath="/recovStatus" /> 
+		<Field id="compName"     name="Company Name of Customer 公司名字"  desc="Company Name of Customer 公司名字" 	status="N" method="None" width=""  size="200" require="false" readonly="false" datatype="String" edittype="text"  xpath="/compName" />
+		<Field id="compRegId"    name="Company Reg ID 公司注册号"      		desc="Company Reg ID 公司注册号"   			status="N" method="None" width=""  size="20" require="false" readonly="false" datatype="String" edittype="text"  xpath="/compRegId" />        
+		<Field id="compId"       name="Company ID 公司代码号"          		desc="Company ID 公司代码号"       			status="N" method="None" width=""  size="20" require="false" readonly="false" datatype="String" edittype="text"  xpath="/compId" />        
+		<Field id="compEng"      name="Company English name 公司英文名 "     desc="Company English name 公司英文名" 	status="N" method="None" width=""  size="100" require="false" readonly="false" datatype="String" edittype="text"  xpath="/compEng" />     
+	</Fields>
+	
+	<Operations>
+		<!--  <Button id="reset" name="reset" desc="Reset重置"  url="#" show="" group="" txn=""  icon="icon-impin"  />-->
+		<Button id="btInsert" name="提交" desc="提交"  url="#" show="" group="" txn=""  icon="icon-impin"  />
+		<!-- <Button id="btInsert" name="提交" desc="提交"  
+		operation="href" url="" show="" group="" txn=""  icon=""  />-->
+	</Operations>
+</CommQry>

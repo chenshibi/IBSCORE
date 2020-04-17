@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndJobQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="no" desc="编号" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/no" />
+			
+		<Field id="name" desc="工作单位" edittype="text" datatype="string"
+			method="None" readonly="false" size="120" status="N"  default="" 
+			primary="true" xpath="/name" />
+
+		<Field id="addr" desc="单位地址" edittype="text" datatype="string"
+			method="None" readonly="false" size="120" status="F" 
+			default="" xpath="/addr" />
+			
+		<Field id="profession" desc="职业" edittype="text" datatype="string"
+			method="None" readonly="false" size="40" status="F" 
+			default="" xpath="/profession" />
+			
+		<Field id="industry" desc="行业" edittype="text" datatype="string"
+			method="None" readonly="false" size="34" status="F" 
+			default="" xpath="/industry" />
+		
+		<Field id="title" desc="职务" edittype="text" datatype="string"
+			method="None" readonly="false" size="58" status="F" 
+			default="" xpath="/title" />
+			
+		<Field id="titleTec" desc="职称" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/titleTec" />
+			
+		<Field id="startdate" desc="进入本单位年份" placeholder="yyyy"
+			edittype="date" datatype="date" 
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/startdate" />
+		<Field id="startdates" desc="进入本单位年份" 
+			edittype="text" datatype="string" 
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/startdates" />
+			
+		<Field id="getdate" desc="信息更新日期" placeholder="yyyy-MM-dd"
+			edittype="date" datatype="date"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/getdate" />
+
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

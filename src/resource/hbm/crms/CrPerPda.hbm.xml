@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrPerPda" table="CR_PER_PDA" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid" />
+        </id>
+
+        <property name="pd01ai01" column="PD01AI01" type="string" not-null="false" length="5" />
+        <property name="pd01ad01" column="PD01AD01" type="string" not-null="false" length="2" />
+        <property name="pd01ad02" column="PD01AD02" type="string" not-null="false" length="2" />
+        <property name="pd01ai02" column="PD01AI02" type="string" not-null="false" length="14" />
+        <property name="pd01ai03" column="PD01AI03" type="string" not-null="false" length="60" />
+        <property name="pd01ai04" column="PD01AI04" type="string" not-null="false" length="5" />
+        <property name="pd01ad03" column="PD01AD03" type="string" not-null="false" length="2" />
+        <property name="pd01ar01" column="PD01AR01" type="string" not-null="false" length="10" />
+        <property name="pd01ad04" column="PD01AD04" type="string" not-null="false" length="3" />
+        <property name="pd01aj01" column="PD01AJ01" type="string" not-null="false" length="15"/>
+        <property name="pd01aj02" column="PD01AJ02" type="string" not-null="false" length="15"/>
+        <property name="pd01aj03" column="PD01AJ03" type="string" not-null="false" length="15"/>
+        <property name="pd01ar02" column="PD01AR02" type="string" not-null="false" length="10" />
+        <property name="pd01ad05" column="PD01AD05" type="string" not-null="false" length="2" />
+        <property name="pd01ad06" column="PD01AD06" type="string" not-null="false" length="2" />
+        <property name="pd01as01" column="PD01AS01" type="string" not-null="false" length="3"/>
+        <property name="pd01ad07" column="PD01AD07" type="string" not-null="false" length="1" />
+        <property name="pd01ad08" column="PD01AD08" type="string" not-null="false" length="1" />
+        <property name="pd01ad09" column="PD01AD09" type="string" not-null="false" length="1" />
+        <property name="pd01ad10" column="PD01AD10" type="string" not-null="false" length="1" />
+        <property name="pd01bd01" column="PD01BD01" type="string" not-null="false" length="2" />
+        <property name="pd01br01" column="PD01BR01" type="string" not-null="false" length="10" />
+        <property name="pd01br04" column="PD01BR04" type="string" not-null="false" length="7" />
+        <property name="pd01bj01" column="PD01BJ01" type="string" not-null="false" length="15"/>
+        <property name="pd01br02" column="PD01BR02" type="string" not-null="false" length="10" />
+        <property name="pd01bj02" column="PD01BJ02" type="string" not-null="false" length="15"/>
+        <property name="pd01bd03" column="PD01BD03" type="string" not-null="false" length="1" />
+        <property name="pd01bd04" column="PD01BD04" type="string" not-null="false" length="1" />
+        <property name="pd01br03" column="PD01BR03" type="string" not-null="false" length="10" />
+        <property name="pd01cr01" column="PD01CR01" type="string" not-null="false" length="7" />
+        <property name="pd01cd01" column="PD01CD01" type="string" not-null="false" length="2" />
+        <property name="pd01cj01" column="PD01CJ01" type="string" not-null="false" length="15"/>
+        <property name="pd01cj02" column="PD01CJ02" type="string" not-null="false" length="15"/>
+        <property name="pd01cj03" column="PD01CJ03" type="string" not-null="false" length="15"/>
+        <property name="pd01cd02" column="PD01CD02" type="string" not-null="false" length="1" />
+        <property name="pd01cs01" column="PD01CS01" type="string" not-null="false" length="3"/>
+        <property name="pd01cr02" column="PD01CR02" type="string" not-null="false" length="10" />
+        <property name="pd01cj04" column="PD01CJ04" type="string" not-null="false" length="15"/>
+        <property name="pd01cj05" column="PD01CJ05" type="string" not-null="false" length="15"/>
+        <property name="pd01cr03" column="PD01CR03" type="string" not-null="false" length="10" />
+        <property name="pd01cs02" column="PD01CS02" type="string" not-null="false" length="3"/>
+        <property name="pd01cj06" column="PD01CJ06" type="string" not-null="false" length="15"/>
+        <property name="pd01cj07" column="PD01CJ07" type="string" not-null="false" length="15"/>
+        <property name="pd01cj08" column="PD01CJ08" type="string" not-null="false" length="15"/>
+        <property name="pd01cj09" column="PD01CJ09" type="string" not-null="false" length="15"/>
+        <property name="pd01cj10" column="PD01CJ10" type="string" not-null="false" length="15"/>
+        <property name="pd01cj11" column="PD01CJ11" type="string" not-null="false" length="15"/>
+        <property name="pd01cj12" column="PD01CJ12" type="string" not-null="false" length="15"/>
+        <property name="pd01cj13" column="PD01CJ13" type="string" not-null="false" length="15"/>
+        <property name="pd01cj14" column="PD01CJ14" type="string" not-null="false" length="15"/>
+        <property name="pd01cj15" column="PD01CJ15" type="string" not-null="false" length="15"/>
+        <property name="pd01cr04" column="PD01CR04" type="string" not-null="false" length="10" />
+        <property name="pd01dr01" column="PD01DR01" type="string" not-null="false" length="7" />
+        <property name="pd01dr02" column="PD01DR02" type="string" not-null="false" length="7" />
+        <property name="pd01er01" column="PD01ER01" type="string" not-null="false" length="7" />
+        <property name="pd01er02" column="PD01ER02" type="string" not-null="false" length="7" />
+        <property name="pd01es01" column="PD01ES01" type="string" not-null="false" length="2"/>
+        <property name="pd01fs01" column="PD01FS01" type="string" not-null="false" length="3"/>
+        <property name="pd01gs01" column="PD01GS01" type="string" not-null="false" length="3"/>
+        <property name="pd01hs01" column="PD01HS01" type="string" not-null="false" length="3"/>
+        <property name="pd01zs01" column="PD01ZS01" type="string" not-null="false" length="1"/>
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+        <property name="batchId" column="BATCH_ID" type="string" not-null="false" length="32" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="文件下载功能" navigate="文件下载"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PermitFileUploadGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="" />
+		<Field id="fileName" desc="File Name" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="60" status="F" 
+			default="" xpath="/fileName" />
+			<Field id="id" desc="id" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="N" require="true" default="" 
+			primary="true" xpath="/id" />	
+		
+		<Field id="sgement" desc="Sgement" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.7021"
+			status="F" default="" xpath="sgement" tip="Sgement" />  
+			
+		<Field id="product" desc="Product" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.7031"
+			status="F" default="" xpath="product" tip="Product" />  
+			
+		<Field id="scope" desc="Scope" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.704"
+			status="F" default="" xpath="scope" tip="Scope" />  
+				
+		<Field id="effectiveDate" desc="Effective Date" edittype="text" datatype="date"
+			method="None" readonly="false" size="10" status="F" default=""   require="true"
+			xpath="/effectiveDate" />
+			
+		<Field id="expireDate" desc="Expire Date" edittype="text" datatype="date"
+			method="None" readonly="false" size="10" status="F" default="" require="false"
+			xpath="/expireDate" />
+		
+			
+			
+		<Field id="flag" desc="Expire Flag" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.705"
+			status="F" default="" xpath="flag" tip="Expire Flag" />  
+			
+			
+		<Field id="note" desc="note" status="N" require="false"
+			readonly="false" primary="true" type="String" size="120"
+			xpath="note" />	
+			
+        <Field id="fileType" desc="文件类型" require="true" edittype="select"  
+			datatype="string" method="None" size="2" translated="DATA_DIC.701"
+			status="F" default="" xpath="/fileType" tip="证件类型" />   
+			
+		<Field id="filePath" desc="文件路径" edittype="text" datatype="string"
+			method="None" readonly="false" size="500" status="F" require="true"
+			default="" xpath="/filePath" />
+			 
+		<Field id="createUser" desc="录入员" edittype="text" datatype="string"
+			method="None" readonly="false" size="200" status="F" require="true"
+			default="" xpath="/createUser" />
+			
+		<Field id="inputTime" desc="录入时间" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" require="true" default=""
+			xpath="/inputTime" />
+		 
+		
+		<Field id="status" desc="状态" require="" edittype="select"
+			datatype="string" method="None" size="3" translated="DATA_DIC.601"
+			status="F" default="" xpath="/status" tip="状态" />  
+
+	</Fields>
+	<Where>
+		<Option id="qsgement"  default="" desc="Sgement" type="MyQuery" 
+		 	tip="" method="None" index="4" translated="DATA_DIC.7021"/>
+				
+		<Option id="qproduct"  default="" desc="Product" type="MyQuery" 
+			tip="" method="None" index="4" translated="DATA_DIC.7031"/>
+				
+		<Option id="qscope"  default="" desc="Scope" type="MyQuery" 
+		 	tip="" method="None" index="4" translated="DATA_DIC.704"/>
+		 <Option id="qflag"  default="0" desc="Expire Flag" type="MyQuery" 
+		 	tip="" method="None" index="4" translated="DATA_DIC.705"/>
+		 	
+		<TextBox id="qfileName" type="String"  size="60" 
+			desc="Name" tip="File Name" index="1" />
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>

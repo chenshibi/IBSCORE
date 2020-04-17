@@ -1,0 +1,3708 @@
+<html>
+<head>
+    <title>个人信用报告</title>
+    <style>
+        td {
+            border: solid black 1px;
+        }
+
+        .labeltd {
+            background: #f7fbfc;
+            text-align: right;
+            width: 15%;
+            padding-right: 8px;
+            color: blue;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .titletd {
+            background: #f7fbfc;
+            text-align: left;
+            width: 15%;
+            padding-left: 8px;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .datatd {
+            background: #f7fbfc;
+            white-space: nowrap;
+            width: 35%;
+            padding-left: 8px;
+            font-size: 12px;
+        }
+
+        .tabletd {
+            width: 100%;
+        }
+
+        .table-label-td {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .table-data-td {
+            font-size: 12px;
+        }
+
+        .table-head-td {
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            border: 0px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        #mainDiv {
+            width: 80%;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        fieldset {
+            border-width: 1px;
+        }
+
+        .mainTable {
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        .secondTable {
+            width: 80%;
+            border-collapse: collapse;
+            border: none;
+            margin-left: 10%;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            td {
+                font-size: 8pt !important;
+            }
+
+            #mainDiv {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            #printBtn {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function printRpt() {
+            window.print();
+        }
+    </script>
+</head>
+
+<body>
+<div id="mainDiv">
+    <h2>企业信用报告</h2>
+    <fieldset>
+        <legend align="center">报告头</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">报告编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报告时间</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">被查询者企业名称</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">被查询者企业身份标识类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">被查询者企业身份标识号码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询原因代码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">企业身份标识个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="2" class="table-head-td">其他企业身份标识列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:50%;">企业身份标识类型</td>
+                            <td class="table-label-td" style="width:50%;">企业身份标识号码</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">美元折人民币汇率</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">汇率有效日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">异议标注数目</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">信用提示信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>信贷交易提示信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">首次有信贷交易的年份</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">首次有相关还款责任的年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">发生信贷交易的机构数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">当前有未结清信贷交易的机构数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">借贷交易余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">被追偿的借贷交易余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">关注类借贷交易余额</td>
+                <td class="datatd" colspan="3">value</td>
+                <td class="labeltd">不良类借贷交易余额</td>
+                <td class="datatd" colspan="3">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保交易余额</td>
+                <td class="datatd" colspan="3">value</td>
+                <td class="labeltd">关注类担保交易余额</td>
+                <td class="datatd" colspan="3">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">不良类担保交易余额</td>
+                <td class="datatd" colspan="4">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>非信贷交易提示信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">非信贷交易账户数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">欠税记录条数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">民事判决记录条数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">强制执行记录条数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">行政处罚记录条数</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">借贷交易汇总信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>未结清借贷交易汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">资产处置业务账户数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">资产处置业务余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">最近一次处置日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">垫款业务账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">垫款业务余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">垫款最近一次还款日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">逾期本金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期利息及其他</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他借贷交易分类汇总条目数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">其他借贷交易分类汇总列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:50%;">业务类型</td>
+                            <td class="table-label-td" style="width:50%;">资产质量分类</td>
+                            <td class="table-label-td" style="width:50%;">账户数</td>
+                            <td class="table-label-td" style="width:50%;">余额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>已结清借贷交易汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">资产处置业务账户数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">资产处置业务金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处置完成日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结清日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">垫款业务账户数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">垫款业务金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他借贷交易分类汇总条目数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="3" class="table-head-td">其他借贷交易分类汇总列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:50%;">业务类型</td>
+                            <td class="table-label-td" style="width:50%;">资产质量分类</td>
+                            <td class="table-label-td" style="width:50%;">账户数</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">月份数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>负债历史汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="11" class="table-head-td">负债历史汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">月份</td>
+                            <td class="labeltd">全部负债账户数</td>
+                            <td class="labeltd">全部负债余额</td>
+                            <td class="labeltd">关注类负债账户数</td>
+                            <td class="labeltd">关注类负债余额</td>
+                            <td class="labeltd">不良类负债账户数</td>
+                            <td class="labeltd">不良类负债余额</td>
+                            <td class="labeltd">逾期账户数</td>
+                            <td class="labeltd">逾期总额</td>
+                            <td class="labeltd">逾期本金账户数</td>
+                            <td class="labeltd">逾期本金</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">担保交易汇总信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>未结清担保交易汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保交易分类汇总条目数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">未结清担保交易汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">业务类型</td>
+                            <td class="labeltd">资产质量分类</td>
+                            <td class="labeltd">账户数</td>
+                            <td class="labeltd">余额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>已结清担保交易汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保交易分类汇总条目数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="3" class="table-head-td">已结清担保交易汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">业务类型</td>
+                            <td class="labeltd">资产质量分类</td>
+                            <td class="labeltd">账户数</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">授信协议汇总信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">非循环信用额度合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已使用的非循环信用额度合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">剩余可用的非循环额度合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">循环信用额度合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">已使用的循环信用额度合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">剩余可用的循环额度合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">是否包含授信限额</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">相关还款责任汇总信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>借贷交易相关还款责任汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">还款责任类型数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="9" class="table-head-td">借贷交易相关还款责任汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">责任类型</td>
+                            <td class="labeltd">被追偿账户的还款责任金额</td>
+                            <td class="labeltd">被追偿账户数</td>
+                            <td class="labeltd">被追偿账户余额</td>
+                            <td class="labeltd">其他借贷交易的还款责任金额</td>
+                            <td class="labeltd">其他借贷交易账户数</td>
+                            <td class="labeltd">其他借贷交易账户余额</td>
+                            <td class="labeltd">其他借贷交易账户关注类余额</td>
+                            <td class="labeltd">其他借贷交易账户不良类余额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>担保交易相关还款责任汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">还款责任类型数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="6" class="table-head-td">担保交易相关还款责任汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">责任类型</td>
+                            <td class="labeltd">还款责任金额</td>
+                            <td class="labeltd">账户数</td>
+                            <td class="labeltd">余额</td>
+                            <td class="labeltd">关注类余额</td>
+                            <td class="labeltd">不良类余额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">基本信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>基本概况信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">经济类型</td>
+                <td class="table-data-td">value</td>
+                <td class="labeltd">组织机构类型</td>
+                <td class="table-data-td">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">企业规模</td>
+                <td class="table-data-td">value</td>
+                <td class="labeltd">所属行业</td>
+                <td class="table-data-td">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">登记地址</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">成立年份</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">登记证书有效截止日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">办公/经营地址</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">存续状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>注册资本及主要出资人信息单元</li>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">注册资本（折人民币合计）</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">主要出资人个数</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="6" class="table-head-td">出资人信息信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">出资人类型</td>
+                            <td class="labeltd">出资人身份类别</td>
+                            <td class="labeltd">出资人名称</td>
+                            <td class="labeltd">出资人身份标识类型</td>
+                            <td class="labeltd">出资人身份标识号码</td>
+                            <td class="labeltd">出资比例</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>主要组成人员信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">主要组成人员个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">主要组成人员信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">姓名</td>
+                            <td class="labeltd">证件类型</td>
+                            <td class="labeltd">证件号码</td>
+                            <td class="labeltd">职位</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>上级机构信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">上级机构类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">上级机构名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">上级机构身份标识类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">上级机构身份标识号码</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">更新日期</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>实际控制人信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">实际控制人个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">实际控制人信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">实际控制人身份类型</td>
+                            <td class="labeltd">实际控制人名称</td>
+                            <td class="labeltd">实际控制人身份标识类型</td>
+                            <td class="labeltd">实际控制人身份标识号码</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">更新日期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">借贷账户信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>基本信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">借贷账户编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户活动状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">借贷账户类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">借款期限</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">授信协议编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">借贷业务种类大类</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">借贷业务种类细分</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">开户日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">借款金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信用额度</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">到期日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保方式</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他还款保证方式</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">发放形式</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">共同借款标识</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">关闭日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>还款表现信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">还款表现记录条数</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="14" class="table-head-td">还款表现信息</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">信息报告日期</td>
+                            <td class="labeltd">余额</td>
+                            <td class="labeltd">余额变化日期</td>
+                            <td class="labeltd">五级分类</td>
+                            <td class="labeltd">五级分类认定日期</td>
+                            <td class="labeltd">最近一次实际还款日期</td>
+                            <td class="labeltd">最近一次实际还款总额</td>
+                            <td class="labeltd">最近一次还款形式</td>
+                            <td class="labeltd">最近一次约定还款日期</td>
+                            <td class="labeltd">最近一次应还总额</td>
+                            <td class="labeltd">逾期总额</td>
+                            <td class="labeltd">逾期本金</td>
+                            <td class="labeltd">逾期月数</td>
+                            <td class="labeltd">剩余还款月数</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>特定交易信息段</li>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">特定交易个数</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">特定交易信息</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">交易类型</td>
+                            <td class="labeltd">交易日期</td>
+                            <td class="labeltd">交易金额</td>
+                            <td class="labeltd">到期日期变更月数</td>
+                            <td class="labeltd">交易明细信息</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>贴现账户分机构汇总信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">贴现账户分机构汇总信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务种类</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">未结清账户数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期总额合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">逾期本金合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">已结清账户数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已结清账户贴现金额合计</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>欠息信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">欠息信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">欠息余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额变化日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">欠息类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">担保账户信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>担保账户信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保账户编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">担保账户类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">授信协议编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">担保交易业务种类细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">开立日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">到期日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">反担保方式</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他还款保证方式</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">保证金比例</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>在保责任信息段</li>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户活动状态</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">风险敞口</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">代偿（垫款）标志</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">共同债务标识</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">关闭日期</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>担保账户分机构汇总信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保账户分机构汇总信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">担保交易业务种类细分</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">未结清账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">30天内到期的余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">60天内到期的余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">90天内到期的余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">90天后到期的余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已结清账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">垫款标志</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>授信协议信息</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信协议编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授信额度类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">额度循环标志</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信额度</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已用额度</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信限额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授信限额编号</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">生效日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">终止日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">相关还款责任信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>相关还款责任借贷账户（不含贴现）信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">主借款人身份类别</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">相关还款责任人类型</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">币种（相关还款责任金额）</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">相关还款责任金额</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务种类</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务种类细分</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">开立日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">到期日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">逾期总额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期本金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">逾期月数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">还款状态</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">剩余还款月数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">借款金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信用额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">保证合同编号</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>相关还款责任贴现账户分机构汇总信息单元</li>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">贴现账户分机构汇总信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">相关还款责任类型</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">业务种类细分</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">相关还款责任金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">逾期总额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期本金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">借款金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">保证合同编号</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>相关还款责任担保账户分机构汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保账户分机构汇总信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">相关还款责任类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务种类细分</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">相关还款责任金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">担保金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">保证合同编号</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">公用事业缴费账户信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>公共事业缴费信息基本信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">公用事业缴费账户编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">公用事业单位名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">缴费状态</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">累计欠费金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">统计年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>过去24个月缴费情况信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">缴费情况记录列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">统计年月</td>
+                            <td class="labeltd">缴费状态</td>
+                            <td class="labeltd">本月应缴金额</td>
+                            <td class="labeltd">本月实缴金额</td>
+                            <td class="labeltd">累计欠费金额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">欠税信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>欠税记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">欠税记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">主管税务机关名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">欠税总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">欠税统计时间</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">法院信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>民事判决记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">民事判决记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">立案法院名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">案号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">立案日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">案由</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">诉讼地位</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">审判程序</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">诉讼标的</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">诉讼标的金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结案方式</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">判决/调解生效日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">判决/调解结果</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>强制执行记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">强制执行记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">执行法院名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">案号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">立案日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">执行案由</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">申请执行标的</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">申请执行标的金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">案件状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">结案方式</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已执行标的</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">已执行标的金额</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">行政处罚信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>行政处罚记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">行政处罚记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">处罚机构名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处罚决定书文号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">违法行为</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处罚决定</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">处罚日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处罚金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">处罚执行情况</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">行政复议结果</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">住房公积金参缴信息段</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>住房公积金缴费记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">初缴年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">职工人数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">缴费基数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">最近一次缴费日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">缴至年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">缴费状态</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">累计欠费金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">统计年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>过去24个月缴费情况信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">缴费记录条数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">缴费情况信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="labeltd">统计年月</td>
+                            <td class="labeltd">缴费状态</td>
+                            <td class="labeltd">本月应缴金额</td>
+                            <td class="labeltd">本月实缴金额</td>
+                            <td class="labeltd">累计欠费金额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">获得认证/奖励相关信息段</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>获得许可记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">许可记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">许可部门名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">许可类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">许可日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">截止日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">许可内容</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>获得认证记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">认证记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">认证部门名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">认证类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">认证日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">截止日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">认证内容</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>获得资质记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">资质记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">认定部门名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">资质类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">批准日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">截止日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">资质内容</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>获得奖励记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">奖励记录编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">奖励部门名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">奖励名称</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授予日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">截止日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">奖励内容</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>拥有专利情况信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">专利名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">专利号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">申请日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授予日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">专利有效期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">进出口检验相关信息段</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>出入境检验检疫绿色通道信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">批准部门名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">出口商品名称</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">生效日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>进出口商品免验信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">批准部门名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">免验商品名称</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">免验号</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">截止日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>进出口商品检验分类监管信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">监管部门名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">管辖直属局</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">监管级别</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">生效日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">截至日期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">融资规模控制信息段</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>融资规模控制信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">所属名录</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">融资控制类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">年度</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">规模</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">财务信息段</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业资产负债表（2002版）信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业资产负债表（2002 版）段</li>
+                </td>
+            <tr>
+                <td class="labeltd">货币资金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">短期投资</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应收票据</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应收股利</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应收利息</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应收账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他应收款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预付账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">期货保证金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应收补贴款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应收出口退税</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">存货</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">存货原材料</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">存货产成品</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">待摊费用</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">待处理流动资产净损失</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">一年内到期的长期债权投资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他流动资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">流动资产合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期投资</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">长期股权投资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期债权投资</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">合并价差</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期投资合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">固定资产原价</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">累计折旧</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">固定资产净值</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产值减值准备</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">固定资产净额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产清理</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">工程物资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">在建工程</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">待处理固定资产净损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">无形资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（无形资产科目下）土地使用权</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">递延资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（递延资产科目下）固定资产修理</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（递延资产科目下）固定资产改良支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他长期资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（其他长期资产科目下）特准储备物资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">无形及其他资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">递延税款借项</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">资产总计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">短期借款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付票据</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付账款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预收账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付工资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付福利费</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应交税金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他应交款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他应付款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">预提费用</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预计负债</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">一年内到期的长期负债</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他流动负债</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">流动负债合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期借款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付债券</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期应付款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">专项应付款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他长期负债</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（其他长期负债科目下）特准储备基金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期负债合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">递延税款贷项</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">负债合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">少数股东权益</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">实收资本</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">国家资本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">集体资本</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">法人资本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（法人资本科目下）国有法人资本</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（法人资本科目下）集体法人资本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">个人资本</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">外商资本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">资本公积</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">盈余公积</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（盈余公积科目下）法定盈余公积</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（盈余公积科目下）公益金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（盈余公积科目下）补充流动资本</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">未确认的投资损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">未分配利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">外币报表折算差额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">所有者权益合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">负债和所有者权益总计</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业资产负债表（2007版)基本段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业资产负债表（2007版）段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">货币资金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">交易性金融资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应收票据</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应收账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">预付账款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应收利息</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应收股利</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他应收款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">存货</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">一年内到期的非流动资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他流动资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">流动资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">可供出售的金融资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">持有至到期投资</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">长期股权投资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期应收款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资性房地产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">在建工程</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">工程物资</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">固定资产清理</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">生产性生物资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">油气资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">无形资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">开发支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">商誉</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">长期待摊费用</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">递延所得税资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他非流动资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">非流动资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">资产总计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">短期借款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">交易性金融负债</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付票据</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付账款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预收账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付利息</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付职工薪酬</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应交税费</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付股利</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他应付款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">一年内到期的非流动负债</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他流动负债</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">流动负债合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">长期借款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付债券</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">长期应付款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">专项应付款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">预计负债</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">递延所得税负债</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他非流动负债</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">非流动负债合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">负债合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">实收资本（或股本）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">资本公积</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">减：库存股</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">盈余公积</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">未分配利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">所有者权益合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">负债和所有者权益合计</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业利润表及利润分配表（2002版）信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业利润表及利润分配表（2002版）段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">主营业务收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（主营业务收入科目下）出口产品销售收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（主营业务收入科目下）进口产品销售收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">销售折扣与折让</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">主营业务收入净额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">主营业务成本</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">主营业务成本科目下）出口产品销售成本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">主营业务税金及附加</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营费用</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他（业务成本）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">递延收益</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">代购代销收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他（收入）</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">主营业务利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他业务利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">营业费用</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">管理费用</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">财务费用</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他（费用）</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">营业利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资收益</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">期货收益</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">补贴收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（补贴收入科目下）补贴前亏损的企业补贴收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">营业外收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（营业外收入科目下）处置固定资产净收益</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（营业外收入科目下）非货币性交易收益</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（营业外收入科目下）出售无形资产收益<</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（营业外收入科目下）罚款净收入/td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他（利润）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（其他科目下）用以前年度含量工资节余弥补利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">营业外支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（营业外支出科目下）处置固定资产净损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（营业外支出科目下）债务重组损失</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（营业外支出科目下）罚款支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（营业外支出科目下）捐赠支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（其他支出）结转的含量工资包干节余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">利润总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">所得税</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">少数股东损益</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">未确认的投资损失</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">净利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">年初未分配利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">盈余公积补亏</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他调整因素</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">可供分配的利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">单项留用的利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">补充流动资本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">提取法定盈余公积</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">提取法定公益金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">提取职工奖励及福利基金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">提取储备基金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">提取企业发展基金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">利润归还投资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（可供分配的利润科目下）其他</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">可供投资者分配的利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付优先股股利</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">提取任意盈余公积</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付普通股股利</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">转作资本的普通股股利</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（可供投资者分配的利润科目下）其他</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">未分配利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（未分配利润科目下）应由以后年度税前利润弥补的亏损</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业利润表及利润分配表（2007版）信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业利润表及利润分配表（2007版）段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">营业收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">营业成本</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">营业税金及附加</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">销售费用</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">管理费用</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">财务费用</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">资产减值损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">公允价值变动净收益</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资净收益</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">对联营企业和合营企业的投资收益</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">营业利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">营业外收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">营业外支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">非流动资产损失（其中：非流动资产处置损失）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">利润总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">所得税费用</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">净利润</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">基本每股收益</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">稀释每股收益</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业现金流量表（2002版）信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业现金流量表（2002版）段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">销售商品和提供劳务收到的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">收到的税费返还</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">收到的其他与经营活动有关的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营活动现金流入小计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">购买商品、接受劳务支付的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">支付给职工以及为职工支付的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">支付的各项税费</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">支付的其他与经营活动有关的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营活动现金流出小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">收回投资所收到的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">取得投资收益所收到的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处置固定资产无形资产和其他长期资产所收回的现金净额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">收到的其他与投资活动有关的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资活动现金流入小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">购建固定资产无形资产和其他长期资产所支付的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资所支付的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">支付的其他与投资活动有关的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资活动现金流出小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">投资活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">吸收投资所收到的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">借款所收到的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">收到的其他与筹资活动有关的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">筹资活动现金流入小计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">偿还债务所支付的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">分配股利、利润或偿付利息所支付的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">支付的其他与筹资活动有关的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">筹资活动现金流出小计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">筹集活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">汇率变动对现金的影响</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金及现金等价物净增加额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">净利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">计提的资产减值准备</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产拆旧</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">无形资产摊销</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期待摊费用摊销</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">待摊费用减少</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预提费用增加</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处置固定资产无形资产和其他长期资产的损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产报废损失</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务费用</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">投资损失</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">递延税款贷项</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">存货的减少</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营性应收项目的减少</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营性应付项目的增加</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（净利润调节为经营活动现金流量科目下）其他</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">债务转为资本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">一年内到期的可转换公司债券</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">融资租入固定资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（不涉及现金收支的投资和筹资活动科目下）其他</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金的期末余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">现金的期初余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金等价物的期末余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">现金等价物的期初余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金及现金等价物净增加额</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业现金流量表（2007版）信息段
+                    <li>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>企业现金流量表（2007版）段</li>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">销售商品和提供劳务收到的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">收到的税费返还</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">收到其他与经营活动有关的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营活动现金流入小计</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">购买商品、接受劳务支付的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">支付给职工以及为职工支付的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">支付的各项税费</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">支付其他与经营活动有关的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营活动现金流出小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">收回投资所收到的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">取得投资收益所收到的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">处置固定资产无形资产和其他长期资产所收回的现金净额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">处置子公司及其他营业单位收到的现金净额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">收到其他与投资活动有关的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">投资活动现金流入小计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">购建固定资产无形资产和其他长期资产所支付的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">投资所支付的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">取得子公司及其他营业单位支付的现金净额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">支付其他与投资活动有关的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资活动现金流出小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">投资活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">吸收投资收到的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">取得借款收到的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">收到其他与筹资活动有关的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">筹资活动现金流入小计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">偿还债务所支付的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">分配股利、利润或偿付利息所支付的现金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">支付其他与筹资活动有关的现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">筹资活动现金流出小计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">筹集活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">汇率变动对现金及现金等价物的影响</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金及现金等价物净增加额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">期初现金及现金等价物余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">期末现金及现金等价物余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">净利润</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">资产减值准备</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产折旧、油气资产折耗、生产性生物资产折旧</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">无形资产摊销</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期待摊费用摊销</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">待摊费用减少</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预提费用增加</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处置固定资产无形资产和其他长期资产的损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产报废损失</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">公允价值变动损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">财务费用</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">投资损失</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">递延所得税资产减少</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">递延所得税负债增加</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">存货的减少</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营性应收项目的减少</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营性应付项目的增加</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（净利润调节为经营活动现金流量科目下）其他</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营活动产生的现金流量净额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">债务转为资本</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">一年内到期的可转换公司债券</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">融资租入固定资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">现金的期末余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金的期初余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">现金等价物的期末余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金等价物的期初余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">现金及现金等价物净增加额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">（不涉及现金收支的投资和筹资活动科目下）其他</td>
+                <td class="datatd">value</td>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位资产负债表（1997版）信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位资产负债表（1997版）段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">现金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">银行存款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应收票据</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应收账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">预付账款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他应收款</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">材料</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">产成品</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">对外投资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">无形资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">拨出经费</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">拨出专款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">专款支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">事业支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">成本费用</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">销售税金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">上缴上级支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">对附属单位补助</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结转自筹基建</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">支出合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">资产部类总计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">借记款项</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付票据</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付账款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预收账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他应付款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应缴预算款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应缴财政专户款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应交税金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">负债合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">事业基金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">一般基金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">投资基金</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">固定基金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">专用基金</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">事业结余</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">净资产合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">财政补助收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">上级补助收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">拨入专款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">事业收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">附属单位缴款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">收入合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">负债部类总计</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位资产负债表（2013版）信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位资产负债表（2013版）段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">货币资金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">短期投资</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">财政应返还额度</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应收票据</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应收账款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预付账款</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">其他应收款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">存货</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他流动资产</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">流动资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">长期投资</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">固定资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">固定资产原价</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">累计折旧</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">在建工程</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">无形资产</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">无形资产原价</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">累计摊销</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">待处置资产损溢</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">非流动资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">资产总计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">短期借款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应缴税费</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应缴国库款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应缴财政专户款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付职工薪酬</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应付票据</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">应付账款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">预收账款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他应付款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他流动负债</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">流动负债合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">长期借款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">长期应付款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">非流动负债合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">负债合计</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">事业基金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">非流动资产基金</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">专用基金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">财政补助结转</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">财政补助结余</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">非财政补助结转</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">非财政补助结余</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">事业结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营结余</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">净资产合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">负债和净资产总计</td>
+                <td class="datatd">value</td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位收入支出表（1997）版信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位收入支出表（1997）版段</li>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">财政补助收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">上级补助收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">附属单位缴款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">事业收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">预算外资金收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">事业收入小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营收入小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">拨入专款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">拨入专款小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">收入总计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">拨出经费</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">上缴上级支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">对附属单位补助</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">事业支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">财政补助支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">预算外资金支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">销售税金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结转自筹基建</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">事业支出小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">销售税金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营支出小计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">拨出专款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">专款支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">专款小计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">支出总计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">事业结余</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">正常收入结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">收回以前年度事业支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">以前年度经营亏损</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结余分配</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应交所得税</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">提取专用基金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">转入事业基金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">其他结余分配</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位收入支出表（2013）版信息单元</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">财务报表编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">报表类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报表类型细分</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>事业单位收入支出表（2013）版段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">本期财政补助结转结余</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">财政补助收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">事业支出（财政补助支出）</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">本期事业结转结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">事业类收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">事业收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">上级补助收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">附属单位上缴收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">（其他收入科目下）捐赠收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">事业类支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">事业支出（非财政补助支出）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">上缴上级支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">对附属单位补助支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他支出</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">本期经营结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">经营收入</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">经营支出</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">弥补以前年度亏损后的经营结余</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">本年非财政补助结转结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">非财政补助结转</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">本年非财政补助结余</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">应缴企业所得税</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">提取专用基金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">转入事业基金</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">评级信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">评级信息编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">评级机构名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">评级日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">评级结果</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">声明及标注信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">对象类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">对象标识</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">标注或声明内容</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">添加日期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <input id="printBtn" type="button" value="打印" onclick="printRpt();" style="font-size:14px"/>
+</div>
+</body>
+
+</html>

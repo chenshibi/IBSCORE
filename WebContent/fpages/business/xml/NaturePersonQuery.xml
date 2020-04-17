@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" desc="批量下载-外汇账户内结汇—基础信息" 
+		url="/trans/qryExp.do"  perfetch="50" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="name" desc="姓名" edittype="text" datatype="string"
+			method="None" readonly="false" size="60" status="F" default="" require="true"
+			xpath="/name" />
+
+		<Field id="individualId" desc="证件号码" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" require="true"
+			default="" xpath="/individualId" />
+			
+		<Field id="individualIdType" desc="证件类型" status="N"  require="true"
+              readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+              translated="DATA_DIC.5512" xpath="/individualIdType"/>	
+		<Field id="nonConsentFilePath" desc="非工作时间上传路径" edittype="text" datatype="string" 
+			method="None" readonly="false" size="400" status="F" 
+			default="" xpath="/nonConsentFilePath" />	
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+	<Button id="btSubmitSave" name="btSubmitSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.NaturePersonQueryUpdate"
+			url="" txn="" show="" group="" />
+    <Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.NaturePersonQueryEmergencyUpdate"
+			url="" txn="" show="" group="" />
+	<Button id="uploadFile" name="UploadFile" desc="上传主管批复文件" operation=""
+			updateClass="#"
+			url="" txn="" show="" group="" />
+			
+	
+	</Operations>
+</CommQry>

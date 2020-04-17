@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="文件上传功能" navigate="文件上传功能"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.FileGroupUploadGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		 
+		<Field id="fileType" desc="文件类型" require="false" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.701"
+			status="F" default="" xpath="fileType" tip="文件类型" />  
+			
+			
+		<Field id="sgement" desc="Sgement" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.7021"
+			status="F" default="" xpath="sgement" tip="Sgement" />  
+			
+		<Field id="product" desc="Product" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.7031"
+			status="F" default="" xpath="product" tip="Product" />  
+			
+		<Field id="scope" desc="Scope" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.704"
+			status="F" default="" xpath="scope" tip="Scope" />  
+				
+		<Field id="effectiveDate" desc="Effective Date" edittype="text" datatype="date"
+			method="None" readonly="false" size="10" status="F" default=""   require="true"
+			xpath="/effectiveDate" />
+			
+		<Field id="expireDate" desc="Expire Date" edittype="text" datatype="date"
+			method="None" readonly="false" size="10" status="F" default="" require="false"
+			xpath="/expireDate" />
+		
+			
+			
+		<Field id="flag" desc="Expire Flag" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.705"
+			status="F" default="" xpath="flag" tip="Expire Flag" />  
+			
+			
+		<Field id="note" desc="note" status="N" require="false"
+			readonly="false" primary="true" type="String" size="120"
+			xpath="note" />	
+			
+		<Field id="name" desc="File Name" status="N" require="true"
+			readonly="false" primary="true" type="String" size="60"
+			xpath="name" />	
+
+	 
+		
+
+	</Fields>
+	<Operations>
+		<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="#"
+			url="#" txn="" />
+	</Operations>
+</CommQry>

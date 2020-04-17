@@ -1,0 +1,153 @@
+body {
+	font-size: 9pt;
+	font-family: "宋体","Tahoma","Arial";
+	border-top-width: 0Px; 
+	padding-right: 0Px; 
+	padding-left: 0Px; 
+	border-left-width: 0Px; 
+	border-bottom-width: 0Px; 
+	border-right-width: 0Px;
+	SCROLLBAR-FACE-COLOR: #cbcbcb; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #f5f9ff; 
+	SCROLLBAR-SHADOW-COLOR: #828282;
+	SCROLLBAR-3DLIGHT-COLOR: #828282; 
+	SCROLLBAR-ARROW-COLOR: #797979; 
+	SCROLLBAR-TRACK-COLOR: #DBDBDB; 
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+
+P { text-indent: 2em }
+input			{font-size: 9pt; color: #333333;}
+
+/* links style */
+A.leftmenu:link 	{color: #034792; text-decoration: none;}
+A.leftmenu:hover 	{color: #034792; text-decoration: none;}
+A.leftmenu:visited 	{color: #034792; text-decoration: none;}
+
+A.tle:link 		{font-size: 10.5pt;color: #FF7E00; text-decoration: underline;}
+A.tle:hover 		{font-size: 10.5pt;color: #FF7E00; text-decoration: none;}
+A.tle:visited 		{font-size: 10.5pt;color: #FF7E00; text-decoration: underline;}
+
+A:link			{color: #024BB7; text-decoration: none;}
+A:visited 		{color: #024BB7; text-decoration: none;}
+A:hover 		{color: #FF0000; text-decoration: none;}
+
+A.news:link		{ color: #666666; text-decoration: underline ; font-size: 9pt; }
+A.news:visited		{ color: #666666; text-decoration: underline ; font-size: 9pt; }
+A.news:hover		{ color: #666666; text-decoration: none ; font-size: 9pt; }
+
+/* font style */
+.f9gray 		{font-size: 9pt; color: #666666;}
+.f9orange 		{font-size: 9pt; color: #FF6000;; font-weight: bold}
+.f9boldgray	 	{font-size: 9pt;color: #666666; font-weight: bold;}
+.f11gray 		{font-size: 10.5pt; color: #666666;}
+.f11orange 		{font-size: 10.5pt; color: #FF6000;; font-weight: bold}
+.f11boldblue 	{font-size: 10.5pt; color: #003870; font-weight: bold;}
+
+.title1 		{font-size: 13.5pt; color: #000000; font-weight: bold; font-family:"宋体","Tahoma","Arial";}
+.title2			{font-size: 11.5pt; color: #FF6000; font-weight: bold; font-family:"宋体","Tahoma","Arial";}
+.title3			{font-size: 9pt; color: #666666; font-weight: bold; font-family:"宋体","Tahoma","Arial";}
+.info			{font-size: 9pt; color: #B75B01; font-weight: bold; font-family:"宋体","Tahoma","Arial";}
+.errors 		{font-size: 9pt; color: #FF6000; font-weight: normal; font-family:"宋体","Tahoma","Arial";}
+.normal			{font-size: 9pt; font-weight: normal; font-family:"宋体","Tahoma","Arial";}
+
+.loginInput { color: #FFFFFF; font-family: "宋体","Tahoma","Arial"; font-size: 11.5pt; border-right: 3px; border-top: 3px; border-left: 3px; border-bottom: 3px; background: url(../images/bg_input.gif); width: 103px; height: 19px}
+.loginPasswd { color: #FFFFFF; font-family: "宋体","Tahoma","Arial"; font-size: 6pt; padding-top: 5px; border-right: 3px; border-top: 3px; border-left: 3px; border-bottom: 3px; background: url(../images/bg_input.gif); width: 103px; height: 19px}
+.loginButton { color: #FFFFFF; font-family: "宋体","Tahoma","Arial"; font-size: 10.5pt; padding-top: 3px; border-right: 3px; border-top: 3px; border-left: 3px; border-bottom: 3px; background: url(../images/bg_button.gif); width: 77px; height: 21px; cursor: hand}
+.loginTitle	{font-size: 10.5pt; color: #FFFFFF; font-family:"宋体","Tahoma","Arial"; padding-top: 4px;}
+.amountInput {text-align: right; font-family: "宋体","Tahoma","Arial"}
+
+.location {
+	font-size: 9pt;
+	font-family: "宋体","Tahoma","Arial";	
+	line-height:13pt;
+	height:20;
+}
+.table-class {
+	border-collapse:collapse;
+	border-color:#999999;
+	border-width: 1px;
+	border-style: solid;
+}
+.table-title {
+	/*background-image: url(../images/table-title.gif);
+	background-repeat: repeat-y;*/
+	font-size: 9pt;
+	font-weight:bold;
+	font-family: "宋体","Tahoma","Arial";
+	vertical-align: middle;
+	background-color: #C9C9C9;
+	border-collapse:collapse;
+}
+.error-table-title {
+	/*background-image: url(../images/table-title.gif);
+	background-repeat: repeat-y;*/
+	color:#FFFFFF;
+	font-size: 9pt;
+	font-weight:bold;
+	font-family: "宋体","Tahoma","Arial";
+	vertical-align: middle;
+	background-color: #777777;
+	border-collapse:collapse;
+}
+.trTitle {	
+	font-size: 9pt;
+	font-weight:bold;
+	font-family: "宋体","Tahoma","Arial";
+	vertical-align: middle;
+	background-color: #C9C9C9;
+	border-collapse:collapse;
+}
+
+.trValue {
+	font-size: 9pt;
+	font-family: "宋体","Tahoma","Arial";
+	vertical-align: middle;
+	border: #9babbb 1pt solid;
+	border-collapse:collapse;
+}
+.trValueHot {
+	font-size: 9pt;
+	font-family: "宋体","Tahoma","Arial";
+	vertical-align: middle;
+	border: #9babbb 1pt solid;
+	border-collapse:collapse;
+	background-color:#D9D9D9;
+}
+.tdTitle {
+	font-size: 9pt;	
+	font-family: "宋体","Tahoma","Arial";
+	line-height:13pt;
+	border-collapse:collapse;
+	background-color:#D9D9D9;
+}
+.tdValue {
+	font-size: 9pt;
+	font-family: "宋体","Tahoma","Arial";	
+	line-height:13pt;
+	border-collapse:collapse;
+}
+.tdValueHot {
+	font-size: 9pt;
+	font-family: "宋体","Tahoma","Arial";	
+	line-height:13pt;
+	border-collapse:collapse;
+	background-color:#D9D9D9;
+}
+.tabTitle {	
+	font-size: 9pt;
+	font-weight:bold;
+	font-family: "宋体","Tahoma","Arial";
+	vertical-align: middle;
+}
+.cal
+{  border: #7F9DB9;
+ border-style: solid; 
+ border-top-width: 1px; 
+ border-right-width: 1px;
+  border-bottom-width: 1px; 
+  border-left-width: 1px;
+  background-color: #FFFFFF;
+  font-size:9pt;
+  font-color:
+  }

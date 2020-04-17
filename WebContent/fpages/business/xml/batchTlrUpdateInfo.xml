@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="用户信息更新查询" navigate="用户信息更新查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.batchTlrUpdateInfoQueryGetter">
+	<Include id="BankParam" />
+	<!-- <PageQryExp type="XLS" limit="true" encoding="GBK" desc="批量下载-外汇账户内结汇—基础信息" 
+		url="/trans/qryExp.do"  perfetch="50" /> -->
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		
+		 <Field id="opr" desc="操作" status="N" method="None" xpath=""
+               primary="true" type="" size="20" default="" tip="操作" require=""/>
+         
+         <Field id="countid" desc="笔数" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/countid" />
+		<Field id="id" desc="id" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/id" />
+				
+		<Field id="batchId" desc="批次号" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/batchId" />	
+		<Field id="userId" desc="操作员号" status="N"  method="None" readonly="true" 
+			primary="true" type="String" size="20" xpath="/userId" default="false"  />
+		
+		<Field id="city" desc="城市" require="" status="F"
+			method="None" width="" primary="false" type="String" size="20"
+			xpath="/city" default="" />
+		<Field id="region" desc="区域" require="" status="F"
+			method="None" width="" primary="false" type="String" size="150"
+			xpath="/region" default="" />
+			
+		<Field id="status" desc="状态" edittype="select" datatype="string" translated=""
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/status" />
+			
+		<Field id="inputTime" desc="创建时间" placeholder="yyyy-MM-dd HH:mm:ss"
+			edittype="timestamp" datatype="timestamp"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/inputTime" />	
+			
+		<Field id="createUser" desc="操作员" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/createUser" />
+			
+	</Fields>
+	
+	<Where>
+		<DateTextBox id="startDate" desc="开始日期" tip="startDate"
+			require="false" status="F" datatype="date" method="None" size="150"
+			width="" primary="false" index="1" type="String" />
+		<DateTextBox id="endDate" desc="结束日期" tip="endDate" require="false"
+			status="F" datatype="date" method="None" size="150" width="" primary="false"
+			index="2" type="String" />
+	</Where>
+	
+	
+	<Operations>
+	</Operations>
+</CommQry>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="IbsPerCreditSum" table="IBS_PER_CREDIT_SUM" >
+        <meta attribute="sync-DAO">false</meta>
+           <id
+			name="xh"
+			type="string"
+			column="报表序号"
+		>
+		</id>
+       <property name="dbrxm" column="担保人姓名" type="string" not-null="false" length="30" />
+     <!--    <property name="xh" column="报表序号
+        " type="string" not-null="false" length="50" /> -->
+        <property name="cxrq" column="查询日期" type="string" not-null="false" length="50" />
+        <property name="sfbh" column="是否白户" type="string" not-null="false" length="50" />
+        <property name="ywyq" column="有无逾期" type="string" not-null="false" length="50" />
+        <property name="yqje" column="逾期金额" type="string" not-null="false" length="50" />
+        <property name="bgbm" column="报告编码" type="string" not-null="false" length="50" />
+        <property name="idcard" column="身份证号码_前三位_后六位" type="string" not-null="false" length="50" />
+        <property name="fmxx" column="负面信息" type="string" not-null="false" length="50" />
+        <property name="dkrzxlb" column="贷款人征信类别" type="string" not-null="false" length="50" />
+        <property name="zxfxdwz" column="征信分相对位置" type="string" not-null="false" length="50" />
+        <property name="findthree" column="近3月查询次数" type="int" not-null="false" length="50" />
+        <property name="findsix" column="近6月查询次数" type="int" not-null="false" length="50" />
+        <property name="findtwelve" column="近12月查询次数" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkbs" column="当前个人住房贷款笔数" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkjgs" column="当前个人住房贷款机构数" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkzfke" column="当前个人住房贷款总放款额" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkzye" column="当前个人住房贷款总余额" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkyyhk" column="当前个人住房贷款月应还款" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkyshk" column="当前个人住房贷款月实还款" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkyqbs" column="当前个人住房贷款逾期笔数" type="int" not-null="false" length="50" />
+        <property name="dqgrzfdkyqje" column="当前个人住房贷款逾期金额" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkbs" column="当前个人经营性贷款笔数" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkjgs" column="当前个人经营性贷款机构数" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkzfke" column="当前个人经营性贷款总放款额" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkzye" column="当前个人经营性贷款总余额" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkyyhk" column="当前个人经营性贷款月应还款" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkyshk" column="当前个人经营性贷款月实还款" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkyqbs" column="当前个人经营性贷款逾期笔数" type="int" not-null="false" length="50" />
+        <property name="dqgrjyxdkyqje" column="当前个人经营性贷款逾期金额" type="int" not-null="false" length="50" />
+        <property name="dqqtdkbs" column="当前其他贷款笔数" type="int" not-null="false" length="50" />
+        <property name="dqqtdkjgs" column="当前其他贷款机构数" type="int" not-null="false" length="50" />
+        <property name="dqqtdkzfke" column="当前其他贷款总放款额" type="int" not-null="false" length="50" />
+        <property name="dqqtdkzye" column="当前其他贷款总余额" type="int" not-null="false" length="50" />
+        <property name="dqqtdkyyhk" column="当前其他贷款月应还款" type="int" not-null="false" length="50" />
+        <property name="dqqtdkyshk" column="当前其他贷款月实还款" type="int" not-null="false" length="50" />
+        <property name="dqqtdkyqbs" column="当前其他贷款逾期笔数" type="int" not-null="false" length="50" />
+        <property name="dqqtdkyqje" column="当前其他贷款逾期金额" type="int" not-null="false" length="50" />       
+        <property name="dqdjkzhs" column="当前贷记卡账户数" type="int" not-null="false" length="50" />
+        <property name="dqdjkjgs" column="当前贷记卡机构数" type="int" not-null="false" length="50" />
+        <property name="dqdjkzed" column="当前贷记卡总额度" type="int" not-null="false" length="50" />
+        <property name="dqxykyhke" column="当前信用卡应还款额" type="int" not-null="false" length="50" />
+        <property name="dqydyhk" column="当前月度应还款" type="int" not-null="false" length="50" />
+        <property name="dqydshk" column="当前月度实还款" type="int" not-null="false" length="50" />
+        <property name="halfyearout3160times" column="近半年逾期31_60次数" type="int" not-null="false" length="50" />
+        <property name="halfyearout3160money" column="近半年逾期31_60金额" type="int" not-null="false" length="50" />
+        <property name="oneyearout60times" column="近一年逾期60天以上次数" type="int" not-null="false" length="50" />
+        <property name="oneyearout60money" column="近一年逾期60天以上金额" type="int" not-null="false" length="50" />
+        <property name="jlnhxbs" column="近两年核销笔数" type="string" not-null="false" length="50" />
+        <property name="jlnhxje" column="近两年核销金额" type="string" not-null="false" length="50" />
+        <property name="tue" column="TUE" type="string" not-null="false" length="30" />
+        <property name="dsr" column="DSR" type="string" not-null="false" length="30" />
+        <property name="wc" column="WC" type="string" not-null="false" length="30" />
+        <property name="totalBankLimit" column="Total_Bank_Limit" type="string" not-null="false" length="30" />    
+    </class>
+</hibernate-mapping>

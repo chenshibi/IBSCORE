@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="企业征信查询结果报告头" navigate="企业征信查询结果报告头  &gt; 企业征信查询结果报告头" type="call"
+         interface="true" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do"
+         getterclassname="com.huateng.report.pboc.getter.CrComEaaGetter">
+    <Include id="BankParam"/>
+    <ResultViewParam>
+        /fpages/crms/ftl/CrComEaa.ftl
+    </ResultViewParam>
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-企业征信查询结果报告头"/>
+
+    <Fields>
+        <!-- 企业征信查询结果报告头 -->
+        <Field id="id" desc="序号" tip="id"  require="true"
+               edittype="text" datatype="String" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/id"/>
+        <Field id="ea01ai01" desc="报告编号" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="22" status="N" default="" xpath="/ea01ai01"/>
+        <Field id="ea01ar01" desc="报告生成时间" require="true" edittype="text"
+               size="19" datatype="string" status="A" xpath="/ea01ar01"/>
+        <Field id="ea01bi01" desc="查询机构代码" require="true" edittype="text" size="18"
+               datatype="string" status="A" xpath="/ea01bi01"/>
+        <Field id="ea01bd02" desc="查询原因" require="true" edittype="text" size="2" datatype="string" status="A" xpath="/ea01bd02"/>
+        <Field id="ea01cq01" desc="企业名称" require="true" size="80" edittype="text" datatype="string" status="F" xpath="/ea01cq01"/>
+        <Field id="ea01cs01" desc="企业身份标识个数" tip="企业身份标识个数" status="F" require="" edittype="text" datatype="string" method="None"
+          readonly="" primary="true" size="3" default="" xpath="/ea01cs01"/>
+        <Field id="ea01ds01" desc="异议标注数目" tip="异议标注数目" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="3" default="" xpath="/ea01ds01"/>
+        <Field id="ea01eq01" desc="美元折人民币汇率" tip="美元折人民币汇率" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="6" default="" xpath="/ea01eq01"/>
+        <Field id="ea01er01" desc="汇率有效日期" tip="汇率有效日期" status="F" require=""
+               edittype="text" datatype="date" method="None" readonly="" primary="true"
+               size="7" default="" xpath="/ea01er01"/>
+        <Field id="createUser" desc="创建人" tip="创建人" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/createUser"/>
+        <Field id="createTime" desc="创建时间" tip="创建时间" status="F"
+               require="" edittype="text" datatype="string" method="None" readonly=""
+               primary="" size="14" default="" xpath="/createTime"/>
+        <Field id="checkUser" desc="审核人" tip="审核人" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/checkUser"/>
+        <Field id="checkTime" desc="审核时间" tip="审核时间" status="F"
+               require="" edittype="text" datatype="string" method="None" readonly=""
+               primary="" size="14" default="" xpath="/checkTime"/>
+        <Field id="sendTime" desc="发送时间" tip="发送时间" status="F"
+               require="" edittype="text" datatype="string" method="None" readonly=""
+               primary="" size="14" default="" xpath="/sendTime"/>
+        <Field id="respTime" desc="返回时间" tip="返回时间" status="F"
+               require="" edittype="text" datatype="string" method="None" readonly=""
+               primary="" size="14" default="" xpath="/respTime"/>
+        <Field id="status" desc="记录状态" tip="记录状态" status="F" translated="LIST:00,未查;03,查询成功;04,查询失败;"
+               require="" edittype="select" datatype="string" method="None" readonly=""
+               primary="true" size="2" default="" xpath="/status"/>
+    </Fields>
+</CommQry>

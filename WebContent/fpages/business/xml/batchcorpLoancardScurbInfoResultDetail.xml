@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.batchcorpLoancardScurbInfoResultDetailGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		
+		<Field id="id" desc="id" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/id" />
+			
+		<Field id="appId" desc="appId" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/appId" />
+				
+		<Field id="batchId" desc="批次号" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/batchId" />	
+			
+		<Field id="createUser" desc="操作员" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/createUser" />
+	
+		<Field id="inquiryValue" desc="查询值" require="" edittype="select"
+			datatype="string" method="None" size="3" translated=""
+			status="F" default="" xpath="/inquiryValue" tip="状态" />  
+		<Field id="inputTime" desc="创建时间" placeholder="yyyy-MM-dd HH:mm:ss"
+			edittype="timestamp" datatype="timestamp"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/inputTime" />	
+			
+		<Field id="returnTime" desc="返回时间" placeholder="yyyy-MM-dd HH:mm:ss"
+			edittype="timestamp" datatype="timestamp"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/returnTime" />
+			
+		<Field id="inquiryType" desc="查询类型" require="" edittype="select"
+			datatype="string" method="None" size="3" translated="DATA_DIC.9001"
+			status="F" default="" xpath="/inquiryType" tip="查询类型" />  
+		<Field id="status" desc="状态" require="" edittype="select"
+			datatype="string" method="None" size="3" translated="DATA_DIC.505"
+			status="F" default="" xpath="/status" tip="状态" />  
+		<Field id="checkNoPass" desc="校验不通过" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="checkNoPass" />	
+			<Field id="queryDefeat" desc="查询失败" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="queryDefeat" />	
+		<Field id="query" desc="正查询" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="query" />	
+			
+		<Field id="querySuccess" desc="查询成功" edittype="text" datatype="string" 
+			method="None" readonly="true" size="50" status="F" 
+			default="" xpath="querySuccess" />		
+			
+	</Fields>
+	
+	<Where>
+		<DateTextBox id="startDate" desc="开始日期" tip="startDate"
+			require="false" status="F" datatype="date" method="None" size="150"
+			width="" primary="false" index="1" type="String" />
+		<DateTextBox id="endDate" desc="结束日期" tip="endDate" require="false"
+			status="F" datatype="date" method="None" size="150" width="" primary="false"
+			index="2" type="String" />
+		<TextBox id="batchId" type="String"  size="8" 
+			desc="用户ID" tip="batchId" index="3" />
+		
+	</Where>
+	
+	
+	<Operations>
+		 <Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/business/ftl/batchcorpLoancardScurbInfoResult.ftl" txn="" />
+	</Operations>
+</CommQry>

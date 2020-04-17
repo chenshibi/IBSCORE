@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrPbocD502" table="CR_PBOC_D502" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid" />
+        </id>
+
+        <property name="fileStartFlag" column="FILE_START_FLAG" type="string" not-null="false" length="1" />
+        <property name="fileVersion" column="FILE_VERSION" type="string" not-null="false" length="5" />
+        <property name="originalSendFileName" column="ORIGINAL_SEND_FILE_NAME" type="string" not-null="false" length="29" />
+        <property name="feedbackFlag" column="FEEDBACK_FLAG" type="string" not-null="false" length="1" />
+        <property name="fileGenTime" column="FILE_GEN_TIME" type="string" not-null="false" length="14" />
+        <property name="fileType" column="FILE_TYPE" type="string" not-null="false" length="4" />
+        <property name="qrySuccNum" column="QRY_SUCC_NUM" type="string" not-null="false" length="5"/>
+        <property name="qryFailNum" column="QRY_FAIL_NUM" type="string" not-null="false" length="5"/>
+        <property name="fileRsv" column="FILE_RSV" type="string" not-null="false" length="8" />
+        <property name="requestid" column="REQUESTID" type="string" not-null="false" length="5"/>
+        <property name="originateOrgCode" column="ORIGINATE_ORG_CODE" type="string" not-null="false" length="14" />
+        <property name="originateUserCode" column="ORIGINATE_USER_CODE" type="string" not-null="false" length="64" />
+        <property name="name" column="NAME" type="string" not-null="false" length="30" />
+        <property name="idType" column="ID_TYPE" type="string" not-null="false" length="2" />
+        <property name="idNum" column="ID_NUM" type="string" not-null="false" length="32" />
+        <property name="queryReason" column="QUERY_REASON" type="string" not-null="false" length="2" />
+        <property name="serviceCode" column="SERVICE_CODE" type="string" not-null="false" length="100" />
+        <property name="resultCode" column="RESULT_CODE" type="string" not-null="false" length="6" />
+        <property name="resultDesc" column="RESULT_DESC" type="string" not-null="false" length="100" />
+        <property name="reportName" column="REPORT_NAME" type="string" not-null="false" length="27" />
+        <property name="reportMessagePath" column="REPORT_MESSAGE_PATH" type="string" not-null="false" length="256" />
+        <property name="recordStatus" column="RECORD_STATUS" type="string" not-null="false" length="2" />
+        <property name="receiptTime" column="RECEIPT_TIME" type="string" not-null="false" length="14" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+    </class>
+</hibernate-mapping>

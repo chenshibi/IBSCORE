@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="TableInfo"
+		table="TB_TABLEINFO"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="TableInfoPk">
+			<key-property
+				name="tableName"
+				column="TABLE_NAME"
+				type="string"
+			/>
+			<key-property
+				name="comments"
+				column="COMMENTS"
+				type="string"
+			/>
+		</composite-id>
+		<property
+			name="columnName"
+			column="COLUMN_NAME"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+		<property
+			name="dataType"
+			column="DATA_TYPE"
+			type="string"
+			not-null="true"
+			length="80"
+		/>
+		<property
+			name="dataLength"
+			column="DATA_LENGTH"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		<property
+			name="className"
+			column="CLASS_NAME"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		<property
+			name="ordnum"
+			column="ORDNUM"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>		
+		<property
+			name="attributeName"
+			column="ATTRIBUTE_NAME"
+			type="string"
+			not-null="false"
+			length="1000"
+		/>
+		<property
+			name="dataDic"
+			column="DATA_DIC"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="twoSeven"
+			column="TWO_SEVEN"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		
+		<property
+			name="isNotPk"
+			column="IS_NOT_PK"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+
+	</class>
+</hibernate-mapping>

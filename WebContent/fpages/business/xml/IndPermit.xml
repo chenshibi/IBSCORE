@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndPermitGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="" />
+		<Field id="name" desc="姓名" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="60" status="F" 
+			default="" xpath="/name" />
+			
+		<Field id="individualId" desc="证件号码" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="N" require="true" default="" 
+			primary="true" xpath="/individualId" />
+			
+		<Field id="id" desc="id" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="N" require="true" default="" 
+			primary="true" xpath="/id" />
+        <Field id="idType" desc="证件类型" require="true" edittype="select"  
+			datatype="string" method="None" size="2" translated="DATA_DIC.5511"
+			status="F" default="" xpath="/idType" tip="证件类型" />   
+		<Field id="customerConUp" desc="查询授权书路径" edittype="text" datatype="string"
+			method="None" readonly="false" size="500" status="F" require="true"
+			default="" xpath="/customerConUp" />
+			<Field id="customerConUp2" desc="查询授权书路径2" edittype="text" datatype="string"
+			method="None" readonly="false" size="500" status="F" require="true"
+			default="" xpath="/customerConUp2" />
+		<Field id="createUser" desc="录入员" edittype="text" datatype="string"
+			method="None" readonly="false" size="200" status="F" require="true"
+			default="" xpath="/createUser" />
+			
+		<Field id="inputTime" desc="录入时间" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/inputTime" />
+		<Field id="expireDate" desc="过期日期" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default=""
+			xpath="/expireDate" />
+			
+		<Field id="approveTime" desc="授权时间" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/approveTime" />
+		
+		<Field id="status" desc="状态" require="" edittype="select"
+			datatype="string" method="None" size="3" translated="DATA_DIC.600"
+			status="F" default="" xpath="/status" tip="状态" />  
+
+	</Fields>
+	<Where>
+		<TextBox id="qindividualId" type="String"  size="20" 
+			desc="证件号码" tip="证件号码" index="0" />
+		<TextBox id="qname" type="String"  size="60" 
+			desc="姓名" tip="姓名" index="1" />
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>

@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="Bctl"
+		table="BCTL"
+		lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="brcode"
+			type="string"
+			column="BRCODE"
+		>
+			<generator class="assigned"/>
+		</id>
+
+		<property
+			name="brno"
+			column="BRNO"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<property
+			name="brname"
+			column="BRNAME"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="brclass"
+			column="BRCLASS"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="brattr"
+			column="BRATTR"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="blnBranchClass"
+			column="BLN_BRANCH_CLASS"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="blnBranchBrcode"
+			column="BLN_BRANCH_BRCODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="blnManageBrcode"
+			column="BLN_MANAGE_BRCODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="blnUpBrcode"
+			column="BLN_UP_BRCODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="txnBrcode"
+			column="TXN_BRCODE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="authlvl"
+			column="AUTHLVL"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="linkman"
+			column="LINKMAN"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="teleno"
+			column="TELENO"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="address"
+			column="ADDRESS"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="postno"
+			column="POSTNO"
+			type="string"
+			not-null="false"
+			length="6"
+		/>
+		<property
+			name="otherAreaFlag"
+			column="OTHER_AREA_FLAG"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="regionalism"
+			column="REGIONALISM"
+			type="string"
+			not-null="false"
+			length="6"
+		/>
+		<property
+			name="financeCode"
+			column="FINANCE_CODE"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="status"
+			column="STATUS"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="miscflgs"
+			column="MISCFLGS"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="misc"
+			column="MISC"
+			type="string"
+			not-null="false"
+			length="256"
+		/>
+		<property
+			name="lastUpdTlr"
+			column="LAST_UPD_TLR"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="lastUpdFunc"
+			column="LAST_UPD_FUNC"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="lastUpdDate"
+			column="LAST_UPD_DATE"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="timestamps"
+			column="TIMESTAMPS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+		<!-- lilinfeng add start  -->
+		<property column="BRTYPE" length="1" name="brtype" not-null="false" type="string"
+			unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+
+		<property column="BILL_MAIL_ADDR" length="1" name="billMailAddr" not-null="false"
+		  	type="string" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+
+		<property column="ACCUM_FUND_EXCHNO" length="6" name="accumFundExchno" not-null="false"
+			type="string" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+
+      	<property column="ACCUM_FUND_BRID" length="3" name="accumFundBrid" not-null="false"
+      		type="string" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+
+      	<property column="EFFECT_DATE" length="8" name="effectDate" not-null="false" type="string"
+      		unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+
+    	<property column="EXPIRE_DATE" length="8" name="expireDate" not-null="false" type="string"
+    		unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+
+    	<!-- lilinfeng add end  -->
+
+		<property
+			name="st"
+			column="ST"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="lock"
+			column="IS_LOCK"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="del"
+			column="IS_DEL"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="isFp"
+			column="is_fp"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="ssfrh"
+			column="ssfrh"
+			type="string"
+			not-null="false"
+			length="17"
+		/>
+		<property
+            name="cnapsCode"
+            column="CNAPS_CODE"
+            type="string"
+            not-null="false"
+            length="14"
+        />
+	</class>
+</hibernate-mapping>

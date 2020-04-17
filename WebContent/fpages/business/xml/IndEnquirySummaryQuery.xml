@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndEnquirySummaryQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="loanApproveOrgL1m" desc="最近1个月内的查询机构数贷款审批" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/loanApproveOrgL1m" />
+			
+		<Field id="ccApproveOrgL1m" desc="最近1个月内的查询机构数信用卡审批" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/ccApproveOrgL1m" />
+
+		<Field id="loanApproveL1m" desc="最近1个月内的查询次数贷款审批" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/loanApproveL1m" />
+			
+		<Field id="ccApproveL1m" desc="最近1个月内的查询次数信用卡审批" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/ccApproveL1m" />
+			
+		<Field id="loanManageL2y" desc="最近2年内的查询次数贷后管理" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/loanManageL2y" />
+			
+		<Field id="assuranceCheckL2y" desc="最近2年内的查询次数担保资格审查" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/assuranceCheckL2y" />
+			
+		<Field id="realNameCheckL2y" desc="最近2年内的查询次数特约商户实名审查" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/realNameCheckL2y" />
+		
+		<Field id="selfL1m" desc="最近1个月内的查询次数本人查询" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/selfL1m" />
+			
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

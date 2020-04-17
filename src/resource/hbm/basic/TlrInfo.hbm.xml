@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class name="TlrInfo" table="TLR_INFO" lazy="false">
+		<meta attribute="sync-DAO">false</meta>
+
+		<id name="tlrno" column="TLRNO" type="string">
+		<generator class="assigned"/>
+		</id>
+
+		<property name="extTlrno" column="EXT_TLRNO" type="string" not-null="false" length="20" unique="false" optimistic-lock="true" lazy="false" generated="never"/>
+		<property name="tlrName" column="TLR_NAME" type="string" not-null="false" length="30"/>
+		<property name="tlrType" column="TLR_TYPE" type="string" not-null="false" length="1"/>
+		<property name="agentType" column="AGENT_TYPE" type="string" not-null="false" length="1"/>
+		<property name="brcode" column="BRCODE" type="string" not-null="false" length="4"/>
+		<property name="password" column="PASSWORD" type="string" not-null="false" length="50"/>
+		<property name="status" column="STATUS" type="string" not-null="false" length="1"/>
+		<property name="chekDpwdFlg" column="CHEK_DPWD_FLG" type="string" not-null="false" length="1"/>
+		<property name="lastaccesstm" column="LASTACCESSTM" type="string" not-null="false" length="14"/>
+		<property name="roleid" column="ROLEID" type="string" not-null="false" length="32"/>
+		<property name="pswderrcnt" column="PSWDERRCNT" type="integer" not-null="false" length="22"/>
+		<property name="totpswderrcnt" column="TOTPSWDERRCNT" type="integer" not-null="false" length="22"/>
+		<property name="pswderrdate" column="PSWDERRDATE" type="string" not-null="false" length="8"/>
+		<property name="lastlogouttm" column="LASTLOGOUTTM" type="string" not-null="false" length="14"/>
+		<property name="loginIp" column="LOGIN_IP" type="string" not-null="false" length="20"/>
+		<property name="passwdenc" column="PASSWDENC" type="string" not-null="false" length="10"/>
+		<property name="failmaxlogin" column="FAILMAXLOGIN" type="integer" not-null="false" length="22"/>
+		<property name="passwdchginterval" column="PASSWDCHGINTERVAL" type="integer" not-null="false" length="22"/>
+		<property name="passwdwarninterval" column="PASSWDWARNINTERVAL" type="integer" not-null="false" length="22"/>
+		<property name="sessionId" column="SESSION_ID" type="string" not-null="false" length="256"/>
+		<property name="msrno" column="MSRNO" type="integer" not-null="false" length="22"/>
+		<property name="flag" column="FLAG" type="string" not-null="false"/>
+		<property name="createDate" column="CREATE_DATE" type="string" not-null="false" length="8"/>
+		<property name="lastUpdOperId" column="LAST_UPD_OPER_ID" type="string" not-null="false" length="20"/>
+		<property name="lastUpdTime" column="LAST_UPD_TIME" type="string" not-null="false" length="14"/>
+
+		<!-- lilinfeng add start -->
+		<property name="effectDate" column="EFFECT_DATE" type="string" not-null="false" length="8"/>
+		<property name="expireDate" column="EXPIRE_DATE" type="string" not-null="false" length="8"/>
+		
+		<property name="misc" column="MISC" type="string" not-null="false" length="30"/>
+		<property name="IdNumber" column="IDNumber" type="string" not-null="false" length="18"/>
+		<!-- lilinfeng add end -->
+
+		<!-- add by zhaozhiguo 2011-6-20 BMS-3153  添加上次密码输入错误时间和错误次数 begin -->
+		<property name="lastPwdUpdTime" type="java.lang.String">
+			<column name="LASTPWDCHGTM" length="14" />
+		</property>
+
+		<property name="lastfailedtm" column="LASTFAILEDTM" type="string" not-null="false" length="14" />
+		<property name="isLock" column="IS_LOCK" type="string" not-null="false" length="1" />
+		<property name="lockReason" column="LOCK_REASON" type="string" not-null="false" length="200" />
+		<!-- add by zhaozhiguo 2011-6-20  BMS-3153 添加上次密码输入错误时间和错误次数 end -->
+		<!-- add by zhiyang.he 修改锁定状态 2012-09-6 begin-->
+		<property name="isLockModify" column="IS_LOCK_MODIFY" type="string" length="1" not-null="false"/>
+		<property name="st" column="ST" type="string" length="1" not-null="false"/>
+		<property name="crtDt" column="CRT_DT" type="string" not-null="false" length="8"/>
+		<property name="lastUpdOper" column="LAST_UPD_OPER" type="string" not-null="false" length="20"/>
+		<property name="lastUpdTms" column="LAST_UPD_TMS" type="string" not-null="false" length="14"/>
+		<!-- add by zhiyang.he 修改锁定状态 2012-09-6 end-->
+		
+		<property name="maker" column="MAKER" type="string" not-null="false" length="20"/>
+		<property name="makeTime" column="MAKETIME" type="string" not-null="false" length="14"/>
+		<property name="checker" column="CHECKER" type="string" not-null="false" length="20"/>
+		<property name="checkTime" column="CHECKTIME" type="string" not-null="false" length="14"/>
+		
+		
+		
+		<property name="city" column="city" type="string" not-null="false" length="20"/>
+		<property name="region" column="region" type="string" not-null="false" length="150"/>
+		<property name="department" column="department" type="string" not-null="false" length="50"/>
+	</class>
+</hibernate-mapping>

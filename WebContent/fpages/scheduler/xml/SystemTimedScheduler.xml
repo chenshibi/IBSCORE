@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="操作员管理" navigate="主页 &gt; 系统维护 &gt; 定时器任务执行设置"
+	type="call"
+	interface="true"
+	pagesize="50"
+	async="true"
+	btnNm="aaa"
+	databusid="DEMO"
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.report.scheduler.getter.SystemTimedSchedulerGetter">
+	<Include id="BankParam" />
+
+	<!-- <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-定时器任务信息"  />
+ -->
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		<Field id="id" desc="任务主键" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="true" size="32" status="N" default="" primary="true" xpath="/id" />
+
+		<Field id="jobName" desc="任务名称" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="true" size="128" status="F" default="" xpath="/jobName" />
+
+		<Field id="jobClassName" desc="任务执行类" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="true" size="256" status="F" default="" xpath="/jobClassName" />
+
+		<Field id="jobTime" desc="执行时间参数" require="true" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="64" status="F" default="" xpath="/jobTime" />
+
+	 	<Field id="jobStauts" desc="任务状态" require="" edittype="select" datatype="string" method="None"
+			readonly="true" size="1" translated="DATA_DIC.71" status="N" default="" xpath="/jobStauts" />
+
+		<Field id="justWorkdateRun" desc="是否只工作日执行" require="true" edittype="select" datatype="string" method="None"
+			readonly="false" size="1" translated="LIST:Y,只在工作日执行;N,每天执行;" status="N" default="" xpath="/justWorkdateRun" />
+
+		<Field id="jobRemark" desc="任务备注" require="" edittype="textarea" datatype="string" method="None"
+	 	  readonly="false" size="256" status="F" default="" xpath="/jobRemark" />
+
+		<Field id="jobLstTm" desc="任务最后修改时间" require="" edittype="date" datatype="timestamp" method="None"
+	 	  readonly="true" size="32" status="N" default="" xpath="/jobLstTm" />
+
+		<Field id="jobLstTrl" desc="任务最后修改人" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="20" status="N" default="" xpath="/jobLstTrl" />
+
+	 	<Field id="opr" desc="操作" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="N" default="" xpath="" />
+	 	  
+	 	<Field id="sysName" desc="系统类型" status="N" require="true" readonly="true" primary="true" type="String"
+        	 edittype="select" size="40" rules="" translated="LIST:CCIS,法院;TCP,电信;OTHER,其他"
+        	 xpath="/sysName"/>
+        	
+	</Fields>
+	<Where>
+	  <!--   <Option id="sysName"  type="String" edittype="select" size="40" rules=""  desc="系统类型" tip="系统类型"
+        	 translated="LIST:CCIS,法院;TCP,电信;OTHER,其他" 
+        	 xpath="/sysName"/> -->
+	</Where>
+	<Operations>
+		<Button id="btJobStatus" name="btJobStatus" desc="启动/停用" operation="asysubmit"
+			updateClass="com.huateng.report.scheduler.updater.CICSTimedScheudlerJobStatusUpdate"
+			url="#" txn="" />
+		<Button id="btModify" name="btModify" desc="修改" operation=""
+			url="#" show="" group="" txn="" />
+		<Button id="btSave" name="btSave" desc="保存" operation="asysubmit"
+			updateClass="com.huateng.report.scheduler.updater.CICSTimedScheudlerJobUpdate"
+			url="#" txn="" />
+		<Button id="btStart" name="btStart" desc="立即执行" operation="asysubmit"
+			updateClass="com.huateng.report.scheduler.updater.StartJobUpdate"
+			
+			url="#" txn="" />
+	</Operations>
+	<Sql>
+	</Sql>
+</CommQry>

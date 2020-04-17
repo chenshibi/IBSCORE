@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL txnlogflag:true记录日志 async:异步提交标志 
+	pagesize:页面显示记录数(缺省为10) -->
+
+<CommQry title="CicsActinfoEntryQuery.title" navigate="基础信息管理  &gt; 客户账户信息维护"
+	type="call" interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+	getterclassname="com.huateng.account.getter.CicsActinfoGetter">
+	<Include id="BankParam" />
+
+	<!-- <PageQryExp type="XLS" limit="true" encoding="UTF-8"
+		url="/trans/qryExp.do" desc="批量下载-数据字典" perfetch="15" /> -->
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+        <!--actNo[200],curCd[100],cmpCodeType[160],cmpCode[150],actName[300],actType[200],status[50],opnBranchCode[50],opnDate[50],
+        clsDate[50],addr[200],post[100],tel[50],remarks[200]" width="100%" hasFrame="true" height="350" readonly="true" -->
+
+		<Field id="actNo" desc="账号" require="true"
+			edittype="text" size="64" datatype="string" status="A" xpath="/actNo" />
+ 
+		<Field id="curCd" desc="币种"
+			require="true" edittype="select" size="3" datatype="string" status="A"
+			translated="DATA_DIC.7000" xpath="/curCd" />
+
+		<Field id="cmpCodeType" desc="证件类型"
+			require="true" size="32" edittype="select" datatype="string" status="F"
+			translated="DATA_DIC.7100" xpath="/cmpCodeType" />
+
+		<Field id="cmpCode" desc="证件号码"
+			require="true" size="32" edittype="text" datatype="string" status="F"
+			xpath="/cmpCode" />
+
+		<Field id="actName" desc="账户名称"
+			edittype="text" datatype="string" xpath="/actName" status="F"/>
+			
+			<Field id="status" desc="状态"
+            edittype="text" datatype="string" xpath="/status" status="F"/>
+            <Field id="addr" desc="地址"
+            edittype="text" datatype="string" xpath="/addr" status="F"/>
+            <Field id="post" desc="邮编"
+            edittype="text" datatype="string" xpath="/post" status="F"/>
+            <Field id="tel" desc="电话"
+            edittype="text" datatype="string" xpath="/tel" status="F"/>
+
+        <Field id="actType" desc="账户类型"
+            require="true" edittype="text" status="A" 
+            datatype="string" xpath="/actType" />
+
+		<Field id="opnBranchCode" desc="分行号"
+			edittype="text" datatype="string" xpath="/opnBranchCode" status="F"/>
+
+		<Field id="opnDate" desc="开户日期"
+			edittype="date" datatype="date" primary="false" type="String" size="20"
+			xpath="/opnDate" status="F"/>
+
+		<Field id="clsDate" desc="关户日期"
+			edittype="date" datatype="date" primary="false" type="String" size="20"
+			xpath="/clsDate" status="F"/>
+			
+		<Field id="remarks" desc="备注"
+			edittype="text" datatype="string" xpath="/remarks" status="F"/>
+
+		<Field id="lastUpdTime" desc="最后更新时间"
+			edittype="time" datatype="time14" xpath="/lastUpdTime" status="F" size="14"/>
+	</Fields>
+
+	<Where>
+		<TextBox id="qAccountId" desc="CicsActinfoEntry.field.id"
+			datatype="string" index="0" />
+        <TextBox id="qActName" desc="CicsActinfoEntry.field.chineseName"
+            datatype="string" index="1" width="100%"/>
+        <Option id="qAccountCur" desc="CicsActinfoEntry.field.accountCur"
+            edittype="select" translated="DATA_DIC.7000" datatype="string" index="2" />
+		<TextBox id="qCustomerId" desc="CicsActinfoEntry.field.cmpcode"
+			datatype="string" index="3"  width="100%"/>
+	</Where>
+
+	<Operations>
+
+	</Operations>
+	<Script></Script>
+</CommQry>

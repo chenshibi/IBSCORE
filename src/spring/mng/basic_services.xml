@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<!-- 通用service -->
+	<bean id="com.huateng.ebank.business.common.service.CommonService"
+		class="com.huateng.ebank.business.common.service.CommonService">
+	</bean>
+	<bean id="com.huateng.service.pub.PasswordService"
+		class="com.huateng.service.pub.PasswordService">
+	</bean>
+	<bean id="com.huateng.service.pub.UserMgrService"
+		class="com.huateng.service.pub.UserMgrService">
+	</bean>
+	<bean id="com.huateng.ebank.business.management.service.UserMgrService"
+		class="com.huateng.ebank.business.management.service.UserMgrService">
+	</bean>
+	
+	<bean id="com.huateng.ebank.business.common.service.BctlService"
+        class="com.huateng.ebank.business.common.service.BctlService">
+    </bean>
+
+	<bean id="com.huateng.ebank.business.common.service.DataDicService"
+		class="com.huateng.ebank.business.common.service.DataDicService">
+	</bean>
+
+
+    <bean id="com.huateng.ebank.business.management.service.TlrInfoExService"
+    	class="com.huateng.ebank.business.management.service.TlrInfoExService">
+    </bean>
+
+    <bean id="com.huateng.service.pub.RoleInfoService"
+    	class="com.huateng.service.pub.RoleInfoService">
+    </bean>
+    <!-- 操作员服务 -->
+	<bean
+		id="com.huateng.service.pub.TlrInfoService"
+		class="com.huateng.service.pub.TlrInfoService">
+	</bean>
+
+		<!-- 操作流水查询 Service.-->
+	<bean id="com.huateng.ebank.business.bizlog.service.BizLogQueryService"
+		class="com.huateng.ebank.business.bizlog.service.BizLogQueryService">
+	</bean>
+	<bean id="com.huateng.ebank.business.common.service.LogSeqService"
+		class="com.huateng.ebank.business.common.service.LogSeqService">
+	</bean>
+
+	<bean
+		id="com.huateng.service.pub.RoleMgrService"
+		class="com.huateng.service.pub.RoleMgrService">
+	</bean>
+
+
+	<!-- 日志查询服务 -->
+	<bean id="com.huateng.ebank.business.logger.service.OperLoggerService" class="com.huateng.ebank.business.logger.service.OperLoggerService">
+	</bean>
+
+	<!-- 用户登录日志管理 -->
+	<bean id="com.huateng.service.pub.TlrLoginLogService"
+		 class="com.huateng.service.pub.TlrLoginLogService">
+	</bean>
+	
+	<!-- 企业征信服务 -->
+	<!-- <bean id="com.huateng.report.service.PbocD103Service" 
+	 class="com.huateng.report.service.PbocD103Service">
+	</bean>
+	
+	<bean id="com.huateng.report.service.NewSysParamsService" class="com.huateng.report.service.NewSysParamsService"></bean>
+	
+	<bean id="com.huateng.report.ws.WSDLClient" class="com.huateng.report.ws.WSDLClient"></bean> -->
+</beans>

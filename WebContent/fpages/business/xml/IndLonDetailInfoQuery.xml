@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndLonDetailInfoQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="l5class" desc="五级分类" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/l5class" />
+			
+		<Field id="balance" desc="本金金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="20" status="N"  default=""  scale="2"
+			primary="true" xpath="/balance" />
+
+		<Field id="leftMonth" desc="剩余还款期数" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/leftMonth" />
+		<Field id="payMonth" desc="本月应还款" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/payMonth" />
+		<Field id="payDay" desc="应还款日" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/payDay" />
+		<Field id="yearmonth" desc="最后更新日期" placeholder="yyyy-MM-dd HH:mm:ss"
+		edittype="timestamp" datatype="timestamp" xpath="/yearmonth" />
+		<Field id="payReal" desc="本月实还款" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/payReal" />
+		<Field id="recentPayDate" desc="最后一次还款日期" edittype="text" datatype="date"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/recentPayDate" />
+		<Field id="overdueCount" desc="当前逾期期数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/overdueCount" />
+		<Field id="overdueAmount" desc="当前逾期金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/overdueAmount" />
+		<Field id="over31" desc="逾期31-60天未还本金" edittype="text" datatype="currency"
+			method="None" readonly="false" size="12" status="F" 
+			default="" xpath="/over31" />
+		<Field id="over61" desc="逾期61-90天未还本金" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/over61" />
+		<Field id="over91" desc="逾期91-180天未还本金" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/over91" />
+		<Field id="over180" desc="逾期180天以上未还本金" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/over180" />
+		<Field id="month24" desc="最近24个月的还款记录" edittype="text" datatype="string"
+			method="None" readonly="false" size="24" status="F" 
+			default="" xpath="/month24" />
+
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

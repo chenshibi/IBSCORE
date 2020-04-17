@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndApp"
+            table="Ind_App"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="individualId"
+                column="Individual_id"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+        <property
+                name="name"
+                column="name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="idType"
+                column="id_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="queryReason"
+                column="query_reason"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="queryType"
+                column="query_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="reportFormat"
+                column="report_format"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="inputTime"
+                column="input_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="queryTime"
+                column="query_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+        
+          <property
+                name="returnTime"
+                column="return_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+          <property
+                name="type"
+                column="type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        
+        
+        
+         <property
+                name="status"
+                column="status"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+       
+          <property
+                name="uploadedFilePath"
+                column="UPLOADED_FILE_PATH"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+    </class>
+</hibernate-mapping>

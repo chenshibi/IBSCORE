@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+
+    <!-- 得到所有机构的下拉选项 -->
+    <Query id="AllBranchSelect" path="/fpages/management/dropdownxml/AllBranchSelect.xml" />
+    <!-- 得到总行和所有分行的下拉选项 -->
+    <Query id="HeadBranch" path="/fpages/management/dropdownxml/HeadBranch.xml" />
+    <!-- 得到所有下属个贷中心 -->
+    <Query id="PlCenterBrcodeSelect" path="/fpages/management/dropdownxml/PlCenterBrcode.xml" />
+    <!-- 得到总行或者当前分行的所有下属机构列表(包含自己),但是不包括其下属支行,即可能包括的机构为:总行,分行,个贷中心,个贷分中心 -->
+    <!-- 机构管理 ： 获取上级机构列表-->
+    <Query id="CenterBrcodeSelect" path="/fpages/management/dropdownxml/DownBrcode.xml" />
+    <!-- 机构管理 ： 获取财务机构列表 -->
+    <Query id="CenterBrcodeSelect2" path="/fpages/management/dropdownxml/DownBrcode.xml" />
+
+    <!-- 机构权限设置 ： 所有有效机构查询，支持模糊查询-->
+    <Query id="BranchInfoSelect" path="/fpages/management/dropdownxml/BranchInfoSelect.xml" />
+    <!-- 操作员增加 ： 所有有效部门查询,不设查询条件-->
+    <Query id="AllDownDepartmentSelect" path="/fpages/management/dropdownxml/AllDownDepartment.xml" />
+        <!-- 操作员增加 ： 所有有效下级机构查询,根据机构号查询-->
+    <Query id="AllDownBrcodeByQuery" path="/fpages/management/dropdownxml/AllDownBrcodeByQuery.xml" />
+    
+	<!-- 批量下载 - 我的下载 -->
+   <Query id="pageqryexp_mydownload" path="/fpages/pageqryexp/xml/mydownload.xml"/>
+	
+	<!-- 得到所有法人行的下拉选项  -->
+   	<Query id="AllFaRenBranchSelect" path="/fpages/management/dropdownxml/AllFaRenBranchSelect.xml" />
+</META>

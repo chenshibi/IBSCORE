@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="AssureIndSum"
+            table="Assure_Ind_Sum"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="contractType"
+                column="contract_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="sumAmount"
+                column="sum_amount"
+                type="float"
+                not-null="false"
+                length="14"
+        />
+       
+        
+    </class>
+</hibernate-mapping>

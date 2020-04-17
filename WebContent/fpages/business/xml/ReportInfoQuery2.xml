@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="客户级别查询" navigate="客户级别查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.ReportInfoQueryGetter2">
+	<Include id="BankParam" />
+	<Fields>
+		<Field id="totalTue" desc="汇总TUE" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/totalTue" />
+		<Field id="totalDsr" desc="汇总Tsr" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/totalDsr" />
+		<Field id="totalWc" desc="汇总Wc" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/totalWc" />
+	</Fields>
+	<Where>
+		<TextBox id="loanCardId" type="String"  size="50" 
+			desc="中征码" tip="loanCardId" require="true" index="0" />
+		<TextBox id="companyName" type="String"  size="200"  require="true"
+			desc="公司名称" tip="companyName" index="1" />
+			<TextBox id="individualId" type="String"  size="50"  require="true"
+			desc="证件号" tip="individualId" index="2" />
+		<TextBox id="name" type="String"  size="200"  require="true"
+			desc="姓名" tip="name" index="3" />
+			
+		<TextBox id="individualIda" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="2" />
+		<TextBox id="namea" type="String"  size="200" 
+			desc="姓名" tip="name" index="3" />
+		<TextBox id="individualIdb" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="nameb" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />
+		<TextBox id="individualIdc" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="namec" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />
+		<TextBox id="individualIdd" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="named" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />
+		<TextBox id="individualIde" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="namee" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />
+		<TextBox id="individualIdf" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="namef" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />
+		<TextBox id="individualIdg" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="nameg" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />
+		<TextBox id="individualIdh" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="nameh" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />
+		<TextBox id="individualIdi" type="String"  size="50" 
+			desc="证件号" tip="individualId" index="" />
+		<TextBox id="namei" type="String"  size="200" 
+			desc="姓名" tip="name" index="" />	
+		
+	</Where>
+	 <Operations>
+		<Button id="btAdd" name="btAdd" desc="汇总" operation="" url=""
+			show="" group="" txn="" icon="icon-add" />
+	</Operations>
+</CommQry>

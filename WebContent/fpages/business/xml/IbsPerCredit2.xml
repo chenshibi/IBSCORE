@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="征信查询" navigate="征信查询&gt;个人展示"
+	type="call" 
+	interface="false" 
+	pagesize="100" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.ebank.business.customer.getter.IbsPerCreditGetter2">
+	<Include id="BankParam" />
+	<Fields>
+	    <Field id="id" desc="id" edittype="text" datatype="string" method="None" readonly="false" size="32" status="F" default="" xpath="/id" />
+	    <Field id="zhmc" desc="账户名称" edittype="text" datatype="string" method="None" readonly="false" size="32" status="F" default="" xpath="/zhmc" />
+	    <Field id="sxjg" desc="授信机构" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/sxjg" />
+	    <Field id="zhzt" desc="帐户状态" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/zhzt" />
+        <Field id="zhlx" desc="帐户类型" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/zhlx" /> 
+		<Field id="dbfs" desc="担保方式" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dbfs" />
+		<Field id="klrq" desc="开立日期" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/klrq" />
+		<Field id="dqr" desc="到期日" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqr" />
+		<Field id="qs" desc="期数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/qs" />
+		<Field id="sxed" desc="授信额度" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/sxed" />
+		<Field id="yyed" desc="已用额度" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/yyed" />
+		<Field id="bz" desc="币种" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/bz" />
+		<Field id="ye" desc="余额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/ye" />
+		<Field id="byyhk" desc="本月应还款" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/byyhk" />
+		<Field id="byshk" desc="本月实还款" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/byshk" />
+		<Field id="zjychkrq" desc="最近一次还款日期" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/zjychkrq" />
+		<Field id="sjgbrq" desc="实际关闭日期" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/sjgbrq" />
+		<Field id="dqyqqs" desc="当前逾期期数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqyqs" />
+		<Field id="dqyqje" desc="当前逾期金额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqyqje" />
+		<Field id="cjyqys" desc="曾经逾期月数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/cjyqys" />
+		<Field id="cjyqjejz" desc="曾经逾期金额加总" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/cjyqjejz" />
+		<Field id="cjzdyqqs" desc="曾经最大逾期期数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/cjzdyqs" />
+		<Field id="tue" desc="TUE" edittype="text" datatype="String" method="None" readonly="false" size="50" status="F" default="" xpath="/tue" />
+		<Field id="dsr" desc="DSR" edittype="text" datatype="String" method="None" readonly="false" size="50" status="F" default="" xpath="/dsr" />
+		<Field id="wc" desc="WC" edittype="text" datatype="String" method="None" readonly="false" size="50" status="F" default="" xpath="/wc" />
+	</Fields>
+	<Operations>
+	 <Button id="btClose" name="btClose" desc="Close" operation="syncsubmit"
+			url="/fpages/management/ftl/IbsPerCreditSum.ftl" txn="" />
+	</Operations>
+</CommQry>

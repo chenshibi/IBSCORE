@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="征信查询" navigate="征信查询&gt;个人总展示"
+	type="call" 
+	interface="true" 
+	pagesize="100" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.ebank.business.customer.getter.IbsPerCreditSumGetter">
+	<Include id="BankParam" />
+	<Fields>
+	    <Field id="xh" desc="报表序号" edittype="text" datatype="string" method="None" readonly="false" size="32" status="F" default="" xpath="/xh" />
+	    <Field id="dbrxm" desc="担保人姓名" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dbrxm" />
+	    <Field id="cxrq" desc="查询日期" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/cxrq" />
+        <Field id="sfbh" desc="是否白户" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/sfbh" /> 
+		<Field id="ywyq" desc="有无逾期" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/ywyq" />
+		<Field id="yqje" desc="逾期金额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/yqje" />
+		<Field id="bgbm" desc="报告编码" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/bgbm" />
+		<Field id="idcard" desc="身份证号码--前三位+后六位" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/idcard" />
+		<Field id="fmxx" desc="负面信息" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/fmxx" />
+		<Field id="dkrzxlb" desc="贷款人征信类别" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dkrzxlb" />
+		<Field id="zxfxdwz" desc="征信分相对位置" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/zxfxdwz" />
+		<Field id="findthree" desc="近3月查询次数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/findthree" />
+		<Field id="findsix" desc="近6月查询次数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/findsix" />
+		<Field id="findtwelve" desc="近12月查询次数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/findtwelve" />
+		<Field id="dqgrzfdkbs" desc="当前个人住房贷款笔数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkbs" />
+		<Field id="dqgrzfdkjgs" desc="当前个人住房贷款机构数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkjgs" />
+		<Field id="dqgrzfdkzfke" desc="当前个人住房贷款总放款额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkzfke" />
+		<Field id="dqgrzfdkzye" desc="当前个人住房贷款总余额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkzye" />
+		<Field id="dqgrzfdkyyhk" desc="当前个人住房贷款月应还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkyyhk" />
+		<Field id="dqgrzfdkyshk" desc="当前个人住房贷款月实还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkyshk" />
+		<Field id="dqgrzfdkyqbs" desc="当前个人住房贷款逾期笔数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkyqbs" />
+		<Field id="dqgrzfdkyqje" desc="当前个人住房贷款逾期金额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrzfdkyqje" />
+		<Field id="dqgrjyxdkbs" desc="当前个人经营性贷款笔数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkbs" />
+		<Field id="dqgrjyxdkjgs" desc="当前个人经营性贷款机构数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkjgs" />
+	    <Field id="dqgrjyxdkzfke" desc="当前个人经营性贷款总放款额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkzfke" />
+		<Field id="dqgrjyxdkzye" desc="当前个人经营性贷款总余额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkzye" />
+		<Field id="dqgrjyxdkyyhk" desc="当前个人经营性贷款月应还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkyyhk" />
+		<Field id="dqgrjyxdkyshk" desc="当前个人经营性贷款月实还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkyshk" />
+		<Field id="dqgrjyxdkyqbs" desc="当前个人经营性贷款逾期笔数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkyqbs" />
+		<Field id="dqgrjyxdkyqje" desc="当前个人经营性贷款逾期金额" require="false" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgrjyxdkyqbs"/>
+		<Field id="dqqtdkbs" desc="当前其他贷款笔数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkbs" />
+		<Field id="dqqtdkjgs" desc="当前其他贷款机构数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkjgs" />
+		<Field id="dqqtdkzfke" desc="当前其他贷款总放款额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkzfke" /> 
+		<Field id="dqqtdkzye" desc="当前其他贷款总余额" require="false" edittype="int" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkzye" />
+		<Field id="dqqtdkyyhk" desc="当前其他贷款月应还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkyyhk" />
+		<Field id="dqqtdkyshk" desc="当前其他贷款月实还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkyshk" />
+		<Field id="dqqtdkyqbs" desc="当前其他贷款逾期笔数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkyqbs" />
+		<Field id="dqqtdkyqje" desc="当前其他贷款逾期金额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqqtdkyqje" />
+		<Field id="dqdjkzhs" desc="当前贷记卡账户数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdjkzhs" />
+		<Field id="dqdjkjgs" desc="当前贷记卡机构数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdjkjgs" />
+		<Field id="dqdjkzed" desc="当前贷记卡总额度" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdjkzed" />
+		
+		<Field id="dqxykyhke" desc="当前信用卡应还款额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqxykyhke" />
+		<Field id="dqydyhk" desc="当前月度应还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqydyhk" />
+		<Field id="dqydshk" desc="当前月度实还款" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/dqydshk" />
+		<Field id="halfyearout3160times" desc="近半年逾期31-60次数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/halfyearout3160times" />
+		<Field id="halfyearout3160money" desc="近半年逾期31-60金额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/halfyearout3160money" />
+		<Field id="oneyearout60times" desc="近一年逾期60天以上次数" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/oneyearout60times" />
+		<Field id="oneyearout60money" desc="近一年逾期60天以上金额" edittype="text" datatype="int" method="None" readonly="false" size="50" status="F" default="" xpath="/oneyearout60money" />
+		<Field id="jlnhxbs" desc="近两年核销笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/jlnhxbs" />
+		<Field id="jlnhxje" desc="近两年核销金额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/jlnhxje" />
+		<Field id="tue" desc="TUE" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/tue" />
+		<Field id="dsr" desc="DSR" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dsr" />
+		<Field id="wc" desc="WC" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/wc" />
+		<Field id="totalBankLimit" desc="totalBankLimit" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/totalBankLimit" />
+		<Field id="opr" desc="Operation" require="false" edittype="text" datatype="string" method="None" readonly="true" primary="true" type="Operation"
+			size="12" default="" xpath="" tip="Operation" />
+	</Fields>
+	<Where>
+		<DateTextBox id="etlDateStart" desc="起始查询日期" edittype="text" datatype="date" size="34"  index="0" />
+		<DateTextBox id="etlDateEnd" desc="终止查询日期" edittype="text" datatype="date" size="34"  index="1" />
+	</Where>
+
+</CommQry>

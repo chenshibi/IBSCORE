@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="TCorpPermit"
+            table="T_Corp_Permit"
+    >
+        <meta attribute="sync-DAO">false</meta>
+         <id
+			name="id"
+			type="integer"
+			column="id"
+			>
+       <!-- oracel数据库自增设置为increment  20191209--> 
+		<!-- <generator class ="identity"/> -->  
+        
+		
+		  <generator class="increment"></generator>
+		   <!-- <generator class="sequence">
+		     <parm name="sequence">T_CORP_PERMIT_ID_SEQ</parm>
+		   </generator>   -->
+        </id> 
+
+
+		 <property
+                name="loanCardNo"
+                column="LOAN_CARD_NO"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="loanCardPass"
+                column="LOAN_CARD_PASS"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="enterpriseRegId"
+                column="ENTERPRISE_REG_ID"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="corpName"
+                column="CORP_NAME"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="customerConUp"
+                column="CUSTOMER_CON_UP"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="createUser"
+                column="CREATE_USER"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="inputTime"
+                column="INPUT_TIME"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+          <property
+                name="expireDate"
+                column="EXPIRE_DATE"
+                type="timestamp"
+                not-null="false"
+        />
+         <property
+                name="approveTime"
+                column="APPROVE_TIME"
+                type="timestamp"
+                not-null="false"
+        />
+         <property
+                name="status"
+                column="STATUS"
+                type="string"
+                not-null="false"
+        />
+    </class>
+</hibernate-mapping>

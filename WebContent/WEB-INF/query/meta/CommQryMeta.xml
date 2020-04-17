@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+	<Include id="BaseParam" path="/WEB-INF/query/include/BaseConfigParam.xml" />
+	<!-- 用户基本的通用查询，自动生成ＳＱＬ -->
+	<Include id="BankParam" path="/WEB-INF/query/include/BankConfigParam.xml" />
+	<Include id="BankTabs" path="/WEB-INF/query/include/BasicTabConfigParam.xml" />
+		<!-- 用户通过后台服务获取数据实现展现的通用查询 -->
+	<Include id="BankCall"
+		path="/WEB-INF/query/include/BankCallParam.xml" />
+	<Include id="BankForm"
+		path="/WEB-INF/query/include/BankFormParam.xml" />
+
+	<Include id="BasicTabParam"
+		path="/WEB-INF/query/include/BasicTabConfigParam.xml" />
+	<!-- 角色下拉菜单
+	<Query id="RoleSelect" path="/fpages/common/xml/RoleSelect.xml" />-->
+    <!-- 操作员列表下拉菜单
+    <Query id="OperatorNameSelect" path="/fpages/common/xml/OperatorNameSelect.xml" />-->
+
+	<Query id="BctlAllSelect"		path="/fpages/parammng/xml/BctlAllSelect.xml" />
+	<!--add by hui.yang 针对补录查询和审核查询只可以查询当前登录的机构下的信息 20130205 start  -->
+	<Query id="BctlOnlySelect"		path="/fpages/parammng/xml/BctlOnlySelect.xml" />
+	<!-- 消息平台 消息编号下拉框 add by zhangdianchao 20160316 -->
+	<Query id="MsgTypeSelect"	path="/fpages/msgplatform/xml/MsgTypeSelect.xml" />
+	<!-- 报表 已启用分配行机构下拉框 add by zhangdianchao 20160426 -->
+	<Query id="BctlFp1Select"	path="/fpages/parammng/xml/BctlFp1Select.xml" />
+</META>

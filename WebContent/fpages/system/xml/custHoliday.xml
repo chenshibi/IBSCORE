@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="节假日查询" type="call" interface="true" navigate=""  pagesize="15"
+	async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.boa.getter.CustHolidayQueryGetter">
+	
+	<Include id="BankParam" />
+	
+	<PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出--节假日查询信息"  />
+	 
+	<Fields>
+	    <Field id="hdate" desc="日期" edittype="text" status="F" datatype="date" readonly="true" xpath="/hdate" size="8" width="100%"/>
+	    <Field id="weekdy" desc="星期" edittype="select" status="F" daytatype="stirng" readonly="true" translated="LIST:1,星期一;2,星期二;3,星期三;4,星期四;5,星期五;6,星期六;7,星期日" xpath="/weekdy" size="1" width="100%"/>
+	    <Field id="work" desc="节假日标志" edittype="select" status="F" datatype="int" readonly="true" xpath="/work" translated="LIST:0,节假日;1,工作日" size="1" width="100%"/>
+	    <Field id="last_up_tm" desc="最后更新时间" edittype="time" status="F" datatype="time14" readonly="true" xpath="/lstUpdTm" size="14" width="100%"/>
+	</Fields>
+	<Where>
+		<TextBox id="qreqdatebegin" desc="开始日期 " require="false" datatype="date"
+			method="None" size="150" primary="false" index="5" type="String" width="220"  />
+		<TextBox id="qreqdateend" desc="截止日期" require="false" datatype="date"
+			method="None" size="150" primary="false" index="6" type="String"  width="220" />	
+	</Where>
+	
+</CommQry>		

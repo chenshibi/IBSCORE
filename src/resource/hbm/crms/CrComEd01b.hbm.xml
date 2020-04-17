@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrComEd01b" table="CR_COM_ED01B" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+           <generator class="uuid" />
+        </id>
+
+        <property name="ed01bs01" column="ED01BS01" type="string" not-null="false" length="3"/>
+        <property name="batchId" column="BATCH_ID" type="string" not-null="false" length="32" />
+        <property name="parentId" column="PARENT_ID" type="string" not-null="false" length="32" />
+    </class>
+</hibernate-mapping>

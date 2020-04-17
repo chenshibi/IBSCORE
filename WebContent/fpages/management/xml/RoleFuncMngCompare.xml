@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+	<!--
+		title:标题 navigate:导航信息 type:方式（sql|call)
+		interface:是否显示输入条件页面(true|false) databusid:数据总线编号
+		transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10)
+	-->
+<CommQry title="企业角色权限管理" navigate="主页 &gt; 权限管理 &gt; 角色管理 &gt; 权限设置对比"
+	type="call" interface="false" pagesize="200" async="true" databusid="DEMO"
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.management.getter.RoleFuncRelMngCompareGetter">
+	<Include id="BankParam" />
+	<ResultViewParam>
+		/fpages/custadmin/ftl/ebankCustRoleMng.ftl
+	</ResultViewParam>
+	<Fields>
+		<!-- 角色信息-->
+		<Field id="id" desc="Role No" status="F" require="false" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色ID"
+			size="8" default="" xpath="/id" tip="角色ID" />
+		<Field id="idOld" desc="Role No" status="F" require="false" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色ID"
+			size="8" default="" xpath="/idOld" tip="角色ID" />
+		<Field id="roleNameOld" desc="Role Name" status="F" require="" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色名字"
+			size="30" default="" xpath="/roleNameOld" tip="角色名字" />
+		<Field id="roleName" desc="Role Name" status="F" require="" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色名字"
+			size="30" default="" xpath="/roleName" tip="角色名字" />
+		<Field id="funcListNew" desc="" status="N" method="None"  readonly="true"
+			edittype="text" primary="true" type="funcList" size="30000" default="" tip="" require=""/>
+		<Field id="funcList" desc="比对后的LIST" status="N" method="None" xpath="/funcList" readonly="true"
+			edittype="text" primary="true" type="funcList" size="20000" default="" tip="" require=""/>
+		<Field id="statusOld" desc="有效标志" status="F" require="false" edittype="select" translated="LIST:1,1-有效;0,0-无效"
+		    datatype="string" method="None" readonly="true" primary="true" type="有效标示"
+		    size="1" default="" xpath="/statusOld" tip="有效标示"/>
+		 <Field id="status" desc="有效标志" status="F" require="false" edittype="select" translated="LIST:1,1-有效;0,0-无效"
+		    datatype="string" method="None" readonly="true" primary="true" type="有效标示"
+		    size="1" default="" xpath="/status" tip="有效标示"/>
+		 <Field id="isInqMaker" desc="法院查询录入" status="F" require="" edittype="select" translated="LIST:0,不需要;1,需要;"
+			datatype="string" method="None" readonly="true" primary="true" type="法院查询录入"
+			size="" default="" xpath="/isInqMaker" tip="法院查询录入" />
+		<Field id="isInqMakerOld" desc="法院查询录入" status="F" require="" edittype="select" translated="LIST:0,不需要;1,需要;"
+			datatype="string" method="None" readonly="true" primary="true" type="法院查询录入"
+			size="" default="" xpath="/isInqMakerOld" tip="法院查询录入" />
+		<Field id="isInqChecker" desc="法院查询审核" status="F" require="" edittype="select" translated="LIST:0,不需要;1,需要;"
+			datatype="string" method="None" readonly="true" primary="true" type="法院查询审核"
+			size="" default="" xpath="/isInqChecker" tip="法院查询审核" />
+		<Field id="isInqCheckerOld" desc="法院查询审核" status="F" require="" edittype="select" translated="LIST:0,不需要;1,需要;"
+			datatype="string" method="None" readonly="true" primary="true" type="法院查询审核"
+			size="" default="" xpath="/isInqCheckerOld" tip="法院查询审核" />
+			
+		<Field id="isTxndtlMakerOld" desc="交易明细查询录入" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true" status="F" 
+            size="1" default="" xpath="/isTxndtlMakerOld" tip="交易明细查询录入"  />
+        <Field id="isTxndtlCheckerOld" desc="交易明细查询审核" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true"
+            size="1" default="" xpath="/isInqCheckerOld"  tip="交易明细查询审核"  />            
+        <Field id="isDynqueMakerOld" desc="动态查询录入" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true" status="F" 
+            size="1" default="" xpath="/isDynqueMakerOld"  tip="动态查询录入"  />
+        <Field id="isDynqueCheckerOld" desc="动态查询审核" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true"
+            size="1" default="" xpath="/isDynqueCheckerOld"  tip="动态查询审核"  />            
+        <Field id="isAllactMakerOld" desc="全账号查询录入" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true" status="F" 
+            size="1" default="" xpath="/isAllactMakerOld"  tip="全账号查询录入"  />
+        <Field id="isAllactCheckerOld" desc="全账号查询审核" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true"
+            size="1" default="" xpath="/isAllactCheckerOld"  tip="全账号查询审核"  />
+        <Field id="roleGroupOld" desc="系统类型" status="N" require="true" readonly="true" primary="true" type="String"
+        	 edittype="select" size="40" rules="" translated="LIST:CCIS,法院;TCP,电信;OTHER,其他"  
+        	 xpath="/roleGroupOld"/>
+            
+        <Field id="isTxndtlMaker" desc="交易明细查询录入" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true" status="F" 
+            size="1" default="" xpath="/isTxndtlMaker" tip="交易明细查询录入"  />
+        <Field id="isTxndtlChecker" desc="交易明细查询审核" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true"
+            size="1" default="" xpath="/isInqChecker"  tip="交易明细查询审核"  />            
+        <Field id="isDynqueMaker" desc="动态查询录入" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true" status="F" 
+            size="1" default="" xpath="/isDynqueMaker"  tip="动态查询录入"  />
+        <Field id="isDynqueChecker" desc="动态查询审核" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true"
+            size="1" default="" xpath="/isDynqueChecker"  tip="动态查询审核"  />            
+        <Field id="isAllactMaker" desc="全账号查询录入" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true" status="F" 
+            size="1" default="" xpath="/isAllactMaker"  tip="全账号查询录入"  />
+        <Field id="isAllactChecker" desc="全账号查询审核" require="true" edittype="select" translated="LIST:0,不需要;1,需要;"
+            datatype="string" method="None" readonly="true"
+            size="1" default="" xpath="/isAllactChecker"  tip="全账号查询审核"  />
+        <Field id="roleGroup" desc="系统类型" status="N" require="true" readonly="true" primary="true" type="String"
+        	 edittype="select" size="40" rules="" translated="LIST:CCIS,法院;TCP,电信;OTHER,其他"  
+        	 xpath="/roleGroup"/>
+			
+		<Field id="mail" desc="Email" status="F" require="" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="Email"
+			size="" default="" xpath="/mail" tip="Email" width="220"/>
+		<Field id="mailOld" desc="Email" status="F" require="" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="Email"
+			size="" default="" xpath="/mailOld" tip="Email"  width="220"/>
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+	    <!-- 角色权限管理 -->
+		<Button id="btOpen" name="btOpen" desc="展开/合并"
+			operation="" updateClass="" url="#"  show="" group="" txn="" />
+		<Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/system/ftl/DirectorConfirm.ftl" txn="" />
+		<Button id="btBack" name="btBack" desc="返回" operation="submitform"
+			url="/fpages/regonization/ftl/RoleMngEntry.ftl" txn="" />
+	</Operations>
+</CommQry>

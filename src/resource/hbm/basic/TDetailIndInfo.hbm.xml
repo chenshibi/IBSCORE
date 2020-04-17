@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="TDetailIndInfo"
+            table="t_detail_ind_info"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="name"
+                column="name"
+                type="string"
+                not-null="false"
+                length="50"
+        />
+		<property
+                name="individualType"
+                column="individual_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+   		<property
+                name="individualId"
+                column="individual_id"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="address"
+                column="address"
+                type="string"
+                not-null="false"
+                length="500"
+        />
+        
+         <property
+                name="contactAddress"
+                column="contact_address"
+                type="string"
+                not-null="false"
+                length="300"
+        />
+           <property
+                name="phone"
+                column="phone"
+                type="string"
+                not-null="false"
+                length="50"
+        />
+       
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="征信查询" navigate="征信查询&gt;批量导入"
+	type="call" 
+	interface="true" 
+	pagesize="100" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.ebank.business.customer.getter.CrpbocD501Getter">
+	<Include id="BankParam" />
+	<Fields>
+	    <Field id="id" desc="序号" edittype="text" datatype="string" method="None" readonly="false" size="32" status="F" default="" xpath="/id" />
+	    <Field id="fileStartFlag" desc="文件头起始标识" edittype="text" datatype="string" method="None" readonly="false" size="1" status="F" default="" xpath="/fileStartFlag" />
+        <Field id="fileVersion" desc="文件格式版本号" edittype="text" datatype="string" method="None" readonly="false" size="5" status="F" default="" xpath="/fileVersion" /> 
+		<Field id="fileQryCode" desc="文件头查询机构代码" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/fileQryCode" />
+		<Field id="fileGenTime" desc="文件生成时间" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/fileGenTime" />
+		<Field id="fileType" desc="文件类型" edittype="text" datatype="string" method="None" readonly="false" size="4" status="F" default="" xpath="/fileType" />
+		<Field id="recordQryNum" desc="查询记录笔数" edittype="text" datatype="string" method="None" readonly="false" size="5" status="F" default="" xpath="/recordQryNum" />
+		<Field id="fileRsv" desc="预留字段" edittype="text" datatype="string" method="None" readonly="false" size="7" status="F" default="" xpath="/fileRsv" />
+		<Field id="queryOrgCode" desc="文件体查询机构代码" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/queryOrgCode" />
+		<Field id="userCode" desc="查询用户代码" edittype="text" datatype="string" method="None" readonly="false" size="64" status="F" default="" xpath="/userCode" />
+		<Field id="password" desc="查询用户密码" edittype="text" datatype="string" method="None" readonly="false" size="100" status="F" default="" xpath="/password" />
+		<Field id="requestid" desc="信息记录标识号" edittype="text" datatype="string" method="None" readonly="false" size="5" status="F" default="" xpath="/requestid" />
+		<Field id="originateOrgCode" desc="发起机构代码" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/originateOrgCode" />
+		<Field id="originateUserCode" desc="发起用户代码" edittype="text" datatype="string" method="None" readonly="false" size="64" status="F" default="" xpath="/originateUserCode" />
+		<Field id="name" desc="信息主体姓名" edittype="text" datatype="string" method="None" readonly="false" size="30" status="F" default="" xpath="/name" />
+		<Field id="idType" desc="信息主体证件类型" edittype="text" datatype="string" method="None" readonly="false" size="2" status="F" default="" xpath="/idType" />
+		<Field id="idNum" desc="信息主体证件号码" edittype="text" datatype="string" method="None" readonly="false" size="32" status="F" default="" xpath="/idNum" />
+		<Field id="queryReason" desc="查询原因" edittype="text" datatype="string" method="None" readonly="false" size="2" status="F" default="" xpath="/queryReason" />
+		<Field id="serviceCode" desc="服务代码" edittype="text" datatype="string" method="None" readonly="false" size="100" status="F" default="" xpath="/serviceCode" />
+		<Field id="digitalSignature" desc="数字签名" edittype="text" datatype="string" method="None" readonly="false" size="1024" status="F" default="" xpath="/digitalSignature" />
+		<Field id="queryDate" desc="查询日期" edittype="text" datatype="string" method="None" readonly="false" size="8" status="F" default="" xpath="/queryDate" />
+		<Field id="createUser" desc="创建人" edittype="text" datatype="string" method="None" readonly="false" size="20" status="F" default="" xpath="/createUser" />
+		<Field id="createTime" desc="创建时间" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/createTime" />
+	    <Field id="checkUser" desc="审核人" edittype="text" datatype="string" method="None" readonly="false" size="20" status="F" default="" xpath="/checkUser" />
+		<Field id="checkTime" desc="审核时间" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/checkTime" />
+		<Field id="sendTime" desc="发送时间" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/sendTime" />
+		<Field id="respTime" desc="respTime" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/respTime" />
+		<Field id="status" desc="匹配状态" require="false" edittype="select" datatype="string" method="None" readonly="false" size="2" status="F" default="" xpath="/status" translated="DATA_DIC.91" />
+		<Field id="rsv1" desc="批次号" edittype="text" datatype="string" method="None" readonly="false" size="3" status="F" default="" xpath="rsv1" />
+		<Field id="rsv2" desc="文件时间" edittype="text" datatype="string" method="None" readonly="false" size="8" status="F" default="" xpath="/rsv2" />
+		<Field id="rsv3" desc="部门" require="false" edittype="select" datatype="string" method="None" readonly="false" size="8" status="F" default="" xpath="/rsv3" translated="DATA_DIC.501" />
+		<Field id="rsv4" desc="备用字段4" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/rsv4" />
+		<Field id="rsv5" desc="备用字段5" edittype="text" datatype="string" method="None" readonly="false" size="14" status="F" default="" xpath="/rsv5" />
+		<Field id="rsv6" desc="备用字段6" edittype="text" datatype="string" method="None" readonly="false" size="32" status="F" default="" xpath="/rsv6" />
+		<Field id="rsv7" desc="备用字段7" edittype="text" datatype="string" method="None" readonly="false" size="64" status="F" default="" xpath="/rsv7" />
+		<Field id="rsv8" desc="备用字段8" edittype="text" datatype="string" method="None" readonly="false" size="60" status="F" default="" xpath="/rsv8" />
+		<Field id="rsv9" desc="备用字段9" edittype="text" datatype="string" method="None" readonly="false" size="512" status="F" default="" xpath="/rsv9" />
+		<Field id="rsv10" desc="备用字段10" edittype="text" datatype="string" method="None" readonly="false" size="1024" status="F" default="" xpath="/rsv10" />
+	</Fields>
+	<Where>
+		<DateTextBox id="etlDateStart" desc="起始日期" edittype="text" datatype="date" size="34" require="true" index="0" />
+		<DateTextBox id="etlDateEnd" desc="终止日期" edittype="text" datatype="date" size="34" require="true" index="1" />
+        <Option id="brcodeName"  default="" desc="部门" edittype="select" status="F" translated="DATA_DIC.501" datatype="string" size="14" index="2"/>
+		<Option id="status"  default="" desc="匹配状态" edittype="select" status="F" translated="DATA_DIC.91" datatype="string" size="2" index="3"/>
+	</Where>
+	<Operations>
+	    <Button id="modelDownload" name="modelDownload" desc="EXCEL模板 下载"   url="#" /> 
+		<Button id="importBN" name="importBN" desc="批量导入数据"  url="#" show="" group="" txn=""  icon="icon-impin"  />
+	    <Button id="rematch" name="rematch" desc="重新匹配" url="#" />
+	    <Button id="roundRobinQuery" name="roundRobinQuery" desc="批量发送" url="#"  operation="asysubmit" 
+		 updateClass="com.huateng.report.pboc.updater.BatchQueryPersonalUpdate" txn=""/> 
+	</Operations>
+</CommQry>

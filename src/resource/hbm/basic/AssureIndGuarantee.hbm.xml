@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="AssureIndGuarantee"
+            table="Assure_Ind_Guarantee"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="contractType"
+                column="contract_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="no"
+                column="no"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+        <property
+                name="contractNo"
+                column="contract_no"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="contractEffFlag"
+                column="contract_eff_flag"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       <property
+                name="contractNoAmount"
+                column="contract_no_amount"
+                type="float"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="contractNoCurrency"
+                column="contract_no_currency"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        
+          <property
+                name="guaranteeAmount"
+                column="guarantee_amount"
+                type="float"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="guaranteeCurrency"
+                column="guarantee_currency"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="financialOrg"
+                column="financial_org"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+       
+          <property
+                name="contractSignDate"
+                column="contract_sign_date"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="contractStyle"
+                column="contract_style"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+    </class>
+</hibernate-mapping>

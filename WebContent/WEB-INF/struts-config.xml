@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<!--======================= Form Bean Definitions  =======================-->
+	<form-beans>
+		<form-bean name="loginForm" type="com.huateng.ebank.business.management.bean.LoginForm">
+			<display-name>LoginForm</display-name>
+		</form-bean>
+		<form-bean name="logoutForm" type="com.huateng.ebank.business.management.bean.LogoutForm">
+			<display-name>LogoutForm</display-name>
+		</form-bean>
+		<form-bean name="changePwdForm" type="com.huateng.ebank.business.management.bean.ChangePwdForm">
+			<display-name>ChangePwdForm</display-name>
+		</form-bean>
+		<form-bean name="upfileForm" type="com.huateng.ebank.business.customer.form.UpfileForm" />
+		<form-bean name="uploadfileForm" type="com.huateng.ebank.business.customer.form.UploadfileForm" />								   								   
+		</form-beans>
+
+	<!-- ========== Global Exceptions Definitions =================================== -->
+	<global-exceptions>
+		<exception type="java.lang.Exception" key="errors.general"
+			handler="com.huateng.ebank.framework.web.struts.ActionExceptionHandler" />
+	</global-exceptions>
+	<global-forwards>
+		<forward name="error" path="/common/error.jsp" />
+		<forward name="ok" path="/send.do"></forward>
+	</global-forwards>
+
+	<action-mappings>
+		<!-- =================== Action Mapping Definitions =====================-->
+		<action path="/custlogin"
+			type="com.huateng.ebank.business.management.action.LoginAction" name="loginForm"
+			scope="request" input="/login/login.jsp">
+			<forward name="login" path="/login/login.jsp"></forward>
+			<forward name="success" path="/login/index.jsp" redirect="true"/>
+			<forward name="error" path="/common/error.jsp" />
+			<forward name="chgpwd" path="/fpages/management/ftl/ChangePwd.ftl" />
+		</action>
+		<action path="/custlogout"
+			type="com.huateng.ebank.business.management.action.LogoutAction" name="logoutForm"
+			scope="request">
+			<forward name="success" path="/login/login.jsp"></forward>
+			<forward name="failure" path="/login/login.jsp"></forward>
+		</action>
+
+		<!-- ===============================navg menu forward -->
+		<action path="/menunavg"
+			type="com.huateng.report.common.action.NavigationAction" scope="request">
+			<forward name="Report0101" redirect="true" path="/login/index.jsp"></forward>
+			<forward name="Report0302" redirect="true" path="/login/index.jsp"></forward>
+		</action>
+<!--		<action  path="/trans/TransDataAction" type="com.huateng.ebank.framework.web.commQuery.TransDataAction">-->
+<!--		</action>-->
+
+		<!-- 文件上传 add by yusonglin  end 20170906 -->
+
+		<action path="/IndAppUploadAction"  name="upfileForm" scope="request" type="com.huateng.ebank.business.customer.action.IndAppUploadAction">
+			<forward name="success" path="/fpages/business/ftl/excelImport.jsp"></forward>
+		 	<forward name="error" path="/fpages/business/ftl/excelImport.jsp"></forward>
+		</action>
+		
+		 <action path="/DownloadInqCustAction"  name="upfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadInqCustAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		
+		 <action path="/DownloadUserPermitAction"  name="download1" scope="request" type="com.huateng.ebank.business.customer.action.DownloadUserPermitAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		 <action path="/DownloadUserPermitAction2"  name="download11" scope="request" type="com.huateng.ebank.business.customer.action.DownloadUserPermitAction2">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		
+		 <!-- <action path="/QueryCorpUpdate"  name="queryCorp" scope="request" type="package com.huateng.report.pboc.action.QueryCorpAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action> -->
+		
+		
+		 <action path="/DownloadLoaAction"  name="download2" scope="request" type="com.huateng.ebank.business.customer.action.DownloadLoaAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		 <action path="/DownloadLoaAction2"  name="download22" scope="request" type="com.huateng.ebank.business.customer.action.DownloadLoaAction2">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		
+		 <action path="/DownloadReplyAction"  name="download3" scope="request" type="com.huateng.ebank.business.customer.action.DownloadReplyAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		
+		 <action path="/DownloadDetailInfoAction"  name="download1" scope="request" type="com.huateng.ebank.business.customer.action.DownloadDetailInfoAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		<!--  许可文件上传下载 -->
+		<action path="/DownloadIndPermitAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadIndPermitAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+	
+	
+		<action path="/DownloadTCorpPermitAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadTCorpPermitAction">
+		 <forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+			<!--   文件 下载 -->
+		<action path="/DownloadFileAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadFileAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		
+			<!-- 文件上传 add by yusonglin  end 20170906 -->
+
+		<action path="/BatchIndAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.BatchIndAction">
+			<forward name="success" path="/fpages/business/ftl/batchIndImport.jsp"></forward>
+		 	<forward name="error" path="/fpages/business/ftl/batchIndImport.jsp"></forward>
+		</action>
+		
+		<action path="/BatchTlrUpdateInfoAction"  name="upfileForm" scope="request" type="com.huateng.ebank.business.customer.action.BatchTlrUpdateInfoAction">
+			<forward name="success" path="/fpages/business/ftl/batchTlrUpdateInfoImport.jsp"></forward>
+		 	<forward name="error" path="/fpages/business/ftl/batchTlrUpdateInfoImport.jsp"></forward>
+		</action>
+		<action path="/MatrixUploadAction"  name="MatrixUploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.MatrixUploadAction">
+			<forward name="success" path="/fpages/business/ftl/batchTlrUpdateInfoImport.jsp"></forward>
+		 	<forward name="error" path="/fpages/business/ftl/batchTlrUpdateInfoImport.jsp"></forward>
+		</action>
+		<action path="/BatchCorpAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.BatchCorpAction">
+			<forward name="success" path="/fpages/business/ftl/batchCorpImport.jsp"></forward>
+		 	<forward name="error" path="/fpages/business/ftl/batchCorpImport.jsp"></forward>
+		</action>
+		
+		
+		 <action path="/CorpDownloadAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.CorpDownloadAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		<action path="/IndDownloadAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.IndDownloadAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		<action path="/BatchDownLoadTlrUpdateInfoAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.BatchDownLoadTlrUpdateInfoAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+			<action path="/CorpLoancardDownloadAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.CorpLoancardDownloadAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		<action path="/BatchCorpLoancardAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.BatchCorpLoancardAction">
+		 	<forward name="success" path="/fpages/business/ftl/batchCorpLoancardImport.jsp" />
+    		<forward name="error" path="/fpages/business/ftl/batchCorpLoancardImport.jsp" />
+		</action>
+
+	<!-- 报表下载 -->
+		 <action path="/reportForm/DownloadReportFormAction" type="com.huateng.htaml.reportForm.util.DownloadReportFormAction">
+ 		 	<forward name="success" path="/common/success.jsp" /> 
+  			<forward name="error" path="/common/error.jsp" /> 
+  		</action>
+  		 <action path="/reportForm/PermissionFileSubmitJobdownloadAction" type="com.huateng.htaml.reportForm.util.PermissionFileSubmitJobdownloadAction">
+ 		 	<forward name="success" path="/common/success.jsp" /> 
+  			<forward name="error" path="/common/error.jsp" /> 
+  		</action>
+  		 <action path="/reportForm/UserReportDownloadAction" type="com.huateng.htaml.reportForm.util.UserReportDownloadAction">
+ 		 	<forward name="success" path="/common/success.jsp" /> 
+  			<forward name="error" path="/common/error.jsp" /> 
+  		</action>
+  		 <action path="/reportForm/MatrixDownloadAction" type="com.huateng.htaml.reportForm.util.MatrixDownloadAction">
+ 		 	<forward name="success" path="/common/success.jsp" /> 
+  			<forward name="error" path="/common/error.jsp" /> 
+  		</action>
+  	<!-- 报表下载 -->
+  	<!-- 原始企业一般报告下载 -->
+  	 <action path="/DownloadStirCorpCustAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadStirCorpCustAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+	 <action path="/DownloadCorpCustAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadCorpCustAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+
+
+	<action path="/printPersonalInfoAction"  name="printPersonalInfo" scope="request" type="com.huateng.ebank.business.customer.action.PrintPersonalInfoAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+
+ <action path="/DownloadLogDetailsAction"  name="downloadLogDetailsAction" scope="request" type="com.huateng.ebank.business.customer.action.DownloadLogDetailsAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+
+ <action path="/DownloadNatureAction"  name="download1" scope="request" type="com.huateng.ebank.business.customer.action.DownloadNatureAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+		<action path="/PrintAssureTotleCustAction"  name="printPersonalInfo" scope="request" type="com.huateng.ebank.business.assure.action.PrintPersonalInfoAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>																				
+	<action path="/PrintAssureTotleCustGuarantDetailAction"  name="printPersonalInfo" scope="request" type="com.huateng.ebank.business.assure.action.PrintPersonalInfoAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>	
+		
+	<!-- 自然人对外担保 -->
+	<action path="/DownloadAssureCustAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.assure.action.DownloadAssureCustAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+	</action>
+	<action path="/DownloadAssureUserPermitAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.assure.action.DownloadAssureUserPermitAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+	</action>
+	<!--邮件报表下载-->
+	<action path="/reportForm/UserReportMailDownloadAction" type="com.huateng.htaml.reportForm.util.UserReportMailDownloadAction">
+ 		 	<forward name="success" path="/common/success.jsp" /> 
+  			<forward name="error" path="/common/error.jsp" /> 
+  		</action>	
+  		
+  		
+     <action path="/BatchNaturePersonCodeQueryAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.BatchNaturePersonCodeQueryAction">
+			<forward name="success" path="/fpages/business/ftl/BatchNaturePersonCodeQuery.jsp"></forward>
+		 	<forward name="error" path="/fpages/business/ftl/BatchNaturePersonCodeQuery.jsp"></forward>
+		</action>
+	<action path="/BatchNaturePersonQueryAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.BatchNaturePersonQueryAction">
+			<forward name="success" path="/fpages/business/ftl/BatchNaturePersonQuery.jsp"></forward>
+		 	<forward name="error" path="/fpages/business/ftl/BatchNaturePersonQuery.jsp"></forward>
+		</action>	
+		
+	 <action path="/DownloadNonWorkFileAction"  name="upfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadNonWorkFileAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>	
+		
+	<action path="/NaturePersonCodeTemplateDownloadAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.NaturePersonCodeTemplateDownloadAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+	</action>	
+	
+	<action path="/NaturePersonTemplateDownloadAction"  name="uploadfileForm" scope="request" type="com.huateng.ebank.business.customer.action.NaturePersonTemplateDownloadAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+	</action>
+  	 <action path="/reportForm/DownloadAction" type="com.huateng.htaml.reportForm.util.DownloadAction">
+ 		 	<forward name="success" path="/common/success.jsp" /> 
+  			<forward name="error" path="/common/error.jsp" /> 
+  		</action>				
+	 
+	<!--AuditTrialReportDownload-->
+	 <action path="/reportForm/AuditTrialReportDownloadAction" type="com.huateng.htaml.reportForm.util.AuditTrialReportDownloadAction">
+ 		 	<forward name="success" path="/common/success.jsp" /> 
+  			<forward name="error" path="/common/error.jsp" /> 
+  		</action>		
+  		<!--文件下载编辑-->
+  		<!-- add by qx 20200202 二代原始报告下载 -->
+  	<action path="/DownloadCustPbocPerQueryAction"  name="upfileForm" scope="request" type="com.huateng.ebank.business.customer.action.DownloadCustPbocPerQueryAction">
+		 	<forward name="success" path="/common/success.jsp" />
+    		<forward name="error" path="/common/error.jsp" />
+		</action>
+
+
+
+
+	</action-mappings>
+	
+</struts-config>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- old primary key(group_id,user_id); -->
+<hibernate-mapping package="resource.bean.msg">
+	<class name="CpgMsgGroup" table="CPG_MSG_GROUP">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="id">
+			<generator class="uuid" />
+		</id>
+		<property name="groupId" 		column="group_id" 		type="string" not-null="false"  length="20" />
+		<property name="userId" 		column="user_id" 		type="string" not-null="false"  length="20" />
+		<property name="creator" 		column="creator" 		type="string" not-null="false"  length="20" />
+		<property name="createdDate"	column="created_date" 	type="string" not-null="false"  length="14" />
+		<property name="modUser" 		column="mod_user" 		type="string" not-null="false"  length="20" />
+		<property name="modDate" 		column="mod_date" 		type="string" not-null="false"  length="14" />
+		<property name="checkUser" 		column="check_user" 	type="string" not-null="false"  length="20" />
+		<property name="checkDate" 		column="check_date" 	type="string" not-null="false"  length="14" />
+		<property name="rsv1" 			column="rsv1" 			type="string" not-null="false"  length="60" />
+		<property name="rsv2" 			column="rsv2" 			type="string" not-null="false"  length="60" />
+		<property name="rsv3" 			column="rsv3" 			type="string" not-null="false"  length="60" />
+		<property name="rsv4" 			column="rsv4" 			type="string" not-null="false"  length="60" />
+		<property name="rsv5" 			column="rsv5" 			type="string" not-null="false"  length="60" />
+	</class>
+</hibernate-mapping>

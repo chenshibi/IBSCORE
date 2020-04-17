@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="个人征信维护" type="call" interface="true" navigate=""  pagesize="10"
+    async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+    getterclassname="com.huateng.crms.thirdparty.pboc.getter.QueryPersonalDetailGetter">
+
+    <Include id="BankParam" />
+
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出--个人征信维护"  />
+
+    <Fields>
+        <Field id="name" desc="姓名" tip="姓名" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="30" default="" xpath="/name"/>
+        <Field id="idType" desc="证件类型" require="true" edittype="select"
+               translated="DATA_DIC.6002" readonly="true"
+               size="2" datatype="string" status="A" xpath="/idType"/>
+        <Field id="idNum" desc="证件号码" require="true" edittype="text" size="32"
+               datatype="string" readonly="true" status="A" xpath="/idNum"/>
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select"
+               size="2" datatype="string" status="A" translated="DATA_DIC.6004"
+               xpath="/queryReason"/>
+        <Field id="serviceCode" desc="服务代码" require="true" size="100"
+               edittype="text" datatype="string" status="F"
+               xpath="/serviceCode"/>
+        <Field id="queryDate" desc="查询日期" tip="查询日期" status="F" require=""
+               edittype="text" datatype="date" method="None" readonly="true" primary="true"
+               size="8" default="" xpath="/queryDate"/>
+        <Field id="status" desc="状态" tip="状态" status="F" translated="LIST:00,未查;01,审批通过;02,审批拒绝;03,查询成功;04,查询失败;05,已绑定证书;06,征信报告过期"
+               require="" edittype="select" datatype="string" method="None" readonly="true"
+               primary="true" size="2" default="" xpath="/status"/>
+        <Field id="id" desc="id" edittype="text" status="C" datatype="string" readonly="true" xpath="/id"  size="6" />
+  	</Fields>
+
+    <Operations>
+        <Button id="btClose" name="btClose" desc="返回" operation="syncsubmit" url="#" txn="" />
+        <Button id="btModify" name="btModify" desc="保存" operation="asysubmit"
+            url="/fpages/crms/ftl/CrmsPbocQueryPersonalMaintain.ftl"
+            updateClass="com.huateng.crms.thirdparty.pboc.updater.QueryPersonalModUpdate"
+            txn="" />
+    </Operations>
+
+</CommQry>
+

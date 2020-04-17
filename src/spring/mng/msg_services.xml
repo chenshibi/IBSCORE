@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+        <!-- add by zhangdianchao 20160301 消息平台 start -->
+    <!-- operations -->
+    <bean id="com.huateng.msgplatform.service.SyncMsgPlatformService"
+        class="com.huateng.msgplatform.service.SyncMsgPlatformService">
+    </bean>
+    <bean   id="MsgTypeOperation"
+            class="com.huateng.msgplatform.opertation.MsgTypeOperation" />
+    <bean   id="RcvUserOperation"
+            class="com.huateng.msgplatform.opertation.RcvUserOperation" />
+    <bean   id="RcvUserGroupOperation"
+            class="com.huateng.msgplatform.opertation.RcvUserGroupOperation" />
+    <bean   id="MsgSendSettingOperation"
+            class="com.huateng.msgplatform.opertation.MsgSendSettingOperation" />
+    <!-- services -->
+    <bean   id="MsgTypeService"
+            class="com.huateng.msgplatform.service.MsgTypeService" />
+    <bean   id="RcvUserService"
+            class="com.huateng.msgplatform.service.RcvUserService" />
+    <bean   id="RcvUserGroupService"
+            class="com.huateng.msgplatform.service.RcvUserGroupService" />
+    <bean   id="MsgSendSettingService"
+            class="com.huateng.msgplatform.service.MsgSendSettingService" />
+    <!-- add by zhangdianchao 20160301 消息平台 end -->
+    
+    <!-- add by yusonglin 20170830 客户征信查询许可文件上传 -->
+    <bean   id="BusinessUploadService"
+            class="com.huateng.ebank.business.customer.service.BusinessUploadService" />
+
+	<bean   id="BatchCorpService"
+            class="com.huateng.ebank.business.customer.service.BatchCorpService" />
+    <bean   id="BatchIndService"
+            class="com.huateng.ebank.business.customer.service.BatchIndService" />
+    <bean   id="BatchTlrUpdateInfoService"
+            class="com.huateng.ebank.business.customer.service.BatchTlrUpdateInfoService" />        
+    <bean   id="BatchCorpLoancardService"
+            class="com.huateng.ebank.business.customer.service.BatchCorpLoancardService" />
+   	<bean   id="CustomerLevelService"
+            class="com.huateng.ebank.business.customer.service.CustomerLevelService" />
+</beans>

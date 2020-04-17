@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndInsDepositQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="no" desc="编号" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/no" />
+			
+		<Field id="city" desc="参保地" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="N"  default="" 
+			primary="true" xpath="/city" />
+
+		<Field id="initDate" desc="参保日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/initDate" />
+			
+		<Field id="totalMonth" desc="累计缴费月数" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/totalMonth" />
+			
+		<Field id="workMonth" desc="参加工作月份" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/workMonth" />
+		
+		<Field id="status" desc="缴费状态" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/status" />
+			
+		<Field id="baseAmount" desc="个人缴费基数" edittype="text" datatype="currency"
+			method="None" readonly="false" size="20" status="F"  scale="2"
+			default="" xpath="/baseAmount" />
+			
+		<Field id="depositAmount" desc="本月缴费金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="20" status="F"  scale="2"
+			default="" xpath="/depositAmount" />
+			
+		<Field id="updateDate" desc="信息更新日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/updateDate" />
+		
+		<Field id="organ" desc="缴费单位" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/organ" />
+			
+		<Field id="endReason" desc="中断或终止缴费原因" edittype="text" datatype="string"
+			method="None" readonly="false" size="300" status="F" 
+			default="" xpath="/endReason" />
+			
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

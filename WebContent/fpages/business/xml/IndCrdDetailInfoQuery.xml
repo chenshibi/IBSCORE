@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndCrdDetailInfoQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="share_" desc="共享额度" edittype="text" datatype="currency" 
+			method="None" readonly="false" size="18" status="F"  scale="2"
+			default="" xpath="/share_" />
+			
+		<Field id="overdue" desc="已用额度" edittype="text" datatype="currency"
+			method="None" readonly="false" size="100" status="N"  default=""  scale="2"
+			primary="true" xpath="/overdue" />
+
+		<Field id="avgusedl6m" desc="最近6个月平均使用额度" edittype="text" datatype="currency"
+			method="None" readonly="false" size="30" status="F"  scale="2"
+			default="" xpath="/avgusedl6m" />
+		
+		<Field id="maxDebit" desc="最大使用额度" edittype="text" datatype="currency"
+			method="None" readonly="false" size="80" status="F"  scale="2"
+			default="" xpath="/maxDebit" />
+			
+		<Field id="payMonth" desc="本月应还款" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/payMonth" />
+			
+		<Field id="billday" desc="账单日" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/billday" />
+			
+		<Field id="yearmonth" desc="最后更新日期" placeholder="yyyy-MM-dd HH:mm:ss"
+		edittype="timestamp" datatype="timestamp" xpath="/yearmonth" />
+			
+		<Field id="payReal" desc="本月实还款" edittype="text" datatype="currency"
+			method="None" readonly="false" size="100" status="F"  scale="2"
+			default="" xpath="/payReal" />
+			
+		<Field id="recentDate" desc="最近一次还款日期" edittype="text" datatype="date"
+			method="None" readonly="false" size="12" status="F" 
+			default="" xpath="/recentDate" />
+			
+		<Field id="overCount" desc="当前逾期期数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/overCount" />
+			
+		<Field id="overAmount" desc="当前逾期金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="20" status="F"  scale="2"
+			default="" xpath="/overAmount" />
+			
+		<Field id="month24" desc="最近24个月的还款记录" edittype="text" datatype="string"
+			method="None" readonly="false" size="24" status="F"  
+			default="" xpath="/month24" />
+			
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

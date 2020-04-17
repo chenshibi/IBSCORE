@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="TCorpLoancardResp"
+            table="T_Corp_Loancard_Resp"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="inqId"
+			column="inq_id"
+			type="integer"
+			not-null="false"
+			length="14"
+		/>
+		
+		<property
+			name="loancardno"
+			column="loancardno"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="countryTaxCode"
+			column="country_tax_code"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+         <property
+                name="orgCreditCode"
+                column="org_credit_code"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="orgCode"
+                column="org_code"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        <property
+                name="regionTaxCode"
+                column="region_tax_code"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+          <property
+                name="registCodeType"
+                column="regist_code_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        <property
+                name="registCode"
+                column="regist_code"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="engName"
+                column="eng_name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        <property
+                name="chnName"
+                column="chn_name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        <property
+                name="fullName"
+                column="full_name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+          <property
+                name="returnTime"
+                column="return_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+        
+       
+        
+    </class>
+</hibernate-mapping>

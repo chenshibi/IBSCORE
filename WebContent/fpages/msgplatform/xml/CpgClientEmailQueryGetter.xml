@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="黑灰名单客户邮件发送记录查询" type="call" interface="true" navigate=""  pagesize="10"
+    async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+    getterclassname="com.huateng.msgplatform.getter.CpgClientEmailQueryGetter">
+
+    <Include id="BankParam" />
+
+   <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出--黑灰名单客户邮件发送记录查询"  />
+ 
+    <Fields>
+        <Field id="ftloperation" desc="操作" status="N" size="20" tip="操作"/>
+        <Field id="cpgClientEmailActno" desc="账户号" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailactno"  size="32"  width="95%"/> 
+        <Field id="cpgClientEmailActName" desc="账户名" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailactname"  width="95%"/> 
+        <Field id="cpgClientEmailBrno" desc="分行号" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailbrno"  size="4"  width="95%"/> 
+        <Field id="cpgClientEmailEmail" desc="EMAIL" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailemail"  size="256"  width="95%"/> 
+        <Field id="cpgClientEmailMsgId" desc="消息号" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailmsgid"  width="95%"/> 
+        <Field id="cpgClientEmailMsgName" desc="消息名" edittype="text" status="F" datatype="string" readonly="true" xpath="/cpgclientemailmsgname"  width="95%"/> 
+        <Field id="cpgClientEmailSndTime" desc="发送时间" edittype="date" status="F" datatype="time14" readonly="true" xpath="/cpgclientemailsndtime"  size="14"  width="95%"/> 
+        <Field id="cpgClientEmailSt" desc="状态" edittype="select" translated="LIST:0,发送失败;1,发送成功;" status="F" datatype="string" readonly="true" xpath="/cpgclientemailst"  size="2"  width="95%"/> 
+    </Fields>
+
+    <Where>
+        <TextBox id="querycpgClientEmailActno" require="false"  desc="账户号" datatype="string" index="1"  size="32"/>
+        <TextBox id="querycpgClientEmailActName" require="false"  desc="账户名" datatype="string" index="2"  size="100"/>
+    </Where>
+
+</CommQry>
+

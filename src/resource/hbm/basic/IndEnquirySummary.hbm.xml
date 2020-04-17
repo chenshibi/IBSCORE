@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndEnquirySummary"
+            table="Ind_enquiry_summary"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="loanApproveOrgL1m"
+                column="loan_approve_org_l1m"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+       
+        <property
+                name="ccApproveOrgL1m"
+                column="cc_approve_org_l1m"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="loanApproveL1m"
+                column="loan_approve_l1m"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="ccApproveL1m"
+                column="cc_approve_l1m"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="loanManageL2y"
+                column="loan_manage_l2y"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="assuranceCheckL2y"
+                column="assurance_check_l2y"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="realNameCheckL2y"
+                column="real_name_check_l2y"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="getDate"
+                column="get_date"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+         <property
+                name="selfL1m"
+                column="self_l1m"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+        
+    </class>
+</hibernate-mapping>

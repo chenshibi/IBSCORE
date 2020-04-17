@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.msg">
+	<class name="CpgMsgCtl" table="CPG_MSG_CTL">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="ID">
+			<generator class="uuid" />
+		</id>
+		<property name="msgId" 			column="msg_id" 		type="string" 	not-null="false"  length="20" />
+		<property name="sysType"	 	column="sys_type" 		type="string" 	not-null="false"  length="20" />
+		<property name="msgName" 		column="msg_name" 		type="string" 	not-null="false"  length="90" />
+		<property name="type" 			column="type" 			type="string" 	not-null="false"  length="1" />
+		<property name="subType" 		column="sub_type" 		type="string" 	not-null="false"  length="20" />
+		<property name="status" 		column="status" 		type="string" 	not-null="false"  length="1" />
+		<!-- 
+		<property name="sndCtlFlag" 		column="snd_ctl_flag" 		type="string" 	not-null="false"  length="1" />
+		<property name="sndCtlStatus" 		column="snd_ctl_status" 	type="string" 	not-null="false"  length="1" />
+		 -->
+		<property name="creator" 		column="creator" 		type="string" 	not-null="false"  length="20" />
+		<property name="createdDate" 	column="created_date" 	type="string" 	not-null="false"  length="14" />
+		<property name="modUser" 		column="mod_user"		type="string" 	not-null="false"  length="20" />
+		<property name="modDate" 		column="mod_date" 		type="string" 	not-null="false"  length="14" />
+		<property name="checkUser" 		column="check_user" 	type="string" 	not-null="false"  length="20" />
+		<property name="checkDate" 		column="check_date" 	type="string" 	not-null="false"  length="14" />
+		<property name="rsv1" 			column="rsv1" 			type="string" 	not-null="false"  length="60" />
+		<property name="rsv2" 			column="rsv2" 			type="string" 	not-null="false"  length="60" />
+		<property name="rsv3" 			column="rsv3" 			type="string" 	not-null="false"  length="60" />
+		<property name="rsv4" 			column="rsv4" 			type="string" 	not-null="false"  length="60" />
+		<property name="rsv5" 			column="rsv5" 			type="string" 	not-null="false"  length="60" />
+	</class>
+</hibernate-mapping>

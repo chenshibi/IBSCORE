@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="授权资料审核" navigate="授权资料审核  &gt; 授权资料审核" type="call"
+         interface="true" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do"
+         getterclassname="com.huateng.crms.thirdparty.pboc.getter.QueryPersonalMaintainGetter">
+    <Include id="BankParam"/>
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-授权资料审核"/>
+    <Fields>
+        <!-- 个人征信历史查询 -->
+        <!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+        <Field id="id" desc="主键" edittype="text" status="F" datatype="string" readonly="true" xpath="/id"  size="6"/>
+        <Field id="select" desc="选择" require="false" method="None"
+               readonly="false" size="20" default="" xpath="" type="select"
+               edittype="checkbox" />
+        <Field id="createUser" desc="操作员号" tip="操作员号"  require="true"
+               edittype="text" datatype="String" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/createUser"/>
+        <Field id="name" desc="姓名" tip="姓名" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="30" default="" xpath="/name"/>
+        <Field id="idType" desc="证件类型" require="true" edittype="select"
+               translated="DATA_DIC.6002"
+               size="2" datatype="string" status="A" xpath="/idType"/>
+        <Field id="idNum" desc="证件号码" require="true" edittype="text" size="32"
+               datatype="string" status="A" xpath="/idNum"/>
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select"
+               size="2" datatype="string" status="A" translated="DATA_DIC.6004"
+               xpath="/queryReason"/>
+        <Field id="serviceCode" desc="服务代码" require="true" size="100"
+               edittype="text" datatype="string" status="F"
+               xpath="/serviceCode"/>
+        <Field id="queryDate" desc="查询日期" tip="查询日期" status="F" require=""
+               edittype="text" datatype="date" method="None" readonly="" primary="true"
+               size="8" default="" xpath="/queryDate"/>
+        <Field id="status" desc="状态" tip="状态" status="F" translated="LIST:00,未查;01,审批通过;02,审批拒绝;03,查询成功;04,查询失败;05,已绑定证书;06,征信报告过期"
+               require="" edittype="select" datatype="string" method="None" readonly=""
+               primary="true" size="2" default="" xpath="/status"/>
+    </Fields>
+    <Where>
+        <TextBox id="name" tablename="NAME" fieldname="name"
+                 type="String" dataType="String" size="30" desc="姓名" tip="姓名"
+                 method="None" index="1" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="idNum" tablename=" ID_NUM" fieldname="idNum"
+                 type="String" dataType="String" size="30" desc="证件号码" tip="证件号码"
+                 method="None" index="2" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="qtlrno" tablename="CREATE_USER" fieldname="createUser"
+                 type="String" dataType="" operation="EQ" size="20" desc="操作员号"
+                 tip="操作员号" method="genLikeP" index="3" function="" width=""
+                 default="" scale="" require="" readOnly="" rules="xss" errmsg="操作员号有错!"/>
+        <!--<Option id="status" size="2" require="false" edittype="select" desc="状态" datatype="int" index="4" translated="LIST:00,未查;01,审批通过;02,审批拒绝;03,查询成功;04,查询失败"/>-->
+    </Where>
+
+    <Operations>
+        <Button id="btBatchGrantRole" desc="审核通过" operation="asysubmit"
+                url="#"
+                updateClass="com.huateng.crms.thirdparty.pboc.updater.GrantAuthDataCheckUpdate"
+                txn=""/>
+    </Operations>
+</CommQry>

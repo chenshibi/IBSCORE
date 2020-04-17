@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="TDetailIndApp"
+            table="t_detail_ind_app"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<!-- oracel数据库自增设置为increment  20191209--> 
+		<!-- <generator class ="identity"/> -->  
+        <generator class ="increment"/> 
+		</id>
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="individualIdType"
+                column="individual_id_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="type"
+                column="type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="individualId"
+                column="individual_id"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+        <property
+                name="name"
+                column="name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="inputUser"
+                column="input_user"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       <property
+                name="inputTime"
+                column="input_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="queryTime"
+                column="query_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+        
+          <property
+                name="returnTime"
+                column="return_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="parseTime"
+                column="parse_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="status"
+                column="status"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="inputUserIp"
+                column="input_user_ip"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+    </class>
+</hibernate-mapping>

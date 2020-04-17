@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    
+    <bean id="CpgMsgUsrDAO" class="resource.dao.msg.CpgMsgUsrDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+    
+    <bean id="CpgUsrInfDAO" class="resource.dao.msg.CpgUsrInfDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+    
+    <bean id="CpgMsgUsrBranchDAO" class="resource.dao.msg.CpgMsgUsrBranchDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+        <bean id="CpgClientEmailCtlDAO" class="resource.dao.msg.CpgClientEmailCtlDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+        <bean id="CpgClientEmailDAO" class="resource.dao.msg.CpgClientEmailDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+
+</beans>
+

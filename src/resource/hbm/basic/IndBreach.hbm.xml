@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndBreach"
+            table="ind_breach"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="badDebtCount"
+                column="bad_debt_count"
+                type="integer"
+                not-null="false"
+        />
+       
+        <property
+                name="badDebtAmount"
+                column="bad_debt_amount"
+                type="float"
+                not-null="false"
+        />
+        <property
+                name="disposalCount"
+                column="disposal_count"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="disposalAmount"
+                column="disposal_amount"
+                type="float"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="ensurePayCount"
+                column="ensure_pay_count"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="ensurePayAmount"
+                column="ensure_pay_Amount"
+                type="float"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="getDate"
+                column="get_date"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+        
+    </class>
+</hibernate-mapping>

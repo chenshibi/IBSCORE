@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndCarTrade"
+            table="ind_car_trade"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="brand"
+                column="brand"
+                type="string"
+                not-null="false"
+                length="20"
+        />
+       
+        <property
+                name="carNumber"
+                column="car_number"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        <property
+                name="carUsage"
+                column="car_usage"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        <property
+                name="engineNumber"
+                column="engine_number"
+                type="string"
+                not-null="false"
+                length="50"
+        />
+         <property
+                name="no"
+                column="no"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="pledged"
+                column="pledged"
+                type="string"
+                not-null="false"
+                length="10"
+        />
+         <property
+                name="status"
+                column="status"
+                type="string"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="type"
+                column="type"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+         <property
+                name="updateDate"
+                column="update_date"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        
+    </class>
+</hibernate-mapping>

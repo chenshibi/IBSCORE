@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CollateralEba" table="COLLATERAL_EBA" >
+        <meta attribute="sync-DAO">false</meta>
+          <id name="id" type="string" column="ID" length="32">
+            <generator class="uuid" />
+          </id>
+        <property name="batchId" column="BATCH_ID" type="string" not-null="false" length="32"  />
+        <property name="eb01Ad06" column="EB01AD06" type="string" not-null="false" length="2"  />
+        <property name="eb01Ad07" column="EB01AD07" type="string" not-null="false" length="2" />
+        <property name="eb01Ad03" column="EB01AD03" type="string" not-null="false" length="2" />
+        <property name="eb01Ad04" column="EB01AD04" type="string" not-null="false" length="2" />
+        <property name="eb01Ar01" column="EB01AR01" type="string" not-null="false" length="10" />
+        <property name="eb01Ad05" column="EB01AD05" type="string" not-null="false" length="3" />
+        <property name="eb01Aj01" column="EB01AJ01" type="string" not-null="false" length="15"  />
+        <property name="eb01Aj02" column="EB01AJ02" type="string" not-null="false" length="15" />
+        <property name="eb01Ar02" column="EB01AR02" type="string" not-null="false" length="10"  />
+        <property name="eb01Ad01" column="EB01AD01" type="string" not-null="false" length="1"  />
+        <property name="eb01Ad02" column="EB01AD02" type="string" not-null="false" length="1"   />
+        <property name="eb01Ar03" column="EB01AR03" type="string" not-null="false" length="10"   />
+        <property name="eb01Bs01" column="EB01BS01" type="string" not-null="false" length="5"   />
+        <property name="eb01Cs01" column="EB01CS01" type="string" not-null="false" length="5"   />
+        <property name="rsv1"  column="RSV1" type="string" not-null="false" length="2"   />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8"   />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8"   />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14"   />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14"    />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32"   />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64"   />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60"   />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512"  />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024"  />
+    </class>
+</hibernate-mapping>

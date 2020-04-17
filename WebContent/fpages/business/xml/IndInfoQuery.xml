@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndInfoQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="gender" desc="性别" edittype="select" datatype="string" translated="DATA_DIC.666"
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/gender" />
+			
+		<Field id="birthday" desc="出生日期" edittype="text" datatype="date"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/birthday" />
+
+		<Field id="marriage" desc="婚姻状况" edittype="select" datatype="string" translated="DATA_DIC.1270"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/marriage" />
+			
+		<Field id="mobile" desc="手机号码" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/mobile" />
+		<Field id="phoneCom" desc="单位电话" edittype="text" datatype="String"
+			method="None" readonly="false" size="10" status="F" default=""
+			xpath="/phoneCom" />
+		<Field id="phoneLiv" desc="住宅电话" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/phoneLiv" />
+		<Field id="education" desc="学历" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/education" />
+		<Field id="degree" desc="学位" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/degree" />
+		<Field id="addr" desc="通讯地址" edittype="text" datatype="string"
+			method="None" readonly="false" width="300" size="18" status="F" default=""
+			xpath="/addr" />
+		<Field id="hukouAddr" desc="户籍地址" edittype="text" datatype="string"
+			method="None" readonly="false" width="300" size="18" status="F" default=""
+			xpath="/hukouAddr" />	
+		<Field id="spouse" desc="姓名" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" default=""
+			xpath="/spouse" />
+		<Field id="spouseIdType" desc="证件类型" edittype="select" datatype="string" translated="DATA_DIC.5511"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/spouseIdType" />
+		<Field id="spouseIdNumber" desc="证件号码" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/spouseIdNumber" />
+		<Field id="spouseCom" desc="工作单位" edittype="text" datatype="string"
+			method="None" readonly="false" size="60" status="F" default=""
+			xpath="/spouseCom" />
+		<Field id="spousePhone" desc="联系电话" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" default=""
+			xpath="/spousePhone" />
+
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

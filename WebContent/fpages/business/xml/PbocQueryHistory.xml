@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="第二代企业征信报告查询" navigate="第二代企业征信报告查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PbocQueryHistoryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="40" default="" tip="操作" require="false" />
+		
+		<Field id="id" name="ID" desc="ID" status="N" method="None" width=""  size="32" require="false" readonly = "true" datatype="String" edittype="text" xpath="/id" />
+		<Field id="entName" name="企业名称" desc="企业名称" status="N" method="None" width=""  size="80" require="false" readonly = "true" datatype="String" edittype="text" xpath="/entName" />
+		<Field id="entCertType" name="企业身份标识类型" desc="企业身份标识类型" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.6065" xpath="/entCertType" />
+		<Field id="entCertNum" name="企业身份标识号码" desc="企业身份标识号码" status="N" method="None" width=""  size="40" require="false" readonly = "true" datatype="String" edittype="text" xpath="/entCertNum" />
+		<Field id="queryReason" name="查询原因" desc="查询原因" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.6066" xpath="/queryReason" />
+		<Field id="serviceCode" name="服务代码" desc="服务代码" status="N" method="None" width=""  size="100" require="false" readonly = "true" datatype="String" edittype="text" xpath="/serviceCode" />
+		<Field id="respId" name="回执ID" desc="回执ID" status="N" method="None" width=""  size="32" require="false" readonly = "true" datatype="String" edittype="text" xpath="/respId" />
+		<Field id="respCode" name="回执码" desc="回执码" status="N" method="None" width=""  size="4" require="false" readonly = "true" datatype="String" edittype="text" xpath="/respCode" />
+		<Field id="respMsg" name="回执信息" desc="回执信息" status="N" method="None" width=""  size="1024" require="false" readonly = "true" datatype="String" edittype="text" xpath="/respMsg" />
+		<Field id="queryDate" name="查询日期" desc="查询日期" status="N" method="None" width=""  size="8" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/queryDate" />
+		<Field id="createUser" name="创建者" desc="创建者" status="N" method="None" width=""  size="20" require="false" readonly = "true" datatype="String" edittype="text" xpath="/createUser" />
+		<Field id="createTime" name="创建时间" desc="创建时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" placeholder="yyyyMMddHHmmss" xpath="/createTime" />
+		<Field id="checkUser" name="审核者" desc="审核者" status="N" method="None" width=""  size="20" require="false" readonly = "true" datatype="String" edittype="text" xpath="/checkUser" />
+		<Field id="checkTime" name="审核时间" desc="审核时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" placeholder="yyyyMMddHHmmss" xpath="/checkTime" />
+		<Field id="sendTime" name="发送时间" desc="发送时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" placeholder="yyyyMMddHHmmss" xpath="/sendTime" />
+		<Field id="respTime" name="回执时间" desc="回执时间" status="N" method="None" width=""  size="14" require="false" readonly = "true" datatype="String" edittype="text" placeholder="yyyyMMddHHmmss" xpath="/respTime" />
+		<Field id="status" name="状态" desc="状态" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="LIST:00,未查;02,查询成功-未解析;03,查询成功;04,查询失败;" xpath="/status" />
+		<Field id="certAuthStatus" name="授权证书状态" desc="授权证书状态" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="LIST:01,已授权;02,未授权;" xpath="/certAuthStatus" />
+		<Field id="funcid1" name="菜单ID1" desc="菜单ID1" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid1" />
+		<Field id="funcid2" name="菜单ID2" desc="菜单ID2" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid2" />
+		<Field id="funcid3" name="菜单ID3" desc="菜单ID3" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid3" />
+		<Field id="funcid4" name="菜单ID4" desc="菜单ID4" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid4" />
+		<Field id="funcid5" name="菜单ID5" desc="菜单ID5" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid5" />
+		<Field id="funcid6" name="菜单ID6" desc="菜单ID6" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid6" />
+		<Field id="funcid7" name="菜单ID7" desc="菜单ID7" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid7" />
+		<Field id="queryLevel" name="查询级别" desc="查询级别" status="N" method="None" width=""  size="2" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.6664" xpath="/queryLevel" />
+		
+	</Fields>
+	<Where>
+		<TextBox id="entName" type="String"  size="80" 
+			desc="企业名称" tip="企业名称" index="1" />
+		<TextBox id="entCertNum" type="String"  size="40" width="180"
+			desc="企业身份标识号码" tip="企业身份标识号码" index="2" />
+		<Option id="queryReason" desc="查询原因" size="2" edittype="select"  datatype="string" index="3" translated="DATA_DIC.6066"  />
+		<Option id="status" desc="查询状态" size="2" edittype="select"  datatype="string" index="4" translated="LIST:00,未查;02,查询成功-未解析;03,查询成功;04,查询失败;"  />
+		<Option id="MyQuery"  default="" desc="我的查询" type="MyQuery" tip="" method="None" index="5" translated="LIST:1,近7日;2,近30天;"/>
+	</Where>
+	<Operations>
+	
+	</Operations>
+</CommQry>

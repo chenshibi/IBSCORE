@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="黑名单企业单笔插入" navigate="黑名单企业单笔插入"
+	type="call" interface="false" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+	getterclassname="">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+        <Field id="compId"      name="CompID"              desc="CompID"              status="N" method="None" width=""  size="30" 	require="true" readonly = "false" datatype="String" edittype="text"   xpath="/compId" />
+        <Field id="regId"       name="CompRegID"           desc="CompRegID"           status="N" method="None" width=""  size="200" require="true" readonly = "false" datatype="String" edittype="text"   xpath="/regId" />
+        <Field id="nameChn"     name="Name Chinese"        desc="Name Chinese"        status="N" method="None" width=""  size="180" require="true" readonly = "false" datatype="String" edittype="text"   xpath="/nameChn" />
+        <Field id="nameEng"     name="Name Enghlish"       desc="Name Enghlish"       status="N" method="None" width=""  size="180" require="false" readonly = "false" datatype="String" edittype="text"  xpath="/nameEng" />
+        <Field id="product"     name="Product"             desc="Product"             status="N" method="None" width=""  size="60" 	require="false" readonly = "false" datatype="String" edittype="select" translated="DATA_DIC.6503"  xpath="/product" />
+        <Field id="rm"          name="RM Name"             desc="RM Name"             status="N" method="None" width=""  size="32" 	require="false" readonly = "false" datatype="String" edittype="text"  xpath="/rm" />
+        <Field id="loanNo"      name="Loan No"             desc="Loan No"             status="N" method="None" width=""  size="10" 	require="false" readonly = "false" datatype="String" edittype="text"  xpath="/loanNo" />
+        <Field id="appNo"       name="Application No"      desc="Application No"      status="N" method="None" width=""  size="20" 	require="false" readonly = "false" datatype="String" edittype="text"  xpath="/appNo" />
+        <Field id="reason1"     name="Reason1"             desc="Reason1"             status="N" method="None" width=""  size="32" 	require="true" readonly = "false"  datatype="String" edittype="select" translated="DATA_DIC.6506"  xpath="/reason1" />
+        <Field id="reason2"     name="Reason2"             desc="Reason2"             status="N" method="None" width=""  size="32" 	require="false" readonly = "false" datatype="String" edittype="select" translated="DATA_DIC.6506"  xpath="/reason2" />
+        <Field id="reason3"     name="Reason3"             desc="Reason3"             status="N" method="None" width=""  size="32" 	require="false" readonly = "false" datatype="String" edittype="select" translated="DATA_DIC.6506"  xpath="/reason3" />
+        <Field id="status"      name="Status"              desc="Status"              status="N" method="None" width=""  size="16" 	require="false" readonly = "false" datatype="String" edittype="select" translated="DATA_DIC.6504"  xpath="/status" />
+        <Field id="dateReg"     name="Date Of Register"    desc="Date Of Register"    status="N" method="None" width=""  size="18" 	require="false" readonly = "false" datatype="date" edittype="date"  xpath="/dateReg" />
+        <Field id="dateApp"     name="Date Of Application" desc="Date Of Application" status="N" method="None" width=""  size="18" 	require="false" readonly = "false" datatype="date" edittype="date"  xpath="/dateApp" />
+        <Field id="dateInput"   name="Date Input"          desc="Date Input"          status="N" method="None" width=""  size="18" 	require="false" readonly = "false" datatype="date" edittype="date"  xpath="/dateInput" />
+        <Field id="compAddr1"   name="Company Address1"    desc="Company Address1"    status="N" method="None" width=""  size="255" require="false" readonly = "false" datatype="String" edittype="text"  xpath="/compAddr1" />
+        <Field id="compAddr2"   name="Company Address2"    desc="Company Address2"    status="N" method="None" width=""  size="255" require="false" readonly = "false" datatype="String" edittype="text"  xpath="/compAddr2" />
+        <Field id="compAddr3"   name="Company Address3"    desc="Company Address3"    status="N" method="None" width=""  size="255" require="false" readonly = "false" datatype="String" edittype="text"  xpath="/compAddr3" />
+        <Field id="recovStatus" name="Recover Status"      desc="Recover Status"      status="N" method="None" width=""  size="1" 	require="false" readonly = "false" datatype="String" edittype="text"  xpath="/recovStatus" />
+        <Field id="applyAmt"    name="Apply Amount"        desc="Apply Amount"        status="N" method="None" width=""  size="10" 	require="false" readonly = "false" datatype="String" edittype="text"  xpath="/applyAmt" />
+        <Field id="approveAmt"  name="Appprove Amount"     desc="Appprove Amount"     status="N" method="None" width=""  size="10" 	require="false" readonly = "false" datatype="String" edittype="text"  xpath="/approveAmt" />
+        <Field id="osAmt"       name="Outstanding Amount"  desc="Outstanding Amount"  status="N" method="None" width=""  size="10" 	require="false" readonly = "false" datatype="String" edittype="text"  xpath="/osAmt" />
+        <Field id="area"        name="Area"                desc="Area"                status="N" method="None" width=""  size="20" 	require="false" readonly = "false" datatype="String" edittype="select" translated="DATA_DIC.6505"  xpath="/area" />
+        <Field id="compPhone1"  name="Company Phone1"      desc="Company Phone1"      status="N" method="None" width=""  size="100" require="false" readonly = "false" datatype="String" edittype="text"  xpath="/compPhone1" />
+        <Field id="compPhone2"  name="Company Phone2"      desc="Company Phone2"      status="N" method="None" width=""  size="100" require="false" readonly = "false" datatype="String" edittype="text"  xpath="/compPhone2" />
+	</Fields>
+	
+	<Operations>
+		<!--  <Button id="reset" name="reset" desc="Reset重置"  url="#" show="" group="" txn=""  icon="icon-impin"  />-->
+		<Button id="btInsert" name="提交" desc="提交"  url="#" show="" group="" txn=""  icon="icon-impin"  />
+		<!-- <Button id="btInsert" name="提交" desc="提交"  
+		operation="href" url="" show="" group="" txn=""  icon=""  />-->
+	</Operations>
+</CommQry>

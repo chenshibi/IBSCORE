@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		  name="TCorpOrginalDetailWindows"
+          table="T_Corp_orginal_detail_windows"
+          lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+			<generator class="increment"/>
+		</id>
+
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="amount"
+            column="amount"
+			type="float"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="balance"
+            column="balance"
+			type="float"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="bondDate"
+            column="bond_date"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="createTime"
+            column="create_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="currency"
+            column="currency"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="expireDate"
+            column="expire_date"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="fiveLevel"
+            column="five_level"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="itemName"
+            column="item_name"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="openDate"
+            column="open_date"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		
+	</class>
+</hibernate-mapping>

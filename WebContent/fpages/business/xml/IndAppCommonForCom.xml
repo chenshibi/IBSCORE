@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call"
+	interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="">
+	<Include id="BankParam" />
+	
+	<Fields>
+		<Field id="inqCustName" desc="Name" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="300" status="F" default="" 
+			xpath="/inqCustName" />
+
+		<Field id="inqCustId" desc="ID" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="18" status="F"
+			default="" xpath="/inqCustId" />
+			
+		<Field id="inqCustIdType" desc="ID Type" status="N"  require="true"
+              readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+              translated="DATA_DIC.5511" xpath="/inqCustIdType"/>	
+             
+  		<Field id="queryReasonInd" desc="Query Reason" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="DATA_DIC.504" xpath="/queryReason"/>
+             
+        <Field id="confirmFlag" desc="是否查询标记" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F"
+			default="" xpath="/confirmFlag" />	
+		
+
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+	<Button id="companyBtNew" name="companyBtNew" desc="新增" icon="icon-add" 
+			operation="addrecord" url="#" txn="" />
+	<Button id="companyBtDel" name="companyDel" desc="删除" icon="icon-remove"
+			operation="delrecord" url="#" txn="" />
+	<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.IndAppUpdate"
+			url="" txn="" show="" group="" />
+	<Button id="btSubmitSave" name="btSubmitSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.IndAppEmergencyUpdate"
+			url="" txn="" show="" group="" />
+	<Button id="buttonSave" name="buttonSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.PbocBatchCorpsEnquiryUpdate"
+			url="" txn="" show="" group="" />
+	<Button id="buttonSaveE" name="buttonSaveE" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.PbocBatchCorpsEnquiryUpdateEmergency"
+			url="" txn="" show="" group="" />
+	<Button id="uploadFile" name="UploadFile" desc="上传主管批复文件" operation=""
+			updateClass="#"
+			url="" txn="" show="" group="" />
+	</Operations>
+</CommQry>

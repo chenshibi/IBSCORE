@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="Users manage" navigate="Homepage &gt; System manage &gt; Users manage"
+         type="call"
+         interface="true"
+         pagesize="50"
+         async="true"
+         btnNm="aaa"
+         databusid="DEMO"
+         transdataactionurl="/trans/TransDataAction.do"
+         getterclassname="com.huateng.ebank.business.opermng.getter.OperMngEntryGetter">
+    <Include id="BankParam"/>
+
+   <!--  <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-用户信息"/>
+ -->
+    <Fields>
+        <!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+        <!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+       
+
+        <Field id="tlrno" desc="User NO" status="F" method="None"
+               readonly="" primary="true" type="String" size="20" xpath="/tlrno"
+               default=""/>
+
+        <Field id="tlrName" desc="User Name" status="F" method="None"
+               width="50" readonly="" primary="true" type="String" size="20"
+               xpath="/tlrName" default=""/>
+        <Field id="gwxx" desc="Role info" require="" status="F" method="None"
+               width="" primary="false" type="String" size="20" xpath="/gwxx"
+               default=""/>
+               
+        <Field id="status" desc="Status" status="N" readonly="true" translated="DATA_DIC.37" edittype="select" width="90"
+               method="None" primary="true" type="String" size="20"
+               xpath="/status"/>
+
+
+        <Field id="flag" desc="Flag" status="F" readonly="true"
+               translated="DATA_DIC.38" require="true" edittype="select" width="90"
+               method="None" primary="true" type="String" size="20"
+               xpath="/flag" default=""/>
+
+        <Field id="createDate" desc="Create Date" status="N" require="false"
+               method="None" width="90" primary="false" xpath="/createDate"
+               type="String" size="2"/>
+
+        <Field id="lastaccesstm" desc="Last  login time" require="" edittype="text" datatype="timestamp"
+               status="F" method="None" width="180" primary="false" type="String"
+               size="6" xpath="/lastaccesstm" default=""/>
+
+        <Field id="lastlogouttm" desc="Last  logout time" require="" edittype="text" datatype="timestamp"
+               status="F" method="None" width="180" primary="false" type="String"
+               size="6" xpath="/lastlogouttm" default=""/>
+
+        <Field id="Effect Date" desc="Effect  Date" require="" status="N"
+               method="None" width="90" primary="false" type="String" size="20"
+               xpath="/Effect Date" default=""/>
+
+        <Field id="Expire Date" desc="Expire  Date" require="" status="N"
+               method="None" width="90" primary="false" type="String" size="20"
+               xpath="/Expire Date" default=""/>
+
+
+        <Field id="misc" desc="Department" require="" status="N" method="None"
+               width="" primary="false" type="String" size="20" xpath="/misc"
+               default=""/>
+
+        <Field id="defRoleid" desc="Default Role" require="" status="N"
+               readonly="false" edittype="select" fieldmap="" method="None"
+               translated="DATA_DIC.100" width="90" viewField="" primary="false"
+               type="String" size="10" xpath="/roleid" tip="Please choose the user's role"/>
+
+        <Field id="isLock" desc="Lock Status" require="" status="N" method="None" translated="DATA_DIC.38"
+               edittype="select" width="" primary="false" type="String" size="20" xpath="/isLock"
+               default=""/>
+
+        <Field id="opr" desc="Operation" status="N" method="None" xpath=""
+               primary="true" type="" size="20" default="" tip="Operation" require=""/>
+
+        <!--add by zhiyang.he 用户管理双岗复核改造 2012-09-04 begin -->
+        <Field id="isLockModify" desc="Modify Lock Status" status="N" method="None" xpath="/isLockModify"
+               primary="true" type="" size="20" default="" tip="ModifyLock Status" require=""/>
+        <Field id="st" desc="Status" status="N" readonly="" tip="ModifyLock Status"
+               translated="DATA_DIC.3001" require="" edittype="select" width="90"
+               method="None" primary="true" type="String" size="20"
+               xpath="/st" default=""/>
+        <Field id="email" desc="Email" require="" status="N" method="None"
+               width="" primary="false" type="String" size="20" xpath="/email"
+               default=""/>
+        <!--add by zhiyang.he 用户管理双岗复核改造 2012-09-04 end -->
+    </Fields>
+
+    <Where>
+        <TextBox id="qtlrno"
+                 type="String" dataType="" operation="EQ" size="20" desc="User NO"
+                 tip="User NO" method="genLikeP" index="0" function="" width=""
+                 default="" scale="" require="" readOnly="" rules="xss" errmsg="User NO Error!"/>
+        <TextBox id="qtlrnoName"
+                 type="String" dataType="" operation="EQ" size="30" desc="User Name"
+                 tip="User Name" method="genLikeP" index="1" function="" width=""
+                 default="" scale="" require="" readOnly=""/>
+    </Where>
+
+    <Operations>
+        <Button id="btAdd" name="btAdd" desc="Add" operation=""
+                url="#" show="" group="" txn="" icon="icon-add"/>
+
+        <Button id="btDel" name="btDel" desc="Delete" operation="asysubmit"
+                updateClass="com.huateng.ebank.business.opermng.update.OperMngDelUpdate"
+                url="#" txn=""/>
+
+        <Button id="btModify" name="btModify" desc="Modify" operation=""
+                url="#" show="" group="" txn=""/>
+
+        <Button id="btSave" name="btSave" desc="Save" operation="asysubmit"
+                updateClass="com.huateng.ebank.business.opermng.update.TlrInfoUpdate"
+                url="#" txn=""/>
+
+        <Button id="btStatus" name="btStatus" desc="lock/unlock" operation="asysubmit"
+                updateClass="com.huateng.ebank.business.opermng.update.OperFlagChgUpdate"
+                url="#" txn="" icon="icon-remove"/>
+               
+
+		 <Button id="btSt" name="btSt" desc="disable/recover"
+                updateClass="com.huateng.ebank.business.opermng.update.OperStatusChgUpdate"
+                operation="asysubmit" url="#" show="" group="" txn="" ></Button>
+
+        <Button id="btAuth" name="btAuth" desc="Assign Role" operation="" url="#" txn=""/>
+
+        <Button id="btResetPwd" name="btResetPwd" desc="Reset password"
+                updateClass="com.huateng.ebank.business.opermng.update.OperMngResetPwdUpdate"
+                operation="asysubmit" url="#" show="" group="" txn="management.userresetpwd.update"></Button>
+
+        <Button id="unLock" name="unLock" desc="Deblocking"
+                updateClass="com.huateng.ebank.business.opermng.update.OperMngUnlockUpdate"
+                operation="asysubmit" url="#" show="" group="" txn="" icon="icon-unlock"></Button>
+
+        <Button id="btLoginStatus" name="btLoginStatus" desc="Forced to return"
+                updateClass="com.huateng.ebank.business.opermng.update.OperStatusChgUpdate"
+                operation="asysubmit" url="#" show="" group="" txn="" icon="icon-undo"></Button>
+        <Button id="btRecover" name="btRecover" desc="Expired user recovery" operation="asysubmit"
+			    updateClass="com.huateng.ebank.business.opermng.update.OperRecoverUpdate"
+			    url="#" txn="" icon="icon-unlock"/>
+    </Operations>
+    <Sql>
+    </Sql>
+</CommQry>

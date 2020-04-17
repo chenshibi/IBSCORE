@@ -1,0 +1,366 @@
+/* CSS Document */
+td {
+	font-size: 9pt
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+.tdbdr_t {
+	border-top: 1px solid #000000
+}
+
+.tdbdr_l {
+	border-left: 1px solid #000000
+}
+
+.tdbdr_r {
+	border-right: 1px solid #000000
+}
+
+.tdbdr_b {
+	border-bottom: 1px solid #000000
+}
+
+.tdbdr_rb {
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000
+}
+
+.tdbdr_rbt {
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-top: 1px solid #000000
+}
+
+.tdbdr_rt {
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000
+}
+
+.tdbdr_rl {
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000
+}
+
+.tdbdr_rlb {
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000
+}
+
+.tdbdr_rlt {
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000
+}
+
+.tdbdr_lb {
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000
+}
+
+.tdbdr_lt {
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000
+}
+
+.tdbdr_bt {
+	border-bottom: 1px solid #000000;
+	border-top: 1px solid #000000
+}
+
+.bodyIn {
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-left: 5px;
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #9e9e9e;
+	SCROLLBAR-SHADOW-COLOR: #9e9e9e;
+	SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+	SCROLLBAR-ARROW-COLOR: #9e9e9e;
+	SCROLLBAR-TRACK-COLOR: #eaeaea;
+	SCROLLBAR-DARKSHADOW-COLOR: #eaeaea;
+}
+
+.title {
+	font-family: 宋体;
+	font-size: 14px;
+	color: #0066CC;
+}
+
+.bodyOut {
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+	background: url(/bems/image/bodyOutBG.jpg);
+	font-size: 9pt;
+	margin-bottom: 0px;
+}
+
+.listTitle {
+	padding: 4px 0px 2px 5px;
+	background: #2775E1;
+	color: white;
+	font-weight: bold; bold;
+	font-size: 9pt;
+}
+
+.listBottom {
+	background: #D4D0C8;
+	font-weight: bold; bold;
+	font-size: 9pt;
+	padding: 4px 0px 2px 5px;
+	border-style: inset;
+	border-width: 1px;
+}
+
+.tableList {
+	background-color: silver;
+	font-size: 9pt;
+	cursor: default;
+}
+
+.tableList td {
+	padding: 0px 4px 0px 4px;
+	background-color: #ffffff;
+}
+
+.tableList th {
+	font-family: "宋体", "Times New Roman", Times, serif;
+	/*background-color: #2B71B8;*/
+	background-image: url('..\images\table_header.gif');
+	color: #000000;
+	padding: 2px 4px 1px 4px;
+	font-weight: normal;
+	/*border-right:1px solid #000000; border-bottom:1px solid 
+#000000; border-left:1px solid #E5E5E5; border-top:1px solid #E5E5E5;*/
+}
+
+.tableList tr {
+	background-color: #F5F5F5;
+}
+
+.checkBox {
+	
+}
+
+.radioBox {
+	
+}
+
+.textBoxShowBorder {
+	border: 1px solid #83ace7;
+	filter: Glow(Color = blue, Strength = 2);
+}
+
+.textBoxShowDialog {
+	border: 1px solid #83ace7;
+	background-color: #FFE4C4;
+	filter: Glow(Color = blue, Strength = 2);
+}
+
+.textBoxHiddenBorder {
+	border: 0px none;
+	width: 95%;
+}
+
+.buttonBox {
+	font-family: verdana;
+	border: darkgray 1px solid;
+	font-size: 9pt;
+	cursor: hand;
+	height: 22px;
+	background-color: white;
+}
+
+.buttonBox1 {
+	font-family: verdana;
+	border: darkgray 1px solid;
+	font-size: 9pt;
+	cursor: hand;
+	height: 22px;
+	background-color: white;
+}
+
+.buttonBoxSmall {
+	font-family: verdana;
+	border: darkgray 1px solid;
+	font-size: 9pt;
+	cursor: hand;
+	height: 22px;
+	background-color: white;
+}
+
+.buttonBoxChoose {
+	font-family: verdana;
+	border: darkgray 1px solid;
+	font-size: 9pt;
+	cursor: hand;
+	height: 22px;
+	background-color: white;
+}
+
+.buttonBoxMiddle {
+	font-family: verdana;
+	border: darkgray 1px solid;
+	font-size: 9pt;
+	cursor: hand;
+	height: 22px;
+	background-color: white;
+}
+
+.buttonBoxMiddle1 {
+	font-family: verdana;
+	border: darkgray 1px solid;
+	font-size: 9pt;
+	cursor: hand;
+	height: 22px;
+	background-color: white;
+}
+
+.buttonBoxLarge {
+	font-family: verdana;
+	border: darkgray 1px solid;
+	font-size: 9pt;
+	cursor: hand;
+	height: 22px;
+	background-color: white;
+}
+
+.textAreaBox {
+	border: 1px solid #83ace7;
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #9e9e9e;
+	SCROLLBAR-SHADOW-COLOR: #9e9e9e;
+	SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+	SCROLLBAR-ARROW-COLOR: #9e9e9e;
+	SCROLLBAR-TRACK-COLOR: #eaeaea;
+	SCROLLBAR-DARKSHADOW-COLOR: #eaeaea;
+	width: 100%;
+	overflow: auto;
+}
+
+.fieldSetBox {
+	font-size: 9pt;
+	align: center;
+	margin: 5px;
+	padding: 5px;
+	padding-left: 3px;
+	padding-right: 3px; /*border-style:solid;*/
+}
+
+.fieldSetBox legend {
+	color: #000000;
+}
+
+.zjjBody {
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.fontFenye {
+	font-size: 9pt;
+	color: #0066FF;
+}
+
+.textFenye {
+	border-top: 1px none white;
+	border-left: 1px none white;
+	border-right: 1px none white;
+	border-bottom: 1px solid #000000;
+}
+
+.divmsg {
+	font-family: 宋体;
+	font-size: 14px;
+}
+
+.leftmenu {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	line-height: 35px;
+	text-indent: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: inset;
+	border-bottom-color: #51B2DF;
+	margin: 0px;
+	background-color:#289FD9;
+}
+
+.leftmenu2 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	line-height: 35px;
+	text-indent: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: inset;
+	border-bottom-color: #51B2DF;
+	margin: 0px;
+	background-color:#78C2E7;
+}
+
+.rowsplit{ 
+	PADDING-RIGHT: 0px; 
+	MARGIN-RIGHT: 0px; 
+	background:#EDF2F6; 
+	cursor:n-resize; 
+	WIDTH: 100%; 
+	height:10px; 
+	FONT-FAMILY:   Webdings; 
+	FONT-SIZE:   5pt;
+}
+
+.colsplit{ 
+	PADDING-RIGHT: 0px; 
+	MARGIN-RIGHT: 0px; 
+	background:#EDF2F6; 
+	cursor:e-resize; 
+	HEIGHT: 100%; 
+	width:3px; 
+	FONT-FAMILY:   Webdings; 
+	FONT-SIZE:   5pt;
+}  
+
+.divloca {
+	font-family: 宋体;
+	font-size: 12px;
+	background-color: white;
+	margin: 10px;
+}
+
+.divmsg {
+	PADDING-TOP: 0px; 
+	MARGIN-TOP: 0px; 
+	PADDING-LEFT: 0px; 
+	MARGIN-LEFT: 0px; 
+	font-family: 宋体;
+	font-size: 12px;
+	margin: 0px;
+}
+
+.welcome {
+	font-size: 12px;
+	color: #0253A4;
+	background-color: #A3BEF1;
+}
+
+.xiaoxi {
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.xiaoxi a {
+	color: #0051A3;
+	text-decoration: none;
+}
+
+.xiaoxi a:hover {
+	color: #AA0000;
+	text-decoration: underline;
+}

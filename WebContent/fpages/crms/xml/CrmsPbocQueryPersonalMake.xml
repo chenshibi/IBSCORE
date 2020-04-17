@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL txnlogflag:true记录日志 async:异步提交标志 
+	pagesize:页面显示记录数(缺省为10) -->
+
+<CommQry title="个人征信查询" navigate="征信查询  &gt; 个人征信查询"
+         type="call" interface="false" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+         getterclassname="">
+    <Include id="BankParam"/>
+
+    <Fields>
+        <Field id="name" desc="姓名" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="30" status="N" default="" xpath="/name"/>
+
+        <Field id="idType" desc="证件类型" require="true" edittype="select"
+               translated="DATA_DIC.6002"
+               size="2" datatype="string" status="A" xpath="/idType"/>
+
+        <Field id="idNum" desc="证件号码" require="true" edittype="text" size="18"
+               datatype="string" status="A" xpath="/idNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select"
+               size="3" datatype="string" status="A" translated="DATA_DIC.6004"
+               xpath="/queryReason"/>
+
+        <Field id="serviceCode" desc="服务代码" require="true" size="100"
+               edittype="text" datatype="string" status="F"
+               xpath="/serviceCode"/>
+
+    </Fields>
+
+
+    <Operations>
+
+        <Button id="btSearch" name="btSearch" desc="录入" icon="icon-search" operation="asysubmit"
+                url="#" updateClass="com.huateng.crms.thirdparty.pboc.updater.CrmsPbocQueryPersonalMakeUpdate"/>
+
+        <Button id="btGrantAuth" name="btGrantAuth" desc="个人证书授权" icon="icon-set" operation="asysubmit"
+                url="#" updateClass="com.huateng.crms.thirdparty.pboc.updater.CrmsPbocGrantCertAuthUpdate"/>
+
+    </Operations>
+    <Script></Script>
+</CommQry>

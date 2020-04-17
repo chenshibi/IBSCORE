@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndAppGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" desc="批量下载-外汇账户内结汇—基础信息" 
+		url="/trans/qryExp.do"  perfetch="50" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="inqCustName" desc="被查询客户姓名" edittype="text" datatype="string"
+			method="None" readonly="false" size="300" status="F" default="" require="true"
+			xpath="/inqCustName" />
+
+		<Field id="inqCustId" desc="被查询客户证件号" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F" require="true"
+			default="" xpath="/inqCustId" />
+			
+		<Field id="inqCustIdType" desc="被查询客户证件类型" status="N"  require="true"
+              readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+              translated="DATA_DIC.5511" xpath="/inqCustIdType"/>	
+              
+   <!-- 主借款人的 -->
+		<Field id="relNamec" desc="借款公司名称" edittype="text" datatype="string"
+			method="None" readonly="false" size="300" status="F" default=""  
+			xpath="/relNamec" />
+			
+		<Field id="relName" desc="主借款人名称" edittype="text" datatype="string"
+			method="None" readonly="false" size="300" status="F" default=""  
+			xpath="/relName" />
+
+		<Field id="relCustId" desc="主借款人证件号" edittype="text" datatype="string"
+			method="None" readonly="false" size="18" status="F"
+			default="" xpath="/relCustId" />
+			
+		<Field id="relCustIdType" desc="主借款人证件类型" status="N" 
+              readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+              translated="DATA_DIC.5511" xpath="/relCustIdType"/>	 
+             
+  		<Field id="queryReason" desc="查询原因" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="DATA_DIC.504" xpath="/queryReason"/>
+        
+       	
+			
+		 <Field id="inqCustType" desc="客户属性" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="LIST:1,担保人;2,主借款人;3,共同借款人" xpath="/inqCustType"/>
+			
+		<Field id="relCorpId" desc="借款公司中证码" edittype="text" datatype="string"
+			method="None" readonly="false" size="16" status="F" default=""
+			primary="true" xpath="/relCorpId" />
+		
+		<Field id="nonWorkhourFilepath" desc="非工作时间上传路径" edittype="text" datatype="string" 
+			method="None" readonly="false" size="400" status="F" 
+			default="" xpath="/nonWorkhourFilepath" />	
+		
+		 <Field id="confirmFlag" desc="是否查询标记" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F"
+			default="" xpath="/confirmFlag" />	
+		
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+	<Button id="companyBtNew" name="companyBtNew" desc="新增" icon="icon-add"
+			operation="addrecord" url="#" txn="" />
+	<Button id="companyBtsave" name="companyBtsave" desc="提交" icon="icon-add"
+			operation="asysubmit" url="#" txn="" />
+	<Button id="companyBtDel" name="companyDel" desc="删除" icon="icon-remove"
+			operation="delrecord" url="#" txn="" />
+	<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.IndAppUpdate"
+			url="" txn="" show="" group="" />
+			
+	
+	</Operations>
+</CommQry>

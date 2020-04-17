@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="HQLDAO" class="com.huateng.ebank.framework.operation.orm.HQLDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="ROOTDAO" class="com.huateng.ebank.business.common.ROOTDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="BctlDAO" class="resource.dao.basic.BctlDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+	
+    <bean id="TlrBctlRelDAO" class="resource.dao.basic.TlrBctlRelDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+    
+    <bean id="SysTaskInfoDAO" class="resource.dao.basic.SysTaskInfoDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+    
+	<bean id="BizFuncInfoDAO" class="resource.dao.basic.BizFuncInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="BranchFuncRelDAO" class="resource.dao.basic.BranchFuncRelDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="FunctionInfoDAO" class="resource.dao.basic.FunctionInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+    <bean id="DataDicDAO"
+        class="resource.dao.basic.DataDicDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+    
+	<bean id="RoleInfoDAO" class="resource.dao.basic.RoleInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="TlrRoleRelDAO" class="resource.dao.basic.TlrRoleRelDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="RoleFuncRelDAO" class="resource.dao.basic.RoleFuncRelDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="TlrInfoDAO" class="resource.dao.basic.TlrInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="PfSysParamDAO" class="resource.dao.basic.PfSysParamDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="SysParamsDAO" class="resource.dao.basic.SysParamsDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="CurcdMapDAO" class="resource.dao.basic.CurcdMapDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+
+
+	<!-- 日志 -->
+	<bean id="TblBizLogDAO" class="resource.dao.basic.TblBizLogDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- add by chensibi 20191105 start -->
+	<bean id="PbocQueryHistoryQueryDAO" class="com.huateng.report.dao.PbocQueryHistoryQueryDAO">
+		<property name="sessionFactory">
+			<ref bean="mySessionFactory" />
+		</property>
+	</bean>
+	<!-- add by chensibi 20191105 end -->
+
+</beans>
+

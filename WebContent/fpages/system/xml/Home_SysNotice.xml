@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+
+<CommQry title="系统公告维护" navigate="系统信息  &gt; 系统公告维护"
+    type="call" interface = "false" pagesize="10" async="true" databusid=""
+    transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+    getterclassname="com.huateng.report.system.getter.HomeSysNoticeGetter" >
+   <Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+
+		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="N" default="" primary="true" xpath="/id" />
+
+		<Field id="noticeTitle" desc="公告标题" require="true" edittype="text" datatype="string" method="None"
+	 	  readonly="true" size="50" status="F" width="300" default="" xpath="/noticeTitle" />
+
+		<Field id="noticeContent" desc="公告内容" require="true" edittype="textarea" datatype="string" method="None"
+	 	  readonly="true" size="1024" height="200" width="300" status="F" default="" xpath="/noticeContent" />
+
+		<Field id="startDate" desc="开始显示时间" require="true" edittype="text" datatype="date" method="None"
+	 	  readonly="true" size="8" status="F" width="300" default="" xpath="/startDate" />
+
+ 	    <Field id="endDate" desc="结束显示时间" require="true" edittype="text" datatype="date" method="None"
+	 	  readonly="true" size="8" status="F" width="300" default="" xpath="/endDate" />
+
+		<Field id="st" desc="记录状态" status="F" require="false" edittype="select"
+			datatype="string" method="None" readonly="true" primary="true"
+			translated="DATA_DIC.3001" size="30" default="" xpath="/st" tip="" />
+
+		<Field id="crtTm" desc="发布时间" require="" edittype="text" datatype="timestamp" method="None"
+	 	  readonly="true" size="14" status="F" width="300" default="" xpath="/crtTm" />
+
+	 	<Field id="crtTlr" desc="发布人" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="true" size="14" status="F" width="300" default="" xpath="/crtTlr" />
+
+		<Field id="lstUpdTm" desc="最后更新日期" require="" edittype="text" datatype="timestamp" method="None"
+	 	  readonly="true" size="14" status="F" width="300" default="" xpath="/lstUpdTm" />
+
+		<Field id="lstUpdTlr" desc="最后更新人" width="300" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="true" size="32" status="F" default="" xpath="/lstUpdTlr" />
+	</Fields>
+	<Where >
+	</Where>
+	<Operations>
+	</Operations>
+	<Script></Script>
+</CommQry>

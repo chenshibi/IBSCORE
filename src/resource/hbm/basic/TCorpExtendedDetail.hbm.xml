@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		  name="TCorpExtendedDetail"
+          table="T_Corp_extended_detail"
+          lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+			<generator class="increment"/>
+		</id>
+
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="createTime"
+            column="create_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="itemName"
+            column="item_name"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="type"
+            column="type"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="startDate"
+            column="start_date"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="endDate"
+            column="end_date"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="extendedAmt"
+            column="extended_amt"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="extensionName"
+            column="extension_name"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		
+	</class>
+</hibernate-mapping>

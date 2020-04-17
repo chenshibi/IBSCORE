@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndPrompt"
+            table="Ind_prompt"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="ID"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="houseLoan"
+                column="house_loan"
+                type="integer"
+                not-null="false"
+        />
+       
+        <property
+                name="otherLoan"
+                column="other_loan"
+                type="integer"
+                not-null="false"
+        />
+        <property
+                name="firstLoanIssueDate"
+                column="first_loan_issue_date"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="firstCcIssueDate"
+                column="first_cc_issue_date"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="firstPdcIssueDate"
+                column="first_pdc_issue_date"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="selfStatementCount"
+                column="self_statement_count"
+                type="integer"
+                not-null="false"
+        />
+         <property
+                name="dissentCount"
+                column="dissent_count"
+                type="integer"
+                not-null="false"
+        />
+         <property
+                name="crdAccount"
+                column="crd_account"
+                type="integer"
+                not-null="false"
+        />
+        
+         <property
+                name="pdcAccount"
+                column="pdc_account"
+                type="integer"
+                not-null="false"
+        />
+        
+        
+          <property
+                name="getDate"
+                column="get_date"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+          <property
+                name="personHouseLoan"
+                column="person_house_loan"
+                type="integer"
+                not-null="false"
+        />
+        
+         <property
+                name="personBizHouseLoan"
+                column="person_biz_house_loan"
+                type="integer"
+                not-null="false"
+        />
+        
+        
+    </class>
+</hibernate-mapping>

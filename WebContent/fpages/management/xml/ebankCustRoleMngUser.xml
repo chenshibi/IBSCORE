@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="Role Information" navigate="主页 &gt; 角色管理 &gt; 人员信息"
+	type="call" interface="false" pagesize="10" async="true" databusid="DEMO"
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.management.getter.EbankCustRoleMngUserGetter">
+	<Include id="BankParam" />
+	<ResultViewParam>
+		/fpages/management/ftl/ebankCustRoleMngUser.ftl
+	</ResultViewParam>
+	<Fields>
+		<!-- 角色信息 -->
+		<Field id="id" desc="ID" status="F" require="true" edittype="text"
+			datatype="string" method="None" readonly="false" primary="true" type="ID"
+			size="" default="" xpath="/id" tip="ID" />
+		<Field id="roleName" desc="Role Name" status="F" require="true" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色名称"
+			size="20" default="" xpath="/roleName" tip="角色名称" />
+
+		<Field id="tlrno" desc="Operator NO" status="F" require="true" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="操作员号"
+			size="30" default="" xpath="/tlrno" tip="操作员号" />
+		<Field id="tlrName" desc="Operator Name" status="F" require="true" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="操作员名称"
+			size="30" default="" xpath="/tlrName" tip="操作员名称" />
+	<!--  <Field id="status" desc="操作员状态" status="F" require="false" edittype="select" translated="LIST:1,1-有效;0,0-无效"
+		    datatype="string" method="None" readonly="false" primary="true" type="角色状态"
+		    size="30" default="" xpath="/status" tip="操作员状态"/> -->
+
+		<Field id="flag" desc="Operator Status" status="F" require="false" edittype="select" translated="LIST:1,1-有效;0,0-无效"
+		    datatype="string" method="None" readonly="false" primary="true" type="角色状态"
+		    size="30" default="" xpath="/flag" tip="操作员状态"/>
+
+		<Field id="lastaccesstm" desc="Operator Last Login Time" status="F" require="true" edittype="text"
+		    datatype="string" method="None" readonly="true" primary="true" type="操作员上次登录时间"
+		    size="30" default="" xpath="/lastaccesstm" tip="操作员上次登录时间" />
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+	    <!-- 角色信息  -->
+	    <Button id="btClose" name="btClose" desc="Close" operation="syncsubmit"
+			url="/fpages/management/ftl/RoleAuthorityManagement.ftl" txn="" />
+		<Button id="btAddRole" name="btAddRole" desc="新增" operation="addrecord"
+			url="" txn="" />
+		<Button id="btDeleteRole" name="btDeleteRole" desc="删除" operation="delrecord"
+			url="" txn="" />
+		<Button id="btSelectRole" name="btSelectRole" desc="查询人员信息" operation=""
+			url="#" txn="" />
+		<Button id="btSave" name="btSave" desc="保存" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.management.updater.RoleManagementUpdater"
+            url="#" txn="management.role.update" />
+	</Operations>
+</CommQry>

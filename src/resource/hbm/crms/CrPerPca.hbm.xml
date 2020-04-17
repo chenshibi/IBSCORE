@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrPerPca" table="CR_PER_PCA" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid" /> 
+        </id>
+
+        <property name="pd02ai01" column="PD02AI01" type="string" not-null="false" length="5" />
+        <property name="pd02ad01" column="PD02AD01" type="string" not-null="false" length="2" />
+        <property name="pd02ai02" column="PD02AI02" type="string" not-null="false" length="14" />
+        <property name="pd02ai03" column="PD02AI03" type="string" not-null="false" length="60" />
+        <property name="pd02ad02" column="PD02AD02" type="string" not-null="false" length="2" />
+        <property name="pd02aj01" column="PD02AJ01" type="string" not-null="false" length="15"/>
+        <property name="pd02ad03" column="PD02AD03" type="string" not-null="false" length="3" />
+        <property name="pd02ar01" column="PD02AR01" type="string" not-null="false" length="10" />
+        <property name="pd02ar02" column="PD02AR02" type="string" not-null="false" length="10" />
+        <property name="pd02ad04" column="PD02AD04" type="string" not-null="false" length="1" />
+        <property name="pd02aj04" column="PD02AJ04" type="string" not-null="false" length="15"/>
+        <property name="pd02aj03" column="PD02AJ03" type="string" not-null="false" length="15"/>
+        <property name="pd02ai04" column="PD02AI04" type="string" not-null="false" length="60" />
+        <property name="pd02zs01" column="PD02ZS01" type="string" not-null="false" length="1"/>
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+        <property name="batchId" column="BATCH_ID" type="string" not-null="false" length="32" />
+    </class>
+</hibernate-mapping>

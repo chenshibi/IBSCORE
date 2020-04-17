@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    
+    <bean id="CustStepInfoDAO" class="resource.dao.boa.CustStepInfoDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+    
+    <bean id="CustHolidayDAO" class="resource.dao.boa.CustHolidayDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+
+    <bean id="CustReportDtlDAO" class="resource.dao.boa.CustReportDtlDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+    
+    <bean id="CustChildConnectDAO" class="resource.dao.boa.CustChildConnectDAO">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory" />
+        </property>
+    </bean>
+	
+</beans>
+

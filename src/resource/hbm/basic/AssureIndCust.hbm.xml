@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="AssureIndCust"
+            table="assure_ind_cust"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="appId"
+			column="app_id"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="individualIdType"
+                column="individual_id_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="individualId"
+                column="individual_id"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+        <property
+                name="name"
+                column="name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="inputUser"
+                column="input_user"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       <property
+                name="inputTime"
+                column="input_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="consentFilePath"
+                column="consent_file_path"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="inputUserIp"
+                column="input_user_ip"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        <property
+                name="nonConsentFilePath"
+                column="non_consent_file_path"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv1"
+                column="rsv1"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv2"
+                column="rsv2"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv3"
+                column="rsv3"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv4"
+                column="rsv4"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv5"
+                column="rsv5"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv6"
+                column="rsv6"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv7"
+                column="rsv7"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="rsv8"
+                column="rsv8"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        
+        
+        
+         
+        
+       
+         
+        
+        
+    </class>
+</hibernate-mapping>

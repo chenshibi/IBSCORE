@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- 系统参数服务类 -->
+	<bean id="sysParamsService"
+		class="com.huateng.report.system.service.SysParamsService">
+	</bean>
+	<bean id="businessService"
+		class="com.huateng.report.system.service.BusinessService">
+	</bean>
+	<bean id="tcpBusinessService"
+		class="com.huateng.report.system.service.TcpBusinessService">
+	</bean>
+	<!-- 系统参数操作类 -->
+	<bean id="sysPramsOperation"
+		class="com.huateng.report.system.operation.SysParamsOperation">
+	</bean>
+	<bean id="businessOperation"
+		class="com.huateng.report.system.operation.BusinessOperation">
+	</bean>
+	<bean id="tcpBusinessOperation"
+		class="com.huateng.report.system.operation.TcpBusinessOperation">
+	</bean>
+	<!-- 公用类 -->
+	<bean id="com.huateng.report.common.service.ReportCommonService"
+		class="com.huateng.report.common.service.ReportCommonService">
+	</bean>
+	<!-- 主管确认 -->
+	<!-- jianxue.zhang -->
+	<bean id="TaskListService"
+		class="com.huateng.report.system.service.TaskListService">
+	</bean>
+	<bean id="RoleInfoTSKService"
+		class="com.huateng.report.system.service.RoleInfoTSKService">
+	</bean>
+	<bean id="UndoConfirmService"
+		class="com.huateng.report.system.service.UndoConfirmService">
+	</bean>
+	<bean id="TaskListOperation"
+		class="com.huateng.report.system.operation.TaskListOperation">
+	</bean>
+
+	<bean id="Parameter.SecParameterOperation"
+		class="com.huateng.report.system.operation.SecParameterOperation">
+	</bean>
+
+	<bean id="com.huateng.report.common.service.ReportShowDetailService"
+		class="com.huateng.report.common.service.ReportShowDetailService">
+	</bean>
+
+	<!-- 数据备份恢复 -->
+	<bean id="com.huateng.report.databak.service.ReportDataBakService"
+		class="com.huateng.report.databak.service.ReportDataBakService">
+	</bean>
+
+	<!-- 数据库清理 -->
+	<bean id="com.huateng.report.dataClean.service.ReportDataCleanService"
+		class="com.huateng.report.dataClean.service.ReportDataCleanService">
+	</bean>
+	<bean id="ReportDataCleanOperation"
+		class="com.huateng.report.dataClean.operation.ReportDataCleanOperation">
+	</bean>
+	
+	<!-- 系统公告维护 -->
+	<bean id="com.huateng.report.system.service.SysNoticeService"
+		class="com.huateng.report.system.service.SysNoticeService">
+	</bean>
+	<bean id="SysNoticeOperation"
+		class="com.huateng.report.system.operation.SysNoticeOperation">
+	</bean>
+</beans>

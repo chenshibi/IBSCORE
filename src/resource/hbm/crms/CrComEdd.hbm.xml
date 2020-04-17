@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrComEdd" table="CR_COM_EDD" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" type="string" column="ID" length="32">
+			<!-- <generator class="uuid" /> -->
+		</id>
+        <property name="ed070i01" column="ED070I01" type="string" not-null="false" length="6" />
+        <property name="ed070d01" column="ED070D01" type="string" not-null="false" length="1" />
+        <property name="ed070d02" column="ED070D02" type="string" not-null="false" length="2" />
+        <property name="ed070d03" column="ED070D03" type="string" not-null="false" length="1" />
+        <property name="ed070d10" column="ED070D10" type="string" not-null="false" length="3" />
+        <property name="ed070j01" column="ED070J01" type="string" not-null="false" length="15"/>
+        <property name="ed070d04" column="ED070D04" type="string" not-null="false" length="2" />
+        <property name="ed070i02" column="ED070I02" type="string" not-null="false" length="4" />
+        <property name="ed070d05" column="ED070D05" type="string" not-null="false" length="2" />
+        <property name="ed070d06" column="ED070D06" type="string" not-null="false" length="2" />
+        <property name="ed070r01" column="ED070R01" type="string" not-null="false" length="10" />
+        <property name="ed070r02" column="ED070R02" type="string" not-null="false" length="10" />
+        <property name="ed070d07" column="ED070D07" type="string" not-null="false" length="3" />
+        <property name="ed070j02" column="ED070J02" type="string" not-null="false" length="15"/>
+        <property name="ed070d08" column="ED070D08" type="string" not-null="false" length="1" />
+        <property name="ed070j03" column="ED070J03" type="string" not-null="false" length="15"/>
+        <property name="ed070j04" column="ED070J04" type="string" not-null="false" length="15"/>
+        <property name="ed070s01" column="ED070S01" type="string" not-null="false" length="3"/>
+        <property name="ed070d09" column="ED070D09" type="string" not-null="false" length="1" />
+        <property name="ed070s02" column="ED070S02" type="string" not-null="false" length="3"/>
+        <property name="ed070r03" column="ED070R03" type="string" not-null="false" length="10" />
+        <property name="ed070j05" column="ED070J05" type="string" not-null="false" length="15"/>
+        <property name="ed070j06" column="ED070J06" type="string" not-null="false" length="15"/>
+        <property name="ed070i03" column="ED070I03" type="string" not-null="false" length="6" />
+        <property name="ed080i01" column="ED080I01" type="string" not-null="false" length="6" />
+        <property name="ed080d01" column="ED080D01" type="string" not-null="false" length="1" />
+        <property name="ed080d02" column="ED080D02" type="string" not-null="false" length="2" />
+        <property name="ed080i02" column="ED080I02" type="string" not-null="false" length="4" />
+        <property name="ed080d03" column="ED080D03" type="string" not-null="false" length="2" />
+        <property name="ed080d04" column="ED080D04" type="string" not-null="false" length="1" />
+        <property name="ed080j01" column="ED080J01" type="string" not-null="false" length="15"/>
+        <property name="ed080s01" column="ED080S01" type="string" not-null="false" length="3"/>
+        <property name="ed080j02" column="ED080J02" type="string" not-null="false" length="15"/>
+        <property name="ed080j03" column="ED080J03" type="string" not-null="false" length="15"/>
+        <property name="ed080j04" column="ED080J04" type="string" not-null="false" length="15"/>
+        <property name="ed080j05" column="ED080J05" type="string" not-null="false" length="15"/>
+        <property name="ed080i03" column="ED080I03" type="string" not-null="false" length="6" />
+        <property name="ed090i01" column="ED090I01" type="string" not-null="false" length="6" />
+        <property name="ed090d01" column="ED090D01" type="string" not-null="false" length="1" />
+        <property name="ed090d02" column="ED090D02" type="string" not-null="false" length="2" />
+        <property name="ed090i02" column="ED090I02" type="string" not-null="false" length="4" />
+        <property name="ed090d03" column="ED090D03" type="string" not-null="false" length="2" />
+        <property name="ed090d04" column="ED090D04" type="string" not-null="false" length="1" />
+        <property name="ed090j01" column="ED090J01" type="string" not-null="false" length="15"/>
+        <property name="ed090s01" column="ED090S01" type="string" not-null="false" length="3"/>
+        <property name="ed090j02" column="ED090J02" type="string" not-null="false" length="15"/>
+        <property name="ed100j03" column="ED100J03" type="string" not-null="false" length="15"/>
+        <property name="ed090i03" column="ED090I03" type="string" not-null="false" length="6" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+    </class>
+</hibernate-mapping>

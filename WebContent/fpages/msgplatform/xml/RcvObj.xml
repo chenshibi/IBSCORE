@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="消息发送配置维护" navigate="主页 &gt; 消息平台 &gt; 消息发送配置维护"
+         type="call"
+         interface="true"
+         pagesize="500"
+         async="true"
+         btnNm="aaa"
+         databusid="DEMO"
+         transdataactionurl="/trans/TransDataAction.do"
+         getterclassname="com.huateng.msgplatform.getter.RcvObjGetter">
+    <Include id="BankParam"/>
+
+    <Fields>
+        <!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+        <!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+
+        <Field id="userId" desc="操作员ID" status="F" require="false" edittype="text" datatype="string" readonly="false"
+               xpath="/userId" size="20"/>
+        <Field id="userName" desc="操作员名称" status="F" require="false" edittype="text" datatype="string" readonly="false"
+               xpath="/userName" size="96"/>
+        <Field id="userEmail" desc="E-Mail" status="F" require="false" edittype="text" datatype="string" readonly="false"
+               xpath="/rsv1" size="96"/>
+
+        <Field id="groupId" desc="组ID" status="F" require="false" edittype="text" datatype="string" readonly="false"
+               xpath="/groupId" size="20"/>
+        <Field id="groupName" desc="组名称 " status="F" require="false" edittype="text" datatype="string" readonly="false"
+               xpath="/groupName" size="96"/>
+
+        <Field id="select" desc="选择" require="false" method="None"
+               readonly="false" size="20" default="" xpath="/select" type="select"
+               edittype="checkbox"/>
+    </Fields>
+
+    <Where>
+    	<TextBox id="qroleGroup" desc="角色类型" require="false" datatype="string"
+			method="None" size="150" primary="false" index="1" type="String"  rules="xss"/>
+    </Where>
+
+    <Operations>
+        <!-- 维护页面按钮 -->
+        <Button id="btDel" name="btDel" desc="删除" operation="asysubmit" url="#"
+                updateClass="com.huateng.msgplatform.updater.MsgSndSettingUpdater" show="" group="" txn=""/>
+        <Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+                updateClass="com.huateng.msgplatform.updater.MsgSndSettingUpdater" url="#" txn=""/>
+        <Button id="btBack" name="btBack" desc="返回" operation="" url="#"/>
+    </Operations>
+</CommQry>

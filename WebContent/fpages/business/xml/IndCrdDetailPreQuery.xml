@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndCrdDetailPreQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="dateofcreate" desc="发放日期" edittype="text" datatype="date" 
+			method="None" readonly="false" size="18" status="F" 
+			default="" xpath="/dateofcreate" />
+			
+		<Field id="issuer" desc="发放机构" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="N"  default="" 
+			primary="true" xpath="/issuer" />
+
+		<Field id="currency" desc="贷记卡类型" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/currency" />
+		
+		<Field id="bizNo" desc="业务号" edittype="text" datatype="string"
+			method="None" readonly="false" size="80" status="F" 
+			default="" xpath="/bizNo" />
+			
+		<Field id="credit" desc="授信额度" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/credit" />
+			
+		<Field id="share_" desc="共享授信额度" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/share_" />
+			
+		<Field id="assurance" desc="担保方式" edittype="text" datatype="string"
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/assurance" />
+			
+		<Field id="overdue" desc="余额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="12" status="F"  scale="2"
+			default="" xpath="/overdue" />
+			
+		<Field id="accStatus" desc="账户状态" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/accStatus" />
+			
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

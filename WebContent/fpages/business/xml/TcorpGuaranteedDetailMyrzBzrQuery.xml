@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.TcorpGuaranteedDetailMyrzBzrQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="assurePerson" desc="担保人" edittype="text" datatype="string" 
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/assurePerson" />
+		
+		<Field id="assureDate" desc="担保日期" edittype="text" datatype="float"
+			method="None" readonly="false" size="30" status="N"  default="" 
+			primary="true" xpath="/assureDate" />
+
+		<Field id="currency" desc="币种" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/currency" />
+			
+		<Field id="assureAmt" desc="担保金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="30" status="F"  scale="2"
+			default="" xpath="/assureAmt" />
+			
+		<Field id="assureType" desc="担保形式" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/assureType" />
+		
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

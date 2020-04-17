@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CustPbocHistoryQuery" table="CUST_PBOC_HISTORY_QUERY" >
+        <meta attribute="sync-DAO">false</meta>
+       <id name="id" type="string" column="ID">
+            <generator class="uuid" />
+        </id>
+
+        <property name="entName" column="ENT_NAME" type="string" not-null="false" length="30" />
+        <property name="entCertType" column="ENT_CERT_TYPE" type="string" not-null="false" length="2" />
+        <property name="entCertNum" column="ENT_CERT_NUM" type="string" not-null="false" length="18" />
+        <property name="queryReason" column="QUERY_REASON" type="string" not-null="false" length="3" />
+        <property name="status" column="STATUS" type="string" not-null="false" length="2" />
+        <property name="isLock" column="IS_Lock" type="string" not-null="false" length="1" />
+        <property name="queryDate" column="QUERY_DATE" type="string" not-null="false" length="8" />
+         <property name="userId" column="user_Id" type="string" not-null="false" length="80" />
+       
+    </class>
+</hibernate-mapping>

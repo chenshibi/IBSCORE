@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+	<!--
+		title:标题 navigate:导航信息 type:方式（sql|call)
+		interface:是否显示输入条件页面(true|false) databusid:数据总线编号
+		transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10)
+	-->
+<CommQry title="企业角色权限管理" navigate="主页 &gt; 权限管理 &gt; 角色管理 &gt; 权限设置"
+	type="call" interface="false" pagesize="200" async="true" databusid="DEMO"
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.management.getter.RoleFuncRelMngGetter">
+	<Include id="BankParam" />
+	<ResultViewParam>
+		/fpages/custadmin/ftl/ebankCustRoleMng.ftl
+	</ResultViewParam>
+	<Fields>
+		<!-- 角色信息-->
+		<Field id="id" desc="Role No" status="F" require="false" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色ID"
+			size="8" default="" xpath="/id" tip="角色ID" />
+			
+		<Field id="roleName" desc="Role Name" status="F" require="true" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色名字"
+			size="20" default="" xpath="/roleName" tip="角色名字" />
+			
+	    <Field id="status" desc="Flag" status="F" require="true" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="有效/无效"
+			size="6" default="" xpath="/status" tip="有效/无效" />
+			
+		<Field id="roleList" desc="Role List" status="F" require="false" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="角色名字"
+			size="1000" default="" xpath="/roleList" tip="角色名字" />
+			
+	 
+            
+     	<Field id="mail" desc="E_Mail" require="false" edittype="text"
+            datatype="string" method="None" readonly="false" primary="true"  rules="isEmail" errmsg="请按邮箱格式填写!"
+            default="" xpath="/mail"  width="220"/>
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+	    <!-- 角色权限管理 -->
+	   <Button id="btSave" name="btSave" desc="Submit"
+			operation="asysubmit" updateClass="com.huateng.ebank.business.management.updater.CustRoleSaveUpdater"
+			url="/fpages/regonization/ftl/RoleMngEntry.ftl"  show="" group="" txn="" />
+		<Button id="btSelectAll" name="btSelectAll" desc="Check all"
+			operation="" updateClass="" url="#"  show="" group="" txn="" />
+		<Button id="btUnSelectAll" name="btUnSelectAll" desc="No choice"
+			operation="" updateClass="" url="#"  show="" group="" txn="" />
+		<Button id="btOpen" name="btOpen" desc="Open/Merge"
+			operation="" updateClass="" url="#"  show="" group="" txn="" />
+	    <Button id="btCancel" name="btCancel" desc="Return" operation="submitform"
+			url="/fpages/regonization/ftl/RoleMngEntry.ftl" txn="" />
+
+	</Operations>
+</CommQry>

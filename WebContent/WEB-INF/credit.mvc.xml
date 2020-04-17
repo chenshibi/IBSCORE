@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!--zhada 批量导入控制器  -->
+	<bean id="batchImportController" class="com.huateng.excel.imp.BatchXLSImportController">
+		<property name="multipartResolver" ref="apmMultipartResolver"></property>
+		<property name="result" value="/fpages/business/jsp/message.jsp"/>
+		<property name="methodNameResolver">
+			<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+				<property name="mappings">
+					<props>
+					<prop key="/amlBatchImport/uploadBN.spring">uploadBlackName</prop>				
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>	
+	<!--查询有效期设置  --> 
+		<bean id="queryExpireImportController" class="com.huateng.excel.imp.QueryExpireXLSImportController">
+		<property name="multipartResolver" ref="apmMultipartResolver"></property>
+		<property name="result" value="/fpages/business/jsp/message.jsp"/>
+		<property name="methodNameResolver">
+			<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+				<property name="mappings">
+					<props>
+					<prop key="/queryExpire/uploadExcelQy.spring">uploadBlackName</prop>				
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>	
+	<!--轮循企业批量查询 -->
+	<bean id="roundRobinImportController" class="com.huateng.excel.imp.RoundRobinImportController">
+		<property name="multipartResolver" ref="apmMultipartResolver"></property>
+		<property name="result" value="/fpages/business/jsp/message.jsp"/>
+		<property name="methodNameResolver">
+			<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+				<property name="mappings">
+					<props>
+					<prop key="/roundRobinImport/uploadExcel.spring">uploadBlackName</prop>				
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>	
+	
+	<!-- 公共文件上传 -->
+	<bean id="commFileGroupUploadController" class="com.huateng.excel.imp.CommonFileGroupUploadController">
+		<property name="multipartResolver" ref="apmMultipartResolver"></property>
+		<property name="result" value="/fpages/business/jsp/message.jsp"/>
+		<property name="methodNameResolver">
+			<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+				<property name="mappings">
+					<props>
+					<prop key="/commFileGroupUpload/uploadExcel.spring">uploadBlackName</prop>				
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+    <!--客户风险计算 -->
+<!-- 	<bean id="risCalculationImportController" class="com.huateng.excel.imp.RisCalculationImportController">
+		<property name="multipartResolver" ref="apmMultipartResolver"></property>
+		<property name="result" value="/fpages/business/jsp/message.jsp"/>
+		<property name="methodNameResolver">
+			<bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+				<property name="mappings">
+					<props>
+					<prop key="/risCalculationImport/uploadExcel.spring">uploadBlackName</prop>				
+					</props>
+				</property>
+			</bean>
+		</property>
+	</bean>	 -->
+	
+	<!-- 地址映射 -->
+	<bean id="apmUrlMapping"
+		  class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		  <property name="mappings">
+			<props>
+				<prop key="/amlBatchImport/*">batchImportController</prop>
+				<prop key="/roundRobinImport/*">roundRobinImportController</prop>
+				<prop key="/queryExpire/*">queryExpireImportController</prop>
+				<prop key="/commFileGroupUpload/*">commFileGroupUploadController</prop>
+				<!-- <prop key="/risCalculationImport/*">risCalculationImportController</prop> -->
+			</props>
+		 </property>
+	</bean>
+	<!-- 文件上传控制 -->
+	<bean id="apmMultipartResolver"
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		  <property name="maxUploadSize">
+			<value>104857600</value>
+		 </property>
+		 <property name="maxInMemorySize">
+			<value>4096</value>
+		 </property>
+	</bean>
+	
+</beans>	
+

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		  name="TCorpStatement"
+          table="T_Corp_statement"
+          lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+			<generator class="increment"/>
+		</id>
+
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="createTime"
+            column="create_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="itemName"
+            column="item_name"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="organ"
+            column="organ"
+			type="string"
+			not-null="false"
+			length="100"
+		/>
+		<property
+			name="content"
+            column="content"
+			type="string"
+			not-null="false"
+			length="2000"
+		/>
+		<property
+			name="initDate"
+            column="init_date"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="updateDate"
+            column="update_date"
+			type="string"
+			not-null="false"
+			length="30"
+		/>
+		
+	</class>
+</hibernate-mapping>

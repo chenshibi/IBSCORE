@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndJob"
+            table="Ind_Job"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+		
+		<property
+                name="no"
+                column="no"
+                type="integer"
+                not-null="false"
+        />
+		
+        <property
+                name="name"
+                column="name"
+                type="string"
+                not-null="false"
+                length="120"
+        />
+       
+        <property
+                name="addr"
+                column="addr"
+                type="string"
+                not-null="false"
+                length="120"
+        />
+        <property
+                name="post"
+                column="post"
+                type="string"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="industry"
+                column="industry"
+                type="string"
+                not-null="false"
+                length="34"
+        />
+          <property
+                name="profession"
+                column="profession"
+                type="string"
+                not-null="false"
+                length="40"
+        />
+          <property
+                name="title"
+                column="title"
+                type="string"
+                not-null="false"
+                length="58"
+        />
+        <property
+                name="titleTec"
+                column="title_tec"
+                type="string"
+                not-null="false"
+                length="58"
+        />
+          <property
+                name="income"
+                column="income"
+                type="string"
+                not-null="false"
+                length="10"
+        />
+        <property
+                name="startdate"
+                column="startdate"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+          <property
+                name="getdate"
+                column="getdate"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+         
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="文件编辑功能" navigate="文件编辑"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.EditFileGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="id" desc="id" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="N" require="true" default="" 
+			primary="true" xpath="/id" />	
+		
+		<Field id="sgement" desc="Sgement" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.702"
+			status="F" default="" xpath="sgement" tip="Sgement" />  
+			
+		<Field id="product" desc="Product" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.703"
+			status="F" default="" xpath="product" tip="Product" />  
+			
+		<Field id="scope" desc="Scope" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.704"
+			status="F" default="" xpath="scope" tip="Scope" />  
+				
+		
+			
+			
+		<Field id="flag" desc="Expire Flag" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.705"
+			status="F" default="" xpath="flag" tip="Expire Flag" />  
+			
+			
+		<Field id="note" desc="note" status="N" require="false"
+			readonly="false" primary="true" type="String" size="120"
+			xpath="note" />	
+			
+		 
+		
+
+	</Fields>
+	<Where>
+		<Option id="qsgement"  default="" desc="Sgement" type="MyQuery" 
+		 	tip="" method="None" index="4" translated="DATA_DIC.702"/>
+				
+		<Option id="qproduct"  default="" desc="Product" type="MyQuery" 
+			tip="" method="None" index="4" translated="DATA_DIC.703"/>
+				
+		<Option id="qscope"  default="" desc="Scope" type="MyQuery" 
+		 	tip="" method="None" index="4" translated="DATA_DIC.704"/>
+		 <Option id="qflag"  default="" desc="Expire Flag" type="MyQuery" 
+		 	tip="" method="None" index="4" translated="DATA_DIC.705"/>
+		 	
+		<TextBox id="qfileName" type="String"  size="60" 
+			desc="Name" tip="File Name" index="1" />
+	</Where>
+	<Operations>
+		<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+				updateClass="com.huateng.ebank.business.customer.update.EditFileSaveUpdater"
+				url="/fpages/business/ftl/PermitFileUpload.ftl" txn="" show="" group="" />
+	</Operations>
+</CommQry>

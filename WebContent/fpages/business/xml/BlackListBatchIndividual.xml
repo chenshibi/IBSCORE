@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="黑名单个人批量查询" navigate="黑名单个人批量查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.BlackListBatchIndividualGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="40" default="" tip="操作" require="false" />
+		<Field id="custId" name="ID证件号码" desc="ID证件号码" tips="NationalId 15->18" status="N" method="None" width=""  size="18" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/custId" />
+		<Field id="idType" name="ID Type证件类型" desc="ID Type证件类型" status="N" method="None" width=""  size="5" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/idType" />
+		<Field id="nameChn" name="CHNName中文姓名" desc="CHNName中文姓名" status="N" method="None" width=""  size="60" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/nameChn" />
+		<Field id="nameEng" name="ENGName英文姓名" desc="ENGName英文姓名" status="N" method="None" width=""  size="60" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/nameEng" />
+		<Field id="product" name="Product产品类型" desc="Product产品类型" status="N" method="None" width=""  size="20" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/product" />
+		<Field id="reason" name="Reason原因" desc="Reason原因" status="N" method="None" width=""  size="64" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/reason" />
+		<Field id="status" name="Status状态" desc="Status状态" status="N" method="None" width=""  size="16" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/status" />
+		<Field id="loanNo" name="LoanNo贷款号" desc="LoanNo贷款号" status="N" method="None" width=""  size="100" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/loanNo" />
+		<Field id="funcid1" name="菜单ID1" desc="菜单ID1" status="N" method="None" width=""  size="22" require="false" readonly = "true" datatype="String" edittype="text" xpath="/funcid1" />
+	</Fields>
+	<Where>
+		<TextBox id="custId" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码"  require="true" index="1" />
+		
+		<TextBox id="custIda" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="2" />
+		<TextBox id="custIdb" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="3" />
+		<TextBox id="custIdc" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="4" />
+		<TextBox id="custIdd" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="5" />
+		<TextBox id="custIde" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="6" />
+		<TextBox id="custIdf" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="7" />
+		<TextBox id="custIdg" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="8" />
+		<TextBox id="custIdh" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="9" />
+		<TextBox id="custIdi" type="String"  size="18" width="180" desc="ID证件号码" tip="证件号码" index="10" />
+		
+	</Where>
+	<Operations>
+		<Button id="btAdd" name="btAdd" desc="新增" operation="" url="#"
+			show="" group="" txn="" icon="icon-add" />
+	</Operations>
+</CommQry>

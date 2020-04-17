@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.boa">
+	<class name="CustUndoTaskConf" table="CUST_UNDOTASK_CONF">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="funcid"
+			type="string"
+			column="FUNCID"
+		>
+		<generator class="assigned"/>
+		</id>
+		
+		<property
+			name="funcname"
+			column="FUNCNAME"
+			type="string"
+			not-null="false"
+			length="120"
+		/>
+		
+		<property
+			name="pagepath"
+			column="PAGEPATH"
+			type="string"
+			not-null="false"
+			length="500"
+		/>
+		<property
+			name="tablename"
+			column="TABLENAME"
+			type="string"
+			not-null="false"
+			length="200"
+		/>
+		<property
+			name="tabledes"
+			column="TABLEDES"
+			type="string"
+			not-null="false"
+			length="200"
+		/>
+		
+		<property
+			name="sysname"
+			column="SYSNAME"
+			type="string"
+			not-null="false"
+			length="120"
+		/>
+		<property
+			name="type"
+			column="TYPE"
+			type="string"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			name="wherecondition"
+			column="WHERE_CONDITION"
+			type="string"
+			not-null="false"
+			length="200"
+		/>
+		<property
+			name="status"
+			column="STATUS"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="rsv1"
+			column="RSV1"
+			type="string"
+			not-null="false"
+			length="125"
+		/>
+		<property
+			name="rsv2"
+			column="RSV2"
+			type="string"
+			not-null="false"
+			length="125"
+		/>
+		<property
+			name="rsv3"
+			column="RSV3"
+			type="string"
+			not-null="false"
+			length="256"
+		/>
+		<property
+			name="rsv4"
+			column="RSV4"
+			type="string"
+			not-null="false"
+			length="256"
+		/>
+		<property
+			name="rsv5"
+			column="RSV5"
+			type="string"
+			not-null="false"
+			length="512"
+		/>
+		<property
+			name="rsv6"
+			column="RSV6"
+			type="string"
+			not-null="false"
+			length="512"
+		/>
+		<property
+			name="brtype"
+			column="BRTYPE"
+			type="string"
+			not-null="false"
+			length="40"
+		/>
+	</class>
+</hibernate-mapping>

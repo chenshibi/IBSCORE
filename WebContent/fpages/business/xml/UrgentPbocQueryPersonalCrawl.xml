@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="二代个人征信爬网查询" navigate="二代个人征信爬网查询  &gt; 二代个人征信爬网查询"
+         type="call" interface="false" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+         getterclassname="">
+    <Include id="BankParam"/>
+
+    <Fields>
+        <Field id="name" desc="姓名" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="30" status="F" default="" xpath="/name"/>
+
+        <Field id="idType" desc="证件类型" require="true" edittype="select"
+               translated="DATA_DIC.6002" method="None"
+               size="2" datatype="string" status="F" xpath="/idType"/>
+
+        <Field id="idNum" desc="证件号码" require="true" edittype="text" size="18" method="None"
+               datatype="string" status="F" xpath="/idNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select" method="None"
+               size="3" datatype="string" status="F" translated="DATA_DIC.8868"
+               xpath="/queryReason"/>
+
+        <Field id="serviceCode" desc="服务代码" require="true" size="100" method="None"
+               edittype="select" datatype="string" status="F" translated="LIST:00,FW_GRXYBG_0074;01,FW_GRXYBG_0010;"
+               xpath="/serviceCode"/>
+         <Field id="queryLevel" desc="查询状况" require="true" size="1" method="None" 
+               edittype="select" datatype="string" status="F" readonly="true" translated="LIST:1,一般;2,紧急"
+               xpath="/queryLevel"/>        
+        <Field id="nonWorkhourFilepath" desc="非工作时间上传路径" edittype="text" datatype="string" 
+			method="None" readonly="false" size="400" status="F" 
+			default="" xpath="/nonWorkhourFilepath" />	
+
+    </Fields>
+
+
+    <Operations>
+
+        <Button id="btSearch" name="btSearch" desc="录入" icon="icon-search" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.UrgentPbocQueryPersonalCrawl"/>
+        <Button id="uploadFile" name="UploadFile" desc="上传主管批复文件" operation="" updateClass="#" url="" txn="" show="" group="" />
+    </Operations>
+
+</CommQry>

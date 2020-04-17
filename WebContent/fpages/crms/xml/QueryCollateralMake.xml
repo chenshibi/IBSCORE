@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="二代企业征信相关还款人及抵押物查询" navigate="二代企业征信相关还款人及抵押物查询  &gt; 二代企业征信相关还款人及抵押物查询"
+         type="call" interface="false" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+         getterclassname="">
+    <Include id="BankParam"/>
+
+    <Fields>
+        <Field id="entName" desc="企业名称" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="30" status="F" default="" xpath="/entName"/>
+
+        <Field id="entCertType" desc="企业身份标识类型" require="true" edittype="select"
+               translated="DATA_DIC.6065" method="None"
+               size="2" datatype="string" status="F" xpath="/entCertType"/>
+
+        <Field id="entCertNum" desc="企业身份标识号码" require="true" edittype="text" size="18" method="None"
+               datatype="string" status="F" xpath="/entCertNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select" method="None"
+               size="3" datatype="string" status="F" translated="DATA_DIC.6066"
+               xpath="/queryReason"/>
+
+        <Field id="serviceCode" desc="服务代码" require="true" size="100" method="None" 
+               edittype="select" datatype="string" status="F" translated="LIST:00,FW_QYXYBG_0043;"
+               xpath="/serviceCode"/>
+               
+    </Fields>
+
+
+    <Operations>
+
+         <Button id="btSearch" name="btSearch" desc="查询" icon="icon-search" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.QueryCollateralMakeUpdate"/>
+    </Operations>
+
+</CommQry>

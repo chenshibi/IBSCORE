@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+	 
+	 <!-- 安全参数设置-->
+	 <Query id="SysParamsSec" path="/fpages/system/xml/SysParamsSec.xml" />
+	 <Query id="SysParamsSecDetail"  path="/fpages/system/xml/SysParamsSecDetail.xml"/>
+	 <Query id="sysParamsEntry" path="/fpages/system/xml/SysParamsEntry.xml" />
+	 <Query id="SysParamsEntryDetail" path="/fpages/system/xml/SysParamsEntryDetail.xml" />
+	 <Query id="custHoliday" path="/fpages/system/xml/custHoliday.xml" txn=""/>
+	 <Query id="paramgroupIdSelectGetter" path="/fpages/system/dropdownxml/paramgroupIdSelect.xml" txn=""/>
+	 <Query id="businessParamgroupIdSelectGetter" path="/fpages/system/dropdownxml/BusinessParamgroupIdSelect.xml" txn=""/>
+	 <Query id="tcpParamgroupIdSelectGetter" path="/fpages/system/dropdownxml/tcpParamgroupIdSelect.xml" txn=""/>
+	 <Query id="SysParamsCheck" path="/fpages/system/xml/SysParamsCheck.xml"/>
+	 <Query id="approve_tlrInfo" path="/fpages/system/approvexml/approve_tlrInfo.xml" />
+	 <Query id="approve_role" path="/fpages/system/approvexml/approve_role.xml" />
+	 <Query id="approve_log" path="/fpages/system/xml/approve_log.xml" />
+     <Query id="approve_log" path="/fpages/system/xml/approve_log.xml" />
+	 <Query id="approve_SysParamsEntry" path="/fpages/system/approvexml/approve_SysParamsEntry.xml" />
+	 <Query id="approve_common" path="/fpages/system/xml/approve_common.xml" />
+	 <Query id="approve_bctl" path="/fpages/system/approvexml/approve_bctl.xml" />
+	 <Query id="approve_tlrInfo" path="/fpages/system/approvexml/approve_tlrInfo.xml" />
+	 <Query id="approve_pfSysParams" path="/fpages/system/approvexml/approve_pfSysParams.xml" />
+	 <Query id="approve_sysNotice" path="/fpages/system/approvexml/approve_sysNotice.xml" />
+	 <Query id="UndoConfirm" path="/fpages/system/xml/UndoConfirm.xml" />
+	
+	
+	 
+	 
+</META>

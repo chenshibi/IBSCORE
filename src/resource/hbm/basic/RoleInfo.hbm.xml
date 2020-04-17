@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="RoleInfo"
+		table="ROLE_INFO"
+		lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+
+        <id name="id" type="string" column="ROLE_ID">
+        </id>
+		<property
+			name="roleName"
+			column="ROLE_NAME"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="status"
+			column="STATUS"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="effectDate"
+			column="EFFECT_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="expireDate"
+			column="EXPIRE_DATE"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<!--
+		<property
+			name="workflowRole"
+			column="WORKFLOW_ROLE"
+			type="string"
+			not-null="false"
+		/>
+		-->
+
+		<property
+			name="roleType"
+			column="ROLE_TYPE"
+			type="string"
+			not-null="false"
+		/>
+		<!--
+		<property
+			name="flag"
+			column="FLAG"
+			type="string"
+			not-null="false"
+		/>
+		-->
+
+		<property
+			name="brclass"
+			column="BRCLASS"
+			type="string"
+			not-null="false"
+		/>
+
+		<property
+			name="lastUpdDate"
+			column="LAST_UPD_DATE"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="lastUpdFunc"
+			column="LAST_UPD_FUNC"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="lastUpdTlr"
+			column="LAST_UPD_TLR"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="timestamps"
+			column="TIMESTAMPS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="miscflgs"
+			column="MISCFLGS"
+			type="string"
+			not-null="false"
+		/>
+		<property
+			name="misc"
+			column="MISC"
+			type="string"
+			not-null="false"
+		/>
+		<!-- add by zhiyang.he 修改锁定状态 2012-09-6 begin-->
+		<property
+			name="isLock"
+			column="IS_LOCK"
+			type="string"
+			length="1"
+			not-null="false"
+		/>
+		<property
+			name="st"
+			column="ST"
+			type="string"
+			length="1"
+			not-null="false"
+		/>
+		<property
+			name="crtDt"
+			column="CRT_DT"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="lastUpdOper"
+			column="LAST_UPD_OPER"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+        <property
+            name="lastUpdTms"
+            column="LAST_UPD_TMS"
+            type="string"
+            not-null="false"
+            length="14"
+        />
+        <property
+            name="isInqMaker"
+            column="IS_INQ_MAKER"
+            type="string"
+            not-null="false"
+            length="1"
+        />
+        <property
+            name="isInqChecker"
+            column="IS_INQ_CHECKER"
+            type="string"
+            not-null="false"
+            length="1"
+        />
+        <property
+            name="isCtlMaker"
+            column="IS_CTL_MAKER"
+            type="string"
+            not-null="false"
+            length="1"
+        />
+        <property
+            name="isCtlChecker"
+            column="IS_CTL_CHECKER"
+            type="string"
+            not-null="false"
+            length="1"
+        />
+       <property
+            name="mail"
+            column="MAIL"
+            type="string"
+            not-null="false"
+            length="256"
+        />
+        <property name="mdTlr" column="MD_TLR" type="string"
+			not-null="false" length="20" />
+		<property name="mdTime" column="MD_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="apvTlr" column="APV_TLR" type="string"
+			not-null="false" length="20" />
+		<property name="apvTime" column="APV_TIME" type="string"
+			not-null="false" length="14" />
+		<property name="brno" column="BRNO" type="string"
+			not-null="false" length="20" />
+		<property name="roleGroup" column="ROLE_GROUP" type="string"
+			not-null="false" length="20" />
+	    <property name="isTxndtlMaker" column="IS_TXNDTL_MAKER" type="string"
+			not-null="false" length="1" />
+		<property name="isTxndtlChecker" column="IS_TXNDTL_CHECKER" type="string"
+			not-null="false" length="1" />
+		<property name="isDynqueMaker" column="IS_DYNQUE_MAKER" type="string"
+			not-null="false" length="1" />
+		<property name="isDynqueChecker" column="IS_DYNQUE_CHECKER" type="string"
+			not-null="false" length="1" />
+		<property name="isAllactMaker" column="IS_ALLACT_MAKER" type="string"
+			not-null="false" length="1" />
+		<property name="isAllactChecker" column="IS_ALLACT_CHECKER" type="string"
+			not-null="false" length="1" />
+        
+		<!-- add by zhiyang.he 修改锁定状态 2012-09-6 end-->
+
+	</class>
+</hibernate-mapping>

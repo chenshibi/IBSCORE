@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="IbscoreBatchqueryLog" table="IBSCORE_BatchQuery_Log" >
+        <meta attribute="sync-DAO">false</meta>
+    <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid" />
+    </id>
+     <property name="fileId" column="FILEID" type="string" not-null="false" length="32" />
+     <property name="fileName" column="FILENAME" type="string" not-null="false" length="100" />
+     <property name="createTime" column="CREATETIME" type="string" not-null="false" length="50" />
+     <property name="userId" column="USERID" type="string" not-null="false" length="50" />
+     <property name="isresponse" column="ISRESPONSE" type="string" not-null="false" length="2" />
+     <property name="rsv1" column="RSV1" type="string" not-null="false" length="50" />
+     <property name="rsv2" column="RSV2" type="string" not-null="false" length="50" />
+     <property name="rsv3" column="RSV3" type="string" not-null="false" length="50" />
+     </class>
+</hibernate-mapping>

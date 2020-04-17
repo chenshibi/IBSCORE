@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="消息发送日志" type="call" interface="true" navigate="消息平台>>消息发送日志查询"
+	async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.dxzp.getter.AbnormalcardQueryGetter">
+	<Include id="BankParam" />
+	<!-- status ：F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+	<!-- primary ： true-作为表单项记录上传 false-不作为表单项上传 -->
+	<Fields>
+		<Field id="id" desc="记录主键" status="F" require="" edittype="text" rules="xssSave"
+			datatype="string" method="None" readonly="false" primary="true" type="String"
+			size="32" default="" xpath="/id" />
+		<Field id="innerId" desc="内部序号" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/innerId" size="20" />
+		<Field id="msgLogId" desc="发送消息内部序号" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/msgLogId" size="20" />
+		<Field id="msgId" desc="消息编号" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/msgId" size="20" />
+		<Field id="oppId" desc="用户ID" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/oppId" size="20" />
+		<Field id="sendType" desc="发送方式" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/sendType" size="2" />
+		<Field id="rcvInf" desc="接收要素" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rcvInf" size="1024" />
+		<Field id="status" desc="状态" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/status" size="1" 
+			translated="LIST:0,待发送;1,发送成功;2,失发送败;" />
+		<Field id="sendDate" desc="发送时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/sendDate" size="14" />
+		<Field id="rsv1" desc="备用1" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv1" size="60" />
+		<Field id="rsv2" desc="备用2" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv2" size="60" />
+		<Field id="rsv3" desc="备用3" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv3" size="60" />
+		<Field id="rsv4" desc="备用4" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv4" size="60" />
+		<Field id="rsv5" desc="备用5" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv5" size="60" />
+
+		<Field id="sendDate1" desc="发送时间" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/sendDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+
+		<Field id="opr" desc="操作" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="" size="20" />	
+		<Field id="select" desc="选择" require="false" method="None"
+			readonly="false" size="20" default="" xpath="/id" type="select"
+			edittype="checkbox" />
+		
+	</Fields>
+	<Where>
+	</Where>
+
+	<Operations>
+	</Operations>
+</CommQry>		

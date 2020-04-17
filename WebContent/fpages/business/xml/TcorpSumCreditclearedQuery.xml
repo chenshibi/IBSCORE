@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="300" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.TcorpSumCreditclearedQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="disposeCount" desc="由资产管理公司处置的债务笔数" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/disposeCount" />
+			
+		<Field id="disposeAmount" desc="由资产管理公司处置的债务原始金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="30" status="N"  default=""  scale="2"
+			primary="true" xpath="/disposeAmount" />
+
+		<Field id="disposeDate" desc="债务处置完成日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/disposeDate" />
+		
+		<Field id="divestCount" desc="被剥离负债汇总笔数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/divestCount" />
+			
+		<Field id="divestAmount" desc="被剥离负债汇总金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/divestAmount" />
+			
+		<Field id="divestDate" desc="最近一次被剥离日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/divestDate" />
+			
+		<Field id="debitInterestCount" desc="欠息汇总笔数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/debitInterestCount" />
+			
+		<Field id="debitInterestClearDate" desc="最近一次欠息结清日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/debitInterestClearDate" />
+			
+		<Field id="advancedCount" desc="垫款汇总笔数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/advancedCount" />
+			
+		<Field id="advancedAmount" desc="垫款汇总金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/advancedAmount" />
+			
+		<Field id="advancedDate" desc="垫款结清日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/advancedDate" />
+			
+		<Field id="assureCreditCount" desc="担保代偿或第三方代偿的债务笔数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/assureCreditCount" />
+			
+		<Field id="assureCreditSum" desc="担保代偿或第三方代偿的债务金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/assureCreditSum" />
+			
+		<Field id="assureCreditClearDate" desc="追偿完毕/代偿还清日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/assureCreditClearDate" />
+			
+			
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

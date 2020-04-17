@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="征信查询" navigate="征信查询&gt;企业总展示"
+	type="call" 
+	interface="true" 
+	pagesize="100" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.ebank.business.customer.getter.IbsEntCreditSumGetter">
+	<Include id="BankParam" />
+	<Fields>
+	    <Field id="xh" desc="报表序号" edittype="text" datatype="string" method="None" readonly="false" size="32" status="F" default="" xpath="/xh" />
+	    <Field id="qymc" desc="企业名称" edittype="text" datatype="string" method="None" readonly="false" size="80" status="F" default="" xpath="/qymc" />
+	    <Field id="cxrq" desc="查询日期" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/cxrq" />
+        <Field id="sfbh" desc="是否白户" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/sfbh" /> 
+		<Field id="ywyq" desc="有无逾期/欠息" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/ywyq" />
+		<Field id="dqgzlblfzbs" desc="当前关注类_不良类负债笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgzlblfzbs" />
+		<Field id="dqgzlblfzye" desc="当前关注类_不良类负债余额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgzlblfzye" />
+		<Field id="lsgzlblyqfzbs" desc="历史关注类_不良类_逾期类负债笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/lsgzlblyqfzbs" />
+		<Field id="lsgzlblyqfze" desc="历史关注类_不良类_逾期类负债额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/lsgzlblyqfze" />
+		<!-- <Field id="cyq" desc="current GZ/NPL; historical GZ/NPL/逾期" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/cyq" /> -->
+		<Field id="fmxx" desc="负面信息" edittype="text" datatype="string" method="None" readonly="false" size="63" status="F" default="" xpath="/fmxx" />
+		<Field id="bgbm" desc="报告编码" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/bgbm" />
+		<Field id="zzm" desc="中征码" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/zzm" />
+		<Field id="qyzxlb" desc="企业征信类别" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/qyzxlb" />
+		<Field id="dqdkbs" desc="当前贷款笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdkbs" />
+		<Field id="dqdkjgs" desc="当前贷款机构数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdkjgs" />
+		<Field id="dqdkzed" desc="当前贷款总额度" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdkzed" />
+		<Field id="dqdkyyed" desc="当前贷款已用额度" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdkyyed" />
+		<Field id="dqdkzye" desc="当前贷款总余额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqdkzye" />
+		<Field id="dqbzcywbs" desc="当前被追偿业务笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqbzcywbs" />
+		<Field id="dqbzcywye" desc="当前被追偿业务余额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqbzcywye" />
+		<Field id="dqxghkzrbs" desc="当前相关还款责任笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqxghkzrbs" />
+		<Field id="dqxghkzrye" desc="当前相关还款责任余额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqxghkzrye" />
+		<Field id="dqzcwjfl" desc="当前最差五级分类" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqzcwjfl" />
+		<Field id="dqyqze" desc="当前逾期总额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqyqze" />
+		<Field id="dqyqbj" desc="当前逾期本金" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqyqbj" />
+		<Field id="dqgzlbs" desc="当前关注类笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgzlbs" />
+		<Field id="dqgzlje" desc="当前关注类金额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqgzlje" />
+		<Field id="dqsslbs" desc="当前损失类笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqsslbs" />
+		<Field id="dqsslje" desc="当前损失类金额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/dqsslje" />
+		<Field id="cjsslbs" desc="曾经损失类笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/cjsslbs" />
+		<Field id="cjsslje" desc="曾经损失类金额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/cjsslje" />
+	    <Field id="jjyblbs" desc="近九月不良笔数" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/jjyblbs" />
+		<Field id="jjyblje" desc="近九月不良金额" edittype="text" datatype="string" method="None" readonly="false" size="50" status="F" default="" xpath="/jjyblje" />
+		<Field id="tue" desc="TUE" edittype="text" datatype="string" method="None" readonly="false" size="30" status="F" default="" xpath="/tue" />
+		<Field id="dsr" desc="DSR" edittype="text" datatype="string" method="None" readonly="false" size="30" status="F" default="" xpath="/dsr" />
+		<Field id="wc" desc="WC" edittype="text" datatype="string" method="None" readonly="false" size="30" status="F" default="" xpath="/wc" />
+		<Field id="totalBankLimit" desc="totalBankLimit" edittype="text" datatype="string" method="None" readonly="false" size="30" status="F" default="" xpath="/totalBankLimit" />
+		<Field id="opr" desc="Operation" require="false" edittype="text" datatype="string" method="None" readonly="true" primary="true" type="Operation"
+			size="12" default="" xpath="" tip="Operation" />
+	</Fields>
+	<Where>
+		<DateTextBox id="etlDateStart" desc="起始查询日期" edittype="text" datatype="date" size="34"  index="0" />
+		<DateTextBox id="etlDateEnd" desc="终止查询日期" edittype="text" datatype="date" size="34"  index="1" />
+	</Where>
+
+</CommQry>

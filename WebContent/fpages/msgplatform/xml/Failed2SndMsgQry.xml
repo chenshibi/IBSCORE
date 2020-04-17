@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="消息发送日志查询" type="call" interface="true" navigate="消息平台>>消息发送日志查询"
+	async="true" databusid="" pagesize="50" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.msgplatform.getter.Failed2SndMsgQryGetter">
+	<Include id="BankParam" />
+	<!-- status ：F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+	<!-- primary ： true-作为表单项记录上传 false-不作为表单项上传 -->
+	<Fields>		
+		<!-- id 为cpg_msg_snd_dtl表的 id  -->
+		<!-- //id,brno,msgName,subType,msgSysId,msgLogHead,createdDate,source,status 消息发送失败查询 -->
+		
+		<Field id="id" desc="发送流水号" status="F" require="" edittype="text" rules="xssSave" 
+			datatype="string" method="None" readonly="false" primary="true" type="String"
+			size="32" default="" xpath="/id" />
+		<Field id="brno" desc="分行号" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/brno" size="14" />
+		<Field id="msgName" desc="消息描述" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/msgName" size="90" />
+		<Field id="subType" desc="子类型" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/subType" size="20" 
+			/>
+		<Field id="msgSysId" desc="系统编号" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/msgSysId" size="20" />	
+		<Field id="msgLogHead" desc="消息标题" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/msgLogHead" size="192" />
+		<Field id="createdDate" desc="产生时间" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/createdDate" size="14" />
+		<Field id="failedReason" desc="失败原因" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/failedReason" size="4000" />
+		<Field id="source" desc="消息来源" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/source" size="20" />
+		<Field id="status" desc="状态" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/status" size="1" 
+			translated="LIST:0,待发送;1,发送成功;2,发送失败;" />
+		
+		<Field id="createdDate1" desc="产生时间" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/createdDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+		
+		<Field id="opr" desc="操作" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="" size="20" />	
+		
+	</Fields>
+	<Where>
+		<!-- sendDate,msgSysId,msgId,userName,msgLogHead -->
+		<TextBox id="dateStart" desc="发送时间 从 " require="false" datatype="date"
+			method="None" size="150" primary="false" index="0" type="String" />
+		<TextBox id="dateEnd" desc="发送时间 到" require="false" datatype="date"
+			method="None" size="150" primary="false" index="1" type="String" />
+	</Where>
+
+	<Operations>
+	</Operations>
+</CommQry>

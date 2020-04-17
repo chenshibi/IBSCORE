@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		  name="TCorpDetailApp"
+          table="T_CORP_DETAIL_APP"
+          lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+			<generator class ="increment"/>
+		</id>
+
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<property
+			name="createTime"
+            column="create_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="loanCardNo"
+            column="loan_card_no"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="loanCardPass"
+            column="loan_card_pass"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="queryReason"
+                column="query_reason"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		
+		<property
+			   name="type"
+                column="type"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			 name="status"
+                column="status"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="statusMsg"
+                column="status_msg"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			    name="inputTime"
+                column="input_time"
+			type="timestamp"
+			not-null="false"
+			length="4"
+		/>
+		<property
+			 name="queryTime"
+                column="query_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			 name="returnTime"
+                column="return_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			  name="parsedTime"
+                column="parsed_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+	</class>
+</hibernate-mapping>

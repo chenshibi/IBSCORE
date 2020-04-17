@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="企业征信历史查询" navigate="企业征信历史查询  &gt; 企业征信历史查询" type="call"
+         interface="true" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do"
+         getterclassname="com.huateng.report.pboc.getter.CustPbocEntQueryGetter">
+    <Include id="BankParam"/>
+    <ResultViewParam>
+        /fpages/crms/ftl/CrmsPbocQueryCorpHistory.ftl
+    </ResultViewParam>
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-企业征信历史查询"/>
+
+    <Fields>
+        <!-- 企业征信历史查询 -->
+        <Field id="createUser" desc="操作员号" tip="操作员号"  require="true"
+               edittype="text" datatype="String" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/createUser"/>
+        <Field id="entName" desc="企业名称" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="30" status="N" default="" xpath="/entName"/>
+
+        <Field id="entCertType" desc="企业身份标识类型" require="true" edittype="select"
+               translated="DATA_DIC.6065"
+               size="2" datatype="string" status="A" xpath="/entCertType"/>
+
+        <Field id="entCertNum" desc="企业身份标识号码" require="true" edittype="text" size="18"
+               datatype="string" status="A" xpath="/entCertNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select"
+               size="3" datatype="string" status="A" translated="DATA_DIC.6066"
+               xpath="/queryReason"/>
+
+        <Field id="serviceCode" desc="服务代码" require="true" size="100"
+               edittype="text" datatype="string" status="F"
+               xpath="/serviceCode"/>
+        <Field id="respId" desc="回执编号" tip="回执编号" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="32" default="" xpath="/respId"/>
+        <Field id="respCode" desc="回执代码" tip="回执代码" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="4" default="" xpath="/respCode"/>
+        <Field id="respMsg" desc="回执信息" tip="回执信息" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="1024" default="" xpath="/respMsg"/>
+        <Field id="queryDate" desc="查询日期" tip="查询日期" status="F" require=""
+               edittype="text" datatype="date" method="None" readonly="" primary="true"
+               size="8" default="" xpath="/queryDate"/>
+        <Field id="sendTime" desc="发送时间" tip="发送时间" status="F" require=""
+               edittype="date" datatype="string" method="None" readonly="" primary="true"
+               size="14" default="" xpath="/sendTime"/>
+        <Field id="respTime" desc="回执时间" tip="回执时间" status="F"
+               require="" edittype="date" datatype="string" method="None" readonly=""
+               primary="" size="14" default="" xpath="/respTime"/>
+        <Field id="status" desc="状态" tip="状态" status="F" translated="LIST:00,未查;03,查询成功;04,查询失败;"
+               require="" edittype="select" datatype="string" method="None" readonly=""
+               primary="true" size="2" default="" xpath="/status"/>
+
+    </Fields>
+    <Where>
+        <TextBox id="entName" tablename="ENT_NAME" fieldname="entName"
+                 type="String" dataType="String" size="30" desc="企业名称" tip="企业名称"
+                 method="None" index="1" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="entCertNum" tablename="ENT_CERT_NUM" fieldname="entCertNum"
+                 type="String" dataType="String" size="30" desc="企业身份标识号码" tip="企业身份标识号码"
+                 method="None" index="2" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="qtlrno" tablename="CREATE_USER" fieldname="createUser"
+                 type="String" dataType="" operation="EQ" size="20" desc="操作员号"
+                 tip="操作员号" method="genLikeP" index="3" function="" width=""
+                 default="" scale="" require="" readOnly="" rules="xss" errmsg="操作员号有错!"/>
+        <Option id="status" size="2" require="false" edittype="select" desc="状态" datatype="int" index="4" translated="LIST:00,未查;01,审批通过;02,审批拒绝;03,查询成功;04,查询失败;06,征信报告过期"/>
+    </Where>
+
+</CommQry>

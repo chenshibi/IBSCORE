@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="企业征信批量查询" navigate="企业征信批量查询  &gt;企业征信批量查询
+"
+	type="call" 
+	interface="true" 
+	pagesize="10" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.report.pboc.getter.CustPbocEntQueryGetter">
+	<Include id="BankParam" />
+    <ResultViewParam>
+        /fpages/crms/ftl/CrmsBatchQueryCorpReport.ftl
+    </ResultViewParam>
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-企业征信批量查询"/>
+    <Fields>
+        <!-- 企业征信批量查询 -->
+        <Field id="id" desc="主键" edittype="text" status="F" datatype="string" require="false" readonly="false" xpath="/id"  size="32"/>
+        <Field id="select" desc="选择" require="false" method="None"
+               readonly="false" size="20" default="" xpath="" type="select"
+               edittype="checkbox" />
+        <Field id="rsv2" desc="批次号" require="true"
+               edittype="text" datatype="string" method="None" readonly="true"
+               size="3" status="F" default="" xpath="/rsv2"/>
+        <Field id="createUser" desc="操作员号" tip="操作员号"  require="true"
+               edittype="text" datatype="String" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/createUser"/>
+        <Field id="entName" desc="企业名称" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="30" status="F" default="" xpath="/entName"/>
+
+        <Field id="entCertType" desc="企业身份标识类型" require="true" edittype="select"
+               translated="DATA_DIC.6065"
+               size="2" datatype="string" status="F" xpath="/entCertType"/>
+
+        <Field id="entCertNum" desc="企业身份标识号码" require="true" edittype="text" size="40"
+               datatype="string" status="F" xpath="/entCertNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select"
+               size="3" datatype="string" status="F" translated="DATA_DIC.6066"
+               xpath="/queryReason"/>
+
+        <Field id="serviceCode" desc="服务代码" tip="服务代码" require="true" size="100"
+               edittype="text" datatype="string" status="F" type="" primary="true" 
+               xpath="/serviceCode"/>
+        
+        <Field id="respId" desc="回执编号" tip="回执编号" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="32" default="" xpath="/respId"/>
+        <Field id="rsv7" desc="IP地址" tip="IP地址" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="64" default="" xpath="/rsv7"/>
+        <Field id="respMsg" desc="回执信息" tip="回执信息" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="1024" default="" xpath="/respMsg"/>
+        <Field id="queryDate" desc="查询日期" tip="查询日期" status="F" require=""
+               edittype="text" datatype="date" method="None" readonly="" primary="true"
+               size="8" default="" xpath="/queryDate"/>
+        <Field id="sendTime" desc="发送时间" tip="发送时间" status="F" require=""
+               edittype="date" datatype="string" method="None" readonly="" primary="true"
+               size="14" default="" xpath="/sendTime"/>
+        <Field id="respTime" desc="回执时间" tip="回执时间" status="F"
+               require="" edittype="date" datatype="string" method="None" readonly=""
+               primary="" size="14" default="" xpath="/respTime"/>
+     
+        <Field id="certAuthStatus" desc="证书授权状态" tip="证书授权状态" status="F" translated="LIST:01,已授权;02,未授权;"
+               require="false" type="String" edittype="select" dataType="String" method="None"  readonly="false"
+               primary="true" size="2"  xpath="/certAuthStatus"/>
+        <Field id="status" desc="状态" tip="状态" status="F" translated="LIST:00,未查;03,查询成功;04,查询失败;"
+               require=""  edittype="select" method="None" readonly=""
+               primary="true" size="2" default="" xpath="/status"/>
+       <!--  <Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="false" /> -->
+
+    </Fields>
+    <Where>
+        <TextBox id="entName" tablename="ENT_NAME" fieldname="entName"
+                 type="String" dataType="String" size="30" desc="企业名称" tip="企业名称"
+                 method="None" index="1" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="entCertNum" tablename="ENT_CERT_NUM" fieldname="entCertNum"
+                 type="String" dataType="String" size="30" desc="企业身份标识号码" tip="企业身份标识号码"
+                 method="None" index="2" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="qtlrno" tablename="CREATE_USER" fieldname="createUser"
+                 type="String" dataType="" operation="EQ" size="20" desc="操作员号"
+                 tip="操作员号" method="genLikeP" index="3" function="" width=""
+                 default="" scale="" require="" readOnly="" rules="xss" errmsg="操作员号有错!"/>
+        <Option id="status" size="2" require="false" edittype="select" desc="状态" datatype="int" index="4" translated="LIST:00,未查;03,查询成功;04,查询失败;"/>
+    </Where>
+    <Operations>
+	    <Button id="modelDownload" name="modelDownload" desc="EXCEL模板 下载"   url="#" /> 
+		<Button id="importBN" name="importBN" desc="批量导入数据"  url="#" show="" group="" txn=""  icon="icon-impin"  />
+	<!-- 	<Button id="roundRobinQuery" name="roundRobinQuery" desc="批量发送" url="#"  operation="asysubmit" 
+		 updateClass="com.huateng.report.pboc.updater.BatchQueryCorpUpdate" txn=""/> 
+		<Button id="rematch" name="rematch" desc="重新匹配" url="#" operation="asysubmit" updateClass="com.huateng.report.pboc.updater.BatchQueryRematchCorpUpdate" txn="" />
+		<Button id="batchDel" name="batchDel" desc="删除" url="#"  operation="asysubmit" updateClass="com.huateng.report.pboc.updater.BatchDeleteCorpUpdate"  txn="" /> -->
+	    <Button id="batchNoQuery" name="batchNoQuery" desc="批量发送（未查）" url="#" operation="asysubmit" updateClass="com.huateng.report.pboc.updater.BatchNoQueryCorpUpdate"  txn="" />  
+	</Operations>
+</CommQry>

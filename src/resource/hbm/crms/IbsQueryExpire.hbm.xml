@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.crms">
+   <class name="IbsQueryExpire" table="IBS_QUERY_EXPIRE" >
+       <meta attribute="sync-DAO">false</meta>
+       <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid"/>
+        </id>
+        <property name="userName" column="user_name" type="string" not-null="false" length="40" />
+        <property name="centralCode" column="central_code" type="string" not-null="false" length="32" />
+        <property name="clientLeId"  column="Client_LEID" type="string" not-null="false" length="50" />
+        <property name="customerName" column="customer_name" type="string" not-null="false" length="40" />
+        <property name="updateTime" column="update_time" type="timestamp" not-null="false" length="14" />
+        <property name="expireTime" column="expire_time" type="timestamp" not-null="false" length="14" />
+        <property name="status" column="status" type="string" not-null="false" length="2" />
+        <property name="rsv1" column="rsv1" type="string" not-null="false" length="14" />
+        <property name="rsv2" column="rsv2" type="string" not-null="false" length="20" />
+        <property name="rsv3" column="rsv3" type="string" not-null="false" length="32" />
+    </class>
+</hibernate-mapping>

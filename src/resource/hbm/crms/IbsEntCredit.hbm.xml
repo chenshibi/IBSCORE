@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="IbsEntCredit" table="IBS_ENT_CREDIT" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" type="string" column="id"  length="32" >
+		</id>
+		<property name="batchId" column="BATCHID" type="string" not-null="false" length="30" />
+		<property name="zhmc" column="账户名称" type="string" not-null="false" length="30" />
+        <property name="sxjg" column="授信机构" type="string" not-null="false" length="30" />
+        <property name="zhzt" column="帐户状态" type="string" not-null="false" length="50" />
+        <property name="zhlx" column="帐户类型" type="string" not-null="false" length="50" />
+        <property name="dbfs" column="担保方式" type="string" not-null="false" length="50" />
+        <property name="klrq" column="开立日期" type="string" not-null="false" length="50" />
+        <property name="dqr" column="到期日" type="string" not-null="false" length="50"/>
+        <property name="qs" column="期数" type="string" not-null="false" length="50" />
+        <property name="sxed" column="授信额度" type="string" not-null="false" length="50" />
+        <property name="yyed" column="已用额度" type="string" not-null="false" length="50" />
+        <property name="bz" column="币种" type="string" not-null="false" length="50" />
+        <property name="ye" column="余额" type="string" not-null="false"  length="50"/>
+        <property name="byyhk" column="本月应还款" type="string" not-null="false" length="50" />
+        <property name="byshk" column="本月实还款" type="string" not-null="false" length="50" />
+        <property name="zzychkrq" column="最近一次还款日期" type="string" not-null="false" length="50" />
+        <property name="sjgbrq" column="实际关闭日期" type="string" not-null="false" length="50" />
+        <property name="dklx" column="贷款类型" type="string" not-null="false" length="50" />
+        <property name="dqwjfl" column="当前五级分类" type="string" not-null="false" length="50" />
+        <property name="dqyqze" column="当前逾期总额" type="string" not-null="false" length="50" />
+        <property name="dqyqbj" column="当前逾期本金" type="string" not-null="false" length="50" />
+        <property name="cjyqys" column="曾经逾期月数" type="string" not-null="false" length="50" />
+        <property name="cjyqjezj" column="曾经逾期金额加总" type="string" not-null="false" length="50" />
+        <property name="cjzcwjfl" column="曾经最差五级分类" type="string" not-null="false" length="50" />
+        <property name="tue" column="TUE" type="string" not-null="false" length="50" />
+        <property name="dsr" column="DSR" type="string" not-null="false" length="50" />
+        <property name="wc" column="WC" type="string" not-null="false" length="50" />
+    </class>
+</hibernate-mapping>

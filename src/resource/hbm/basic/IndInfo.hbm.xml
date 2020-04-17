@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndInfo"
+            table="Ind_Info"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="enquiryDate"
+                column="enquiry_date"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+       
+        <property
+                name="reportDate"
+                column="report_date"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+        <property
+                name="name"
+                column="name"
+                type="string"
+                not-null="false"
+                length="60"
+        />
+        <property
+                name="idType"
+                column="id_type"
+                type="string"
+                not-null="false"
+                length="1"
+        />
+        <property
+                name="gender"
+                column="gender"
+                type="string"
+                not-null="false"
+                length="1"
+        />
+         <property
+                name="idNumber"
+                column="id_number"
+                type="string"
+                not-null="false"
+                length="36"
+        />
+         <property
+                name="birthday"
+                column="birthday"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="education"
+                column="education"
+                type="string"
+                not-null="false"
+                length="34"
+        />
+        
+        
+          <property
+                name="degree"
+                column="degree"
+                type="string"
+                not-null="false"
+                length="10"
+        />
+          <property
+                name="addr"
+                column="addr"
+                type="string"
+                not-null="false"
+                length="500"
+        />
+        
+        
+        
+        
+         <property
+                name="postcode"
+                column="postcode"
+                type="string"
+                not-null="false"
+                length="20"
+        />
+        
+        <property
+								name="hukouAddr"
+								column="hukou_addr"
+								type="string"
+								not-null="false"
+								length="1000"
+				/>
+				
+				 <property
+								name="phoneLiv"
+								column="phone_liv"
+								type="string"
+								not-null="false"
+								length="150"
+				/>
+				<property
+								name="phoneCom"
+								column="phone_com"
+								type="string"
+								not-null="false"
+								length="150"
+				/>
+				<property
+								name="mobile"
+								column="mobile"
+								type="string"
+								not-null="false"
+								length="150"
+				/>
+				 <property
+								name="email"
+								column="email"
+								type="string"
+								not-null="false"
+								length="150"
+				/>
+				 <property
+								name="marriage"
+								column="marriage"
+								type="string"
+								not-null="false"
+								length="2"
+				/>
+				
+				<property
+								name="spouse"
+								column="spouse"
+								type="string"
+								not-null="false"
+								length="60"
+				/>
+				 <property
+								name="spouseIdType"
+								column="spouse_id_type"
+								type="string"
+								not-null="false"
+								length="1"
+				/>
+        
+        
+          <property
+                name="spouseIdNumber"
+                column="spouse_id_number"
+                type="string"
+                not-null="false"
+                length="36"
+        />
+        
+        <property
+                name="spouseCom"
+                column="spouse_com"
+                type="string"
+                not-null="false"
+                length="500"
+        />
+        
+         <property
+                name="spousePhone"
+                column="spouse_phone"
+                type="string"
+                not-null="false"
+                length="150"
+        />
+        
+        <property
+                name="nameQueried"
+                column="name_queried"
+                type="string"
+                not-null="false"
+                length="60"
+        />
+        
+        <property
+                name="idTypeQueried"
+                column="id_type_queried"
+                type="string"
+                not-null="false"
+                length="1"
+        />
+        
+         <property
+                name="idNoQueried"
+                column="id_no_queried"
+                type="string"
+                not-null="false"
+                length="36"
+        />
+        
+        <property
+                name="enquiryReson"
+                column="enquiry_reason"
+                type="string"
+                not-null="false"
+                length="40"
+        />
+        
+         <property
+                name="verifyResult"
+                column="verify_result"
+                type="string"
+                not-null="false"
+                length="40"
+        />
+        
+         <property
+                name="issueOrg"
+                column="issue_org"
+                type="string"
+                not-null="false"
+                length="100"
+        />
+        
+        <property
+                name="enquiryName"
+                column="enquiry_name"
+                type="string"
+                not-null="false"
+                length="200"
+        />
+        
+        <property
+                name="getDate"
+                column="get_date"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+    </class>
+</hibernate-mapping>

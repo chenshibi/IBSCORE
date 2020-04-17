@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="贷款卡卡号（中证码）查询请求" navigate="贷款卡卡号（中证码）查询请求"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.LoanCardNoInquiryRespQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="id" desc="ID" edittype="text" datatype="string" 
+			 method="None" readonly="false" size="22" status="F"
+			default="" xpath="/id" />
+		<Field id="inqId" desc="inqId" edittype="text" datatype="string" 
+			 method="None" readonly="false" size="22" status="F"
+			default="" xpath="/inqId" />
+         
+          <Field id="loancardno" desc="中证码" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/loancardno"/> 
+         
+         <Field id="countryTaxCode" desc="国税 " status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/countryTaxCode"/>
+         
+         <Field id="orgCreditCode" desc="机构信用代码" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/orgCreditCode"/>	 
+         
+        <Field id="orgCode" desc="组织机构代码" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/orgCode"/>	 
+           
+         <Field id="regionTaxCode" desc="地税" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/regionTaxCode"/>	
+         <Field id="registCodeType" desc="登记注册号类型" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/registCodeType"/>	
+         <Field id="registCode" desc="登记注册号" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/registCode"/>	
+         
+               
+                  
+        	             
+         
+          <Field id="engName" desc="英文名称" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/engName"/>
+         <Field id="chnName" desc="中文名称" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/chnName"/>	
+		
+        <Field id="fullName" desc="中/英文名称" status="N" require="true"
+               readonly="" primary="true" type="String" edittype="text" size="20" rules=""
+               xpath="/fullName"/>	
+		
+		<Field id="returnTime" desc="返回时间" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default=""
+			xpath="/returnTime" />
+
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+		  <Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/business/ftl/LoanCardNoInquirySingleQuery.ftl" txn="" />
+	</Operations>
+</CommQry>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="原始个人征信报告查询" navigate="原始个人征信报告查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.NaturePersonCodeGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="id" desc="ID" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/id" />
+		<Field id="rptKey" desc="rptKey" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/rptKey" />
+		 <Field id="individualIdType" desc="证件类型" edittype="select" translated="DATA_DIC.5513"  
+         datatype="String" size="2"  status="F"  xpath="/individualIdType"/>
+		<Field id="individualId" desc="证件号码" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/individualId" />
+		<Field id="name" desc="名称" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="30" status="F" 
+			default="" xpath="/name" />	
+		<Field id="inputUser" desc="查询操作员" edittype="text" datatype="string"
+			method="None" readonly="false" size="60" status="N" require="true" default="" 
+			primary="true" xpath="/inputUser" />
+		<Field id="inputTime" desc="提交时间" placeholder="yyyy-MM-dd HH:mm:ss"
+			edittype="timestamp" datatype="timestamp" xpath="/inputTime" />		
+		<Field id="queryTime" desc="查询时间" placeholder="yyyy-MM-dd HH:mm:ss"
+		edittype="timestamp" datatype="timestamp" xpath="/queryTime" />
+		<Field id="returnTime" desc="返回时间" placeholder="yyyy-MM-dd HH:mm:ss"
+		edittype="timestamp" datatype="timestamp" xpath="/returnTime" />
+		<Field id="status" desc="状态" status="N" require="false" edittype="select"
+			datatype="string" method="None" readonly="true" primary="true" type="st"
+			translated="DATA_DIC.506" size="30" default="" xpath="/status" tip="" />
+		<Field id="funcid1" desc="菜单ID1" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/funcid1" />
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="20" default="" tip="操作" require="false" />
+	</Fields>
+	<Where>
+	     <Option id="individualIdType" type="String"  size="22"
+			desc="证件类型" tip="证件类型" index="2" translated="DATA_DIC.5513"/>
+		<TextBox id="individualId" type="String"  size="22" width="180"
+			desc="证件号码" tip="证件号码" index="1" />
+		<Option id="MyQuery"  default="" desc="我的查询" type="MyQuery" tip="" method="None" index="4" translated="LIST:1,近七日;"/>
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>

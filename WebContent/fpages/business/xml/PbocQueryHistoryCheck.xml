@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="二代企业征信历史信息报告查询" navigate="二代企业征信历史信息报告查询 &gt; 二代企业征信历史信息报告查询"
+         type="call" interface="false" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+         getterclassname="com.huateng.ebank.business.customer.getter.PbocQueryHistoryCheckGetter">
+    <Include id="BankParam"/>
+
+    <Fields>
+     
+        <Field id="select" desc="select" edittype="checkbox" xpath="" default=""/>
+    
+        <Field id="id" desc="id" require="false"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="32" status="F" default="" xpath="/id"/>
+               
+        <Field id="entName" desc="企业名称" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="30" status="F" default="" xpath="/entName"/>
+
+        <Field id="entCertType" desc="企业身份标识类型" require="true" edittype="select"
+               translated="DATA_DIC.6065" method="None"
+               size="2" datatype="string" status="F" xpath="/entCertType"/>
+
+        <Field id="entCertNum" desc="企业身份标识号码" require="true" edittype="text" size="18" method="None"
+               datatype="string" status="F" xpath="/entCertNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select" method="None"
+               size="3" datatype="string" status="F" translated="DATA_DIC.6066"
+               xpath="/queryReason"/>
+               
+        <Field id="status" desc="查询状态" require="false" edittype="select" method="None"
+               size="2" datatype="string" status="F" translated="LIST:00,00-未提交审批;01,01-审批中;02,02-审核成功"
+               xpath="/status"/>
+               
+        <Field id="isLock" desc="是否锁定" require="false" edittype="select" method="None"
+               size="1" datatype="string" status="F" translated="LIST:0,0-未锁定;1,1-已锁定"
+               xpath="/isLock"/>
+               
+        <Field id="queryDate" desc="查询日期" require="false" edittype="select" method="None"
+               size="3" datatype="date" status="F" translated=""
+               xpath="/queryDate"/>
+               
+         <Field id="userId" desc="用户ID" require="false" edittype="text" method="None"
+              size="80" datatype="text" status="F" translated=""
+              xpath="/userId"/>
+
+
+    </Fields>
+    
+    <Where>
+		<TextBox id="entName" type="String"  size="80" 
+			desc="企业名称" tip="企业名称" index="1" />
+		<TextBox id="entCertNum" type="String"  size="40" width="180"
+			desc="企业身份标识号码" tip="企业身份标识号码" index="2" />
+		<DateTextBox id="etlDate" desc="日期" 
+		    edittype="text" datatype="date" size="34"  index="0" />
+	</Where>
+
+
+    <Operations>
+
+         <Button id="btSubmit" name="btSubmit" desc="提交" icon="" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.PbocQueryHistoryMakeUpdate"/>
+                
+         <Button id="Submit" name="Submit" desc="提交审批" icon="" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.PbocQueryHistoryMakeUpdate"/>
+                
+          <Button id="btapprove" name="btapprove" desc="审批同意" icon="" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.PbocQueryHistoryApproveUpdate"/>
+                
+           <Button id="disapprove" name="disapprove" desc="审批拒绝" icon="" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.PbocQueryHistorydisApproveUpdate"/>
+                
+           <Button id="delete" name="delete" desc="删除" icon="" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.PbocQueryHistorydisApproveUpdate"/>
+                
+           <Button id="add" name="add" desc="新增" icon="icon-add" operation="" url="/fpages/business/ftl/PbocQueryHistoryAdd.ftl" />
+                
+         
+    </Operations>
+
+</CommQry>

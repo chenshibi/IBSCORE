@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrPbocD103" table="CR_PBOC_D103" >
+       <meta attribute="sync-DAO">false</meta>
+       <id name="id" column="ID" type="string"  length="32" >
+            <generator class="uuid"/>
+        </id>         
+        <property name="msgStartFlag" column="MSG_START_FLAG" type="string" not-null="false" length="1" />
+        <property name="msgVersion" column="MSG_VERSION" type="string" not-null="false" length="5" />
+        <property name="msgSndCode" column="MSG_SND_CODE" type="string" not-null="false" length="14" />
+        <property name="msgRcvCode" column="MSG_RCV_CODE" type="string" not-null="false" length="14" />
+        <property name="msgGenTime" column="MSG_GEN_TIME" type="string" not-null="false" length="14" />
+        <property name="msgType" column="MSG_TYPE" type="string" not-null="false" length="14" />
+        <property name="msgId" column="MSG_ID" type="string" not-null="false" length="16" />
+        <property name="msgRsv" column="MSG_RSV" type="string" not-null="false" length="10" />
+        <property name="queryOrgCode" column="QUERY_ORG_CODE" type="string" not-null="false" length="14" />
+        <property name="userCode" column="USER_CODE" type="string" not-null="false" length="64" />
+        <property name="password" column="PASSWORD" type="string" not-null="false" length="100" />
+        <property name="originateOrgCode" column="ORIGINATE_ORG_CODE" type="string" not-null="false" length="14" />
+        <property name="originateUserCode" column="ORIGINATE_USER_CODE" type="string" not-null="false" length="64" />
+        <property name="entName" column="ENT_NAME" type="string" not-null="false" length="80" />
+        <property name="entCertType" column="ENT_CERT_TYPE" type="string" not-null="false" length="2" />
+        <property name="entCertNum" column="ENT_CERT_NUM" type="string" not-null="false" length="40" />
+        <property name="queryReason" column="QUERY_REASON" type="string" not-null="false" length="2" />
+        <property name="serviceCode" column="SERVICE_CODE" type="string" not-null="false" length="100" />
+        <property name="digitalSignature" column="DIGITAL_SIGNATURE" type="string" not-null="false" length="1024" />
+        <property name="queryDate" column="QUERY_DATE" type="string" not-null="false" length="8" />
+        <property name="createUser" column="CREATE_USER" type="string" not-null="false" length="20" />
+        <property name="createTime" column="CREATE_TIME" type="string" not-null="false" length="14" />
+        <property name="checkUser" column="CHECK_USER" type="string" not-null="false" length="20" />
+        <property name="checkTime" column="CHECK_TIME" type="string" not-null="false" length="14" />
+        <property name="sendTime" column="SEND_TIME" type="string" not-null="false" length="14" />
+        <property name="respTime" column="RESP_TIME" type="string" not-null="false" length="14" />
+        <property name="status" column="STATUS" type="string" not-null="false" length="2" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="8" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="14" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="32" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="64" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="60" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+    </class>
+</hibernate-mapping>

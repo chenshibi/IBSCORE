@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="各部门查询企业次数汇总" navigate="各部门查询企业次数汇总"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.EachDepartmentQueryEntNumsGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="" size="40" default="" tip="操作" require="false" />
+		
+		<Field id="department" name="部门名称" desc="部门名称" status="N" method="None" width=""  size="50" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.501" xpath="/department" />
+		<Field id="queryTimes" name="查询次数" desc="查询次数" status="N" method="None" width=""  size="5" require="false" readonly = "true" datatype="String" edittype="text"  xpath="/queryTimes" />
+		<Field id="createTime" name="查询时间" desc="查询时间" status="N" method="None" width=""  size="40" require="false" readonly = "true" datatype="String" edittype="text" placeholder="yyyyMMddHHmmss" xpath="//createTime" />
+		<Field id="city" name="城市" desc="城市" status="N" method="None" width=""  size="20" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.503" xpath="/city" />
+		<Field id="region" name="区域" desc="区域" status="N" method="None" width=""  size="150" require="false" readonly = "true" datatype="String" edittype="select" translated="DATA_DIC.502" xpath="/region" />
+		
+	</Fields>
+	<Where>
+		<Option id="department" desc="部门名称" size="50" edittype="select"  datatype="string" index="1" translated="DATA_DIC.501"  />
+		<Option id="city" desc="城市" size="20" edittype="select"  datatype="string" index="2" translated="DATA_DIC.503"  />
+		<Option id="region" desc="区域" size="150" edittype="select"  datatype="string" index="3" translated="DATA_DIC.502"  />
+		<Option id="QueryCycle"  default="" desc="查询周期" type="QueryCycle" require="true" tip="请选择查询周期" method="None" index="5" translated="LIST:1,每天;2,每月;"/>
+
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndOverdueQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="loanCount" desc="贷款逾期笔数" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/loanCount" />
+			
+		<Field id="loanMonthCount" desc="贷款逾期月份数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/loanMonthCount" />
+
+		<Field id="loanMaxAmount" desc="贷款逾期单月最高逾期总额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/loanMaxAmount" />
+			
+		<Field id="loanMaxMonth" desc="贷款逾期最长逾期月数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/loanMaxMonth" />
+			
+		<Field id="ccCount" desc="贷记卡逾期账户数" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/ccCount" />
+			
+		<Field id="ccMonthCount" desc="贷记卡逾期月份数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/ccMonthCount" />
+
+		<Field id="ccMaxAmount" desc="贷记卡逾期单月最高逾期总额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/ccMaxAmount" />
+			
+		<Field id="ccMaxMonth" desc="贷记卡逾期最长逾期月数" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/ccMaxMonth" />
+			
+		<Field id="pdcCount" desc="准贷记卡60天以上透支账户数" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/pdcCount" />
+			
+		<Field id="pdcMonthCount" desc="准贷记卡60天以上透支月份数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/pdcMonthCount" />
+
+		<Field id="pcdMaxAmount" desc="准贷记卡60天以上透支单月最高透支余额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/pcdMaxAmount" />
+			
+		<Field id="pdcMaxMonth" desc="准贷记卡60天以上透支最长透支月数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/pdcMaxMonth" />
+			
+
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

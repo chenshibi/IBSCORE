@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="BizFuncInfo"
+		table="BIZ_FUNC_INFO"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="BIZ_FUNC_CODE"
+		>
+			<generator class="native"/>
+		</id>
+
+		<property
+			name="bizFuncName"
+			column="BIZ_FUNC_NAME"
+			type="string"
+			not-null="false"
+			length="60"
+		/>
+		<property
+			name="menuFuncCode"
+			column="MENU_FUNC_CODE"
+			type="string"
+			not-null="false"
+			length="10"
+		/>
+		<property
+			name="bizFuncType"
+			column="BIZ_FUNC_TYPE"
+			type="string"
+			not-null="false"
+			length="2"
+		/>
+		<property
+			name="logType"
+			column="LOG_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="timestamps"
+			column="TIMESTAMPS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="miscflgs"
+			column="MISCFLGS"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="misc"
+			column="MISC"
+			type="string"
+			not-null="false"
+			length="256"
+		/>
+
+
+	</class>
+</hibernate-mapping>

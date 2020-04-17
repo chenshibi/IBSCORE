@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="SysParams"
+		table="SYS_PARAMS"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="SysParamsPK">
+			<key-property
+				name="paramgroupId"
+				column="PARAMGROUP_ID"
+				type="string"
+			/>
+			<key-property
+				name="paramId"
+				column="PARAM_ID"
+				type="string"
+			/>
+		</composite-id>
+
+		<property
+			name="paramVal"
+			column="PARAM_VAL"
+			type="string"
+			not-null="false"
+			length="2048"
+		/>
+		<property
+			name="paramName"
+			column="PARAM_NAME"
+			type="string"
+			not-null="false"
+			length="512"
+		/>
+		<property
+			name="memo"
+			column="MEMO"
+			type="string"
+			not-null="false"
+			length="512"
+		/>
+		<property
+			name="st"
+			column="ST"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="lock"
+			column="IS_LOCK"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="del"
+			column="IS_DEL"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="crtDt"
+			column="CRT_DT"
+			type="string"
+			not-null="false"
+			length="8"
+		/>
+		<property
+			name="lastUpdOper"
+			column="LAST_UPD_OPER"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="lastUpdTms"
+			column="LAST_UPD_TMS"
+			type="string"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="sys_name"
+			column="SYS_NAME"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="公共文件上传功能" navigate="公共文件上传功能"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.FileGroupUploadGetter">
+	<Include id="BankParam" />
+		<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="select" desc="操作" status="N" method="None" xpath=""
+			primary="true" type="select" size="20" default="" tip="操作" require="false" edittype="checkbox"/>
+		<Field id="fileName" desc="文件名称" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="60" status="F" 
+			default="" xpath="/fileName" />
+			<Field id="id" desc="id" edittype="text" datatype="string"
+			method="None" readonly="false" size="50" status="N" require="true" default="" 
+			primary="true" xpath="/id" />	
+		<Field id="effectiveDate" desc="上传时间" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" default=""   require="true"
+			xpath="/effectiveDate" />
+		<Field id="filePath" desc="文件路径" edittype="text" datatype="string"
+			method="None" readonly="false" size="500" status="F" require="true"
+			default="" xpath="/filePath" />
+		<Field id="createUser" desc="录入员" edittype="text" datatype="string"
+			method="None" readonly="false" size="200" status="F" require="true"
+			default="" xpath="/createUser" />
+		<Field id="inputTime" desc="录入时间" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F" require="true" default=""
+			xpath="/inputTime" />
+		<Field id="department" desc="部门" require="" edittype="select"
+			datatype="string" method="None" size="3" translated="DATA_DIC.999"
+			status="F" default="" xpath="/department" tip="部门" />    
+		<Field id="status" desc="状态" require="" edittype="select"
+			datatype="string" method="None" size="3" translated="DATA_DIC.998"
+			status="F" default="" xpath="/status" tip="状态" />  
+	</Fields>
+	<Where>
+		 <Option id="department" size="5" require="false" edittype="select" desc="部门" datatype="int" index="1" translated="DATA_DIC.999"/>
+	</Where>
+	
+	 <Operations>
+	    <Button id="disuseBN" name="disuseBN" desc="弃用"   url="#" operation="asysubmit" updateClass="com.huateng.ebank.business.customer.update.BatchDisuseUpdate" txn="" /> 
+		<Button id="uploadBN" name="uploadBN" desc="上传" url="#" show="" group="" txn=""  icon="icon-impin"  />
+	</Operations>
+	
+</CommQry>

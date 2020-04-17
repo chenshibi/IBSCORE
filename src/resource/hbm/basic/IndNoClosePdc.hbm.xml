@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndNoClosePdc"
+            table="Ind_No_Close_Pdc"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="lawOrgCount"
+                column="law_org_count"
+                type="integer"
+                not-null="false"
+                length="120"
+        />
+       
+        <property
+                name="orgCount"
+                column="org_count"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="count"
+                column="count"
+                type="integer"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="totalCreditAmount"
+                column="total_credit_amount"
+                type="float"
+                not-null="false"
+                length="20"
+        />
+          <property
+                name="maxCreditAmount"
+                column="max_credit_amount"
+                type="float"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="minCreditAmount"
+                column="min_credit_amount"
+                type="float"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="totalOverdraw"
+                column="total_overdraw"
+                type="float"
+                not-null="false"
+                length="20"
+        />
+         <property
+                name="avgOverdrawL6m"
+                column="avg_overdraw_l6m"
+                type="float"
+                not-null="false"
+                length="20"
+        />
+        <property
+                name="getDate"
+                column="get_date"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+    </class>
+</hibernate-mapping>

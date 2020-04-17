@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="个人征信统计报表" navigate="个人征信统计报表  &gt;个人征信统计报表
+"
+	type="call" 
+	interface="true" 
+	pagesize="10" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.report.pboc.getter.PerStatisticsReportGetter">
+	<Include id="BankParam" />
+    <ResultViewParam>
+        /fpages/crms/ftl/PerStatisticsReport.ftl
+    </ResultViewParam>
+     <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-个人征信统计报表查询"/> 
+    <Fields>
+        <!-- 个人征信统计报表查询 -->
+        
+         <Field id="operatorId" desc="查询操作员ID" tip="查询操作员ID" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="50" default="" xpath="/operatorId"/>
+               
+        <Field id="queryOrgCode" desc="查询机构代码" require="true"
+               edittype="text" datatype="string" method="None" readonly="true"
+               size="14" status="F" default="" xpath="/queryOrgCode"/>
+       <!--  <Field id="query_org_name" desc="查询机构名称" tip="查询机构名称"  require="true"
+               edittype="text" datatype="String" method="None" readonly="" primary="true"
+               size="100" default="" xpath="/queryOrgName"/> -->
+        <Field id="userCode" desc="查询用户代码" require="true"
+               edittype="text" datatype="string" method="None" readonly="true"
+               size="64" status="F" default="" xpath="/userCode"/>
+        <Field id="userName" desc="查询用户姓名" tip="查询用户姓名" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="30" default="" xpath="/userName"/>
+               
+        <Field id="name" desc="客户姓名" tip="客户姓名" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="30" default="" xpath="/name"/>
+
+        <Field id="idType" desc="证件类型" require="true" edittype="select"
+               translated="DATA_DIC.6002"
+               size="2" datatype="string" status="F" xpath="/idType"/>
+
+        <Field id="idNum" desc="证件号码" require="true" edittype="text" size="18"
+               datatype="string" status="F" xpath="/idNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select" translated="DATA_DIC.6004"
+               size="3" datatype="string" status="F"  xpath="/queryReason"/>
+
+        <Field id="serviceCode" desc="服务代码" tip="服务代码" require="true" size="100"
+               edittype="text" datatype="string" status="F" type="" primary="true" 
+               xpath="/serviceCode"/>
+        
+        <Field id="ip" desc="IP地址" tip="IP地址" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="64" default="" xpath="/ip"/>
+        <Field id="queryDate" desc="查询日期" tip="查询日期" status="F" require="true"
+               edittype="text" datatype="date" method="None" readonly="true" primary="true"
+               size="8" default="" xpath="/queryDate"/>
+     
+        <Field id="indPermitId" desc="客户授权书编码" tip="应用场景" status="F" require="true"
+               edittype="text" datatype="int" method="None" readonly="true" primary="true"
+               default="" xpath="/indPermitId"/>
+          <!--      
+         <Field id="useScan" desc="应用场景" tip="应用场景" status="F" require="true"
+               edittype="text" datatype="date" method="None" readonly="true" primary="true"
+               size="2" default="" xpath="/useScan"/>
+          --> 
+      
+        <Field id="status" desc="状态" tip="状态" status="F" translated="DATA_DIC.901"
+               require="true"  edittype="select" method="None" readonly="true"
+               primary="true" size="2" xpath="/status"/>
+               
+         <Field id="queryDate" desc="查询日期" tip="查询日期" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="8" default="" xpath="/queryDate"/>
+               
+          <Field id="branch" desc="部门" tip="部门" status="F" translated="DATA_DIC.501" require="true" 
+               edittype="select" datatype="string" size="14"  xpath="/branch"/>
+          
+          <!-- add by chensibi start -->
+               
+           <Field id="createTime" desc="用户录入时间" tip="用户录入时间" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="50" default="" xpath="/createTime"/>
+               
+            <Field id="returnTime" desc="一般报告返回时间" tip="一般报告返回时间" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="50" default="" xpath="/returnTime"/>
+               
+             <Field id="sendTime" desc="一般报告查询时间" tip="一般报告查询时间" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="50" default="" xpath="/sendTime"/>
+               
+             <Field id="cdappQueryTime" desc="明细报告查询时间" tip="明细报告查询时间" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="50" default="" xpath="/cdappQueryTime"/>
+               
+             <Field id="cdappReturnTime" desc="明细报告返回时间" tip="明细报告返回时间" status="F" require="true"
+               edittype="text" datatype="string" method="None" readonly="true" primary="true"
+               size="50" default="" xpath="/cdappReturnTime"/>
+               
+          <!-- add by chensibi end -->
+
+    </Fields>
+    <Where>
+		<Option id="reportDate" desc="报表月份" placeholder="yyyyMM"
+		 edittype="select" dropdowntype="custom" url="/templets/lib/yyyyMM.ftl" require="true" 
+		fieldmap="reportDate=yyyyMM" viewField="yyyyMM" />
+        <Option id="branch"  default="" desc="部门" edittype="select" status="F" translated="DATA_DIC.501" datatype="string" size="14" index="2"/>
+    </Where>
+    
+    <Operations>
+		<Button id="btDownload" name="btDownload" desc="下载Excel" url="#" />
+	</Operations>
+
+</CommQry>

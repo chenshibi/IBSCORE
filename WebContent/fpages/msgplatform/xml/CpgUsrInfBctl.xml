@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="可选机构列表" type="call" interface="true" navigate="消息平台>接收用户维护>明细>可选机构列表"
+	async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.msgplatform.getter.BctlBeanGetter">
+	<Include id="BankParam" />
+	<!-- status ：F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+	<!-- primary ： true-作为表单项记录上传 false-不作为表单项上传 -->
+	<Fields>		
+		<Field id="brcode" desc="主键" status="F" require="false" edittype="text" datatype="string" readonly="false" xpath="/brcode" size="20" />
+		<Field id="brno" desc="内部机构号" status="F" require="false" edittype="text" datatype="string" readonly="false" xpath="/brno" size="20" />
+		<Field id="brname" desc="内部机构名称" status="F" require="false" edittype="text" datatype="string" readonly="false" xpath="/brname" size="60" />
+
+		<Field id="opr" desc="操作" status="F" require="false" edittype="text" datatype="string" readonly="false" xpath="" size="20" />	
+		<Field id="select" desc="选择" require="false" method="None"
+			readonly="false" size="20" default="" xpath="/select" type="select"
+			edittype="checkbox" />
+		
+	</Fields>
+	<Where>
+	</Where>
+
+	<Operations>
+	</Operations>
+</CommQry>		

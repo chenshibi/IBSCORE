@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrComEda" table="CR_COM_EDA" >
+        <meta attribute="sync-DAO">false</meta>
+       <id name="id" type="string" column="ID" length="32">
+			<!-- <generator class="uuid" /> -->
+		</id>
+		
+		<property name="ed01ai01" column="ED01AI01" type="string" not-null="false" length="6" />
+        <property name="ed01ad01" column="ED01AD01" type="string" not-null="false" length="1" />
+        <property name="ed01ad02" column="ED01AD02" type="string" not-null="false" length="2" />
+        <property name="ed01ad03" column="ED01AD03" type="string" not-null="false" length="2" />
+        <property name="ed01ad04" column="ED01AD04" type="string" not-null="false" length="2" />
+        <property name="ed01ai02" column="ED01AI02" type="string" not-null="false" length="4" />
+        <property name="ed01ai03" column="ED01AI03" type="string" not-null="false" length="6" />
+        <property name="ed01ad05" column="ED01AD05" type="string" not-null="false" length="2" />
+        <property name="ed01ad06" column="ED01AD06" type="string" not-null="false" length="2" />
+        <property name="ed01ar01" column="ED01AR01" type="string" not-null="false" length="10" />
+        <property name="ed01ad07" column="ED01AD07" type="string" not-null="false" length="3" />
+        <property name="ed01aj01" column="ED01AJ01" type="string" not-null="false" length="15"/>
+        <property name="ed01aj02" column="ED01AJ02" type="string" not-null="false" length="15"/>
+        <property name="ed01ar02" column="ED01AR02" type="string" not-null="false" length="10" />
+        <property name="ed01ad08" column="ED01AD08" type="string" not-null="false" length="1" />
+        <property name="ed01ad09" column="ED01AD09" type="string" not-null="false" length="1" />
+        <property name="ed01ad10" column="ED01AD10" type="string" not-null="false" length="1" />
+        <property name="ed01ad11" column="ED01AD11" type="string" not-null="false" length="1" />
+        <property name="ed01ar03" column="ED01AR03" type="string" not-null="false" length="10" />
+        <property name="ed01ar04" column="ED01AR04" type="string" not-null="false" length="10" />
+        <property name="ed01bs01" column="ED01BS01" type="string" not-null="false" length="3"/>
+        <property name="ed01cs01" column="ED01CS01" type="string" not-null="false" length="3"/>
+        <property name="ed020i01" column="ED020I01" type="string" not-null="false" length="6" />
+        <property name="ed020d01" column="ED020D01" type="string" not-null="false" length="2" />
+        <property name="ed020i02" column="ED020I02" type="string" not-null="false" length="4" />
+        <property name="ed020d02" column="ED020D02" type="string" not-null="false" length="2" />
+        <property name="ed020d03" column="ED020D03" type="string" not-null="false" length="1" />
+        <property name="ed020s01" column="ED020S01" type="string" not-null="false" length="3"/>
+        <property name="ed020j01" column="ED020J01" type="string" not-null="false" length="15"/>
+        <property name="ed020j02" column="ED020J02" type="string" not-null="false" length="15"/>
+        <property name="ed020j03" column="ED020J03" type="string" not-null="false" length="15"/>
+        <property name="ed020s02" column="ED020S02" type="string" not-null="false" length="3"/>
+        <property name="ed020j04" column="ED020J04" type="string" not-null="false" length="15"/>
+        <property name="ed030i01" column="ED030I01" type="string" not-null="false" length="6" />
+        <property name="ed030d01" column="ED030D01" type="string" not-null="false" length="2" />
+        <property name="ed030i02" column="ED030I02" type="string" not-null="false" length="4" />
+        <property name="ed030d02" column="ED030D02" type="string" not-null="false" length="3" />
+        <property name="ed030j01" column="ED030J01" type="string" not-null="false" length="15"/>
+        <property name="ed030r01" column="ED030R01" type="string" not-null="false" length="10" />
+        <property name="ed030d03" column="ED030D03" type="string" not-null="false" length="1" />
+        <property name="ed030r02" column="ED030R02" type="string" not-null="false" length="10" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+    </class>
+</hibernate-mapping>

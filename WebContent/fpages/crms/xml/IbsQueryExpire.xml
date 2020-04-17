@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="查询有效期设置" navigate="查询有效期设置  &gt;查询有效期设置"
+	type="call" 
+	interface="false" 
+	pagesize="10" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.report.pboc.getter.IbsQueryExpireGetter">
+	<Include id="BankParam" />
+    <ResultViewParam>
+        /fpages/crms/ftl/IbsQueryExpire.ftl
+    </ResultViewParam>
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-二代查询有效期设置"/>
+      <Fields>
+        <!--二代查询有效期设置  -->
+        <Field id="id" desc="序号" tip="id"  require="true"
+               edittype="text" datatype="String" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/id"/>
+        <Field id="userName" desc="用户姓名" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="40" status="N" default="" xpath="/userName"/>
+        <Field id="centralCode" desc="中征码" require="true" edittype="text"
+               size="32" datatype="string" status="A" xpath="/centralCode"/>
+        <Field id="clientLeId" desc="Client_LEID" require="true" edittype="text" size="50"
+               datatype="string" status="A" xpath="/clientLeId"/>
+        <Field id="customerName" desc="客户姓名" require="true" edittype="text" size="14" datatype="string" status="A" xpath="/customerName"/>
+        <Field id="updateTime" desc="更新时间" require="true" size="14" edittype="text" datatype="date" status="F" xpath="/updateTime"/>
+        <Field id="expireTime" desc="有效期时间" tip="有效期时间" status="F" require="true" edittype="text" datatype="date" method="None"
+          readonly="" primary="true" size="3" default="" xpath="/expireTime"/>
+        <Field id="status" desc="状态" tip="状态"  require="true"
+               edittype="select" datatype="String" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/status" translated="LIST:00,成功;01,失败;"/>
+    </Fields>
+    
+    <Where>
+		<DateTextBox id="etlDateStart" desc="起始日期" edittype="text" datatype="date" size="34" require="true" index="0" />
+		<DateTextBox id="etlDateEnd" desc="终止日期" edittype="text" datatype="date" size="34" require="true" index="1" />
+	</Where>
+ <Operations>
+        <Button id="modelDownload" name="modelDownload" desc="授权书模板 下载"   url="#" /> 
+		<Button id="importBN" name="importBN" desc="查询授权文件上传"  url="#" show="" group="" txn=""  icon="icon-impin"  />
+</Operations>
+ </CommQry>

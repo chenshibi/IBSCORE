@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="操作员管理" navigate="主页 &gt; 系统管理 &gt; 操作员管理" type="call"
+	interface="false" pagesize="100" async="true" databusid="MANAGEMENTTLR"
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.opermng.getter.OperMngRoleInfoSelGetter">
+	<Include id="BankParam" />
+
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		<Field id="select" desc="选择" status="N" method="None" datetype="checkbox"
+			edittype="checkbox" readonly="false" primary="true" type="String"
+			size="20" default="false" xpath="/selected" />
+
+		<Field id="roleId" desc="Role No" status="N" method="None"
+			readonly="true" primary="false" type="String" size="20"
+			xpath="/roleId" />
+
+		<Field id="roleName" desc="Role Name" status="N" method="None"
+			readonly="true" primary="false" type="String" size="20"
+			xpath="/roleName" />
+
+		<Field id="tlrno" desc="Operator NO" status="N" method="None"
+			readonly="true" primary="false" type="String" size="20"
+			xpath="/tlrno" />
+			
+		<Field id="roleGroup" desc="Role Group" status="N" method="None"
+			readonly="true" primary="false" type="String" size="20"
+			xpath="/roleGroup" />
+		<Field id="sysGroup" desc="SYS Group" status="N" method="None"  edittype="select" datatype="string"
+			translated="LIST:CCIS,法院;TCP,电信;OTHER,其他" readonly="true" primary="false" type="String" size="20"
+			xpath="/sysGroup" />
+
+	</Fields>
+
+	<Where>
+		<TextBox id="qroleGroup" desc="角色类型" require="false" datatype="string"
+			method="None" size="150" primary="false" index="1" type="String"  rules="xss"/>
+	</Where>
+	<Operations>
+	<!--modify by zhiyang.he 用户管理双岗复核改造 2012-09-04 begin -->
+		<Button id="btRoleSave" name="btRoleSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.opermng.update.OperMngModUpdate"
+			url="/fpages/regonization/ftl/OperMngEntry.ftl" txn="" />
+	    <Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/regonization/ftl/OperMngEntry.ftl" txn="" />
+		<Button id="btadd" name="btadd" desc="添加" operation=""
+			url="#" txn="" />
+	<!--modify by zhiyang.he 用户管理双岗复核改造 2012-09-04 end -->
+	</Operations>
+	<Sql></Sql>
+</CommQry>

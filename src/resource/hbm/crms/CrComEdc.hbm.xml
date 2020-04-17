@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrComEdc" table="CR_COM_EDC" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+          <!-- <generator class="uuid" /> -->
+        </id>
+
+        <property name="ed060i01" column="ED060I01" type="string" not-null="false" length="6" />
+        <property name="ed060d01" column="ED060D01" type="string" not-null="false" length="2" />
+        <property name="ed060i02" column="ED060I02" type="string" not-null="false" length="4" />
+        <property name="ed060d02" column="ED060D02" type="string" not-null="false" length="2" />
+        <property name="ed060d03" column="ED060D03" type="string" not-null="false" length="1" />
+        <property name="ed060d04" column="ED060D04" type="string" not-null="false" length="3" />
+        <property name="ed060j01" column="ED060J01" type="string" not-null="false" length="15"/>
+        <property name="ed060j04" column="ED060J04" type="string" not-null="false" length="15"/>
+        <property name="ed060j03" column="ED060J03" type="string" not-null="false" length="6"/>
+        <property name="ed060i03" column="ED060I03" type="string" not-null="false" length="6" />
+        <property name="ed060r01" column="ED060R01" type="string" not-null="false" length="10" />
+        <property name="ed060r02" column="ED060R02" type="string" not-null="false" length="10" />
+        <property name="ed060r03" column="ED060R03" type="string" not-null="false" length="10" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+    </class>
+</hibernate-mapping>

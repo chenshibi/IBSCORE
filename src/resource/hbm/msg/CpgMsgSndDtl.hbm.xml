@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!--  old primary key(innerId); -->
+<hibernate-mapping package="resource.bean.msg">
+	<class name="CpgMsgSndDtl" table="CPG_MSG_SND_DTL">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="id">
+			<generator class="uuid" />
+		</id>
+		<property name="innerId" 	column="inner_id" 	type="string" not-null="false"  length="32" />
+		<property name="msgLogId"	column="msg_log_id" type="string" not-null="false"  length="20" />
+		<property name="msgId" 		column="msg_id" 	type="string" not-null="false"  length="20" />
+		<property name="oppId" 		column="opp_id" 	type="string" not-null="false"  length="20" />
+		<property name="sendType" 	column="send_type" 	type="string" not-null="false"  length="2" />
+		<property name="rcvInf" 	column="rcv_inf" 	type="string" not-null="false"  length="1024" />
+		<property name="status" 	column="status" 	type="string" not-null="false"  length="1" />
+		<property name="sendDate" 	column="send_date" 	type="string" not-null="false"  length="14" />
+		<property name="rsv1" 		column="rsv1" 		type="string" not-null="false"  length="60" />
+		<property name="rsv2" 		column="rsv2" 		type="string" not-null="false"  length="60" />
+		<property name="rsv3" 		column="rsv3" 		type="string" not-null="false"  length="60" />
+		<property name="rsv4" 		column="rsv4" 		type="string" not-null="false"  length="60" />
+        <property name="rsv5"       column="rsv5"       type="string" not-null="false"  length="60" />
+        <property name="failedReason"       column="failed_reason"       type="string" not-null="false"  length="4000" />
+	</class>
+</hibernate-mapping>

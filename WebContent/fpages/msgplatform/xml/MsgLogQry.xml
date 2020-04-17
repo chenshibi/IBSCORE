@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="消息发送日志查询" type="call" interface="true" navigate="消息平台>>消息发送日志查询"
+	async="true" databusid="" pagesize="50" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.msgplatform.getter.MsgLogQryGetter">
+	<Include id="BankParam" />
+	<!-- status ：F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+	<!-- primary ： true-作为表单项记录上传 false-不作为表单项上传 -->
+	<Fields>		
+		<!-- id 为cpg_msg_snd_dtl表的 id  -->
+		<!-- id,msgId,msgName,msgSysId,oppId,userName,msgLogHead,sendDate -->
+		<!-- bId,aId,msgId,msgName,oppId,userName,brno,type,subType,createdDate,msgSysId,source,sendDate,status,msgLogHead,msgLog -->
+		
+		<!-- table cpg_msg_pool start -->
+		<Field id="aId" desc="消息流水号" status="F" require="" edittype="text" rules="xssSave" 
+			datatype="string" method="None" readonly="false" primary="true" type="String"
+			size="32" default="" xpath="/aId" />
+		<Field id="msgSysId" desc="系统编号" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/msgSysId" size="20" />
+		<Field id="msgLogHead" desc="消息标题" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/msgLogHead" size="192" />
+		<Field id="brno" desc="分行号" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/brno" size="14" />
+		<Field id="createdDate" desc="产生时间" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/createdDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+		<Field id="source" desc="消息来源" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/source" size="20" />
+		<Field id="msgLog" desc="消息内容" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/msgLog" size="4000" />
+		<!-- table cpg_msg_pool end -->
+		<Field id="rcvInf" desc="接收要素" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rcvInf" size="1024" />
+		
+		<!-- table cpg_msg_snd_dtl start -->
+		<Field id="id" desc="发送流水号" status="F" require="" edittype="text" rules="xssSave" 
+			datatype="string" method="None" readonly="false" primary="true" type="String"
+			size="32" default="" xpath="/id" />
+		<Field id="bId" desc="发送流水号" status="F" require="" edittype="text" rules="xssSave" 
+			datatype="string" method="None" readonly="false" primary="true" type="String"
+			size="32" default="" xpath="/bId" />
+        <Field id="msgId" desc="消息编号" status="F" require="false" edittype="select" datatype="select" translated="DATA_DIC.8000" readonly="false" xpath="/msgId" size="20" />
+		<Field id="oppId" desc="接收用户编号" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/oppId" size="20" />
+		<Field id="sendDate" desc="发送时间" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/sendDate" size="14" />
+		<Field id="status" desc="状态" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/status" size="1" 
+			translated="LIST:0,待发送;1,发送成功;2,发送失败;" />
+		<!-- table cpg_msg_snd_dtl end -->
+        <Field id="sendType" desc="发送方式" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/sendType" size="2" />
+        <Field id="failedReason" desc="失败原因" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/failedReason" size="2" />
+		
+		<!-- table cpg_usr_inf start -->
+		<Field id="userName" desc="接收用户名" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/userName" size="96" />
+		<!-- table cpg_usr_inf end -->
+		
+		<!-- table cpg_msg_ctl start -->
+		<Field id="msgName" desc="消息描述" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/msgName" size="90" />
+		<Field id="type" desc="对象类型" status="F" require="false" edittype="select" datatype="string" readonly="false" xpath="/type" size="1" 
+			translated="LIST:1,系统级消息;2,业务级消息;3,信息级消息;" />
+        <Field id="subType" desc="消息子类型" status="F" require="false" edittype="select" datatype="select" translated="DATA_DIC.8100" readonly="false" xpath="/subType" size="20" 
+            />
+		<!-- table cpg_msg_ctl end -->
+		
+		<Field id="sendDate1" desc="产生时间" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="/sendDate" size="14" 
+			method="com.huateng.ebank.business.common.CQMethod.format2Time" />
+		
+		<Field id="opr" desc="操作" status="F" require="false" edittype="text" rules="xssSave"  datatype="string" readonly="false" xpath="" size="20" />			
+	</Fields>
+	<Where>
+		<!-- sendDate,msgSysId,msgId,userName,msgLogHead -->
+		<TextBox id="dateStart" desc="发送时间 从" require="false" datatype="date"
+			method="None" size="150" primary="false" index="0" type="String" />
+		<TextBox id="dateEnd" desc="发送时间 到" require="false" datatype="date"
+			method="None" size="150" primary="false" index="1" type="String" />
+		<Option id="msgId" desc="消息编号" require="false" datatype="select"
+            method="None" size="150" primary="false" index="2" type="String" rules="xss" translated="DATA_DIC.8000"/>
+		<Option id="status" desc="状态" require="false" datatype="select"
+			method="None" size="150" primary="false" index="3" type="String" rules="xss" translated="LIST:0,待发送;1,发送成功;2,发送失败;"/>
+		<TextBox id="userName" desc="接收用户名" require="false" datatype="string"
+			method="None" size="150" primary="false" index="4" type="String" rules="xss"/>
+		<TextBox id="msgLogHead" desc="消息标题" require="false" datatype="string"
+			method="None" size="150" primary="false" index="5" type="String" rules="xss"/>
+	</Where>
+
+	<Operations>
+		<!-- 明细页面按钮 -->
+		<Button id="btBack" name="btBack" desc="返回" operation="" url="#" />
+	</Operations>
+</CommQry>

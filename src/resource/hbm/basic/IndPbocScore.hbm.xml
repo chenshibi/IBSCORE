@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="IndPbocScore"
+            table="Ind_Pboc_Score"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptId"
+			column="Rpt_id"
+			type="string"
+			not-null="false"
+			length="22"
+		/>
+
+        <property
+                name="scoreDate"
+                column="score_date"
+                type="string"
+                not-null="false"
+                length="18"
+        />
+       
+        <property
+                name="scorePercentile"
+                column="score_percentile"
+                type="string"
+                not-null="false"
+                length="50"
+        />
+        <property
+                name="scoreDescription"
+                column="score_description"
+                type="string"
+                not-null="false"
+                length="50"
+        />
+        <property
+                name="pbocScore"
+                column="pboc_score"
+                type="string"
+                not-null="false"
+                length="10"
+        />
+        <property
+                name="getDate"
+                column="get_date"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+         <property
+                name="score"
+                column="score"
+                type="float"
+                not-null="false"
+        />
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndNoCloseCcQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="lawOrgCount" desc="发卡法人机构数" edittype="text" datatype="integer" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/lawOrgCount" />
+			
+		<Field id="orgCount" desc="发卡机构数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="20" status="N"  default="" 
+			primary="true" xpath="/orgCount" />
+
+		<Field id="count" desc="账户数" edittype="text" datatype="integer"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/count" />
+			
+		<Field id="totalCreditAmount" desc="授信总额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/totalCreditAmount" />
+			
+		<Field id="maxCreditAmount" desc="当家行最高授信额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/maxCreditAmount" />
+			
+		<Field id="minCreditAmount" desc="当家行最低授信额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/minCreditAmount" />
+			
+		<Field id="totalUsed" desc="已用额度" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/totalUsed" />
+			
+		<Field id="avgUsedL6m" desc="最近6个月平均使用额度" edittype="text" datatype="currency"
+			method="None" readonly="false" size="22" status="F"  scale="2"
+			default="" xpath="/avgUsedL6m" />
+			
+	</Fields>
+	<Operations>
+	</Operations>
+</CommQry>

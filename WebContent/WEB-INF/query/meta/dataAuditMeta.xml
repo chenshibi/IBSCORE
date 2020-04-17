@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+
+    <Query id="tblCsBizLogQuery" path="/fpages/dataquery/xml/TblCsBizLogQuery.xml" />
+
+	<Query id="TlrLoginLogQuery" path="/fpages/dataquery/xml/TlrLoginLogQuery.xml"/>
+
+	<Query id="TlrLoginLogCountQuery" path="/fpages/dataquery/xml/TlrLoginLogCountQuery.xml"/>
+	<Query id="tlrLoginLogQueryTabs" path="/fpages/dataquery/xml/tlrLoginLogQueryTabs.xml"/>
+
+     <!--定时任务日志查询-->
+     <Query id="BiQuartzJobLog" path="/fpages/dataquery/xml/BiQuartzJobLog.xml" />
+     
+      <!-- 征信上傳-->
+	 <Query id="TCorpPermitUpload" path="/fpages/business/xml/TCorpPermitUpload.xml"/>
+	 <Query id="TCorpPermitUploadN" path="/fpages/business/xml/TCorpPermitUploadN.xml"/>
+	 <Query id="TCorpPermitUploadN2" path="/fpages/business/xml/TCorpPermitUploadN2.xml"/>
+	 <Query id="TCorpPermitUploadP" path="/fpages/business/xml/TCorpPermitUploadP.xml"/>
+	 <Query id="IndPermitUpload" path="/fpages/business/xml/IndPermitUpload.xml"/>
+	 <!-- 新征信查詢  批量-->
+	  <Query id="CrpbocD503" path="/fpages/business/xml/CrpbocD503.xml"/>
+	  <Query id="CrpbocD501" path="/fpages/business/xml/CrpbocD501.xml"/>
+	   <!-- 征信查询企业与个人展示页面 -->
+     <Query id="IbsEntCredit" path="/fpages/business/xml/IbsEntCredit.xml"/>
+	    <Query id="IbsEntCreditSum" path="/fpages/business/xml/IbsEntCreditSum.xml"/>
+	 <Query id="IbsPerCredit" path="/fpages/business/xml/IbsPerCredit.xml"/>
+	   <Query id="IbsPerCreditSum" path="/fpages/business/xml/IbsPerCreditSum.xml"/>
+	   <!-- 征信企业报表明细 -->
+	  <Query id="IbsEntCredit2" path="/fpages/business/xml/IbsEntCredit2.xml"/>
+	  <!--征信个人报表明细 -->
+	  <Query id="IbsPerCredit2" path="/fpages/business/xml/IbsPerCredit2.xml"/>
+	   
+	   <!-- 征信查詢-->
+	 <Query id="TCorpPermitQuery" path="/fpages/business/xml/TCorpPermit.xml"/>
+	 <Query id="IndPermitQuery" path="/fpages/business/xml/IndPermit.xml"/>
+	 <Query id="IndPromptQuery" path="/fpages/business/xml/IndPromptQuery.xml"/>
+	 <Query id="IndAppQuery" path="/fpages/business/xml/IndAppQuery.xml"/>
+	 <Query id="IndInfoQuery" path="/fpages/business/xml/IndInfoQuery.xml"/>
+	 <Query id="IndAddrQuery" path="/fpages/business/xml/IndAddrQuery.xml"/>
+	 <Query id="IndJobQuery" path="/fpages/business/xml/IndJobQuery.xml"/>
+	 <Query id="IndPromptQuery" path="/fpages/business/xml/IndPromptQuery.xml"/>
+	 <Query id="IndPbocScoreQuery" path="/fpages/business/xml/IndPbocScoreQuery.xml"/>
+	 <Query id="IndBreachQuery" path="/fpages/business/xml/IndBreachQuery.xml"/>
+	 <Query id="IndOverdueQuery" path="/fpages/business/xml/IndOverdueQuery.xml"/>
+	 <Query id="IndNoCloseLoanQuery" path="/fpages/business/xml/IndNoCloseLoanQuery.xml"/>
+	 <Query id="IndNoCloseCcQuery" path="/fpages/business/xml/IndNoCloseCcQuery.xml"/>
+	 <Query id="IndNoClosePdcQuery" path="/fpages/business/xml/IndNoClosePdcQuery.xml"/>
+	 <Query id="IndAssuranceQuery" path="/fpages/business/xml/IndAssuranceQuery.xml"/>
+	 <Query id="IndDisposalQuery" path="/fpages/business/xml/IndDisposalQuery.xml"/>
+	 <Query id="IndEnsureQuery" path="/fpages/business/xml/IndEnsureQuery.xml"/>
+	 <Query id="IndLonDetailQuery" path="/fpages/business/xml/IndLonDetailQuery.xml"/>
+	  <Query id="IndLonDetailInfoQuery" path="/fpages/business/xml/IndLonDetailInfoQuery.xml"/>	
+	 <Query id="IndOverdueDetailLonQuery" path="/fpages/business/xml/IndOverdueDetailLonQuery.xml"/>
+	 <Query id="IndSpecialNewLonQuery" path="/fpages/business/xml/IndSpecialNewLonQuery.xml"/>	 
+	 <Query id="IndCrdDetailQuery" path="/fpages/business/xml/IndCrdDetailQuery.xml"/>
+	 <Query id="IndCrdDetailInfoQuery" path="/fpages/business/xml/IndCrdDetailInfoQuery.xml"/>
+	 <Query id="IndOverdueDetailCrdQuery" path="/fpages/business/xml/IndOverdueDetailCrdQuery.xml"/>
+	 <Query id="IndSpecialNewCrdQuery" path="/fpages/business/xml/IndSpecialNewCrdQuery.xml"/>
+	 <Query id="IndCrdDetailPreQuery" path="/fpages/business/xml/IndCrdDetailPreQuery.xml"/>
+	 <Query id="IndPreCrdDetailInfoQuery" path="/fpages/business/xml/IndPreCrdDetailInfoQuery.xml"/>
+	 <Query id="IndOverdueDetailPreCrdQuery" path="/fpages/business/xml/IndOverdueDetailPreCrdQuery.xml"/>
+	 <Query id="IndSpecialNewPreCrdQuery" path="/fpages/business/xml/IndSpecialNewPreCrdQuery.xml"/>
+	 
+	 
+	 <Query id="IndOweTaxQuery" path="/fpages/business/xml/IndOweTaxQuery.xml"/>
+	 <Query id="IndPublicRecordCivilQuery" path="/fpages/business/xml/IndPublicRecordCivilQuery.xml"/>
+	 <Query id="IndPublicRecordForceQuery" path="/fpages/business/xml/IndPublicRecordForceQuery.xml"/>
+	 <Query id="IndPublicRecordProgQuery" path="/fpages/business/xml/IndPublicRecordProgQuery.xml"/>
+	 <Query id="IndHousefundDepositQuery" path="/fpages/business/xml/IndHousefundDepositQuery.xml"/>
+	 <Query id="IndInsDepositQuery" path="/fpages/business/xml/IndInsDepositQuery.xml"/>
+	 <Query id="IndInsPaymentQuery" path="/fpages/business/xml/IndInsPaymentQuery.xml"/>
+	 <Query id="IndSuccourQuery" path="/fpages/business/xml/IndSuccourQuery.xml"/>
+	 <Query id="IndAwardPraQuery" path="/fpages/business/xml/IndAwardPraQuery.xml"/>
+	 <Query id="IndAwardBonQuery" path="/fpages/business/xml/IndAwardBonQuery.xml"/>
+	 <Query id="IndCarTradeQuery" path="/fpages/business/xml/IndCarTradeQuery.xml"/>
+	 <Query id="IndTelecomPaymentQuery" path="/fpages/business/xml/IndTelecomPaymentQuery.xml"/>
+	 <Query id="IndStatementDeclareQuery" path="/fpages/business/xml/IndStatementDeclareQuery.xml"/>
+	 <Query id="IndStatementDissentQuery" path="/fpages/business/xml/IndStatementDissentQuery.xml"/>
+	 <Query id="IndEnquirySummaryQuery" path="/fpages/business/xml/IndEnquirySummaryQuery.xml"/>
+	 <Query id="IndEnquiryQuery" path="/fpages/business/xml/IndEnquiryQuery.xml"/>
+	 <Query id="IndAssuranceDetailLoanQuery" path="/fpages/business/xml/IndAssuranceDetailLoanQuery.xml"/>
+	 <Query id="IndAssuranceDetailCreditQuery" path="/fpages/business/xml/IndAssuranceDetailCreditQuery.xml"/>
+	 
+	 <!-- 个人征信查询请求 -->
+	 <Query id="IndAppRequest" path="/fpages/business/xml/IndAppRequest.xml"/>
+	 <Query id="IndAppCommon" path="/fpages/business/xml/IndAppCommon.xml"/>
+	 <Query id="IndAppCommonForCom" path="/fpages/business/xml/IndAppCommonForCom.xml"/>
+	 <Query id="PbocBatchCorpsEnquiry" path="/fpages/business/xml/PbocBatchCorpsEnquiry.xml"/>
+	 <Query id="PbocCompany" path="/fpages/business/xml/PbocCompany.xml"/>
+	 <!-- 原始个人征信报告查询 -->
+	 <Query id="InqRequest" path="/fpages/business/xml/InqRequest.xml"/>
+	 <Query id="IndPermitUploadN" path="/fpages/business/xml/IndPermitUploadN.xml"/>
+	 <Query id="IndPermitUploadP" path="/fpages/business/xml/IndPermitUploadP.xml"/>
+	  <!-- 原始企业征信报告查询 -->
+	 <Query id="CompanyReport" path="/fpages/business/xml/CompanyReport.xml"/>
+	 <Query id="InqCustGlinfoQuery" path="/fpages/business/xml/InqCustGlinfoQuery.xml"/>
+	 <Query id="CorpCustQuery" path="/fpages/business/xml/CorpCustQuery.xml"/>
+	 <Query id="TcorpInfoBasicQuery" path="/fpages/business/xml/TcorpInfoBasicQuery.xml"/>
+	 <Query id="TcorpInfoInvestorQuery" path="/fpages/business/xml/TcorpInfoInvestorQuery.xml"/>
+	 <Query id="TcorpInfoExecutiveQuery" path="/fpages/business/xml/TcorpInfoExecutiveQuery.xml"/>
+	   <Query id="TcorpInfoInvestorCheckQuery" path="/fpages/business/xml/TcorpInfoInvestorCheckQuery.xml"/>
+	 <Query id="TcorpInfoExecutiveCheckQuery" path="/fpages/business/xml/TcorpInfoExecutiveCheckQuery.xml"/>
+	
+	 <Query id="TcorpInfoRelevantCorpQuery" path="/fpages/business/xml/TcorpInfoRelevantCorpQuery.xml"/>
+	 <Query id="TcorpSumCreditUnclearedQuery" path="/fpages/business/xml/TcorpSumCreditUnclearedQuery.xml"/>
+	 <Query id="TcorpSumCreditclearedQuery" path="/fpages/business/xml/TcorpSumCreditclearedQuery.xml"/>
+	 <Query id="TcorpSumCreditItemsUnclearedQuery" path="/fpages/business/xml/TcorpSumCreditItemsUnclearedQuery.xml"/>
+	 <Query id="TcorpSumCreditItemsclearedQuery" path="/fpages/business/xml/TcorpSumCreditItemsclearedQuery.xml"/>
+	 <Query id="TcorpSumDebitHistoryQuery" path="/fpages/business/xml/TcorpSumDebitHistoryQuery.xml"/>
+	 <Query id="TcorpSumAssureQuery" path="/fpages/business/xml/TcorpSumAssureQuery.xml"/>
+	 <Query id="TcorpDetailOthersDebtQuery" path="/fpages/business/xml/TcorpDetailOthersDebtQuery.xml"/>
+	 <Query id="TcorpDetailOthersInterestQuery" path="/fpages/business/xml/TcorpDetailOthersInterestQuery.xml"/>
+	 <Query id="TcorpDetailOthersDkQuery" path="/fpages/business/xml/TcorpDetailOthersDkQuery.xml"/>
+	 <Query id="TcorpDetailLoanUnHealthyQuery" path="/fpages/business/xml/TcorpDetailLoanUnHealthyQuery.xml"/>
+	 <Query id="TcorpDetailOthersTradeQuery" path="/fpages/business/xml/TcorpDetailOthersTradeQuery.xml"/>
+	 <Query id="TcorpDetailOthersFactorQuery" path="/fpages/business/xml/TcorpDetailOthersFactorQuery.xml"/>
+	 <Query id="TcorpDetailOthersBillQuery" path="/fpages/business/xml/TcorpDetailOthersBillQuery.xml"/>
+	 <Query id="TcorpDetailOthersDraftQuery" path="/fpages/business/xml/TcorpDetailOthersDraftQuery.xml"/>
+	 <Query id="TcorpDetailOthersCreditQuery" path="/fpages/business/xml/TcorpDetailOthersCreditQuery.xml"/>
+	 <Query id="TcorpDetailOthersLetterQuery" path="/fpages/business/xml/TcorpDetailOthersLetterQuery.xml"/>
+	 <Query id="TcorpDetailLoanHealthyQuery" path="/fpages/business/xml/TcorpDetailLoanHealthyQuery.xml"/>
+	 <Query id="TcorpDetailOthersLdkNormalQuery" path="/fpages/business/xml/TcorpDetailOthersLdkNormalQuery.xml"/>
+	 <Query id="TcorpDetailOthersTradeNormalQuery" path="/fpages/business/xml/TcorpDetailOthersTradeNormalQuery.xml"/>
+	 <Query id="TcorpDetailOthersFactorNormalQuery" path="/fpages/business/xml/TcorpDetailOthersFactorNormalQuery.xml"/>
+	 <Query id="TcorpDetailSummaryBillQuery" path="/fpages/business/xml/TcorpDetailSummaryBillQuery.xml"/>
+	 <Query id="TcorpDetailSummaryDraftQuery" path="/fpages/business/xml/TcorpDetailSummaryDraftQuery.xml"/>
+	 <Query id="TcorpDetailSummaryCreditQuery" path="/fpages/business/xml/TcorpDetailSummaryCreditQuery.xml"/>
+	 <Query id="TcorpDetailSummaryLetterQuery" path="/fpages/business/xml/TcorpDetailSummaryLetterQuery.xml"/>
+	 <Query id="TcorpDetailOthersDebtClearedQuery" path="/fpages/business/xml/TcorpDetailOthersDebtClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersQxClearedQuery" path="/fpages/business/xml/TcorpDetailOthersQxClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersDkClearedQuery" path="/fpages/business/xml/TcorpDetailOthersDkClearedQuery.xml"/>
+	 <Query id="TcorpDetailLoanHealthyClearedQuery" path="/fpages/business/xml/TcorpDetailLoanHealthyClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersTradeNormalClearedQuery" path="/fpages/business/xml/TcorpDetailOthersTradeNormalClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersFactorNormalClearedQuery" path="/fpages/business/xml/TcorpDetailOthersFactorNormalClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersBillClearedQuery" path="/fpages/business/xml/TcorpDetailOthersBillClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersDraftClearedQuery" path="/fpages/business/xml/TcorpDetailOthersDraftClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersCreditClearedQuery" path="/fpages/business/xml/TcorpDetailOthersCreditClearedQuery.xml"/>
+	 <Query id="TcorpDetailOthersLetterClearedQuery" path="/fpages/business/xml/TcorpDetailOthersLetterClearedQuery.xml"/>
+	 <Query id="TcorpDetailAssureQuery" path="/fpages/business/xml/TcorpDetailAssureQuery.xml"/>
+	 <Query id="TcorpPublicOweTaxQuery" path="/fpages/business/xml/TcorpPublicOweTaxQuery.xml"/>
+	 <Query id="TcorpJudgeRecordQuery" path="/fpages/business/xml/TcorpJudgeRecordQuery.xml"/>
+	 <Query id="TcorpJudgeRecordForceQuery" path="/fpages/business/xml/TcorpJudgeRecordForceQuery.xml"/>
+	 <Query id="TcorpPunishRecordQuery" path="/fpages/business/xml/TcorpPunishRecordQuery.xml"/>
+	 <Query id="TcorpSocialPayRecordQuery" path="/fpages/business/xml/TcorpSocialPayRecordQuery.xml"/>
+	 <Query id="TcorpSocialPayRecordFundsQuery" path="/fpages/business/xml/TcorpSocialPayRecordFundsQuery.xml"/>
+	 <Query id="TcorpPublicAwardPermitQuery" path="/fpages/business/xml/TcorpPublicAwardPermitQuery.xml"/>
+	 <Query id="TcorpPublicAwardRzQuery" path="/fpages/business/xml/TcorpPublicAwardRzQuery.xml"/>
+	 <Query id="TcorpPublicAwardZzQuery" path="/fpages/business/xml/TcorpPublicAwardZzQuery.xml"/>
+	 <Query id="TcorpPublicAwardRewardQuery" path="/fpages/business/xml/TcorpPublicAwardRewardQuery.xml"/>
+	 <Query id="TcorpPublicAwardCrjQuery" path="/fpages/business/xml/TcorpPublicAwardCrjQuery.xml"/>
+	 <Query id="TcorpPublicAwardMjQuery" path="/fpages/business/xml/TcorpPublicAwardMjQuery.xml"/>
+	 <Query id="TcorpPublicAwardJgQuery" path="/fpages/business/xml/TcorpPublicAwardJgQuery.xml"/>
+	 <Query id="TcorpStatementQuery" path="/fpages/business/xml/TcorpStatementQuery.xml"/>
+	 <Query id="TcorpPublicAwardZlQuery" path="/fpages/business/xml/TcorpPublicAwardZlQuery.xml"/>
+	 <Query id="TcorpSocialPayRecordCauseQuery" path="/fpages/business/xml/TcorpSocialPayRecordCauseQuery.xml"/>
+	 <Query id="TcorpStatementBsQuery" path="/fpages/business/xml/TcorpStatementBsQuery.xml"/>
+	 <Query id="TcorpStatementZxQuery" path="/fpages/business/xml/TcorpStatementZxQuery.xml"/>
+	 <Query id="TcorpStatementZtQuery" path="/fpages/business/xml/TcorpStatementZtQuery.xml"/>
+	 <Query id="TcorpHistoryRecordDkQuery" path="/fpages/business/xml/TcorpHistoryRecordDkQuery.xml"/>
+	 <Query id="TcorpHistoryRecordLDkQuery" path="/fpages/business/xml/TcorpHistoryRecordLDkQuery.xml"/>
+	 <Query id="TcorpExtendedDetailDkQuery" path="/fpages/business/xml/TcorpExtendedDetailDkQuery.xml"/>
+	 <Query id="TcorpHistoryRecordMyrzQuery" path="/fpages/business/xml/TcorpHistoryRecordMyrzQuery.xml"/>
+	 <Query id="TcorpExtendedDetailMyrzQuery" path="/fpages/business/xml/TcorpExtendedDetailMyrzQuery.xml"/>
+	 <Query id="TcorpDetailAssureWindowsQuery" path="/fpages/business/xml/TcorpDetailAssureWindowsQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailDkBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailDkBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailDkDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailDkDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailDkZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailDkZywQuery.xml"/>
+	 <Query id="TcorpExtendedDetailDkZqQuery" path="/fpages/business/xml/TcorpExtendedDetailDkZqQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailMyrzBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailMyrzBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailMyrzDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailMyrzDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailMyrzZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailMyrzZywQuery.xml"/>
+	 <Query id="TcorpExtendedDetailMyrzZqQuery" path="/fpages/business/xml/TcorpExtendedDetailMyrzZqQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailBlBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailBlBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailBlDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailBlDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailBlZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailBlZywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailYhcdhpBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailYhcdhpBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailYhcdhpDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailYhcdhpDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailYhcdhpZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailYhcdhpZywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailXyzBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailXyzBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailXyzDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailXyzDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailXyzZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailXyzZywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailBhBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailBhBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailBhDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailBhDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailBhZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailBhZywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailLdkBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailLdkBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailLdkDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailLdkDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailLdkZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailLdkZywQuery.xml"/>
+	 <Query id="TcorpExtendedDetailLdkZqQuery" path="/fpages/business/xml/TcorpExtendedDetailLdkZqQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailNormalBlBzrQuery" path="/fpages/business/xml/TcorpGuaranteedDetailNormalBlBzrQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailNormalBlDywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailNormalBlDywQuery.xml"/>
+	 <Query id="TcorpGuaranteedDetailNormalBlZywQuery" path="/fpages/business/xml/TcorpGuaranteedDetailNormalBlZywQuery.xml"/>
+	 <Query id="TcorpPublicInfoDetailQuery" path="/fpages/business/xml/TcorpPublicInfoDetailQuery.xml"/>
+	 <Query id="TcorpPublicInfoDetailGjjQuery" path="/fpages/business/xml/TcorpPublicInfoDetailGjjQuery.xml"/>
+	 <Query id="TcorpPublicInfoDetailGysyQuery" path="/fpages/business/xml/TcorpPublicInfoDetailGysyQuery.xml"/>
+	 <Query id="TcorpDetailOthersPjtxDetailQuery" path="/fpages/business/xml/TcorpDetailOthersPjtxDetailQuery.xml"/>
+	 <Query id="TcorpDetailOthersYhcdhpDetailQuery" path="/fpages/business/xml/TcorpDetailOthersYhcdhpDetailQuery.xml"/>
+	 <Query id="TcorpDetailOthersXyzDetailQuery" path="/fpages/business/xml/TcorpDetailOthersXyzDetailQuery.xml"/>
+	 <Query id="TcorpDetailOthersBhDetailQuery" path="/fpages/business/xml/TcorpDetailOthersBhDetailQuery.xml"/>
+	 <Query id="TcorpDetailOthersDkMxQuery" path="/fpages/business/xml/TcorpDetailOthersDkMxQuery.xml"/>
+	 <Query id="TotalTcorpDetailOthersDkMxQuery" path="/fpages/business/xml/TotalTcorpDetailOthersDkMxQuery.xml"/>
+	 <Query id="TcorpDetailOthersMyrzMxQuery" path="/fpages/business/xml/TcorpDetailOthersMyrzMxQuery.xml"/>
+	 <Query id="TotalTcorpDetailOthersMyrzMxQuery" path="/fpages/business/xml/TotalTcorpDetailOthersMyrzMxQuery.xml"/>
+	 <Query id="TcorpDetailOthersBlMxQuery" path="/fpages/business/xml/TcorpDetailOthersBlMxQuery.xml"/>
+	 <Query id="TotalTcorpDetailOthersBlMxQuery" path="/fpages/business/xml/TotalTcorpDetailOthersBlMxQuery.xml"/>
+	 <Query id="TcorpDetailOthersPjtxMxQuery" path="/fpages/business/xml/TcorpDetailOthersPjtxMxQuery.xml"/>
+	 <Query id="TotalTcorpDetailOthersPjtxMxQuery" path="/fpages/business/xml/TotalTcorpDetailOthersPjtxMxQuery.xml"/>
+	 <Query id="TcorpDetailOthersYhcdhpMxQuery" path="/fpages/business/xml/TcorpDetailOthersYhcdhpMxQuery.xml"/>
+	 <Query id="TotalTcorpDetailOthersYhcdhpMxQuery" path="/fpages/business/xml/TotalTcorpDetailOthersYhcdhpMxQuery.xml"/>
+	 <Query id="TcorpDetailOthersXyzMxQuery" path="/fpages/business/xml/TcorpDetailOthersXyzMxQuery.xml"/>
+	 <Query id="TotalTcorpDetailOthersXyzMxQuery" path="/fpages/business/xml/TotalTcorpDetailOthersXyzMxQuery.xml"/>
+	 <Query id="TcorpDetailOthersBhMxQuery" path="/fpages/business/xml/TcorpDetailOthersBhMxQuery.xml"/>
+	 <Query id="TotalTcorpDetailOthersBhMxQuery" path="/fpages/business/xml/TotalTcorpDetailOthersBhMxQuery.xml"/>
+	 <Query id="TcorpOrginalDetailWindowsQuery" path="/fpages/business/xml/TcorpOrginalDetailWindowsQuery.xml"/>
+	 <Query id="TcorpOrginalDetailWindowsClearDkQuery" path="/fpages/business/xml/TcorpOrginalDetailWindowsClearDkQuery.xml"/>
+	 <Query id="TcorpDetailLoanHealthyCareQuery" path="/fpages/business/xml/TcorpDetailLoanHealthyCareQuery.xml"/>
+	 <Query id="TcorpDetailOthersTradeCareQuery" path="/fpages/business/xml/TcorpDetailOthersTradeCareQuery.xml"/>
+	 <Query id="TcorpDetailOthersFactorCareQuery" path="/fpages/business/xml/TcorpDetailOthersFactorCareQuery.xml"/>
+	 <Query id="TcorpDetailOthersBillCareQuery" path="/fpages/business/xml/TcorpDetailOthersBillCareQuery.xml"/>
+	 <Query id="TcorpDetailOthersDraftCareQuery" path="/fpages/business/xml/TcorpDetailOthersDraftCareQuery.xml"/>
+	 <Query id="TcorpDetailOthersCreditCareQuery" path="/fpages/business/xml/TcorpDetailOthersCreditCareQuery.xml"/>
+	 <Query id="TcorpDetailOthersLetterCareQuery" path="/fpages/business/xml/TcorpDetailOthersLetterCareQuery.xml"/>
+	  <!-- 财务报表 -->
+	 <Query id="TcorpYearlyBalanceReportQuery" path="/fpages/business/xml/TcorpYearlyBalanceReportQuery.xml"/>
+	 <Query id="TcorpYearlyProfitReportQuery" path="/fpages/business/xml/TcorpYearlyProfitReportQuery.xml"/>
+	 <Query id="TcorpYearlyCashFlowReportQuery" path="/fpages/business/xml/TcorpYearlyCashFlowReportQuery.xml"/>
+	 <!-- 个人批量征信报告查询上传结果查询 -->
+	 <Query id="IndScrubInfoQuery" path="/fpages/business/xml/IndScrubInfoQuery.xml"/>
+	 <!-- 个人批量征信报告查询上传结果查询详情 -->
+	 <Query id="IndScrubInfoQuerydetail" path="/fpages/business/xml/IndScrubInfoQuerydetail.xml"/>
+	 
+	  <!-- 企业批量征信报告查询上传结果查询 -->
+	 <Query id="CorpScrubInfoQuery" path="/fpages/business/xml/CorpScrubInfoQuery.xml"/>
+	 <!-- 企业批量征信报告查询上传结果查询详情 -->
+	 <Query id="CorpScrubInfoQuerydetail" path="/fpages/business/xml/CorpScrubInfoQuerydetail.xml"/>
+	 
+	  <!-- 用户信息更新上传结果查询 -->
+	 <Query id="batchTlrUpdateInfo" path="/fpages/business/xml/batchTlrUpdateInfo.xml"/>
+	 <Query id="batchTlrUpdateInfoQuerydetail" path="/fpages/business/xml/batchTlrUpdateInfoQuerydetail.xml"/>
+	 
+	 
+	  <!-- 个人征信查询请求 -->
+	  <Query id="LoanCardNoInquiryQuery" path="/fpages/business/xml/LoanCardNoInquiryQuery.xml"/>
+	 <Query id="LoanCardNoInquiry" path="/fpages/business/xml/LoanCardNoInquiry.xml"/>
+	 <!-- 个人征信查询请求 -->
+	 <Query id="LoanCardNoInquiryDetail" path="/fpages/business/xml/LoanCardNoInquiryDetail.xml"/>
+	 <Query id="batchcorpLoancardScurbInfoResult" path="/fpages/business/xml/batchcorpLoancardScurbInfoResult.xml"/>
+	 <Query id="batchcorpLoancardScurbInfoResultDetail" path="/fpages/business/xml/batchcorpLoancardScurbInfoResultDetail.xml"/>
+	 <Query id="IndPermitUploadIndApp" path="/fpages/business/xml/IndPermitUploadIndApp.xml"/>
+	 <Query id="PersonalReportFormdownload" path="/fpages/business/xml/PersonalReportFormdownload.xml"/>
+     <Query id="CompanyReportFormdownload" path="/fpages/business/xml/CompanyReportFormdownload.xml"/>
+	  <!-- 客户级别查询 -->
+	  <Query id="CustomerLevelQuery" path="/fpages/business/xml/CustomerLevelQuery.xml"/>
+	 <!-- 报表查询 
+	  <Query id="StopPaymentDtlForm" path="/fpages/business/xml/StopPaymentDtlForm.xml"/>
+-->
+ 
+     <!-- 日志明细报文导出 -->
+      <Query id="logdownload" path="/fpages/business/xml/logdownload.xml"/>
+       	<!-- 许可文件上传的报表JOB下载 -->
+     	 <Query id="PermissionFileSubmitJobdownload" path="/fpages/business/xml/PermissionFileSubmitJobdownload.xml"/>
+     	 <!-- User Report报表和IBS matrix下载  -->
+     	 <Query id="UserReportRoleMatrixDownload" path="/fpages/business/xml/UserReportRoleMatrixDownload.xml"/>
+     	 
+     	 
+     	 
+     	  <Query id="TcorpDetailAssureWindowsLoanQuery" path="/fpages/business/xml/TcorpDetailAssureWindowsLoanQuery.xml"/>
+     	   <Query id="TcorpDetailAssureWindowsTradeFianlQuery" path="/fpages/business/xml/TcorpDetailAssureWindowsTradeFianlQuery.xml"/>
+     	    <Query id="TcorpDetailAssureWindowsFactorQuery" path="/fpages/business/xml/TcorpDetailAssureWindowsFactorQuery.xml"/>
+     	     <Query id="TcorpDetailAssureWindowsAcceptanceQuery" path="/fpages/business/xml/TcorpDetailAssureWindowsAcceptanceQuery.xml"/>
+     	      <Query id="TcorpDetailAssureWindowsCreditQuery" path="/fpages/business/xml/TcorpDetailAssureWindowsCreditQuery.xml"/>
+     	       <Query id="TcorpDetailAssureWindowsPaulikQuery" path="/fpages/business/xml/TcorpDetailAssureWindowsPaulikQuery.xml"/>
+     	       
+     	  <!-- 自然人对外担保查询 -->    
+     	 <Query id="NaturePersonQuery" path="/fpages/business/xml/NaturePersonQuery.xml"/>
+     	 <Query id="NaturePersonCodeQuery" path="/fpages/business/xml/NaturePersonCodeQuery.xml"/>
+     	 <Query id="NaturePersonCode" path="/fpages/business/xml/NaturePersonCode.xml"/>
+     	<Query id="AssureIndRequest" path="/fpages/assure/xml/AssureIndRequest.xml"/> 
+     	<Query id="NatureReportFormdownload" path="/fpages/business/xml/NatureReportFormdownload.xml"/>
+     	
+     	<!-- 企业汇总新增table -->
+     	<Query id="TCorpDetailOthersLoanQuery" path="/fpages/business/xml/TCorpDetailOthersLoanQuery.xml"/>
+	  	<Query id="TCorpDetailOthersQuery" path="/fpages/business/xml/TCorpDetailOthersQuery.xml"/>
+	  	<!-- 企业汇总新增汇率 -->
+	  	<Query id="TcorpReportExchangeRate" path="/fpages/business/xml/TcorpReportExchangeRate.xml"/>
+	  	<!-- 企业汇总新增类贷款 -->
+	  	<Query id="TcorpDetailOthersAttentionQuery" path="/fpages/business/xml/TcorpDetailOthersAttentionQuery.xml"/>
+	  	
+	  	<Query id="TcorpDetailOthersModLoan" path="/fpages/business/xml/TcorpDetailOthersModLoan.xml"/>
+	  	<Query id="TcorpDetailOthersModLoanMaxQuery" path="/fpages/business/xml/TcorpDetailOthersModLoanMaxQuery.xml"/>
+	  	<!-- 邮件报表下载 -->
+	  	<Query id="UserReportMailDownload" path="/fpages/business/xml/UserReportMailDownload.xml"/>
+	  	
+	  	<!-- IBS 企业/个人密码修改 -->
+	  	<Query id="PBOCPswChange" path="/fpages/business/xml/PBOCPswChange.xml"/>
+	  	
+	  	
+	  	<Query id="NatureCodeQueryScrubInfoQuery" path="/fpages/business/xml/NatureCodeQueryScrubInfoQuery.xml"/>
+	  	<Query id="NaturePersonScrubInfoQuery" path="/fpages/business/xml/NaturePersonScrubInfoQuery.xml"/>
+	  	<!-- 自然人中征码查询 -->
+     	<Query id="AssureReportFormdownload" path="/fpages/business/xml/AssureReportFormdownload.xml"/>
+     	<!-- 企业中征码查询 -->
+     	<Query id="AssureCorpReportFormdownload" path="/fpages/business/xml/AssureCorpReportFormdownload.xml"/>
+     	
+     		<!-- 上传页面 -->
+     	<Query id="FileGroupUpload" path="/fpages/business/xml/FileGroupUpload.xml"/>
+	  	<Query id="PermitFileUpload" path="/fpages/business/xml/PermitFileUpload.xml"/>
+	  	<Query id="EditFile" path="/fpages/business/xml/EditFile.xml"/>
+	  	
+	  	<Query id="AuditTrialReportDownload" path="/fpages/business/xml/AuditTrialReportDownload.xml"/>
+	  	
+	  	<!-- add by chensibi 20191104 start -->
+	  	<!-- 二代企业征信查询 -->
+	  	<Query id="PbocQueryHistoryAdd" path="/fpages/business/xml/PbocQueryHistoryMake.xml"/>
+	  	<Query id="PbocQueryHistoryCheck" path="/fpages/business/xml/PbocQueryHistoryCheck.xml"/>
+	  	<Query id="PbocQueryHistoryMake" path="/fpages/business/xml/PbocQueryHistoryMake.xml"/>
+        <Query id="PbocQueryHistory" path="/fpages/business/xml/PbocQueryHistory.xml"/>
+	  	<!-- add by chensibi 20191104 end -->
+	  	
+	  	<!-- 二代企业历史查询maker -->
+	  	<Query id="PbocQueryCorpMake" path="/fpages/business/xml/PbocQueryCorpMake.xml"/>
+	  	
+	  	<!-- 二代个人征信查询 -->
+	  	<Query id="PbocQueryPersonalMake" path="/fpages/business/xml/PbocQueryPersonalMake.xml"/>
+	  	<!-- 二代个人征信爬网查询 -->
+	  	<Query id="PbocQueryPersonalCrawl" path="/fpages/business/xml/PbocQueryPersonalCrawl.xml"/>
+	  	<!-- 二代个人征信批量文件上传 -->
+	  	<Query id="CrmsBatchQueryPersonalReport" path="/fpages/crms/xml/CrmsBatchQueryPersonalReport.xml"/>
+	  	
+	    <!-- 二代企业征信批量文件上传 -->
+	  	<Query id="CrmsBatchQueryCorpReport" path="/fpages/crms/xml/CrmsBatchQueryCorpReport.xml"/>
+	  	<!-- 二代个人征信统计报表 -->
+	    <Query id="PerStatisticsReport" path="/fpages/crms/xml/PerStatisticsReport.xml"/>
+	    <!-- 二代企业征信统计报表 -->
+	    <Query id="CorpStatisticsReport" path="/fpages/crms/xml/CorpStatisticsReport.xml"/>
+	    <!-- 二代数据提取 -->
+	    <Query id="DataExtraction" path="/fpages/crms/xml/DataExtraction.xml"/>
+	  	
+	  	<!-- 二代企业信用信息查询..add by quxin -->
+	  	<Query id="CompanyReport2" path="/fpages/business/xml/CompanyReport2.xml"/>
+	  	<Query id="CompanyReport3" path="/fpages/business/xml/CompanyReport3.xml"/>
+	  	<!-- 二代个人信用信息查询..add by quxin -->
+	  	<Query id="personReport2" path="/fpages/business/xml/personReport2.xml"/>
+	  	<Query id="personReport3" path="/fpages/business/xml/personReport3.xml"/>
+	  	
+	  	<!-- 二代公共文件上传 -->
+	  	<Query id="CommonFileGroupUpload" path="/fpages/crms/xml/CommonFileGroupUpload.xml"/>
+	  	<!-- 二代公共文件下载 -->
+	  	<Query id="CommonPermitFileUpload" path="/fpages/crms/xml/CommonPermitFileUpload.xml"/>
+	  	<!-- 征信查询企业征信结果报告头 -->
+	 <!--  	<Query id="CrComEaa" path="/fpages/crms/xml/CrComEaa.xml"/> -->
+	 	<!--查询有效期设置 -->
+        <Query id="IbsQueryExpire" path="/fpages/crms/xml/IbsQueryExpire.xml"/>
+        <!--密码修改接口 -->
+	    <Query id="PasswordModify" path="/fpages/crms/xml/PasswordModify.xml"/> 
+	    <!--密码修改  -->
+	    <Query id="updatePwd" path="/fpages/crms/xml/UpdatePwd.xml"/> 
+	    <!-- 报表抽查 -->
+	    <Query id="ReportInfoQuery" path="/fpages/business/xml/ReportInfoQuery.xml"/> 
+	    <!-- 报表抽查 -->
+	    <Query id="ReportInfoQuery2" path="/fpages/business/xml/ReportInfoQuery2.xml"/>
+	    <!-- 抵押物及相关还款责任人查询 -->
+	    <Query id="QueryCollateralMake" path="/fpages/crms/xml/QueryCollateralMake.xml"/>
+	    <!-- 各部门查询企业次数汇总 -->
+	    <Query id="EachDepartmentQueryEntNums" path="/fpages/business/xml/EachDepartmentQueryEntNums.xml"/> 
+	    <!-- 各部门查询个人次数汇总 -->
+	    <Query id="EachDepartmentQueryPerNums" path="/fpages/business/xml/EachDepartmentQueryPerNums.xml"/> 
+	    <!-- 个人批量爬网状态查询 -->
+	    <Query id="PersonalCrawState" path="/fpages/crms/xml/PersonalCrawState.xml"/>
+	    <!-- 企业批量状态查询 -->
+	    <Query id="CorpStateQuery" path="/fpages/crms/xml/CorpStateQuery.xml"/>
+	       <!-- 提交企业征信报告查询请求(紧急) -->
+	    <Query id="UrgentPbocQueryCorpMake" path="/fpages/business/xml/UrgentPbocQueryCorpMake.xml"/>
+	       <!-- 提交个人爬网查询请求(紧急) -->
+	    <Query id="UrgentPbocQueryPersonalCrawl" path="/fpages/business/xml/UrgentPbocQueryPersonalCrawl.xml"/>     
+</META>

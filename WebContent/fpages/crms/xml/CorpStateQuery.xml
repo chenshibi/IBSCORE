@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="批量二代企业征信请求状态查询" navigate="批量二代企业征信请求状态查询 &gt;批量二代企业征信请求状态查询
+"
+	type="call" 
+	interface="true" 
+	pagesize="10" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.report.pboc.getter.CorpStateQueryGetter">
+	<Include id="BankParam" />
+    <ResultViewParam>
+        /fpages/crms/ftl/CorpStateQuery.ftl
+    </ResultViewParam>
+    <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-批量二代企业征信请求状态查询"/>
+    <Fields>
+        <Field id="rsv2" desc="批次号" require="true"
+               edittype="text" datatype="string" method="None" readonly="true"
+               size="3" status="F" default="" xpath="/rsv2"/>
+        <Field id="createUser" desc="操作员号" tip="操作员号"  require="true"
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/createUser"/>
+        <Field id="totalNum" desc="总笔数" tip="总笔数" require="true" size="20"
+               edittype="text" datatype="int" status="F" type="" primary="true" 
+               xpath="/totalNum"/>
+        <Field id="successNum" desc="成功笔数" tip="成功笔数" require="true" size="20"
+               edittype="text" datatype="int" status="F" type="" primary="true" 
+               xpath="/successNum"/>
+        <Field id="failNum" desc="失败笔数" tip="失败笔数" require="true" size="20"
+               edittype="text" datatype="int" status="F" type="" primary="true" 
+               xpath="/failNum"/>
+        <Field id="emptyNum" desc="未查笔数" tip="未查笔数" require="true" size="20"
+               edittype="text" datatype="int" status="F" type="" primary="true" 
+               xpath="/emptyNum"/>
+        <Field id="createTime" desc="创建时间" tip="创建时间" require="true" size="8"
+               edittype="text" datatype="string" status="F" type="" primary="true" 
+               xpath="/createTime"/>
+    </Fields>
+    <Where>
+		<DateTextBox id="etlDateStart" desc="起始日期" edittype="text" datatype="date" size="34" require="false" index="0" />
+		<DateTextBox id="etlDateEnd" desc="终止日期" edittype="text" datatype="date" size="34" require="false" index="1" />
+	</Where>
+</CommQry>

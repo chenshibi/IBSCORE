@@ -1,0 +1,1945 @@
+<html>
+
+<head>
+    <title>个人信用报告</title>
+    <style>
+        td {
+            border: solid black 1px;
+        }
+
+        .labeltd {
+            background: #f7fbfc;
+            text-align: right;
+            width: 15%;
+            padding-right: 8px;
+            color: blue;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .titletd {
+            background: #f7fbfc;
+            text-align: left;
+            width: 15%;
+            padding-left: 8px;
+            color: black;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .datatd {
+            background: #f7fbfc;
+            white-space: nowrap;
+            width: 35%;
+            padding-left: 8px;
+            font-size: 12px;
+        }
+
+        .tabletd {
+            width: 100%;
+        }
+
+        .table-label-td {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .table-data-td {
+            font-size: 12px;
+        }
+
+        .table-head-td {
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            border: 0px;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        #mainDiv {
+            width: 80%;
+            padding-right: 10%;
+            padding-left: 10%;
+        }
+
+        fieldset {
+            border-width: 1px;
+        }
+
+        .mainTable {
+            width: 100%;
+            border-collapse: collapse;
+            border: none;
+        }
+
+        .secondTable {
+            width: 80%;
+            border-collapse: collapse;
+            border: none;
+            margin-left: 10%;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            td {
+                font-size: 8pt !important;
+            }
+
+            #mainDiv {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            #printBtn {
+                display: none;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function printRpt() {
+            window.print();
+        }
+    </script>
+</head>
+
+<body>
+<div id="mainDiv">
+    <h2>个人信用报告</h2>
+    <fieldset>
+        <legend align="center">报告头</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">报告编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">报告时间</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">被查询者姓名</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">被查询者证件类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">被查询者证件号码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询原因代码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">其他身份标识个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="2" class="table-head-td">其他身份标识列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:50%;">证件类型</td>
+                            <td class="table-label-td" style="width:50%;">证件号码</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">防欺诈警示标志</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">防欺诈警示联系电话</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">防欺诈警示生效日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">防欺诈警示截止日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">异议标注数目</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">身份信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">性别</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">出生日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">学历</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">学位</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">就业状况</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">电子邮箱</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">通讯地址</td>
+                <td class="datatd" colspan="3">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">户籍地址</td>
+                <td class="datatd" colspan="3">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">国籍</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">手机号码个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="2" class="table-head-td">手机号码列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:50%;">手机号码</td>
+                            <td class="table-label-td" style="width:50%;">信息更新日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">婚姻信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">婚姻状况</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">配偶姓名</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">配偶证件类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">配偶证件号码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">配偶工作单位</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">配偶联系电话</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">居住信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">居住状况</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">居住地址</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">住宅电话</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">信息更新日期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">职业信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">就业状况</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">工作单位</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">单位性质</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">行业</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">单位地址</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">单位电话</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">职业</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">职务</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">职称</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">进入本单位年份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息更新日期</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">评分信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">数字解读</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">相对位置</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">分数说明条数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">分数说明</td>
+                <td class="datatd">value</td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend align="center">信贷交易信息概要</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>信贷交易提示信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户数合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务类型数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">信贷交易提示信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:25%;">业务类型</td>
+                            <td class="table-label-td" style="width:25%;">业务大类</td>
+                            <td class="table-label-td" style="width:25%;">账户数</td>
+                            <td class="table-label-td" style="width:25%;">首笔业务发放月份</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>被追偿汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户数合计</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额合计</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务类型数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">被追偿汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">业务类型</td>
+                            <td class="table-label-td" style="width:33%;">账户数</td>
+                            <td class="table-label-td" style="width:33%;">余额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>呆账汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>逾期（透支）汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户类型数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">逾期（透支）汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:20%;">账户类型</td>
+                            <td class="table-label-td" style="width:20%;">账户数</td>
+                            <td class="table-label-td" style="width:20%;">月份数</td>
+                            <td class="table-label-td" style="width:20%;">单月最高逾期（透支）总额</td>
+                            <td class="table-label-td" style="width:20%;">最长逾期（透支）月数</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>非循环贷账户汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">管理机构数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">最近6个月平均应还款</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>循环额度下分账户汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">管理机构数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">最近6个月平均应还款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>循环贷账户汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">管理机构数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">最近6个月平均应还款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>贷记卡账户汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">发卡机构数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">单家行最高授信额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">单家行最低授信额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已用额度</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">最近6个月平均使用额度</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>准贷记卡账户汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">发卡机构数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">单家行最高授信额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">单家行最低授信额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已用额度</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="labeltd">最近6个月平均使用额度</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>相关还款责任汇总信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">相关还款责任个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">相关还款责任汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:20%;">借款人身份类别</td>
+                            <td class="table-label-td" style="width:20%;">还款责任类型</td>
+                            <td class="table-label-td" style="width:20%;">账户数</td>
+                            <td class="table-label-td" style="width:20%;">还款责任金额</td>
+                            <td class="table-label-td" style="width:20%;">余额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">非信贷交易信息概要</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">后付费业务类型数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">后付费业务欠费信息汇总信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">后付费业务类型</td>
+                            <td class="table-label-td" style="width:33%;">欠费账户数</td>
+                            <td class="table-label-td" style="width:33%;">欠费金额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">公共信息概要</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">公共信息类型数量</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">公共信息概要信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">公共信息类型</td>
+                            <td class="table-label-td" style="width:33%;">记录数</td>
+                            <td class="table-label-td" style="width:33%;">涉及金额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">查询记录概要</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>上一次查询记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询机构机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询机构代码</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询原因</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>最近1个月内查询信息</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询机构数（贷款审批）</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询机构数（信用卡审批）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询次数（贷款审批）</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询次数（信用卡审批）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询次数（本人查询）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>最近2年内查询信息</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询次数（贷后管理）</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询次数（担保资格审查）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询次数（特约商户实名审查）</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">借贷账户信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>基本信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构代码</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户标识</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授信协议编号</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务种类</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">开立日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">借款金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户授信额度</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">共享授信额度</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">到期日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">还款方式</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">还款频率</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">还款期数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">担保方式</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">贷款发放形式</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">共同借款标志</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">债权转移时的还款状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>最新表现信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户状态</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">关闭日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">转出月份</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">最近一次还款日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">最近一次还款金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">还款状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>最近一次月度表现信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">月份</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">账户状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已用额度</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">未出单的大额专项分期余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">剩余还款期数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结算/应还款日</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">本月应还款</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">本月实还款</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">最近一次还款日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">当前逾期期数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">当前逾期总额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">逾期31—60天未还本金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期61－90天未还本金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">逾期91－180天未还本金</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期180天以上未还本金</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">透支180天以上未付余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">最近6个月平均使用额度</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">最近6个月平均透支余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">最大使用额度</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">最大透支余额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>最近24个月还款记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">起始年月</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">截止年月</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="2" class="table-head-td">还款状态信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:50%;">月份</td>
+                            <td class="table-label-td" style="width:50%;">还款状态</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>最近5年内历史表现信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">起始年月</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">截止年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">月数</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="3" class="table-head-td">历史表现信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">月份</td>
+                            <td class="table-label-td" style="width:33%;">还款状态</td>
+                            <td class="table-label-td" style="width:33%;">逾期（透支）总额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>特殊交易信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">特殊交易个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">特殊交易信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:20%;">特殊交易类型</td>
+                            <td class="table-label-td" style="width:20%;">特殊交易发生日期</td>
+                            <td class="table-label-td" style="width:20%;">到期日期变更月数</td>
+                            <td class="table-label-td" style="width:20%;">特殊交易发生金额</td>
+                            <td class="table-label-td" style="width:20%;">特殊交易明细记录</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>特殊事件说明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">特殊事件说明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="5" class="table-head-td">特殊事件说明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:50%;">特殊事件发生月份</td>
+                            <td class="table-label-td" style="width:50%;">特殊事件类型</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>大额专项分期信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">大额专项分期笔数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">大额专项分期信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:25%;">大额专项分期额度</td>
+                            <td class="table-label-td" style="width:25%;">分期额度生效日期</td>
+                            <td class="table-label-td" style="width:25%;">分期额度到期日期</td>
+                            <td class="table-label-td" style="width:25%;">已用分期金额</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">授信协议信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>基本信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信协议编号</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授信协议标识</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信额度用途</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授信额度</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">生效日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">到期日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授信协议状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">已用额度</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">授信限额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">授信限额编号</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">相关还款责任信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>相关还款责任信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">主借款人身份类别</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务管理机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务管理机构</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务种类</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">开立日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">到期日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">相关还款责任人类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">保证合同编号</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">相关还款责任金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">币种</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">余额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">五级分类</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">账户类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">还款状态</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">逾期月数</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">信息报告日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">后付费业务信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>后付费业务信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">后付费账户类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">机构名称</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">业务类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">业务开通日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">当前缴费状态</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">当前欠费金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">记账年月</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">最近24个月缴费记录</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">欠税记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>欠税记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">主管税务机关</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">欠税总额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">欠税统计日期</td>
+                <td class="datatd">value</td>
+            </tr>
+
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">民事判决记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>民事判决记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">立案法院</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">案由</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">立案日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结案方式</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">判决/调解结果</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">判决/调解生效日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">诉讼标的</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">诉讼标的金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">强制执行记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>强制执行记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">执行法院</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">执行案由</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">立案日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结案方式</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">案件状态</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">结案日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">申请执行标的</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">申请执行标的金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">已执行标的</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">已执行标的金额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">行政处罚记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>行政处罚记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">处罚机构</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">处罚内容</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处罚金额</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">处罚生效日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">处罚截止日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">行政复议结果</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">住房公积金参缴记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>住房公积金参缴记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">参缴地</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">参缴日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">缴费状态</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">初缴月份</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">缴至月份</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">单位缴存比例</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">个人缴存比例</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">月缴存额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">缴费单位</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">信息更新日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">低保救助记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>低保救助记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">人员类别</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">所在地</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">工作单位</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">家庭月收入</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">申请日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">批准日期</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">信息更新日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">月缴存额</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">执业资格记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>执业资格记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">执业资格名称</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">颁发机构</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">等级</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">机构所在地</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">获得年月</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">到期年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">吊销年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">行政奖励记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>行政奖励记录信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">奖励机构</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">奖励内容</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">生效年月</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">截止年月</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="titletd" colspan="4">
+                    <li>标注及声明信息段</li>
+                </td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend align="center">其他标注及声明信息</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">对象类型</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">对象标识</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">标注及声明类型个数</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                        <tr>
+                            <td colspan="4" class="table-head-td">标注及声明信息列表</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label-td" style="width:33%;">标注及声明类型</td>
+                            <td class="table-label-td" style="width:33%;">标注或声明内容</td>
+                            <td class="table-label-td" style="width:33%;">添加日期</td>
+                        </tr>
+                        <tr>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                            <td class="table-data-td">value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend align="center">查询记录</legend>
+        <table class="mainTable">
+            <tr>
+                <td class="labeltd">查询日期</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询机构类型</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="labeltd">查询机构</td>
+                <td class="datatd">value</td>
+                <td class="labeltd">查询原因</td>
+                <td class="datatd">value</td>
+            </tr>
+            <tr>
+                <td class="tabletd" colspan="4">
+                    <table class="secondTable">
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <input id="printBtn" type="button" value="打印" onclick="printRpt();" style="font-size:14px"/>
+</div>
+</body>
+
+</html>

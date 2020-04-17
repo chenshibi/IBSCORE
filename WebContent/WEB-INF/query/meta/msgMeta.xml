@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+	<!-- add by zhangdianchao 20160301 消息平台Meta start -->
+	<Query id="CpgMsgCtl" path="/fpages/msgplatform/xml/CpgMsgCtl.xml" />
+	<Query id="CpgMsgCtlTmp" path="/fpages/msgplatform/xml/CpgMsgCtlTmp.xml" />
+	<Query id="CpgGroupInf" path="/fpages/msgplatform/xml/CpgGroupInf.xml" />
+	<Query id="CpgGroupInfTmp" path="/fpages/msgplatform/xml/CpgGroupInfTmp.xml" />
+	<Query id="CpgMsgGroup" path="/fpages/msgplatform/xml/CpgMsgGroup.xml" />
+	<Query id="CpgMsgGroupTmp" path="/fpages/msgplatform/xml/CpgMsgGroupTmp.xml" />
+	<Query id="CpgMsgSndDtl" path="/fpages/msgplatform/xml/CpgMsgSndDtl.xml" />
+	<Query id="CpgMsgUsrBranch" path="/fpages/msgplatform/xml/CpgMsgUsrBranch.xml" />
+	<Query id="CpgMsgUsrBranchTmp" path="/fpages/msgplatform/xml/CpgMsgUsrBranchTmp.xml" />
+	<Query id="CpgUsrInf" path="/fpages/msgplatform/xml/CpgUsrInf.xml" />
+	<Query id="CpgUsrInfTmp" path="/fpages/msgplatform/xml/CpgUsrInfTmp.xml" />
+	<Query id="CpgMsgPool" path="/fpages/msgplatform/xml/CpgMsgPool.xml" />
+	<Query id="CpgMsgSndCtl" path="/fpages/msgplatform/xml/CpgMsgSndCtl.xml" />
+	<Query id="CpgMsgSndCtlTmp" path="/fpages/msgplatform/xml/CpgMsgSndCtlTmp.xml" />
+	<Query id="CpgMsgUsr" path="/fpages/msgplatform/xml/CpgMsgUsr.xml" />
+	<Query id="CpgMsgUsrTmp" path="/fpages/msgplatform/xml/CpgMsgUsrTmp.xml" />
+	<Query id="MsgLogQry" path="/fpages/msgplatform/xml/MsgLogQry.xml" />
+	<Query id="Failed2SndMsgQry" path="/fpages/msgplatform/xml/Failed2SndMsgQry.xml" />
+	<Query id="CpgUsrInfBctl" path="/fpages/msgplatform/xml/CpgUsrInfBctl.xml" />
+	<Query id="MsgSndSetting" path="/fpages/msgplatform/xml/MsgSndSetting.xml" />
+	<Query id="RcvUsrList" path="/fpages/msgplatform/xml/RcvObj.xml" />
+	<Query id="RcvGroupList" path="/fpages/msgplatform/xml/RcvObj.xml" />
+</META>

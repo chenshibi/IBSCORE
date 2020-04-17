@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="Management.LoginManagerOP"
+		  class="com.huateng.ebank.business.common.operator.LoginManagerOP">
+	</bean>
+	
+	<bean id="Management.FavOperation"
+          class="com.huateng.ebank.business.management.operation.FavOperation">
+    </bean>
+	<bean id="Management.ChangePwdOP"
+		  class="com.huateng.ebank.business.management.operation.ChangePwdOP">
+	</bean>
+    <bean id="Management.PasswordResetOP"
+		  class="com.huateng.ebank.business.management.operation.PasswordResetOP">
+	</bean>
+	<bean id="Management.CustRoleMngOperation"
+		  class="com.huateng.ebank.business.management.operation.CustRoleMngOperation">
+	</bean>
+
+	<bean id="Management.BranchManageUpdateOperation"
+		  class="com.huateng.ebank.business.management.operation.BranchManageUpdateOperation">
+	</bean>
+
+	<bean id="Management.TlrInfoOperation"
+		  class="com.huateng.ebank.business.management.operation.TlrInfoOperation">
+	</bean>
+
+  	<bean id="Management.SystemParamOperation"
+		class="com.huateng.ebank.business.management.operation.SystemParamOperation">
+	</bean>
+
+	<!-- lilinfeng add 岗位权限设置管理 -->
+
+	<bean id="parammng.roleInfoOP"
+		  class="com.huateng.ebank.business.management.operation.RoleInfoOperation">
+	</bean>
+
+	<bean id="parammng.RoleInfoOperationNew"
+		  class="com.huateng.ebank.business.management.operation.RoleInfoOperationNew">
+	</bean>
+	<!-- lilinfeng add 岗位权限设置管理 -->
+
+	<!-- add by zhaozhiguo 2011-6-20 BMS-3153   -->
+	<bean id="Management.PswdValidteOP"
+		class="com.huateng.ebank.business.common.operator.PswdValidteOP">
+	</bean>
+
+
+	<!-- add by zhaozhiguo 2012/02/14 FPP-9 用户,岗位及机构的管理页面优化调整 begin -->
+	<bean id="management.OperMngOperation"
+			  class="com.huateng.ebank.business.opermng.operation.OperMngOperation">
+	</bean>
+	<bean id="management.RoleMngOperation"
+			  class="com.huateng.ebank.business.rolemng.operation.RoleMngOperation">
+	</bean>
+	<bean id="management.BranchMngOperation"
+			  class="com.huateng.ebank.business.branchmng.operation.BranchMngOperation">
+	</bean>
+	<!-- add by zhaozhiguo 2012/02/14 FPP-9 用户,岗位及机构的管理页面优化调整 end -->
+	<!-- add by zhiyang.he 双岗复核改造 2012-09-03 begin -->
+	<bean id="management.RoleMngApplyOperation"
+    	class="com.huateng.ebank.business.management.operation.RoleMngApplyOperation">
+  	</bean>
+	<!-- add by yusonglin 客户征信查询许可文件上传  2017-08-30 begin -->
+	<bean id="customer.IndPermitOperation"
+    	class="com.huateng.ebank.business.customer.operation.IndPermitOperation">
+  	</bean>
+  	<bean id="customer.TCorpPermitOperation"
+    	class="com.huateng.ebank.business.customer.operation.TCorpPermitOperation">
+  	</bean>
+  	<!-- add by yusonglin 批量个人征信报告查询请求  2017-08-30 begin -->
+  	<bean id="customer.IndAppUploadOperation"
+    	class="com.huateng.ebank.business.customer.operation.IndAppUploadOperation">
+  	</bean>
+  	<bean id="customer.IndAppOperation"
+    	class="com.huateng.ebank.business.customer.operation.IndAppOperation">
+  	</bean>
+  	<bean id="customer.PbocBatchCorpsEnquiryOperation"
+    	class="com.huateng.ebank.business.customer.operation.PbocBatchCorpsEnquiryOperation">
+  	</bean>
+  	
+  		<bean id="customer.PbocBatchCorpsEnquiryEmergencyOperation"
+    	class="com.huateng.ebank.business.customer.operation.PbocBatchCorpsEnquiryEmergencyOperation">
+  	</bean>
+  		
+  	<bean id="customer.IndAppEmergencyOperation"
+    	class="com.huateng.ebank.business.customer.operation.IndAppEmergencyOperation">
+  	</bean>
+  	<bean id="customer.PbocCompanyCheckOperation"
+    	class="com.huateng.ebank.business.customer.operation.PbocCompanyCheckOperation">
+  	</bean>
+  	
+  	<!-- add by yusonglin 批量个人征信报告查询请求  2017-08-30 begin -->
+  	<bean id="customer.BatchIndOperation"
+    	class="com.huateng.ebank.business.customer.operation.BatchIndOperation">
+  	</bean>
+  	<bean id="customer.BatchTlrUpdateInfoOperation"
+    	class="com.huateng.ebank.business.customer.operation.BatchTlrUpdateInfoOperation">
+  	</bean>
+  	
+  	
+  	<!-- <bean id="customer.BatchCorpOperation"
+    	class="com.huateng.ebank.business.customer.operation.BatchCorpOperation">
+  	</bean> -->
+  	<bean id="customer.LoanCardNoInquirySingleOperation"
+    	class="com.huateng.ebank.business.customer.operation.LoanCardNoInquirySingleOperation">
+  	</bean>
+  	 <bean id="customer.BatchCorpLoancardOperation"
+    	class="com.huateng.ebank.business.customer.operation.BatchCorpLoancardOperation">
+  	</bean>
+  	<!-- add by dhb -->
+
+  	<bean id="customer.NaturePersonQueryOperation"
+    	class="com.huateng.ebank.business.customer.update.NaturePersonQueryOperation">
+  	</bean>
+  	 <bean id="customer.NaturePersonQueryEmergencyOperation"
+    	class="com.huateng.ebank.business.customer.update.NaturePersonQueryEmergencyOperation">
+  	</bean>
+  	
+  	<bean id="customer.NaturePersonCodeQueryOperation"       
+    	class="com.huateng.ebank.business.customer.operation.NaturePersonCodeQueryOperation">
+  	</bean>
+  	
+  	<!-- 个人/企业 密码修改  -->
+  	<bean id="customer.PBOCPswOperation"
+    	class="com.huateng.ebank.business.customer.operation.PBOCPswOperation">
+  	</bean>
+  	
+  	
+  	<bean id="customer.BatchNaturePersonCodeQueryOperation"
+    	class="com.huateng.ebank.business.customer.operation.BatchNaturePersonCodeQueryOperation">
+  	</bean>
+  	<bean id="customer.BatchNaturePersonQueryOperation"
+    	class="com.huateng.ebank.business.customer.operation.BatchNaturePersonQueryOperation">
+  	</bean>
+  		<!-- 文件上传功能  -->
+  	<bean id="customer.FileGroupUploadOperation"
+    	class="com.huateng.ebank.business.customer.operation.FileGroupUploadOperation">
+  	</bean>
+  	
+  	<bean id="customer.EditFileOperation"
+    	class="com.huateng.ebank.business.customer.operation.EditFileOperation">
+  	</bean>
+</beans>

@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="InqCust"
+            table="Inq_cust"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="ID"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="inqCustAppid"
+			column="inq_cust_appid"
+			type="integer"
+			not-null="false"
+			length="14"
+		/>
+
+        <property
+                name="inqCustName"
+                column="inq_cust_name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+        <property
+                name="inqCustId"
+                column="inq_cust_id"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="inqCustIdType"
+                column="inq_cust_id_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="inqCustType"
+                column="inq_cust_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="inqType"
+                column="inq_Type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="custId"
+                column="cust_id"
+                type="integer"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="relName"
+                column="rel_name"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="relCustId"
+                column="rel_cust_id"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="relCustIdType"
+                column="rel_cust_id_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        
+          <property
+                name="relCorpId"
+                column="rel_corp_id"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+          <property
+                name="createTime"
+                column="create_time"
+                type="timestamp"
+                not-null="false"
+                length="14"
+        />
+        
+        
+        
+        
+         <property
+                name="createUser"
+                column="create_user"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+        <property
+                name="queryReason"
+                column="query_reason"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+          <property
+                name="consentFilePath"
+                column="consent_file_path"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="nonWorkhourFilepath"
+                column="non_workhour_filepath"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="confirmFlag"
+                column="confirm_flag"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        
+         <property
+                name="createUserIp"
+                column="create_user_ip"
+                type="string"
+                not-null="false"
+                length="20"
+        />
+    </class>
+</hibernate-mapping>

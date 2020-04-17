@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--jianxue.zhang-->
+<CommQry
+title="待办任务审计"
+navigate=""
+type="call"
+interface="false"
+pagesize="10"
+async="true"
+databusid=""
+txnlogflag="true"
+transdataactionurl="/trans/TransDataAction.do"
+getterclassname="com.huateng.report.system.getter.ApproveRecordGetter">
+	<Include id="BankParam" />
+
+	<Fields>
+		<Field id="approveRemark" desc="备注" status="F" require="false" edittype="textarea"
+			datatype="string" method="None" readonly="false"
+			size="100" default="" xpath="/approveRemark" tip="" width="200"/>
+
+		<Field id="approveResult" desc="审批结果" status="F" require="true" edittype="select" width="200"
+			datatype="string" method="None" readonly="false"   translated="LIST:01,01-通过;02,02-拒绝"
+			size="" default="" xpath="/approveResult" tip="" />
+
+		<Field id="intInsId" desc="" status="N" method="None" xpath="/intInsId"
+			primary="true" type="string" size="" default="" tip=""/>
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+	    <Button id="btApprove" name="btApprove" desc="确定" operation="asysubmit" updateClass="com.huateng.report.system.updater.TaskListUpdate" url="/common/success.jsp?type=approve" show="" group="" txn="" />
+	    <Button id="btBack" name="btBack" desc="取消" operation="href" url="/fpages/system/ftl/DirectorConfirm.ftl" show="" group="" txn="" />
+	    <Button id="btApproveSysParams" name="btApproveSysParams" desc="确定" operation="asysubmit" updateClass="com.huateng.report.system.updater.TaskListUpdate" url="#" show="" group="" txn="" />
+	    <Button id="btBackSysParams" name="btBackSysParams" desc="取消" operation="href" url="#" show="" group="" txn="" />
+	    <Button id="btApproveTlr" name="btApproveTlr" desc="确定" operation="asysubmit" updateClass="com.huateng.report.system.updater.TaskListUpdate" url="/common/success.jsp?type=tlrapprove" show="" group="" txn="" />
+	    <Button id="btBackTlr" name="btBackTlr" desc="取消" operation="href" url="/fpages/regonization/ftl/OperMngCheck.ftl" show="" group="" txn="" />
+	 	<Button id="btApproveRole" name="btApproveRole" desc="确定" operation="asysubmit" updateClass="com.huateng.report.system.updater.TaskListUpdate" url="/common/success.jsp?type=approverole" show="" group="" txn="" />
+	    <Button id="btBackRole" name="btBackRole" desc="取消" operation="href" url="/fpages/regonization/ftl/RoleMngCheck.ftl" show="" group="" txn="" />
+	</Operations>
+</CommQry>

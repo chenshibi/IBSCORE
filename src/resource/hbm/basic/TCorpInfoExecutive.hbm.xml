@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="TCorpInfoExecutive"
+            table="t_corp_info_executive"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+		<generator class ="increment"/>
+		</id>
+		<property
+			name="rptKey"
+			column="Rpt_key"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+
+        <property
+                name="createTime"
+                column="create_time"
+                type="timestamp"
+                not-null="false"
+                length="18"
+        />
+       
+        <property
+                name="title"
+                column="title"
+                type="string"
+                not-null="false"
+                length="50"
+        />
+        <property
+                name="name"
+                column="name"
+                type="string"
+                not-null="false"
+                length="300"
+        />
+         <property
+                name="idType"
+                column="id_type"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+         <property
+                name="idNumber"
+                column="id_number"
+                type="string"
+                not-null="false"
+                length="100"
+        />
+         <property
+                name="sex"
+                column="sex"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+         <property
+                name="birthday"
+                column="birthday"
+                type="string"
+                not-null="false"
+                length="30"
+        />
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- old primary key is (inner_id) -->
+<hibernate-mapping package="resource.bean.msg">
+	<class name="CpgMsgPool" table="CPG_MSG_POOL">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="id">
+			<generator class="uuid" />
+		</id>
+		<property name="innerId" 		column="inner_id" 		type="string" not-null="false"  length="32" />
+		<property name="brno" 			column="brno" 			type="string" not-null="false"  length="14" />
+		<property name="msgId" 			column="msg_id" 		type="string" not-null="false"  length="20" />
+		<property name="msgSysId" 		column="msg_sys_id" 	type="string" not-null="false"  length="20" />
+		<property name="msgLogHead" 	column="msg_log_head" 	type="string" not-null="false"  length="192" />
+		<property name="msgLog" 		column="msg_log" 		type="string" not-null="false"  length="4000" />
+		<property name="status" 		column="status" 		type="string" not-null="false"  length="1" />
+		<property name="createdDate" 	column="created_date" 	type="string" not-null="false"  length="14" />
+		<property name="source" 		column="source" 		type="string" not-null="false"  length="20" />
+		<property name="addUserType" 	column="add_user_type" 	type="string" not-null="false"  length="1" />
+		<property name="addUser" 		column="add_user" 		type="string" not-null="false"  length="200" />
+		<property name="rsv1" 			column="rsv1" 			type="string" not-null="false"  length="60" />
+		<property name="rsv2" 			column="rsv2" 			type="string" not-null="false"  length="60" />
+		<property name="rsv3" 			column="rsv3" 			type="string" not-null="false"  length="60" />
+		<property name="rsv4" 			column="rsv4" 			type="string" not-null="false"  length="60" />
+        <property name="rsv5"           column="rsv5"           type="string" not-null="false"  length="60" />
+        <property name="sendTime"           column="SEND_TIME"           type="string" not-null="false"  length="14" />
+        <property name="failedReason"           column="FAILED_REASON"           type="string" not-null="false"  length="2048" />
+	</class>
+</hibernate-mapping>

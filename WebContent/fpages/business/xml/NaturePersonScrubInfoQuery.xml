@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.NaturePersonScrubInfoQueryGetter">
+	<Include id="BankParam" />
+	<!-- <PageQryExp type="XLS" limit="true" encoding="GBK" desc="" 
+		url="/trans/qryExp.do"  perfetch="50" /> -->
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+
+   
+		<Field id="name" desc="姓名" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/name" />
+		<Field id="individualId" desc="证件号" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" 
+			default="" xpath="/individualId" />
+		<Field id="individualIdType" desc="证件号类型" edittype="select" datatype="string" 
+			method="None" readonly="false" size="50" status="F"  translated="DATA_DIC.5513"
+			default="" xpath="/individualIdType" />
+		
+	<!-- <Field id="queryReason" desc="查询原因" edittype="select" translated="DATA_DIC.504"  
+         datatype="String" size="20"  status="F"  xpath="/queryReason"/>
+		 -->	
+		
+		 
+		<Field id="status" desc="状态" edittype="select" datatype="string" 
+			method="None" readonly="false" size="50" status="F" translated="DATA_DIC.506"
+			default="" xpath="/status" />
+			
+	   
+
+	</Fields>
+	
+	<Where>
+		<TextBox id="batchId" desc="batchId" tip="batchId" require="false"
+			status="F" datatype="string" method="None" size="150" width="" primary="false"
+			index="2" type="String" />
+			
+			<DateTextBox id="startDate" desc="结束日期" tip="endDate" require="false"
+			status="F" datatype="date" method="None" size="150" width="" primary="false"
+			index="2" type="String" />
+	</Where>
+	
+	
+	<Operations>
+	</Operations>
+</CommQry>

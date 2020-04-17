@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="二代数据提取" navigate="二代数据提取  &gt;二代数据提取"
+	type="call" 
+	interface="true" 
+	async="true" 
+	databusid=""
+	transdataactionurl="/trans/TransDataAction.do" 
+	getterclassname="com.huateng.ebank.business.customer.getter.DataExtractionGetter">
+	<Include id="BankParam" />
+    <ResultViewParam>
+        /fpages/crms/ftl/DataExtraction.ftl
+    </ResultViewParam>
+    <Fields>
+        <Field id="etlDateStart" desc="起始日期" require="true"
+               edittype="text" datatype="date" method="None" readonly="false"
+               size="30" status="F" default="" xpath="/etlDateStart"/>
+
+        <Field id="etlDateEnd" desc="终止日期" require="true"
+               edittype="text" datatype="date" method="None" readonly="false"
+               size="30" status="F" default="" xpath="/etlDateEnd"/>
+
+ <!--        <Field id="branch"   default=""  desc="部门"  edittype="select" status="F" require="true" readonly="true" translated="DATA_DIC.501" datatype="string" size="14" xpath="/branch"/>
+        <Field id="country"   default=""  desc="城市"  edittype="select" status="F"  require="true" readonly="true" translated="DATA_DIC.503" datatype="string" size="14" xpath="/city"/> -->
+        <Field id="type"   default=""  desc="类别"  edittype="select" status="F" require="true" translated="DATA_DIC.701" datatype="string" size="14" xpath="/type"/>
+        <Field id="corpTableName"   default=""  desc="企业数据表"  edittype="select" require="true" status="F" translated="DATA_DIC.601" datatype="string" size="14" xpath="/corpTableName"/>
+        <Field id="personalTableName"   default=""  desc="个人数据表"  edittype="select" require="true" status="F" translated="DATA_DIC.602" datatype="string" size="14" xpath="/personalTableName"/>   
+    </Fields>
+    <Operations>
+        <Button id="btDownload" name="btDownload" desc="下载" icon="icon-impin"  url="#" />
+	   <!--  <Button id="batchDownload" name="batchDownload" desc="批量下载" icon="icon-impin"  url="#" />  -->
+		<Button id="importBN" name="importBN" desc="上月数据包下载"  url="#" show="" group="" txn=""  icon="icon-impin"  />
+		<Button id="downloadGen" name="downloadGen" desc="一代上月数据包下载"  url="#" show="" group="" txn=""  icon="icon-impin"  />
+	</Operations>
+ </CommQry>

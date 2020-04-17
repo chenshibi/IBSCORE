@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 
+     navigate:导航信息 
+     type:方式（sql|call) 
+     interface:是否显示输入条件页面(true|false) 
+	 databusid:数据总线编号
+	 transdataactionurl:数据整理URL 
+	 async:异步提交标志 
+	 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate=" 批量企业征信报告查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PbocBatchCorpsEnquiryGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" desc="" 
+		url="/trans/qryExp.do"  perfetch="50" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="corpCustLoancard" desc="被查询公司贷款卡卡号/中征码" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="16" status="F" default="" 
+			xpath="/loanCardId" />
+		<Field id="corpCustPswd" desc="被查询公司LEID" edittype="text" datatype="string" 
+			method="None" readonly="false" size="8" status="F"
+			default="" xpath="/loanCardPassword" />
+		<Field id="corpCustCompanyname" desc="被查询公司名称" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="300" status="F"
+			default="" xpath="/companyName" />
+		<Field id="queryType" desc="查询类型" edittype="text" datatype="string" require="true"
+			method="None" readonly="true" size="30" status="F" 
+			default="" xpath="/queryType" />
+		<Field id="entCertType" desc="被查询企业身份标识类型" edittype="select" require="true"
+			method="None" readonly="false" size="2" status="F"  translated="DATA_DIC.6065" xpath="/entCertType" />
+		<Field id="entCertNum" desc="被查询企业身份标识号码" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="40" status="F"  xpath="/entCertNum" />
+		<Field id="queryReason" desc="查询原因" status="N" require="true"
+             readonly="false" type="String" edittype="select" size="20" rules=""
+             translated="DATA_DIC.507" xpath="/queryReason"/>
+        <Field id="serviceCode" desc="服务代码" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="100" status="F"
+			default="" xpath="/serviceCode" />     
+        <Field id="corpCustType" desc="客户属性" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="LIST:1,借款公司;2,担保公司" xpath="/customerType"/>	
+		<Field id="detailFlag" desc="是否需要明细" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="DATA_DIC.509" xpath="/detailFlag"/>
+     
+		
+		<Field id="relCorpId" desc="借款公司中证码" edittype="text" datatype="string" 
+			method="None" readonly="false" size="50" status="F" require=""
+			default="" xpath="/relCorpId" />
+		<Field id="relName" desc="借款公司名称" edittype="text" datatype="string" 
+			method="None" readonly="false" size="300" status="F"  require=""
+			default="" xpath="/relName" />
+			
+		<Field id="nonWorkhourFilepath" desc="非工作时间上传路径" edittype="text" datatype="string" 
+			method="None" readonly="false" size="200" status="F" 
+			default="" xpath="/nonWorkhourFilepath" />	
+		
+		   <Field id="confirmFlag" desc="是否查询标记" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F"
+			default="" xpath="/confirmFlag" />	
+				
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+	<Button id="companyBtNew" name="companyBtNew" desc="新增" icon="icon-add"
+			operation="addrecord" url="#" txn="" />
+	<Button id="companyBtsave" name="companyBtsave" desc="提交" icon="icon-add"
+			operation="asysubmit" url="#" txn="" />
+	<Button id="companyBtDel" name="companyDel" desc="删除" icon="icon-remove"
+			operation="delrecord" url="#" txn="" />
+	
+	</Operations>
+</CommQry>

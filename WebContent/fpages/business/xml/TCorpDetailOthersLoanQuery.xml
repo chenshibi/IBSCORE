@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="300" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.TCorpDetailOthersLoanQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<Field id="organ" desc="授信机构" edittype="text" datatype="string" 
+			method="None" readonly="false" size="100" status="F" 
+			default="" xpath="/organ" />
+		
+		<Field id="type" desc="种类" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="N"  default="" 
+			primary="true" xpath="/type" />
+		
+		<Field id="currency" desc="币种" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="N"  default="" 
+			primary="true" xpath="/currency" />
+
+		<Field id="amount" desc="融资金额" edittype="text" datatype="currency"
+			method="None" readonly="false" size="20" status="F"  scale="2"
+			default="" xpath="/amount" />
+		
+		<Field id="initDate" desc="放款日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/initDate" />
+			
+		<Field id="expireDate" desc="到期日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/expireDate" />
+			
+		<Field id="closeDate" desc="结清日期" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/closeDate" />
+			
+			
+		<Field id="closeStyle" desc="还款方式" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/closeStyle" />
+			
+		<Field id="fiveLevel" desc="五级分类" edittype="text" datatype="string"
+			method="None" readonly="false" size="20" status="F" 
+			default="" xpath="/fiveLevel" />
+			
+	</Fields>
+	<Operations>
+	<Button id="queryNormalClearMoldLoan" name="queryNormalClearMoldLoan" desc="查看正常结清类业务" operation="" url="#" />
+	</Operations>
+</CommQry>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+
+	<allow>
+
+		<create creator="new" javascript="CommonQueryResultProcess">
+			<param name="class" value="com.huateng.commquery.process.BankResultProcess" />
+			<include method="processAsyncBean" />
+		</create>
+
+		<create creator="new" javascript="CommonQueryUpdateProcess">
+			<param name="class" value="com.huateng.commquery.process.BankUpdateProcess" />
+			<include method="savaOrUpdate" />
+		</create>
+
+		<create creator="new" javascript="PortletProcess">
+			<param name="class" value="com.huateng.commquery.process.PortletProcess" />
+			<include method="process" />
+		</create>
+		
+		<!-- <create creator="new" javascript="ParseCorpData">
+			<param name="class" value="com.huateng.report.pboc.updater.QueryCorpUpdate" />
+			<include method="dealCorpData" />
+		</create> -->
+
+		<create creator="new" javascript="PrivAction">
+			<param name="class" value="com.huateng.ebank.business.dwr.DwrFunctions" />
+			<include method="haveRole" />
+			<include method="queryFileExist" />
+            <include method="setGlobalInfo" />
+            <include method="saveFavt" />
+			<include method="setCurrentTabId" />
+			<include method="getFuncArray" />
+			<include method="getFuncArrayCopram" />
+			<include method="getCurrentBctlNo" />
+			<include method="setCurrentBctlNo" />
+			<include method="getUserInfo" />
+			<include method="getFunctionByBranchId" />
+			<include method="updateBranchFunc" />
+			<include method="getRoleFuncByid" />
+			<include method="getRoleFuncByIdCom" />
+			<include method="getRoleFuncByIdComSeri" />
+			<include method="updateRoleFunc" />
+			<include method="getcurrentFileType" />
+			<include method="getFuncArrayByFavt" />
+            <include method="getFavtList" />
+            <include method="getUsrByMsgId" />
+            <include method="getFuncArrayBySysname" />
+            <include method="permitFlag" />
+            <include method="permitFlagCompany" />
+            <include method="isWorkTime" />
+            <include method="tCorpPermit12month" />
+            <include method="tCorpCust12month" />
+            <include method="IndPermit12month" />
+            <include method="InqCust2month" />
+            <include method="test" />
+            <include method="test1" />
+            <include method="test2" />
+            <include method="test3" />
+            <include method="test4" />
+            <include method="test5" />
+            <include method="test6" />
+            <include method="test7" />
+            <include method="getMsg" />
+            <include method="getMsg1" />
+            <include method="getMsg2" />
+            <include method="getMsg3" />
+            <include method="getMsg4" />
+            <include method="getAssureReport" />
+            <include method="getAssureCorpReport" />
+            <include method="getMsgTcorpPermitQuery" />
+            <include method="getMsgIndPermitQuery" />
+            <include method="getMsgMail" />
+            <include method="getMsgMatrix" />
+            
+            <!-- add by dhb 2017 12 25 begin-->
+            <include method="isFileNotExists" />
+            <include method="searchFile" />
+            <!-- add by dhb 2017 12 25 end-->
+  
+            <include method="indQueryPermit" />
+            <include method="tCorpQueryPermit" />
+            
+            <include method="isCompanyExpire" />
+            <include method="getparamValue" />
+            <include method="getTCorpPermitQuery" />
+            <include method="isExpire" />
+            <include method="isNatureExpire" />
+            <include method="isNatureExist" />
+             
+            <include method="getDataDicNameByNo" />
+             
+            <include method="assureDownloadReport" />
+            <include method="assureDownloadPermit" />
+            <!-- 检验密码 -->
+            <include method="cheackPswOld" />
+            <!-- add by 2019 04 24 hy -->
+            <include method="getJsonMessage" />
+            <!--企业查询-->           
+            <include method="dealCorpData" />
+            <!-- 企业批量查询 -->
+            <include method="dealBatchCorpData" />    
+            <include method="RematchMessage" />
+            <!--个人查询 -->
+            <include method="dealPersonalData" />
+            <include method="dealBatchPersonalData" /> 
+            <include method="getCityNo" />
+            <include method="getReginonNo" />
+            <!-- add by 2020 02 02 qx  二代个人原始报告下载 -->              
+            <include method="test33" />              
+		</create>
+
+		<!-- 图形绘制 -->
+		<convert match="map" converter="java.util.Map" />
+		<convert match="com.huateng.exception.AppException" converter="bean" />
+		<convert match="com.huateng.commquery.result.ResultParamBean"
+			javascript="ResultParamBean" converter="bean" />
+		<convert match="com.huateng.commquery.result.ResCdMsg"
+			javascript="ResCdMsg" converter="bean" />
+		<convert match="com.huateng.commquery.result.MultiUpdateResultBean"
+			converter="bean" />
+		<convert match="com.huateng.commquery.result.UpdateResultBean"
+			converter="bean" />
+		<convert match="com.huateng.commquery.result.UpdateReturnBean"
+			converter="bean" />
+		<convert match="resource.bean.basic.FunctionInfo" converter="bean" />
+		<convert match="resource.bean.basic.Bctl" converter="bean" />
+		<convert match="resource.bean.basic.RoleInfo" converter="bean" />
+		<convert match="resource.bean.basic.RoleFuncRel" converter="bean" />
+
+
+		<create creator="new" javascript="UploadMonitor">
+			<param name="class" value="com.huateng.commquery.fileupload.UploadMonitor" />
+		</create>
+		<convert converter="bean"
+			match="com.huateng.commquery.fileupload.UploadInfo" />
+
+	</allow>
+
+	<signatures>
+		<![CDATA[
+		import java.util.List;
+		import java.util.Map;
+		import com.huateng.commquery.result.UpdateReturnBean;
+		import com.huateng.commquery.result.UpdateResultBean;
+		import com.huateng.commquery.process.BankResultProcess;
+		import com.huateng.commquery.process.BankUpdateProcess;
+		import com.huateng.commquery.result.MultiUpdateResultBean;
+		BankResultProcess.processAsyncBean(Map<String,String> map,HttpServletRequest request,HttpServletResponse response);
+		BankUpdateProcess.savaOrUpdate(String updateClassName,MultiUpdateResultBean bean,HttpServletRequest request,HttpServletResponse response);
+		MultiUpdateResultBean.setUpdateResult(Map<String,UpdateResultBean> map);
+		MultiUpdateResultBean.setParamMap(Map<String,String> map);
+		UpdateReturnBean.setParamMap(Map<String,String> map);
+		UpdateResultBean.setParamMap(Map<String,String> map);
+		UpdateResultBean.setTotalList(List<Map> list);
+		]]>
+	</signatures>
+</dwr>

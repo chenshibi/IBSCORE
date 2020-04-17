@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	  navigate:导航信息
+	  type:方式（sql|call)
+	  interface:是否显示输入条件页面(true|false)
+	  databusid:数据总线编号
+	  transdataactionurl:数据整理URL
+	  async:异步提交标志
+	  pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry
+title=""
+navigate=""
+type="call"
+interface="false"
+pagesize="20"
+async="true"
+databusid="TEST"
+transdataactionurl="/trans/TransDataAction.do"
+getterclassname="com.huateng.ebank.business.management.getter.AllFaRenBranchSelect"
+>
+	<Include id="BankParam"/>
+
+	<Fields>
+
+		<Field id="stbrNo" primary="false" type="String"  method="trimStringRS" xpath="/stbrNo"/>
+
+		<Field id="stbrName" primary="false" type="stbrName"  method="trimStringRS" xpath="/stbrName"/>
+
+		<Field id="stbrNoTypeName" method="trimStringRS" xpath="/stbrNoTypeName"/>
+
+	</Fields>
+	<Parameters>
+		<Parameter id="value1" desc="机构号"  value=""/>
+	</Parameters>
+	<Where>
+	</Where>
+	<Sql>
+	</Sql>
+	<Script>
+	</Script>
+</CommQry>

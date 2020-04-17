@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="二代企业征信查询" navigate="二代企业征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.PermitUploadGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" desc="二代企业征信查询" 
+		url="/trans/qryExp.do"  perfetch="50" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+	 	<Field id="id" desc="id" edittype="text" datatype="string"
+			method="None" readonly="true" size="6" status="N" default="" 
+			xpath="" />
+	    <Field id="loanCardNo" desc="贷款卡号码/中征码" edittype="text" datatype="string"
+			method="None" readonly="false" size="16" status="F" default="" require="true"
+			primary="true" xpath="/loanCardNo" />
+		<Field id="loanCardPass" desc="LEID" edittype="text" datatype="string"
+			method="None" readonly="false" size="8" status="F" default="" require="false"
+			xpath="/loanCardPass" />
+		<Field id="enterpriseRegId" desc="组织机构代码" edittype="text" datatype="string"
+			require="false" method="None" readonly="false" size="22" status="F" 
+			default=""  xpath="/enterpriseRegId" />
+		<Field id="corpName" desc="企业名称" edittype="text" datatype="string" 
+			require="true" method="None" readonly="false" size="200" status="F"
+			default="" xpath="/corpName" />
+	   <Field id="entCertType" desc="企业身份标识类型" require="true" edittype="select"
+               translated="DATA_DIC.6065" method="None"
+               size="2" datatype="string" status="F" xpath="/entCertType"/>
+     <!--    <Field id="flag" desc="标识" edittype="text" datatype="string"
+			method="None" readonly="false" size="1" status="F" default="" 
+			xpath="flag" /> -->
+		<Field id="expireDate" desc="过期日期" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default="" require="true"
+			xpath="/expireDate" />
+		<Field id="approveTime" desc="授权时间" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default="" 
+			xpath="/approveTime" />
+
+
+	</Fields>
+	<Where>
+		<TextBox id="qloanCardId" type="String" operation="EQ" size="8" 
+			desc="贷款卡号码/中征码" tip="贷款卡号码/中征码" index="0" />
+		<TextBox id="qsenterpriseRegId" type="String" operation="EQ" size="8" 
+			desc="组织机构代码" tip="组织机构代码" index="0" />
+		
+	</Where>
+	<Operations>
+		<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="#"
+			url="" txn="" />
+	     <!-- <Button id="btClose" name="btClose" desc="返回" operation="syncsubmit"
+			url="/fpages/crms/ftl/CrmsBatchQueryCorpReport.ftl" txn="" updateClass="#"/> -->
+	</Operations>
+</CommQry>

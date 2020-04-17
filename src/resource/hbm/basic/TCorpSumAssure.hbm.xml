@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		  name="TCorpSumAssure"
+          table="T_Corp_Sum_Assure"
+          lazy="false"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="id"
+		>
+			<generator class="increment"/>
+		</id>
+
+		<property
+			name="rptKey"
+			column="rpt_key"
+			type="string"
+			not-null="true"
+			length="50"
+		/>
+		<property
+			name="createTime"
+            column="create_time"
+			type="timestamp"
+			not-null="false"
+			length="14"
+		/>
+		<property
+			name="itemName"
+            column="item_name"
+			type="string"
+			not-null="false"
+			length="50"
+		/>
+		<property
+			name="count"
+            column="count"
+			type="integer"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="amount"
+            column="amount"
+			type="float"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="normalAmount"
+            column="normal_amount"
+			type="float"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="concernAmount"
+            column="concern_amount"
+			type="float"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="badAmount"
+            column="bad_amount"
+			type="float"
+			not-null="false"
+			length="30"
+		/>
+		<property
+			name="totalAmount"
+            column="total_amount"
+			type="float"
+			not-null="false"
+			length="30"
+		/>
+		
+	</class>
+</hibernate-mapping>

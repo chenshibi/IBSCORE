@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+	<class
+		name="CurcdMap"
+		table="CURCD_MAP"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="curcd"
+			type="string"
+			column="CURCD"
+		>
+		<generator class="assigned"/>
+		</id>
+
+		<property
+			name="curcdname"
+			column="CURCD_NAME"
+			type="string"
+			not-null="false"
+			length="152"
+		/>
+		<property
+			name="curcdno"
+			column="CURCD_NO"
+			type="string"
+			not-null="false"
+			length="20"
+		/>
+		<property
+			name="curcdnameno"
+			column="CURCD_NAME_NO"
+			type="string"
+			not-null="true"
+			length="152"
+		/>
+	</class>
+</hibernate-mapping>

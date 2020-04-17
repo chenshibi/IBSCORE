@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="50" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.LoanCardNoInquirySingleQueryGetter">
+	<Include id="BankParam" />
+	<Fields>
+	
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+			<Field id="id" desc="ID" edittype="text" datatype="string" 
+			 method="None" readonly="false" size="22" status="F"
+			default="" xpath="/id" />
+		<Field id="opr" desc="操作" edittype="text" datatype="string" 
+			 method="None" readonly="false" tip="opr" size="22" status="F"
+			default="" xpath="" />
+			<Field id="pwid" desc="操作员" edittype="text" datatype="string" 
+			 method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/pwid" />
+		<Field id="inquiryValue" desc="客户证件号码" edittype="text" datatype="string" 
+			 method="None" readonly="false" size="22" status="F"  require="true"
+			default="" xpath="/inquiryValue" />
+          
+		<Field id="inputTime" desc="录入时间" edittype="text" datatype="timestamp"
+			method="None" readonly="false" size="10" status="F" default=""
+			xpath="/inputTime" />
+		
+		<Field id="inquiryType" desc="客户证件类型" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.9001"
+			status="F" default="" xpath="/inquiryType" tip="查询类型" />  
+         
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select"  
+			datatype="string" method="None" size="3" translated="DATA_DIC.9002"
+			status="F" default="" xpath="/queryReason" tip="查询原因" />
+	
+		<Field id="status" desc="状态" require="" edittype="select"
+			datatype="string" method="None" size="3" translated="DATA_DIC.506"
+			status="F" default="" xpath="/status" tip="状态" />  
+			
+		
+	</Fields>
+	<Where>
+		<Option id="qinquiryType"  default="" desc="客户证件类型" type="String" tip="" method="None" index="0" translated="DATA_DIC.9001"/>
+		<TextBox id="qinquiryValue" type="String"  size="20" desc="客户证件号码" tip="" index="3" require="true" />
+	</Where>
+	<Operations>
+			
+	</Operations>
+</CommQry>

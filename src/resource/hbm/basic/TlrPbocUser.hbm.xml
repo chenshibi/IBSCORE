@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.basic">
+    <class
+            name="TlrPbocUser"
+            table="tlr_pboc_user"
+            lazy="false"
+    >
+    <meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="ID"
+		>
+		<generator class ="increment"/>
+		</id>
+
+        <property
+                name="userNo"
+                column="user_no"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+       
+        <property
+                name="userPswdNow"
+                column="user_pswd_now"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="userPswdOld"
+                column="user_pswd_old"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+          <property
+                name="userType"
+                column="user_type"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+        <property
+                name="statusPswd"
+                column="status_pswd"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="lastUpdateTime"
+                column="last_update_time"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+         <property
+                name="updateTlrInfo"
+                column="update_tlr_info"
+                type="string"
+                not-null="false"
+                length="14"
+        />
+    </class>
+</hibernate-mapping>

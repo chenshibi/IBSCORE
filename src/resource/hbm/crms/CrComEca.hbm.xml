@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="resource.bean.crms">
+    <class name="CrComEca" table="CR_COM_ECA" >
+        <meta attribute="sync-DAO">false</meta>
+        <id name="id" column="ID" type="string"  length="32" >
+           <!--  <generator class="uuid" /> -->
+        </id>
+
+        <property name="ec010d01" column="EC010D01" type="string" not-null="false" length="3" />
+        <property name="ec010d02" column="EC010D02" type="string" not-null="false" length="2" />
+        <property name="ec010d03" column="EC010D03" type="string" not-null="false" length="1" />
+        <property name="ec010d04" column="EC010D04" type="string" not-null="false" length="5" />
+        <property name="ec010q01" column="EC010Q01" type="string" not-null="false" length="80" />
+        <property name="ec010r01" column="EC010R01" type="string" not-null="false" length="4" />
+        <property name="ec010r02" column="EC010R02" type="string" not-null="false" length="10" />
+        <property name="ec010q02" column="EC010Q02" type="string" not-null="false" length="80" />
+        <property name="ec010d05" column="EC010D05" type="string" not-null="false" length="1" />
+        <property name="ec020j01" column="EC020J01" type="string" not-null="false" length="15"/>
+        <property name="ec020s01" column="EC020S01" type="string" not-null="false" length="2"/>
+        <property name="ec020r01" column="EC020R01" type="string" not-null="false" length="10" />
+        <property name="ec030s01" column="EC030S01" type="string" not-null="false" length="3"/>
+        <property name="ec030r01" column="EC030R01" type="string" not-null="false" length="10" />
+        <property name="ec040d01" column="EC040D01" type="string" not-null="false" length="1" />
+        <property name="ec040q01" column="EC040Q01" type="string" not-null="false" length="80" />
+        <property name="ec040d02" column="EC040D02" type="string" not-null="false" length="2" />
+        <property name="ec040i01" column="EC040I01" type="string" not-null="false" length="40" />
+        <property name="ec040r01" column="EC040R01" type="string" not-null="false" length="10" />
+        <property name="ec050s01" column="EC050S01" type="string" not-null="false" length="3"/>
+        <property name="ec050r01" column="EC050R01" type="string" not-null="false" length="10" />
+        <property name="rsv1" column="RSV1" type="string" not-null="false" length="2" />
+        <property name="rsv2" column="RSV2" type="string" not-null="false" length="8" />
+        <property name="rsv3" column="RSV3" type="string" not-null="false" length="8" />
+        <property name="rsv4" column="RSV4" type="string" not-null="false" length="14" />
+        <property name="rsv5" column="RSV5" type="string" not-null="false" length="14" />
+        <property name="rsv6" column="RSV6" type="string" not-null="false" length="32" />
+        <property name="rsv7" column="RSV7" type="string" not-null="false" length="64" />
+        <property name="rsv8" column="RSV8" type="string" not-null="false" length="60" />
+        <property name="rsv9" column="RSV9" type="string" not-null="false" length="512" />
+        <property name="rsv10" column="RSV10" type="string" not-null="false" length="1024" />
+    </class>
+</hibernate-mapping>

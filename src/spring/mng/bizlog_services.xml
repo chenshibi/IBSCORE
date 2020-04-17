@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- 交易流水查询	  -->
+	<bean id="bizLogQueryOP"
+		class="com.huateng.ebank.business.bizlog.operation.BizLogQueryOP">
+	</bean>
+	
+	<!-- 日志查询  -->
+	<bean id="logger.OperLoggerQueryOP"
+		class="com.huateng.ebank.business.logger.operation.OperLoggerQueryOP">
+	</bean>
+	
+	
+   <bean id="com.huateng.report.dataquery.service.TblCsBizLogService"
+        class="com.huateng.report.dataquery.service.TblCsBizLogService">
+    </bean>
+    
+</beans>

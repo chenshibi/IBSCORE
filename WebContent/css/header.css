@@ -1,0 +1,75 @@
+.zi {
+	FONT-SIZE: 12px; WORD-SPACING: 12pt; COLOR: #ffffff; LINE-HEIGHT: 22px
+}
+.zi1 {
+	FONT-SIZE: 13px; COLOR: #000000
+}
+.zi2 {
+	FONT-SIZE: 12px; COLOR: #6666cc
+}
+.hui {
+	FONT-SIZE: 14px; LINE-HEIGHT: 22px
+}
+.lan {
+	FONT-SIZE: 12px; COLOR: #0033ff
+}
+.bai {
+	FONT-SIZE: 12px; LINE-HEIGHT: 20px; COLOR: #ffffff
+}
+.xz {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #93bee1
+}
+.whitelink {
+	FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.whitelink:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.whitelink:hover {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.blacklink {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+A.blacklink:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.blacklink:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.bluelink {
+	FONT-SIZE: 12px; COLOR: #0000ff; TEXT-DECORATION: none
+}
+A.bluelink:link {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+A.bluelink:hover {
+	COLOR: #0000ee; TEXT-DECORATION: none
+}
+.n {
+	TEXT-DECORATION: none
+}
+.blacklink2 {
+	FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+}
+A.blacklink2:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.blacklink2:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.mid {
+	FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.mid:hover {
+	FONT-SIZE: 12px; COLOR: #cccccc; TEXT-DECORATION: none
+}
+.blue {
+	FONT-SIZE: 12px; COLOR: #0066ff; TEXT-DECORATION: none
+}
+blue:hover {
+	COLOR: #ff33cc; TEXT-DECORATION: none
+}
+.h4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #3b127a; LINE-HEIGHT: 125%
+}

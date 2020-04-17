@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="个人征信查询" navigate="个人征信查询"
+	type="call" interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.customer.getter.IndAppGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" desc="批量下载-外汇账户内结汇—基础信息" 
+		url="/trans/qryExp.do"  perfetch="50" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+		<!-- 
+			<Field id="id" desc="ID" edittype="text" datatype="string" require="true"
+			method="None" readonly="false" size="22" status="F" 
+			default="" xpath="/id" />
+			
+			<Field id="rptId" desc="证件号码" edittype="text" datatype="string"
+			method="None" readonly="false" size="52" status="N" require="true" default="" 
+			primary="true" xpath="/rptId" />
+			
+			<Field id="reportFormat" desc="上传的用户许可" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/reportFormat" />
+			
+			<Field id="status" desc="状态" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/status" />
+			
+		   <Field id="uploadedFilePath" desc="上传路径" edittype="text" datatype="string"
+			method="None" readonly="false" size="22" status="F" require="true"
+			default="" xpath="/uploadedFilePath" />
+			
+			<Field id="inputTime" desc="插入日期" edittype="text" datatype="date"
+			method="None" readonly="false" size="50" status="F" default=""
+			xpath="/inputTime" />
+		<Field id="queryTime" desc="查询日期" edittype="text" datatype="date"
+			method="None" readonly="false" size="50" status="F" default=""
+			xpath="/queryTime" />
+		<Field id="returnTime" desc="返回日期" edittype="text" datatype="date"
+			method="None" readonly="false" size="50" status="F" default=""
+			xpath="/returnTime" />
+			<Field id="type" desc="查询方式" edittype="text" datatype="string"
+			method="None" readonly="false" size="2" status="F" require="true"
+			default="" xpath="/type" />
+ -->
+ <!-- 最外面的 -->
+		<Field id="inqCustName" desc="Name" edittype="text" datatype="string"
+			method="None" readonly="false" size="60" status="F" default="" 
+			xpath="/inqCustName" />
+
+		<Field id="inqCustId" desc="ID" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F"
+			default="" xpath="/inqCustId" />
+			
+		<Field id="inqCustIdType" desc="ID Type" status="N" 
+              readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+              translated="LIST:1,军官证;2,身份证" xpath="/inqCustIdType"/>	
+              
+   <!-- 主借款人的 -->
+		<Field id="relName" desc="corp Name" edittype="text" datatype="string"
+			method="None" readonly="false" size="60" status="F" default="" 
+			xpath="/relName" />
+
+		<Field id="relCustId" desc="ID" edittype="text" datatype="string"
+			method="None" readonly="false" size="30" status="F"
+			default="" xpath="/relCustId" />
+			
+		<Field id="relCustIdType" desc="ID TYPE" status="N" 
+              readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+              translated="LIST:1,军官证;2,身份证" xpath="/relCustIdType"/>	 
+             
+  		<Field id="queryReason" desc="query Reason" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="LIST:1,贷前审查;2,贷中操作;3,贷后管理;4,其他理由;5,关联查询" xpath="/queryReason"/>	
+			
+		 <Field id="inqCustType" desc="Cust Type" status="N" require="true"
+             readonly="" primary="true" type="String" edittype="select" size="20" rules=""
+             translated="LIST:1,担保人;2,主借款人;3,共同借款人" xpath="/inqCustType"/>
+			
+		<Field id="relCorpId" desc="loan card ID" edittype="text" datatype="string"
+			method="None" readonly="false" size="16" status="F" default=""
+			primary="true" xpath="/relCorpId" />
+			
+		
+		
+		
+		
+	</Fields>
+	<Where>
+		
+	</Where>
+	<Operations>
+	<Button id="companyBtNew" name="companyBtNew" desc="新增" icon="icon-add"
+			operation="addrecord" url="#" txn="" />
+	<Button id="companyBtsave" name="companyBtsave" desc="提交" icon="icon-add"
+			operation="asysubmit" url="#" txn="" />
+	<Button id="companyBtDel" name="companyDel" desc="删除" icon="icon-remove"
+			operation="delrecord" url="#" txn="" />
+	<Button id="btSave" name="btSave" desc="提交" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.customer.update.IndAppUpdate"
+			url="" txn="" show="" group="" />
+	</Operations>
+</CommQry>

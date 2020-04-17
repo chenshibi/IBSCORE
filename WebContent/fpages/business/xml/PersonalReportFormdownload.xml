@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL async:异步提交标志 pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="指令相关报表" type="call" interface="true" navigate=""
+	async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.dxzp.reportForm.getter.PersonalReportFormdownloadGetter">
+	<Include id="BankParam" />
+	<!-- status ：F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+	<!-- primary ： true-作为表单项记录上传 false-不作为表单项上传 -->
+	
+	<Fields>
+		<!-- 明细报表没有字段展示，只有下载Excel -->
+	</Fields>
+	
+	<Where>
+		<!-- <Option id="qbrno" fieldname="qbrno"  size="120" desc="分行号" type="string" 
+			translated="CQ:BctlFp1Select" fieldmap="qbrno=brno" index="0"
+			viewField="brcodeTypeName" dropdowntype="dynamic" init="true"
+			require="false" readOnly="false" />
+			
+		<Option id="qtype" desc="类型" edittype="select" require="true"
+			translated="DATA_DIC.5501" datatype="string" index="1" />
+			
+		<TextBox id="qdatebegin" desc="查询日期 起" require="true" datatype="date"
+			method="None" size="150" primary="false" index="2" type="String" />
+		<TextBox id="qdateend" desc="至" require="true" datatype="date"
+			method="None" size="150" primary="false" index="3" type="String" />  -->
+		<Option id="reportDate" desc="报表月份" placeholder="yyyyMM"
+		edittype="select" dropdowntype="custom" url="/templets/lib/yyyyMM.ftl" require="true" 
+		fieldmap="reportDate=yyyyMM" viewField="yyyyMM" />
+	</Where>
+
+	<Operations>
+		<Button id="btDownload" name="btDownload" desc="下载Excel" url="#" />
+	</Operations>
+</CommQry>

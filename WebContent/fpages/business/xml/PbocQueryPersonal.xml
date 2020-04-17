@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="二代个人征信查询" navigate="二代个人征信查询  &gt; 二代个人征信查询"
+         type="call" interface="false" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+         getterclassname="com.huateng.report.pboc.getter.CustPbocPerQueryGetter">
+    <Include id="BankParam"/>
+        <ResultViewParam>
+        /fpages/crms/ftl/PbocQueryPersonalMake.ftl
+    </ResultViewParam>
+    
+       <PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="数据导出-个人征信查询"/>
+    <Fields>
+        <!-- 个人征信查询 -->
+         <Field id="id" desc="操作" edittype="text" status="F" datatype="string" readonly="true" xpath="/id"  size="6"/>
+        <Field id="select" desc="选择" require="false" method="None"
+               readonly="false" size="20" default="" xpath="" type="select"
+               edittype="checkbox" />
+        <Field id="createUser" desc="操作员号" tip="操作员号"  require="true"
+               edittype="text" datatype="String" method="None" readonly="" primary="true"
+               size="20" default="" xpath="/createUser"/>
+        <Field id="name" desc="姓名" tip="姓名" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="30" default="" xpath="/name"/>
+        <Field id="idType" desc="证件类型" require="true" edittype="select"
+               translated="DATA_DIC.6002"
+               size="2" datatype="string" status="A" xpath="/idType"/>
+        <Field id="idNum" desc="证件号码" require="true" edittype="text" size="32"
+               datatype="string" status="A" xpath="/idNum"/>
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select"
+               size="2" datatype="string" status="A" translated="DATA_DIC.6004"
+               xpath="/queryReason"/>
+        <Field id="serviceCode" desc="服务代码" require="true" size="100"
+               edittype="text" datatype="string" status="F"
+               xpath="/serviceCode"/>
+        <Field id="respId" desc="回执编号" tip="回执编号" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="32" default="" xpath="/respId"/>
+        <Field id="respCode" desc="回执代码" tip="回执代码" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="4" default="" xpath="/respCode"/>
+        <Field id="respMsg" desc="回执信息" tip="回执信息" status="F" require=""
+               edittype="text" datatype="string" method="None" readonly="" primary="true"
+               size="1024" default="" xpath="/respMsg"/>
+        <Field id="queryDate" desc="查询日期" tip="查询日期" status="F" require=""
+               edittype="text" datatype="date" method="None" readonly="" primary="true"
+               size="8" default="" xpath="/queryDate"/>
+        <Field id="sendTime" desc="发送时间" tip="发送时间" status="F" require=""
+               edittype="date" datatype="string" method="None" readonly="" primary="true"
+               size="14" default="" xpath="/sendTime"/>
+        <Field id="respTime" desc="回执时间" tip="回执时间" status="F"
+               require="" edittype="date" datatype="string" method="None" readonly=""
+               primary="" size="14" default="" xpath="/respTime"/>
+        <Field id="status" desc="状态" tip="状态" status="F" translated="LIST:00,未查;03,查询成功;04,查询失败;"
+               require="" edittype="select" datatype="string" method="None" readonly=""
+               primary="true" size="2" default="" xpath="/status"/>
+
+    </Fields>
+    <Where>
+        <TextBox id="name" tablename="NAME" fieldname="name"
+                 type="String" dataType="String" size="30" desc="姓名" tip="姓名"
+                 method="None" index="1" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="idNum" tablename=" ID_NUM" fieldname="idNum"
+                 type="String" dataType="String" size="30" desc="证件号码" tip="证件号码"
+                 method="None" index="2" function="" width="" default="" scale=""
+                 require="" readOnly="" rules=""/>
+        <TextBox id="qtlrno" tablename="CREATE_USER" fieldname="createUser"
+                 type="String" dataType="" operation="EQ" size="20" desc="操作员号"
+                 tip="操作员号" method="genLikeP" index="3" function="" width=""
+                 default="" scale="" require="" readOnly="" rules="xss" errmsg="操作员号有错!"/>
+        <Option id="status" size="2" require="false" edittype="select" desc="状态" datatype="int" index="4" translated="LIST:00,未查;03,查询成功;04,查询失败;"/>
+    </Where>
+    
+    
+    
+    
+<!-- 
+    <Fields>
+        <Field id="name" desc="姓名" require="true"
+               edittype="text" datatype="string" method="None" readonly="false"
+               size="30" status="F" default="" xpath="/name"/>
+
+        <Field id="idType" desc="证件类型" require="true" edittype="select"
+               translated="DATA_DIC.6002" method="None"
+               size="2" datatype="string" status="F" xpath="/idType"/>
+
+        <Field id="idNum" desc="证件号码" require="true" edittype="text" size="18" method="None"
+               datatype="string" status="F" xpath="/idNum"/>
+
+        <Field id="queryReason" desc="查询原因" require="true" edittype="select" method="None"
+               size="3" datatype="string" status="F" translated="DATA_DIC.6004"
+               xpath="/queryReason"/>
+
+        <Field id="serviceCode" desc="服务代码" require="true" size="100" method="None"
+               edittype="text" datatype="string" status="F"
+               xpath="/serviceCode"/>
+
+    </Fields> -->
+
+
+    <!-- <Operations>
+
+        <Button id="btSearch" name="btSearch" desc="查询" icon="icon-search" operation="asysubmit"
+                url="#" updateClass="com.huateng.ebank.business.customer.update.PbocQueryPersonalMakeUpdate"/>
+    </Operations> -->
+
+</CommQry>
